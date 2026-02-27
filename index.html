@@ -181,6 +181,25 @@
     .connect-cta p strong { color:var(--white); font-weight:400; }
     .cnote { font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; color:var(--g700); margin-top:14px; display:block; }
 
+    /* Form Styles */
+    .contact-form { max-width:620px; margin:0 auto 84px; }
+    .form-group { margin-bottom:24px; display:grid; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .form-row .form-group { margin-bottom:0; }
+    .form-label { font-size:14px; font-weight:500; color:var(--white); margin-bottom:8px; display:block; }
+    .form-label .required { color:var(--cyan); }
+    .form-input, .form-textarea { font-family:var(--body); font-size:14px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:4px; padding:12px 16px; color:var(--white); transition:border-color .2s, background-color .2s; width:100%; }
+    .form-input::placeholder, .form-textarea::placeholder { color:var(--g500); }
+    .form-input:focus, .form-textarea:focus { outline:none; border-color:var(--cyan); background:rgba(255,255,255,.09); }
+    .form-textarea { resize:vertical; min-height:120px; font-family:var(--body); }
+    .form-error { color:#ff4444; font-size:12px; margin-top:6px; display:none; }
+    .form-error.show { display:block; }
+    .form-submit { display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; font-weight:500; text-decoration:none; padding:13px 26px; border-radius:4px; background:var(--cyan); color:var(--blue); border:none; cursor:pointer; transition:transform .18s, background .18s; width:100%; justify-content:center; }
+    .form-submit:hover { transform:translateY(-2px); background:var(--cyan-dim); }
+    .form-message { text-align:center; margin-top:16px; padding:16px; border-radius:4px; display:none; font-size:14px; }
+    .form-message.success { display:block; background:rgba(0,200,100,.1); border:1px solid rgba(0,200,100,.3); color:#00c864; }
+    .form-message.error { display:block; background:rgba(255,100,100,.1); border:1px solid rgba(255,100,100,.3); color:#ff6464; }
+
     .socials { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:76px; }
     .soc { display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--g500); border:1px solid rgba(255,255,255,.1); padding:10px 18px; border-radius:4px; text-decoration:none; transition:border-color .2s, color .2s, transform .18s; }
     .soc:hover { border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px); }
@@ -292,7 +311,7 @@
         <div class="eyebrow">Experience</div>
         <h2>Built at<br/><em>real scale.</em></h2>
       </div>
-      <p class="s-sub">13+ years across public sector, enterprise and SaaS — designing cloud platforms that support thousands of engineers and mission-critical workloads. <strong>Not theory. Production systems that shipped.</strong></p>
+      <p class="s-sub">Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. <strong>Not theory. Production systems that shipped.</strong></p>
     </div>
 
     <div class="timeline">
@@ -308,6 +327,20 @@
           <div class="tl-role">Principal AI-Native Cloud Architect</div>
           <p class="tl-desc">Fractional architecture leadership for Seed–Series C SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability — without the overhead of a full-time Principal hire.</p>
           <div class="tags"><span class="tag">AI-Native Architecture</span><span class="tag">Cloud-Agnostic</span><span class="tag">IaC</span><span class="tag">Cost Architecture</span><span class="tag">WAF2p Framework</span><span class="tag">Fractional Leadership</span></div>
+        </div>
+      </div>
+
+      <div class="tlrow reveal">
+        <div class="tlmeta">
+          <span class="tl-period">2023 — 2024</span>
+          <span class="tl-co">FoxBase</span>
+          <span class="tl-loc">Düsseldorf · Germany</span>
+        </div>
+        <div class="tlspine"></div>
+        <div class="tlbody">
+          <div class="tl-role">Tech Team Lead & Co-Innovation Manager</div>
+          <p class="tl-desc">Led AWS Amplify Backend-as-a-Service rollout for SaaS platform — deliberately trading low-level infrastructure control for faster time-to-market and improved developer experience. Architected platform foundation that enabled rapid feature delivery across five countries while maintaining scalability for enterprise customers. Standardized incident detection and prevention processes (+50% efficiency), managed key accounts and co-innovation requests, and established governance frameworks supporting international platform expansion.</p>
+          <div class="tags"><span class="tag">AWS Amplify</span><span class="tag">BaaS</span><span class="tag">Product Leadership</span><span class="tag">SaaS Platform</span><span class="tag">Developer Experience</span><span class="tag">International Rollout</span><span class="tag">Co-Innovation</span></div>
         </div>
       </div>
 
@@ -356,21 +389,8 @@
     </div>
 
     <div class="creds reveal">
-      <div class="cred">
-        <span class="cred-icon">📘</span>
-        <div class="cred-title">Published with Microsoft</div>
-        <p class="cred-desc">Executive architecture guidance on scalable Kubernetes and microservice platforms — co-authored and published in collaboration with Microsoft and Capgemini.</p>
-      </div>
-      <div class="cred">
-        <span class="cred-icon">🏆</span>
-        <div class="cred-title">AWS Global Partner Award</div>
-        <p class="cred-desc">Contributed to the award-winning cloud platform for autonomous vehicle development, enabling 1,700 engineers globally under strict performance and compliance requirements.</p>
-      </div>
-      <div class="cred">
-        <span class="cred-icon">⚙️</span>
-        <div class="cred-title">WAF2p — Open-Source Framework</div>
-        <p class="cred-desc">Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved.</p>
-      </div>
+      <div class="cred-title">WAF2p — Open-Source Framework</div>
+      <p class="cred-desc">Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved.</p>
     </div>
 
   </div>
@@ -422,7 +442,7 @@
 
       <div class="case reveal">
         <div class="case-hd">
-          <div><span class="case-num">Case 01</span><h3>Global Kubernetes Platform for 2,500 Developers</h3></div>
+          <div><span class="case-num">Case 01</span><h3>Cloud Infrastructure Powering Enterprise Development at Scale</h3></div>
           <span class="case-client">Capgemini × Microsoft</span>
         </div>
         <div class="case-cols">
@@ -488,9 +508,45 @@
         <div class="eyebrow" style="justify-content:center;">Connect</div>
         <h2>Your platform should<br/><em>outlast your roadmap.</em></h2>
         <p>If you're a CTO or engineering leader at a SaaS company scaling from 10 to 100 engineers — and architecture is starting to create friction — <strong>let's talk.</strong> A 30-minute call costs nothing and usually surfaces the one thing worth fixing first.</p>
-        <a href="https://calendly.com/chriscloud-weber" target="_blank" class="btn btn-p">Get in touch</a>
-        <span class="cnote">No sales pitch. No commitment. Just architectural clarity.</span>
       </div>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name <span class="required">*</span></label>
+            <input type="text" name="firstName" class="form-input" placeholder="eg: John" required />
+            <div class="form-error">This field is required</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name <span class="required">*</span></label>
+            <input type="text" name="lastName" class="form-input" placeholder="eg: Doe" required />
+            <div class="form-error">This field is required</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Email <span class="required">*</span></label>
+          <input type="email" name="email" class="form-input" placeholder="eg: user@example.com" required />
+          <div class="form-error">Please enter a valid email</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Company <span class="required">*</span></label>
+          <input type="text" name="company" class="form-input" placeholder="eg: Apple Inc" required />
+          <div class="form-error">This field is required</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message <span class="required">*</span></label>
+          <textarea name="message" class="form-textarea" placeholder="Type your message here ..." required></textarea>
+          <div class="form-error">This field is required</div>
+        </div>
+
+        <button type="submit" class="form-submit">Send Message</button>
+        <div class="form-message" id="formMessage"></div>
+      </form>
+
+      <div class="cnote" style="text-align:center; margin-bottom:84px;">No sales pitch. No commitment. Just architectural clarity.</div>
 
       <div class="socials reveal">
         <a href="https://www.linkedin.com/in/christian-weber-0591/" target="_blank" class="soc">
@@ -533,6 +589,55 @@
     { threshold: 0.1 }
   );
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Contact Form Handler
+  async function handleSubmit(event) {
+    event.preventDefault();
+    
+    const form = document.getElementById('contactForm');
+    const messageEl = document.getElementById('formMessage');
+    const submitBtn = form.querySelector('.form-submit');
+    
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Disable button during submission
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    try {
+      const response = await fetch('https://flow.mach2.cloud/form/contact-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      });
+      
+      if (response.ok) {
+        messageEl.textContent = 'Thank you! We\'ll get back to you soon.';
+        messageEl.className = 'form-message success';
+        form.reset();
+        submitBtn.textContent = 'Send Message';
+        submitBtn.disabled = false;
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+          messageEl.className = 'form-message';
+        }, 5000);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      messageEl.textContent = 'Error sending message. Please try again.';
+      messageEl.className = 'form-message error';
+      submitBtn.textContent = 'Send Message';
+      submitBtn.disabled = false;
+      
+      console.error('Form submission error:', error);
+    }
+  }
 </script>
 
 </body>
