@@ -1,394 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Weber - AI-Native Cloud Architect for SaaS</title>
-    <meta name="description" content="Principal AI-Native Cloud Architect helping SaaS CTOs design scalable, secure, and cost-efficient cloud platforms. Enterprise-scale platform leadership with Microsoft published architecture guidance.">
-    <meta name="keywords" content="AI-Native Architecture, Cloud Architecture, SaaS Platform, Cloud Cost Optimization, Platform Engineering">
-    <meta property="og:title" content="Christian Weber - AI-Native Cloud Architect">
-    <meta property="og:description" content="Helping SaaS CTOs design cloud platforms that scale reliably and stay cost-efficient.">
-    <meta property="og:type" content="website">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christian Weber — AI-Native Cloud Architect</title>
+  <meta name="description" content="I help Seed–Series C SaaS CTOs design AI-native cloud architectures that scale reliably — cloud-agnostic, security-first, production-ready." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue:      #0B1F3A;
+      --blue-mid:  #0D2447;
+      --cyan:      #00E5FF;
+      --cyan-dim:  #00b8cc;
+      --cyan-pale: #e4fbff;
+      --white:     #ffffff;
+      --g100:      #f4f6f8;
+      --g300:      #c8d4e3;
+      --g500:      #8a9bb0;
+      --g700:      #4a5a72;
+      --serif:     'DM Serif Display', Georgia, serif;
+      --body:      'DM Sans', sans-serif;
+      --mono:      'DM Mono', monospace;
+      --max:       1100px;
+      --nav:       64px;
+      --pad:       clamp(20px, 5vw, 60px);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--body); background: var(--blue); color: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    ::selection { background: var(--cyan); color: var(--blue); }
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--blue); }
+    ::-webkit-scrollbar-thumb { background: var(--cyan-dim); }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+    /* ── TYPE ── */
+    h1 { font-family: var(--serif); font-size: clamp(36px, 5.8vw, 64px); font-weight: 400; line-height: 1.08; letter-spacing: -.025em; margin-bottom: 24px; }
+    h2 { font-family: var(--serif); font-size: clamp(28px, 4.2vw, 46px); font-weight: 400; line-height: 1.12; letter-spacing: -.02em; }
+    h3 { font-family: var(--serif); font-size: 21px; font-weight: 400; color: var(--white); line-height: 1.2; }
+    h1 em, h2 em { font-style: italic; color: var(--cyan); }
+
+    .eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--cyan); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .eyebrow::before { content: ''; display: block; width: 26px; height: 1px; background: var(--cyan); flex-shrink: 0; }
+
+    /* ── BUTTONS ── */
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11.5px; letter-spacing: .07em; text-transform: uppercase; font-weight: 500; text-decoration: none; padding: 13px 26px; border-radius: 4px; transition: transform .18s, background .18s, border-color .18s, color .18s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-p { background: var(--cyan); color: var(--blue); }
+    .btn-p:hover { background: var(--cyan-dim); }
+    .btn-g { background: transparent; color: var(--g300); border: 1px solid rgba(255,255,255,.15); }
+    .btn-g:hover { border-color: var(--cyan); color: var(--cyan); }
+
+    /* ── TAGS ── */
+    .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--cyan-dim); background: rgba(0,229,255,.06); border: 1px solid rgba(0,229,255,.14); padding: 4px 10px; border-radius: 3px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    /* ── SECTION EDGE ── */
+    .s-top { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(0,229,255,.18), transparent); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.on { opacity: 1; transform: translateY(0); }
+
+    @keyframes rise { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    .rise { opacity: 0; animation: rise .7s ease forwards; }
+    .r1{animation-delay:.05s} .r2{animation-delay:.18s} .r3{animation-delay:.3s} .r4{animation-delay:.44s} .r5{animation-delay:.58s} .r6{animation-delay:.7s}
+
+    /* ════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════ */
+    nav { position: fixed; top:0; left:0; right:0; z-index:200; height: var(--nav); display:flex; align-items:center; justify-content:space-between; padding: 0 var(--pad); background: rgba(11,31,58,.92); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0,229,255,.07); }
+    .nav-logo { font-family: var(--mono); font-size:14px; font-weight:500; color: var(--cyan); text-decoration:none; letter-spacing:.04em; }
+    .nav-logo span { color: var(--g700); }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { font-family: var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color: var(--g500); text-decoration:none; transition: color .2s; }
+    .nav-links a:hover { color: var(--cyan); }
+
+    /* ════════════════════════════════════════════
+       01  HEADER
+    ════════════════════════════════════════════ */
+    #header { min-height:100vh; padding-top: var(--nav); display:flex; align-items:center; position:relative; overflow:hidden; }
+    #header::before { content:''; position:absolute; inset:0; pointer-events:none; background-image: linear-gradient(rgba(0,229,255,.027) 1px,transparent 1px), linear-gradient(90deg,rgba(0,229,255,.027) 1px,transparent 1px); background-size:64px 64px; }
+    #header::after { content:''; position:absolute; top:var(--nav); left:0; right:0; height:2px; background:linear-gradient(90deg,var(--cyan),rgba(0,229,255,0) 55%); }
+
+    .hgrid { display:grid; grid-template-columns:1fr 272px; gap:68px; align-items:center; padding:80px 0 72px; }
+    .hero-sub { font-size:16px; font-weight:300; line-height:1.76; color: var(--g500); max-width:510px; margin-bottom:36px; }
+    .hero-sub strong { color:var(--white); font-weight:400; }
+    .hero-btns { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:52px; }
+
+    .trust { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid rgba(255,255,255,.07); padding-top:34px; }
+    .t-item { padding: 0 20px; border-right:1px solid rgba(255,255,255,.06); }
+    .t-item:first-child { padding-left:0; }
+    .t-item:last-child { border-right:none; }
+    .t-n { font-family:var(--serif); font-size:30px; color:var(--cyan); display:block; line-height:1; margin-bottom:7px; }
+    .t-l { font-size:12px; font-weight:300; color:var(--g500); line-height:1.45; }
+
+    .hphoto { position:relative; }
+    .hphoto img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:6px; display:block; filter:grayscale(15%); }
+    .hphoto::after { content:''; position:absolute; top:-10px; right:-10px; width:100%; height:100%; border:1px solid rgba(0,229,255,.28); border-radius:6px; pointer-events:none; }
+    .pbadge { position:absolute; bottom:16px; left:-16px; background:var(--blue-mid); border:1px solid rgba(0,229,255,.22); border-radius:5px; padding:10px 14px; }
+    .pb-l { font-family:var(--mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--cyan); display:block; margin-bottom:3px; }
+    .pb-v { font-size:13px; font-weight:500; color:var(--white); }
+
+    /* ════════════════════════════════════════════
+       02  EXPERIENCE
+    ════════════════════════════════════════════ */
+    #experience { padding:120px 0; background:var(--blue-mid); position:relative; }
+    .exp-top { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; margin-bottom:68px; }
+    .s-sub { font-size:15px; font-weight:300; line-height:1.75; color:var(--g500); }
+    .s-sub strong { color:var(--white); font-weight:400; }
+
+    .timeline { display:flex; flex-direction:column; }
+    .tlrow { display:grid; grid-template-columns:185px 1px 1fr; gap:0 34px; padding:36px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+    .tlrow:last-child { border-bottom:none; }
+    .tlmeta { padding-top:3px; }
+    .tl-period { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--cyan); display:block; margin-bottom:6px; }
+    .tl-co { font-size:13.5px; font-weight:500; color:var(--g300); display:block; margin-bottom:4px; }
+    .tl-loc { font-size:12px; font-weight:300; color:var(--g700); }
+    .tlspine { width:1px; background:linear-gradient(180deg,var(--cyan),rgba(0,229,255,.04)); position:relative; }
+    .tlspine::before { content:''; position:absolute; top:8px; left:50%; transform:translateX(-50%); width:8px; height:8px; border-radius:50%; background:var(--cyan); box-shadow:0 0 8px rgba(0,229,255,.5); }
+    .tlbody { padding-top:2px; }
+    .tl-role { font-family:var(--serif); font-size:20px; color:var(--white); margin-bottom:10px; line-height:1.2; }
+    .tl-desc { font-size:14px; font-weight:300; line-height:1.72; color:var(--g500); margin-bottom:14px; }
+
+    .creds { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:62px; }
+    .cred { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.07); border-radius:7px; padding:26px 22px; transition:border-color .25s, transform .2s; }
+    .cred:hover { border-color:rgba(0,229,255,.28); transform:translateY(-3px); }
+    .cred-icon { font-size:24px; display:block; margin-bottom:12px; }
+    .cred-title { font-size:14px; font-weight:500; color:var(--white); margin-bottom:7px; }
+    .cred-desc { font-size:12.5px; font-weight:300; line-height:1.6; color:var(--g500); }
+
+    /* ════════════════════════════════════════════
+       03  PORTFOLIO
+    ════════════════════════════════════════════ */
+    #portfolio { padding:120px 0; position:relative; }
+    .port-top { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:end; margin-bottom:52px; }
+
+    /* process */
+    .process { background:var(--blue-mid); border:1px solid rgba(0,229,255,.08); border-radius:8px; padding:30px 30px 28px; margin-bottom:52px; }
+    .proc-label { font-family:var(--mono); font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--cyan); margin-bottom:22px; }
+    .proc-steps { display:grid; grid-template-columns:repeat(5,1fr); position:relative; }
+    .proc-steps::before { content:''; position:absolute; top:19px; left:10%; right:10%; height:1px; background:linear-gradient(90deg,var(--cyan),rgba(0,229,255,.25),rgba(0,229,255,.08)); z-index:0; }
+    .pstep { display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; padding:0 8px; }
+    .pstep-n { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:12px; font-weight:500; margin-bottom:13px; transition:transform .2s; }
+    .pstep:nth-child(odd) .pstep-n { background:var(--cyan); color:var(--blue); }
+    .pstep:nth-child(even) .pstep-n { background:transparent; color:var(--cyan); border:1.5px solid var(--cyan); }
+    .pstep:hover .pstep-n { transform:scale(1.12); }
+    .pstep-t { font-size:11.5px; font-weight:500; color:var(--white); margin-bottom:5px; line-height:1.3; }
+    .pstep-d { font-size:11px; font-weight:300; line-height:1.5; color:var(--g500); }
+
+    /* cases */
+    .cases { display:flex; flex-direction:column; gap:3px; }
+    .case { background:rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); border-radius:8px; overflow:hidden; transition:border-color .25s; }
+    .case:hover { border-color:rgba(0,229,255,.22); }
+    .case-hd { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:28px 28px 0; }
+    .case-num { font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; color:var(--cyan); display:block; margin-bottom:7px; }
+    .case-client { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--g700); background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); padding:6px 12px; border-radius:4px; white-space:nowrap; flex-shrink:0; margin-top:4px; }
+    .case-cols { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; padding:20px 28px 26px; }
+    .case-col { padding:0 18px; }
+    .case-col:first-child { padding-left:0; }
+    .case-col:last-child { padding-right:0; }
+    .case-col+.case-col { border-left:1px solid rgba(255,255,255,.05); }
+    .col-lbl { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--g700); margin-bottom:8px; }
+    .col-txt { font-size:13px; font-weight:300; line-height:1.65; color:var(--g500); }
+    .col-txt strong { color:var(--cyan); font-weight:500; }
+    .case-ft { padding:0 28px 22px; }
+
+    /* ════════════════════════════════════════════
+       04  CONNECT + FOOTER
+    ════════════════════════════════════════════ */
+    #connect { background:var(--blue-mid); position:relative; overflow:hidden; }
+    .gbg { position:absolute; inset:0; pointer-events:none; background-image: linear-gradient(rgba(0,229,255,.022) 1px,transparent 1px), linear-gradient(90deg,rgba(0,229,255,.022) 1px,transparent 1px); background-size:64px 64px; }
+    .connect-body { position:relative; z-index:1; padding:108px 0 0; }
+    .connect-cta { max-width:620px; margin:0 auto 84px; text-align:center; }
+    .connect-cta h2 { margin-bottom:20px; }
+    .connect-cta p { font-size:16px; font-weight:300; line-height:1.75; color:var(--g500); margin-bottom:34px; }
+    .connect-cta p strong { color:var(--white); font-weight:400; }
+    .cnote { font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; color:var(--g700); margin-top:14px; display:block; }
+
+    .socials { display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:76px; }
+    .soc { display:flex; align-items:center; gap:8px; font-family:var(--mono); font-size:11px; letter-spacing:.07em; text-transform:uppercase; color:var(--g500); border:1px solid rgba(255,255,255,.1); padding:10px 18px; border-radius:4px; text-decoration:none; transition:border-color .2s, color .2s, transform .18s; }
+    .soc:hover { border-color:var(--cyan); color:var(--cyan); transform:translateY(-2px); }
+    .soc svg { width:14px; height:14px; fill:currentColor; flex-shrink:0; }
+
+    footer { border-top:1px solid rgba(255,255,255,.06); padding:30px 0; }
+    .foot-inner { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+    .foot-logo { font-family:var(--mono); font-size:13px; color:var(--cyan); font-weight:500; }
+    .foot-copy { font-family:var(--mono); font-size:11px; color:var(--g700); }
+    .foot-links { display:flex; gap:18px; list-style:none; }
+    .foot-links a { font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--g700); text-decoration:none; transition:color .2s; }
+    .foot-links a:hover { color:var(--cyan); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hgrid { grid-template-columns:1fr; }
+      .hphoto { display:none; }
+      .trust { grid-template-columns:1fr 1fr; }
+      .t-item { padding:0 12px 20px !important; border-right:none !important; }
+      .exp-top,.port-top { grid-template-columns:1fr; gap:20px; }
+      .tlrow { grid-template-columns:1fr; gap:10px; }
+      .tlspine { display:none; }
+      .creds { grid-template-columns:1fr; }
+      .proc-steps { grid-template-columns:1fr; }
+      .proc-steps::before { display:none; }
+      .pstep { flex-direction:row; text-align:left; gap:14px; margin-bottom:18px; align-items:flex-start; }
+      .pstep-n { flex-shrink:0; margin-bottom:0; }
+      .case-cols { grid-template-columns:1fr; }
+      .case-col+.case-col { border-left:none; border-top:1px solid rgba(255,255,255,.05); padding:16px 0 0; margin-top:14px; }
+      .nav-links { display:none; }
+      .foot-inner { flex-direction:column; text-align:center; }
+      .foot-links { justify-content:center; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <nav class="site-nav">
-            <a class="brand" href="#hero" aria-label="MaCh2.Cloud">
-                <span class="brand-text">MaCh2.Cloud</span>
-            </a>
-            <div class="nav-links">
-                <a href="#problem">Problem</a>
-                <a href="#authority">Authority</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <a href="https://calendly.com/chriscloud-weber" target="_blank" rel="noopener" class="btn btn--primary">Book Clarity Call</a>
-                <a href="#contact" class="btn btn--secondary">Get Demo</a>
-            </div>
-        </nav>
-    </header>
-    
-    <main>
-        <!-- 1. HERO SECTION -->
-        <section class="hero" id="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-image" aria-hidden="true">
-                        <img src="assets/img/Chris.png" alt="Portrait of Christian Weber" loading="lazy">
-                    </div>
-                    <div class="hero-text">
-                        <h1>Best-in-class Guidance on AI-Native Cloud Architecture</h1>
-                        <p class="hero-subheadline">
-                            Take control of your platform with best-in-class, sustainable guidance 
-                            for fast, scalable Cloud solutions, enabling streamlined operations 
-                            aligned on business goals.
-                        </p>
-                        
-                        <div class="hero-cta">
-                            <a href="https://www.linkedin.com/in/christian-weber-0591/" target="_blank" rel="noopener" class="btn btn--secondary btn--large">LinkedIn</a>
-                            <a href="https://github.com/chriscloud27" target="_blank" rel="noopener" class="btn btn--secondary btn--large">GitHub</a>
-                            <a href="https://calendly.com/chriscloud-weber" target="_blank" rel="noopener" class="btn btn--primary btn--large">Book a Call</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 2. PROBLEM SECTION -->
-        <section class="section section--alt" id="problem">
-            <div class="container">
-                <h2 class="section-title text-center">Your Cloud Platform Is Slowing You Down—Not Speeding You Up</h2>
-                
-                <div class="problem-grid">
-                    <div class="problem-card">
-                        <h3>AI features work in demos but fail in production</h3>
-                        <p>Inference latency, scaling, and cost dynamics weren't part of the architecture</p>
-                    </div>
-                    
-                    <div class="problem-card">
-                        <h3>Cloud costs growing faster than revenue</h3>
-                        <p>No clear cost model tied to business value</p>
-                    </div>
-                    
-                    <div class="problem-card">
-                        <h3>Architectural bottlenecks slowing delivery</h3>
-                        <p>Teams wait on infrastructure instead of shipping features</p>
-                    </div>
-                    
-                    <div class="problem-card">
-                        <h3>Over-engineered or under-engineered foundations</h3>
-                        <p>Either premature complexity or technical debt stalling growth</p>
-                    </div>
-                    
-                    <div class="problem-card">
-                        <h3>Fragmented platform strategy</h3>
-                        <p>No clear system direction as teams scale</p>
-                    </div>
-                    
-                    <div class="problem-card">
-                        <h3>Re-architecture risk ahead</h3>
-                        <p>You know the current path won't scale another 12 months</p>
-                    </div>
-                </div>
-                
-                <p class="problem-transition text-center">
-                    Sound familiar? You're not alone. These aren't engineering failures—they're architectural gaps.
-                </p>
-            </div>
-        </section>
+<!-- NAV -->
+<nav>
+  <a href="#header" class="nav-logo">MaCh2<span>.cloud</span></a>
+  <ul class="nav-links">
+    <li><a href="#header">Home</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+  <a href="https://calendly.com/chriscloud-weber" target="_blank" class="btn btn-p">Get in touch</a>
+</nav>
 
-        <!-- 3. POSITIONING SECTION -->
-        <section class="section section--positioning" id="positioning">
-            <div class="container">
-                <div class="positioning-content">
-                    <h2 class="positioning-title text-center">Principal AI-Native Platform Architect with enterprise-scale platform leadership and published architecture guidance in collaboration with Microsoft.</h2>
-                    
-                    <ul class="positioning-points">
-                        <li>✓ Production-ready AI architecture (not just prototypes)</li>
-                        <li>✓ Predictable cloud cost at scale</li>
-                        <li>✓ Systems that evolve with your business</li>
-                        <li>✓ 10+ years enabling platforms for 1,700–2,500 developers</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
-        <!-- 4. AUTHORITY SECTION -->
-        <section class="section" id="authority">
-            <div class="container">
-                <h2 class="section-title text-center">Proven Architecture at Enterprise Scale</h2>
-                <p class="section-subtitle text-center">
-                    My work has enabled platforms supporting thousands of engineers, 
-                    mission-critical workloads, and globally distributed systems.
-                </p>
-                
-                <div class="authority-grid">
-                    <div class="authority-card">
-                        <div class="authority-icon">📘</div>
-                        <h3>Published with Microsoft</h3>
-                        <p>Executive architecture guidance on scalable Kubernetes and microservice platforms (Microsoft + Capgemini)</p>
-                    </div>
-                    
-                    <div class="authority-card">
-                        <div class="authority-icon">🏆</div>
-                        <h3>AWS Global Partner Award</h3>
-                        <p>Contributed to award-winning cloud platform for autonomous driving (1,700 developers)</p>
-                    </div>
-                    
-                    <div class="authority-card">
-                        <div class="authority-icon">📊</div>
-                        <h3>Enterprise platform rollout</h3>
-                        <p>Improved sales efficiency 40% through platform optimization and international rollout</p>
-                    </div>
-                    
-                    <div class="authority-card">
-                        <div class="authority-icon">🌍</div>
-                        <h3>Global engineering platforms</h3>
-                        <p>Led architecture for Azure platforms supporting 2,500+ developers</p>
-                    </div>
-                    
-                    <div class="authority-card">
-                        <div class="authority-icon">⚡</div>
-                        <h3>Backend-as-a-Service platform rollout</h3>
-                        <p>Led AWS Amplify architecture and rollout, accelerating time-to-market for Seed Startup and improving developer experience</p>
-                    </div>
-                </div>
-                
-                <div class="social-proof text-center">
-                    <p class="stats"><strong>1,700–2,500 developers supported</strong> • <strong>40% efficiency improvement</strong></p>
-                </div>
-            </div>
-        </section>
+<!-- ══ 01 HEADER ══════════════════════════════════════════ -->
+<section id="header">
+  <div class="wrap">
+    <div class="hgrid">
 
-        <!-- 5. VALUE PROPOSITION SECTION -->
-        <section class="section section--alt" id="value-proposition">
-            <div class="container">
-                <h2 class="section-title text-center">How I Help SaaS Companies Scale Their Cloud Foundations</h2>
-                <p class="section-subtitle text-center">
-                    Unlike traditional cloud consultants who focus on tooling or short-term migrations, 
-                    I design system-level architecture foundations that enable long-term speed, 
-                    operational stability, and financial predictability.
-                </p>
-                
-                <div class="value-pillars">
-                    <div class="pillar-card">
-                        <h3>Foundation Built for Scale</h3>
-                        <ul>
-                            <li>Architecture designed for production workloads, performance optimization, and evolving patterns</li>
-                            <li>Production-ready AI integration (not experimental add-ons)</li>
-                            <li>Cost dynamics and performance tradeoffs built into the foundation</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="pillar-card">
-                        <h3>System-Level Thinking</h3>
-                        <ul>
-                            <li>Infrastructure + platform + engineering workflows aligned</li>
-                            <li>Cloud cost as an architectural design variable</li>
-                            <li>Automation-first design (up to 90% operational automation)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="pillar-card">
-                        <h3>Architecture as Economic Strategy</h3>
-                        <ul>
-                            <li>Clear architectural decision frameworks</li>
-                            <li>Predictable cost structure tied to business metrics</li>
-                            <li>Systems that survive real traffic, real growth, real budget constraints</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="outcomes">
-                    <h3 class="text-center">Outcomes You Can Expect</h3>
-                    <div class="outcomes-grid">
-                        <div class="outcome-item">✓ Deliver customer value faster with stable platform foundations</div>
-                        <div class="outcome-item">✓ Scale product and revenue without architectural bottlenecks</div>
-                        <div class="outcome-item">✓ Integrate AI capabilities reliably into core products</div>
-                        <div class="outcome-item">✓ Maintain predictable cloud cost as business grows</div>
-                        <div class="outcome-item">✓ Reduce long-term re-architecture risk</div>
-                        <div class="outcome-item">✓ Enable continuous platform evolution</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6. USE CASES SECTION -->
-        <section class="section" id="use-cases">
-            <div class="container">
-                <h2 class="section-title text-center">Real Problems. Real Solutions. Real Impact.</h2>
-                
-                <div class="use-cases-grid">
-                    <div class="use-case-card">
-                        <h3>Scaling Cloud Platforms</h3>
-                        <div class="use-case-detail">
-                            <strong>Challenge:</strong>
-                            <p>Engineering teams growing rapidly need scalable infrastructure to support increasing workloads</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Solution:</strong>
-                            <p>Designed scalable platform architecture with infrastructure automation and self-service</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Result:</strong>
-                            <p>Enabled platforms supporting up to 2,500 developers with reduced provisioning friction</p>
-                        </div>
-                    </div>
-                    
-                    <div class="use-case-card">
-                        <h3>AI-Native Architecture Design</h3>
-                        <div class="use-case-detail">
-                            <strong>Challenge:</strong>
-                            <p>AI features working in prototype but failing under production load</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Solution:</strong>
-                            <p>AI-native cloud architecture with inference scaling, cost modeling, and latency optimization</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Result:</strong>
-                            <p>Production-ready AI systems integrated into core product with predictable performance</p>
-                        </div>
-                    </div>
-                    
-                    <div class="use-case-card">
-                        <h3>Cloud Cost Optimization</h3>
-                        <div class="use-case-detail">
-                            <strong>Challenge:</strong>
-                            <p>Cloud costs increasing faster than revenue with unclear cost drivers</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Solution:</strong>
-                            <p>Architecture assessment and cost-efficient platform redesign aligned to business value</p>
-                        </div>
-                        <div class="use-case-detail">
-                            <strong>Result:</strong>
-                            <p>Predictable cost structure with improved unit economics</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 7. SERVICES SECTION -->
-        <section class="section section--alt" id="services">
-            <div class="container">
-                <h2 class="section-title text-center">Three Ways to Work Together</h2>
-                
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-badge">Package 1</div>
-                        <h3>Architecture Clarity Audit</h3>
-                        <p class="service-tagline">Perfect for: Teams experiencing scaling pains or unclear direction</p>
-                        
-                        <div class="service-content">
-                            <h4>What You Get:</h4>
-                            <ul>
-                                <li>Comprehensive architecture assessment</li>
-                                <li>Scalability, reliability, and cost risk analysis</li>
-                                <li>Prioritized improvement roadmap</li>
-                                <li>2-week delivery</li>
-                            </ul>
-                            
-                            <p class="service-outcome"><strong>Outcome:</strong> Clear understanding of your current state and next steps</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card service-card--featured">
-                        <div class="service-badge service-badge--featured">Package 2</div>
-                        <h3>Platform Design</h3>
-                        <p class="service-tagline">Perfect for: Companies building or scaling (AI-powered) products</p>
-                        
-                        <div class="service-content">
-                            <h4>What You Get:</h4>
-                            <ul>
-                                <li>AI-native cloud architecture design</li>
-                                <li>Infrastructure automation strategy</li>
-                                <li>Cost and performance optimization plan</li>
-                                <li>Implementation guidance</li>
-                            </ul>
-                            
-                            <p class="service-outcome"><strong>Outcome:</strong> Production-ready architecture foundation for AI at scale</p>
-                        </div>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-badge">Package 3</div>
-                        <h3>Continuous Architecture Partnership</h3>
-                        <p class="service-tagline">Perfect for: CTOs who need ongoing architectural leadership</p>
-                        
-                        <div class="service-content">
-                            <h4>What You Get:</h4>
-                            <ul>
-                                <li>Fractional architecture leadership</li>
-                                <li>System evolution guidance</li>
-                                <li>Architectural decision support</li>
-                                <li>Strategic technical direction</li>
-                            </ul>
-                            
-                            <p class="service-outcome"><strong>Outcome:</strong> Long-term architectural clarity without full-time hire</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <p class="services-cta text-center">
-                    Not sure which fits? → <a href="https://calendly.com/chriscloud-weber" target="_blank" rel="noopener" class="text-accent"><strong>Book a 30-min call to discuss</strong></a>
-                </p>
-            </div>
-        </section>
-
-        <!-- 8. FINAL CTA SECTION -->
-        <section class="section section--primary" id="contact">
-            <div class="container text-center">
-                <h2>Let's Design Your AI-Native Cloud Foundation</h2>
-                <p class="cta-description">
-                    Book a 30-minute clarity call.<br>
-                    We'll discuss your current architecture, identify bottlenecks, 
-                    and map out a path to scalable, cost-efficient growth.
-                </p>
-                
-                <a href="https://calendly.com/chriscloud-weber" target="_blank" rel="noopener" class="btn btn--accent btn--large">Book Your Call Now</a>
-                
-                <p class="trust-element">No sales pitch. Just architectural clarity.</p>
-            </div>
-        </section>
-    </main>
-    
-    <!-- 9. FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Christian Weber</h4>
-                    <p>Principal AI-Native Cloud Architect</p>
-                    <p>Supporting SaaS companies building scalable, AI-powered platforms.</p>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.linkedin.com/in/christian-weber-0591/" target="_blank" rel="noopener">LinkedIn</a></li>
-                        <li><a href="https://github.com/chriscloud27" target="_blank" rel="noopener">GitHub</a></li>
-                        <li><a href="https://calendly.com/chriscloud-weber" target="_blank" rel="noopener">Calendly</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <p>Email: <a href="mailto:cwcs@gmail.com">cwcs@gmail.com</a></p>
-                    <p>Location: Remote, US-EU</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Christian Weber. All rights reserved.</p>
-            </div>
+      <div>
+        <div class="eyebrow rise r1">Principal AI-Native Cloud Architect</div>
+        <h1 class="rise r2">Your platform should<br/><em>accelerate growth.</em><br/>Right now it probably isn't.</h1>
+        <p class="hero-sub rise r3">
+          I help <strong>Seed–Series C SaaS CTOs and engineering leaders</strong>
+          design AI-native cloud architectures that scale reliably —
+          cloud-agnostic, security-first, and built to survive your next
+          funding round without a full rewrite.
+        </p>
+        <div class="hero-btns rise r4">
+          <a href="https://calendly.com/chriscloud-weber" target="_blank" class="btn btn-p">Get in touch</a>
+          <a href="#portfolio" class="btn btn-g">See My Work</a>
         </div>
-    </footer>
-    
-    <script src="assets/js/main.js"></script>
+        <div class="trust rise r5">
+          <div class="t-item">
+            <span class="t-n">13+</span>
+            <span class="t-l">Years designing enterprise cloud systems</span>
+          </div>
+          <div class="t-item">
+            <span class="t-n">2,500</span>
+            <span class="t-l">Developers enabled on global platforms</span>
+          </div>
+          <div class="t-item">
+            <span class="t-n">90%</span>
+            <span class="t-l">Operational automation on prior platforms</span>
+          </div>
+          <div class="t-item">
+            <span class="t-n">3 Clouds</span>
+            <span class="t-l">AWS · GCP · Azure — no vendor bias</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hphoto rise r6">
+        <img src="https://mach2.cloud/assets/img/Chris.png" alt="Christian Weber" />
+        <div class="pbadge">
+          <span class="pb-l">Available</span>
+          <span class="pb-v">Remote · US / EU</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ 02 EXPERIENCE ══════════════════════════════════════ -->
+<section id="experience">
+  <div class="s-top"></div>
+  <div class="wrap">
+
+    <div class="exp-top reveal">
+      <div>
+        <div class="eyebrow">Experience</div>
+        <h2>Built at<br/><em>real scale.</em></h2>
+      </div>
+      <p class="s-sub">13+ years across public sector, enterprise and SaaS — designing cloud platforms that support thousands of engineers and mission-critical workloads. <strong>Not theory. Production systems that shipped.</strong></p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="tlrow reveal">
+        <div class="tlmeta">
+          <span class="tl-period">2022 — Present</span>
+          <span class="tl-co">MaCh2.Cloud</span>
+          <span class="tl-loc">Remote · Global</span>
+        </div>
+        <div class="tlspine"></div>
+        <div class="tlbody">
+          <div class="tl-role">Principal AI-Native Cloud Architect</div>
+          <p class="tl-desc">Fractional architecture leadership for Seed–Series C SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability — without the overhead of a full-time Principal hire.</p>
+          <div class="tags"><span class="tag">AI-Native Architecture</span><span class="tag">Cloud-Agnostic</span><span class="tag">IaC</span><span class="tag">Cost Architecture</span><span class="tag">WAF2p Framework</span><span class="tag">Fractional Leadership</span></div>
+        </div>
+      </div>
+
+      <div class="tlrow reveal">
+        <div class="tlmeta">
+          <span class="tl-period">2019 — 2022</span>
+          <span class="tl-co">Capgemini</span>
+          <span class="tl-loc">Germany · Global</span>
+        </div>
+        <div class="tlspine"></div>
+        <div class="tlbody">
+          <div class="tl-role">Principal Cloud Architect — Global Platforms</div>
+          <p class="tl-desc">Architected and led delivery of Azure Kubernetes platforms supporting 2,500+ developers across global engineering organisations. Co-authored executive architecture guidance on scalable Kubernetes and microservice platform design — published in collaboration with Microsoft.</p>
+          <div class="tags"><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Microsoft Partnership</span><span class="tag">Platform Engineering</span><span class="tag">Multi-Tenancy</span><span class="tag">2,500 Devs</span></div>
+        </div>
+      </div>
+
+      <div class="tlrow reveal">
+        <div class="tlmeta">
+          <span class="tl-period">2016 — 2019</span>
+          <span class="tl-co">AWS Partner — Automotive</span>
+          <span class="tl-loc">Germany</span>
+        </div>
+        <div class="tlspine"></div>
+        <div class="tlbody">
+          <div class="tl-role">Cloud Platform Architect — Autonomous Driving</div>
+          <p class="tl-desc">Core architect on the cloud platform for autonomous vehicle development — enabling 1,700 engineers across distributed teams to process extreme data volumes at speed under strict compliance constraints. Platform awarded the AWS Global Partner Award for outstanding cloud platform delivery.</p>
+          <div class="tags"><span class="tag">AWS</span><span class="tag">AWS Global Partner Award</span><span class="tag">1,700 Developers</span><span class="tag">Data Pipelines</span><span class="tag">Reliability Engineering</span></div>
+        </div>
+      </div>
+
+      <div class="tlrow reveal">
+        <div class="tlmeta">
+          <span class="tl-period">2013 — 2016</span>
+          <span class="tl-co">Public Sector</span>
+          <span class="tl-loc">Germany</span>
+        </div>
+        <div class="tlspine"></div>
+        <div class="tlbody">
+          <div class="tl-role">Cloud Infrastructure Architect</div>
+          <p class="tl-desc">Designed secure, compliant cloud infrastructure for public sector workloads — where security is structural and decisions carry long-term institutional weight. This is where security-first became a design principle, not a checkbox.</p>
+          <div class="tags"><span class="tag">Security-First Design</span><span class="tag">Compliance Architecture</span><span class="tag">Regulated Workloads</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="creds reveal">
+      <div class="cred">
+        <span class="cred-icon">📘</span>
+        <div class="cred-title">Published with Microsoft</div>
+        <p class="cred-desc">Executive architecture guidance on scalable Kubernetes and microservice platforms — co-authored and published in collaboration with Microsoft and Capgemini.</p>
+      </div>
+      <div class="cred">
+        <span class="cred-icon">🏆</span>
+        <div class="cred-title">AWS Global Partner Award</div>
+        <p class="cred-desc">Contributed to the award-winning cloud platform for autonomous vehicle development, enabling 1,700 engineers globally under strict performance and compliance requirements.</p>
+      </div>
+      <div class="cred">
+        <span class="cred-icon">⚙️</span>
+        <div class="cred-title">WAF2p — Open-Source Framework</div>
+        <p class="cred-desc">Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ 03 PORTFOLIO ═══════════════════════════════════════ -->
+<section id="portfolio">
+  <div class="s-top"></div>
+  <div class="wrap">
+
+    <div class="port-top reveal">
+      <div>
+        <div class="eyebrow">Portfolio</div>
+        <h2>Architecture<br/><em>that shipped.</em></h2>
+      </div>
+      <p class="s-sub">Real engagements. Real constraints. Real outcomes. <strong>Each case reflects the same approach:</strong> understand the business pressure, design the right system foundation, enable the team to own it independently.</p>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="process reveal">
+      <div class="proc-label">// How We Work Together</div>
+      <div class="proc-steps">
+        <div class="pstep">
+          <div class="pstep-n">01</div>
+          <div><div class="pstep-t">Discovery Call</div><div class="pstep-d">30 min. Map your platform, team, and where growth is creating friction.</div></div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">02</div>
+          <div><div class="pstep-t">Architecture Assessment</div><div class="pstep-d">Audit current state, identify risks, surface what needs to change and why.</div></div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">03</div>
+          <div><div class="pstep-t">Blueprint & Roadmap</div><div class="pstep-d">Clear architecture design with a prioritised plan your engineers can execute.</div></div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">04</div>
+          <div><div class="pstep-t">Enablement & Build</div><div class="pstep-d">Hands-on guidance through implementation — reviews, decisions, unblocking.</div></div>
+        </div>
+        <div class="pstep">
+          <div class="pstep-n">05</div>
+          <div><div class="pstep-t">Continuous Evolution</div><div class="pstep-d">Ongoing advisory keeps the platform ahead of growth, not catching up to it.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE STUDIES -->
+    <div class="cases">
+
+      <div class="case reveal">
+        <div class="case-hd">
+          <div><span class="case-num">Case 01</span><h3>Global Kubernetes Platform for 2,500 Developers</h3></div>
+          <span class="case-client">Capgemini × Microsoft</span>
+        </div>
+        <div class="case-cols">
+          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Global engineering organisation needed a unified Kubernetes platform supporting thousands of developers across distributed teams — without operational bottlenecks or sacrificing security and governance at scale.</p></div>
+          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Multi-tenant Azure Kubernetes architecture with self-service provisioning, governance guardrails, and full infrastructure automation. Co-authored the platform design guidance published as a reference model with Microsoft.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform scaled to <strong>2,500 developers</strong>. Provisioning friction eliminated. Architecture guidance published externally as the enterprise reference model for Kubernetes platform design at scale.</p></div>
+        </div>
+        <div class="case-ft"><div class="tags"><span class="tag">Azure Kubernetes</span><span class="tag">Multi-Tenancy</span><span class="tag">Platform Engineering</span><span class="tag">IaC</span><span class="tag">Governance</span><span class="tag">Microsoft</span></div></div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-hd">
+          <div><span class="case-num">Case 02</span><h3>Award-Winning Cloud Platform — Autonomous Driving</h3></div>
+          <span class="case-client">AWS · Automotive</span>
+        </div>
+        <div class="case-cols">
+          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Autonomous vehicle development demands extreme data volumes, processing speed, and strict compliance across 1,700 engineers in distributed teams — without slowing development velocity.</p></div>
+          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">AWS-based platform with high-throughput data pipelines, automated infrastructure provisioning, and developer self-service. Designed for performance, reliability, and cost control at production scale under real operational constraints.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform enabled <strong>1,700 engineers</strong> with no delivery bottlenecks. Recognised with the <strong>AWS Global Partner Award</strong> for outstanding cloud platform delivery.</p></div>
+        </div>
+        <div class="case-ft"><div class="tags"><span class="tag">AWS</span><span class="tag">Data Pipelines</span><span class="tag">Reliability Engineering</span><span class="tag">Self-Service Infra</span><span class="tag">AWS Partner Award</span></div></div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-hd">
+          <div><span class="case-num">Case 03</span><h3>Platform Optimisation — 40% Sales Efficiency Improvement</h3></div>
+          <span class="case-client">Enterprise SaaS</span>
+        </div>
+        <div class="case-cols">
+          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">SaaS company experiencing declining sales efficiency due to platform performance issues and operational complexity. International rollout stalling. Cloud cost growing faster than revenue with no clear cost model.</p></div>
+          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Architecture assessment surfaced bottlenecks and cost inefficiencies. Platform redesigned for international scalability with automation-first operations. Infrastructure cost realigned to business metrics and revenue growth.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Sales efficiency improved by <strong>40%</strong> following optimisation and international rollout. Cloud cost aligned to revenue. Engineering team unblocked for continued product development.</p></div>
+        </div>
+        <div class="case-ft"><div class="tags"><span class="tag">Architecture Audit</span><span class="tag">Cost Optimisation</span><span class="tag">International Rollout</span><span class="tag">Automation</span><span class="tag">SaaS</span></div></div>
+      </div>
+
+      <div class="case reveal">
+        <div class="case-hd">
+          <div><span class="case-num">Case 04</span><h3>BaaS Platform — Seed Startup to Production</h3></div>
+          <span class="case-client">Seed Stage SaaS</span>
+        </div>
+        <div class="case-cols">
+          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Seed-stage SaaS startup needed to move prototype to production-grade backend infrastructure fast — 5-engineer team, no budget for over-engineering, but no tolerance for architectural debt that would block Series A scaling.</p></div>
+          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Led AWS Amplify Backend-as-a-Service architecture design and rollout. Balanced speed-to-market with structural foundations — ensuring the platform could scale with the business rather than requiring a costly rewrite at growth stage.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Time-to-market <strong>significantly accelerated</strong>. Developer experience and team autonomy improved. Platform foundation built to scale beyond seed stage — not just to ship the first version.</p></div>
+        </div>
+        <div class="case-ft"><div class="tags"><span class="tag">AWS Amplify</span><span class="tag">BaaS</span><span class="tag">Startup Architecture</span><span class="tag">Developer Experience</span><span class="tag">Seed Stage</span></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ 04 CONNECT + FOOTER ════════════════════════════════ -->
+<section id="connect">
+  <div class="s-top"></div>
+  <div class="gbg"></div>
+  <div class="wrap">
+    <div class="connect-body">
+
+      <div class="connect-cta reveal">
+        <div class="eyebrow" style="justify-content:center;">Connect</div>
+        <h2>Your platform should<br/><em>outlast your roadmap.</em></h2>
+        <p>If you're a CTO or engineering leader at a SaaS company scaling from 10 to 100 engineers — and architecture is starting to create friction — <strong>let's talk.</strong> A 30-minute call costs nothing and usually surfaces the one thing worth fixing first.</p>
+        <a href="https://calendly.com/chriscloud-weber" target="_blank" class="btn btn-p">Get in touch</a>
+        <span class="cnote">No sales pitch. No commitment. Just architectural clarity.</span>
+      </div>
+
+      <div class="socials reveal">
+        <a href="https://www.linkedin.com/in/christian-weber-0591/" target="_blank" class="soc">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/chriscloud27" target="_blank" class="soc">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:chrisallin24@gmail.com" class="soc">
+          <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
+          Email
+        </a>
+        <a href="https://calendly.com/chriscloud-weber" target="_blank" class="soc">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.346 4 2 5.346 2 7v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V7c0-1.654-1.346-3-3-3zm1 17c0 .551-.449 1-1 1H5c-.551 0-1-.449-1-1v-9h16v9zm0-11H4V7c0-.551.449-1 1-1h1v1h2V6h8v1h2V6h1c.551 0 1 .449 1 1v3z"/></svg>
+          Calendly
+        </a>
+      </div>
+
+      <footer>
+        <div class="foot-inner">
+          <span class="foot-logo">MaCh2.cloud</span>
+          <span class="foot-copy">© 2026 Christian Weber · Remote, US–EU · chrisallin24@gmail.com</span>
+          <ul class="foot-links">
+            <li><a href="https://www.linkedin.com/in/christian-weber-0591/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/chriscloud27" target="_blank">GitHub</a></li>
+            <li><a href="https://calendly.com/chriscloud-weber" target="_blank">Get in touch</a></li>
+          </ul>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const io = new IntersectionObserver(
+    es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
 </body>
 </html>
