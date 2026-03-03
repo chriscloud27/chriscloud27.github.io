@@ -1,0 +1,112 @@
+{
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "cases": "Cases",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "blog": "Blog",
+    "connect": "Connect",
+    "getInTouch": "Get in touch",
+    "case01": "Case 01 — Kubernetes at Enterprise",
+    "case02": "Case 02 — Autonomous Driving Platform",
+    "case03": "Case 03 — SaaS Optimization",
+    "case04": "Case 04 — BaaS Startup to Production"
+  },
+  "hero": {
+    "eyebrow": "Principal AI-Native Cloud Architect",
+    "h1Part1": "Your platform should",
+    "h1Emphasis": "accelerate growth.",
+    "h1Part2": "Right now it probably isn't.",
+    "sub": "I help <strong>Seed–Series C SaaS CTOs and engineering leaders</strong> build scalable SaaS infrastructure for growth-stage velocity. I design <strong>automated, secure, high-leverage cloud platforms</strong> that scale AI-native products without architectural rewrites.",
+    "cta": "Get in touch",
+    "ctaSecondary": "See My Work",
+    "stat1Value": "13+",
+    "stat1Label": "Years designing enterprise cloud systems",
+    "stat2Value": "2,500",
+    "stat2Label": "Developers enabled on global platforms",
+    "stat3Value": "90%",
+    "stat3Label": "Operational automation on prior platforms",
+    "stat4Value": "3 Clouds",
+    "stat4Label": "AWS · GCP · Azure — no vendor bias",
+    "available": "Available",
+    "availableLocation": "Remote · US / EU"
+  },
+  "experience": {
+    "eyebrow": "Experience",
+    "heading": "Built at <em>real scale.</em>",
+    "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. <strong>Not theory. Production systems that shipped.</strong>",
+    "waf2pTitle": "WAF2p — Open-Source Framework",
+    "waf2pDesc": "Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved."
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "heading": "Architecture <em>that shipped.</em>",
+    "sub": "Real outcomes. <strong>Each case reflects the same approach:</strong> understand the business pressure, design the right system foundation, enable the team to own it independently.",
+    "processLabel": "// How We Work Together",
+    "situation": "Situation",
+    "outcome": "Outcome",
+    "more": "More"
+  },
+  "authority": {
+    "heading": "Proven Architecture at <em>Enterprise Scale</em>",
+    "sub": "My work has enabled platforms supporting thousands of engineers, mission-critical workloads, and globally distributed systems.",
+    "downloadWhitepaper": "Download Whitepaper"
+  },
+  "connect": {
+    "eyebrow": "Connect",
+    "heading": "Your platform should <em>outlast your roadmap.</em>",
+    "sub": "If you're a CTO or engineering leader at a SaaS company scaling from 10 to 100 engineers — and architecture is starting to create friction — <strong>let's talk.</strong> A 30-minute call costs nothing and usually surfaces the one thing worth fixing first.",
+    "note": "No sales pitch. No commitment. Just architectural clarity."
+  },
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "company": "Company",
+    "message": "Message",
+    "firstNamePlaceholder": "eg: John",
+    "lastNamePlaceholder": "eg: Doe",
+    "emailPlaceholder": "eg: user@example.com",
+    "companyPlaceholder": "eg: MaCh2.cloud",
+    "messagePlaceholder": "Type your message here ...",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Thank you! We'll get back to you soon.",
+    "error": "Error sending message. Please try again.",
+    "required": "required",
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Message is required"
+    }
+  },
+  "footer": {
+    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "heading": "Architecture <em>Thinking</em>",
+    "sub": "Practical writing on cloud architecture, AI-native platform design, and engineering leadership for growth-stage SaaS companies.",
+    "comingSoon": "More posts coming soon.",
+    "subscribe": "Subscribe via email →",
+    "readMore": "Read more →",
+    "backToBlog": "← Back to Blog"
+  },
+  "about": {
+    "eyebrow": "About",
+    "heading": "Christian Weber <em>AI-Native Cloud Architect</em>",
+    "sub": "I help Seed–Series C SaaS CTOs and engineering leaders build scalable SaaS infrastructure for growth-stage velocity.",
+    "description": "With 13+ years of experience designing enterprise cloud systems across AWS, Azure, and GCP, I specialise in cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability.",
+    "cta": "Get in touch",
+    "ctaSecondary": "See My Work"
+  },
+  "notFound": {
+    "label": "404 — Not Found",
+    "h1Part1": "This page",
+    "h1Emphasis": "doesn't exist.",
+    "sub": "The page you're looking for has moved or never existed.",
+    "backHome": "Back to Home"
+  }
+}

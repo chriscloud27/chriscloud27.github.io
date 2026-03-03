@@ -4,16 +4,18 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
 
-# next.js
+# next.js build output
 /.next/
 /out/
 
-# production
+# production build
 /build
+/dist
 
 # misc
 .DS_Store
