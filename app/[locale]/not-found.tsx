@@ -1,16 +1,12 @@
 import Link from 'next/link'
 import { getTranslations, getLocale } from 'next-intl/server'
-import Nav from '@/components/layout/Nav'
-import Footer from '@/components/layout/Footer'
 
 export default async function LocaleNotFound() {
   const t = await getTranslations('notFound')
   const locale = await getLocale()
 
   return (
-    <>
-      <Nav />
-      <main
+    <main
         style={{
           paddingTop: 'var(--nav)',
           minHeight: '100vh',
@@ -52,7 +48,5 @@ export default async function LocaleNotFound() {
           </Link>
         </div>
       </main>
-      <Footer />
-    </>
   )
 }

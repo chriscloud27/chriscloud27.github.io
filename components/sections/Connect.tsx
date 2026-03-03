@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server'
 import ContactForm from '@/components/ContactForm'
-import Footer from '@/components/layout/Footer'
 
 export default async function Connect() {
   const t = await getTranslations('connect')
@@ -78,8 +77,6 @@ export default async function Connect() {
               Calendly
             </a>
           </div>
-
-          <Footer />
         </div>
       </div>
     </section>

@@ -49,10 +49,17 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+html, body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyan-dim) var(--blue);
+}
 ::selection { background: var(--cyan); color: var(--blue); }
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--blue); }
 ::-webkit-scrollbar-thumb { background: var(--cyan-dim); }
+*::-webkit-scrollbar { width: 3px; height: 3px; }
+*::-webkit-scrollbar-track { background: var(--blue); }
+*::-webkit-scrollbar-thumb { background: var(--cyan-dim); }
 
 /* ── Layout ── */
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
@@ -164,6 +171,11 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
   transform: translateY(0);
 }
 
+.value-card:hover {
+  border-color: rgba(0,229,255,.22) !important;
+  transform: translateY(-3px);
+}
+
 @keyframes rise {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -212,6 +224,16 @@ nav {
   transition: color .2s;
 }
 .nav-links a:hover { color: var(--cyan); }
+.nav-blog-quick {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--g500);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-blog-quick:hover { color: var(--cyan); }
 .nav-item { position: relative; }
 .nav-item.has-dropdown > span {
   cursor: pointer;
@@ -630,6 +652,7 @@ footer { border-top: 1px solid rgba(255,255,255,.06); padding: 30px 0; }
   .case-col + .case-col { border-left: none; border-top: 1px solid rgba(255,255,255,.05); padding: 16px 0 0; margin-top: 14px; }
   .achievements { grid-template-columns: repeat(2,1fr); }
   .nav-links { display: none; }
+  .nav-blog-quick { display: inline-block; }
   .foot-inner { flex-direction: column; text-align: center; }
   .foot-links { justify-content: center; }
 }

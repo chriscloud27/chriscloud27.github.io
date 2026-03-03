@@ -5,6 +5,9 @@ import { getMessages } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { Providers } from '@/lib/providers'
 import RevealObserver from '@/components/RevealObserver'
+import Header from '@/components/layout/Header'
+import Connect from '@/components/sections/Connect'
+import Footer from '@/components/layout/Footer'
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -45,7 +48,10 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider messages={messages}>
           <Providers>
+            <Header />
             {children}
+            <Connect />
+            <Footer />
             <RevealObserver />
           </Providers>
         </NextIntlClientProvider>

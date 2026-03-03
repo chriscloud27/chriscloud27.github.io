@@ -183,7 +183,51 @@ export async function getBlogPosts(): Promise<NotionBlogPost[]> {
 export async function getBlogPost(slug: string): Promise<NotionBlogPostDetail | null> {
   if (!DATABASE_ID) {
     const fallback = FALLBACK_POSTS.find((p) => p.slug === slug)
-    return fallback ? { ...fallback, blocks: '<p>Content coming soon.</p>' } : null
+    if (!fallback) return null
+    
+    // Return fallback content for demonstration
+    const fallbackContent: Record<string, string> = {
+      'ai-native-platform-design': `
+        <p>Most teams add AI features on top of existing platforms. But this approach creates compounding complexity:</p>
+        <ul style="margin: 16px 0; padding-left: 24px;">
+          <li>Existing data pipelines aren't optimized for ML workloads</li>
+          <li>Compute patterns differ fundamentally (batch vs. real-time inference)</li>
+          <li>Cost models break when you layer AI on legacy infrastructure</li>
+        </ul>
+        <p><strong>AI-native architecture</strong> designs the entire system around AI from day one:</p>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">Data Flow</h3>
+        <p>Stream-first design. Your core pipeline assumes continuous feature computation, not batch imports. This means Kafka, Flink, or managed streaming services from the start—not a retrofit.</p>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">Compute Patterns</h3>
+        <p>GPU-native workloads. Training and inference infrastructure is tightly coupled—not separate concerns. Inference happens at the edge when possible, training happens asynchronously against a live feature store.</p>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">Cost Model</h3>
+        <p>Infrastructure costs scale with inference volume, not request count. You pay for compute utilization, not API calls. This changes how you think about caching, batching, and request patterns.</p>
+        <p style="margin-top: 24px;"><em>When is this worth it? When your product is fundamentally built on predictions—search ranking, personalization, fraud detection, recommendation systems. Not for teams adding a chatbot to an e-commerce platform.</em></p>
+      `,
+      'baas-vs-custom-infra': `
+        <p>The most overrated infrastructure decision is choosing between BaaS and custom infrastructure as if it's permanent.</p>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">Why BaaS Wins Early</h3>
+        <p>In your first 18 months, you need to validate product-market fit, not manage Kubernetes. BaaS gives you:</p>
+        <ul style="margin: 16px 0; padding-left: 24px;">
+          <li>Faster iteration (no ops)</li>
+          <li>Predictable scaling (up to a limit)</li>
+          <li>Audit logs and compliance baked in</li>
+        </ul>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">Where Custom Infra Becomes Cheaper</h3>
+        <p>Around Series A scale, your bill hits ~$50-100K/month. At that point, moving to Kubernetes or ECS saves 30-40% compared to BaaS pricing. But only if:</p>
+        <ul style="margin: 16px 0; padding-left: 24px;">
+          <li>You have infrastructure expertise on staff</li>
+          <li>Your scaling patterns are predictable</li>
+          <li>You've actually hit the limits of the BaaS platform</li>
+        </ul>
+        <h3 style="margin-top: 24px; margin-bottom: 12px;">The Architecture That Actually Works</h3>
+        <p>Hybrid approach: Core API on BaaS (Amplify, Firebase). Async jobs and batch workloads on managed Kubernetes. Feature flags to swap implementations. This lets you grow without a rip-and-replace migration.</p>
+      `,
+    }
+    
+    return { 
+      ...fallback, 
+      blocks: fallbackContent[slug] || '<p>Content coming soon.</p>'
+    }
   }
 
   try {

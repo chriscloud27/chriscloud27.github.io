@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
 import Mach2Logo from '@/components/Mach2Logo'
+import MobileNav from '@/components/layout/MobileNav'
 import { routing } from '@/i18n/routing'
 
 export default function Nav() {
@@ -75,6 +76,10 @@ export default function Nav() {
       </ul>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <Link href={localeHref('/blog')} className="nav-blog-quick">
+          {t('blog')}
+        </Link>
+
         {/* Language switcher */}
         <div style={{ display: 'flex', gap: '6px' }}>
           {routing.locales.map((loc) => (

@@ -2,8 +2,6 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getTranslations, getLocale } from 'next-intl/server'
-import Nav from '@/components/layout/Nav'
-import Footer from '@/components/layout/Footer'
 import { getBlogPost, getBlogSlugs } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
 
@@ -43,9 +41,7 @@ export default async function BlogPostPage({
   if (!post) notFound()
 
   return (
-    <>
-      <Nav />
-      <main style={{ paddingTop: 'var(--nav)' }}>
+    <main style={{ paddingTop: 'var(--nav)' }}>
         <article style={{ padding: '80px 0 120px', minHeight: '80vh' }}>
           <div className="wrap" style={{ maxWidth: '760px' }}>
             <Link
@@ -97,7 +93,5 @@ export default async function BlogPostPage({
           </div>
         </article>
       </main>
-      <Footer />
-    </>
   )
 }
