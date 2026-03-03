@@ -1,0 +1,112 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "experience": "Erfahrung",
+    "cases": "Fallstudien",
+    "portfolio": "Portfolio",
+    "about": "Über mich",
+    "blog": "Blog",
+    "connect": "Kontakt",
+    "getInTouch": "Kontakt aufnehmen",
+    "case01": "Fall 01 — Kubernetes im Unternehmen",
+    "case02": "Fall 02 — Autonomes Fahren Plattform",
+    "case03": "Fall 03 — SaaS-Optimierung",
+    "case04": "Fall 04 — BaaS Startup zur Produktion"
+  },
+  "hero": {
+    "eyebrow": "Principal AI-Native Cloud Architekt",
+    "h1Part1": "Ihre Plattform sollte",
+    "h1Emphasis": "Wachstum beschleunigen.",
+    "h1Part2": "Wahrscheinlich tut sie das gerade nicht.",
+    "sub": "Ich helfe <strong>Seed–Series C SaaS CTOs und Engineering-Leadern</strong>, skalierbare SaaS-Infrastruktur für Wachstumsgeschwindigkeit aufzubauen. Ich entwerfe <strong>automatisierte, sichere, hocheffiziente Cloud-Plattformen</strong>.",
+    "cta": "Kontakt aufnehmen",
+    "ctaSecondary": "Meine Arbeit ansehen",
+    "stat1Value": "13+",
+    "stat1Label": "Jahre Enterprise-Cloud-Systemdesign",
+    "stat2Value": "2.500",
+    "stat2Label": "Entwickler auf globalen Plattformen",
+    "stat3Value": "90%",
+    "stat3Label": "Betriebsautomatisierung",
+    "stat4Value": "3 Clouds",
+    "stat4Label": "AWS · GCP · Azure — kein Anbieter-Bias",
+    "available": "Verfügbar",
+    "availableLocation": "Remote · US / EU"
+  },
+  "experience": {
+    "eyebrow": "Erfahrung",
+    "heading": "Im <em>echten Maßstab</em> gebaut.",
+    "sub": "Seit 2010: Aufbau von Systeminfrastruktur für Organisationen in großem Maßstab. Seit 2019: Cloud-Plattformen die Engineering-Geschwindigkeit beschleunigen. <strong>Keine Theorie. Produktivsysteme, die ausgeliefert wurden.</strong>",
+    "waf2pTitle": "WAF2p — Open-Source-Framework",
+    "waf2pDesc": "Ersteller von WAF2p — einer Open-Source-Erweiterung des Well-Architected Framework für KI-natives, Cloud-agnostisches Plattformdesign."
+  },
+  "portfolio": {
+    "eyebrow": "Portfolio",
+    "heading": "Architektur, <em>die ausgeliefert wurde.</em>",
+    "sub": "Echte Ergebnisse. <strong>Jeder Fall spiegelt denselben Ansatz wider:</strong> Geschäftsdruck verstehen, das richtige Systemfundament entwerfen.",
+    "processLabel": "// Wie wir zusammenarbeiten",
+    "situation": "Situation",
+    "outcome": "Ergebnis",
+    "more": "Mehr"
+  },
+  "authority": {
+    "heading": "Bewährte Architektur in <em>Enterprise-Größenordnung</em>",
+    "sub": "Meine Arbeit hat Plattformen ermöglicht, die Tausende von Ingenieuren, geschäftskritische Workloads und global verteilte Systeme unterstützen.",
+    "downloadWhitepaper": "Whitepaper herunterladen"
+  },
+  "connect": {
+    "eyebrow": "Kontakt",
+    "heading": "Ihre Plattform sollte <em>Ihren Fahrplan überdauern.</em>",
+    "sub": "Wenn Sie CTO oder Engineering-Leader bei einem SaaS-Unternehmen sind — und Architektur anfängt, Reibung zu erzeugen — <strong>lassen Sie uns sprechen.</strong>",
+    "note": "Kein Verkaufsgespräch. Keine Verpflichtung. Nur architektonische Klarheit."
+  },
+  "form": {
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail",
+    "company": "Unternehmen",
+    "message": "Nachricht",
+    "firstNamePlaceholder": "z.B. Max",
+    "lastNamePlaceholder": "z.B. Mustermann",
+    "emailPlaceholder": "z.B. nutzer@beispiel.de",
+    "companyPlaceholder": "z.B. MaCh2.cloud",
+    "messagePlaceholder": "Ihre Nachricht hier ...",
+    "submit": "Nachricht senden",
+    "submitting": "Wird gesendet...",
+    "success": "Vielen Dank! Wir melden uns bald.",
+    "error": "Fehler beim Senden. Bitte erneut versuchen.",
+    "required": "erforderlich",
+    "validation": {
+      "firstNameRequired": "Vorname ist erforderlich",
+      "lastNameRequired": "Nachname ist erforderlich",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "messageRequired": "Nachricht ist erforderlich"
+    }
+  },
+  "footer": {
+    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com"
+  },
+  "blog": {
+    "eyebrow": "Blog",
+    "heading": "Architektur <em>Gedanken</em>",
+    "sub": "Praktische Beiträge über Cloud-Architektur und KI-natives Plattformdesign.",
+    "comingSoon": "Weitere Beiträge folgen bald.",
+    "subscribe": "Per E-Mail abonnieren →",
+    "readMore": "Weiterlesen →",
+    "backToBlog": "← Zurück zum Blog"
+  },
+  "about": {
+    "eyebrow": "Über mich",
+    "heading": "Christian Weber <em>AI-Native Cloud Architekt</em>",
+    "sub": "Ich helfe Seed–Series C SaaS CTOs und Engineering-Leadern, skalierbare SaaS-Infrastruktur aufzubauen.",
+    "description": "Mit über 13 Jahren Erfahrung im Enterprise-Cloud-Systemdesign über AWS, Azure und GCP.",
+    "cta": "Kontakt aufnehmen",
+    "ctaSecondary": "Meine Arbeit ansehen"
+  },
+  "notFound": {
+    "label": "404 — Nicht gefunden",
+    "h1Part1": "Diese Seite",
+    "h1Emphasis": "existiert nicht.",
+    "sub": "Die gesuchte Seite wurde verschoben oder hat nie existiert.",
+    "backHome": "Zurück zur Startseite"
+  }
+}
