@@ -78,6 +78,13 @@
     .nav-links { display:flex; gap:28px; list-style:none; }
     .nav-links a { font-family: var(--mono); font-size:11px; letter-spacing:.09em; text-transform:uppercase; color: var(--g500); text-decoration:none; transition: color .2s; }
     .nav-links a:hover { color: var(--cyan); }
+    .nav-item { position:relative; }
+    .nav-item.has-dropdown > a { cursor:pointer; }
+    .nav-dropdown { position:absolute; top:100%; left:0; background:rgba(11,31,58,.98); border:1px solid rgba(0,229,255,.12); border-top:none; border-radius:0 0 4px 4px; min-width:220px; list-style:none; opacity:0; visibility:hidden; transform:translateY(-8px); transition:opacity .2s, visibility .2s, transform .2s; pointer-events:none; z-index:300; }
+    .nav-item.has-dropdown:hover .nav-dropdown { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto; }
+    .nav-dropdown li { margin:0; }
+    .nav-dropdown a { display:block; padding:12px 16px; font-size:10px; letter-spacing:.08em; color:var(--g500); text-decoration:none; transition:color .2s, background .2s; }
+    .nav-dropdown a:hover { color:var(--cyan); background:rgba(0,229,255,.06); }
 
     /* ════════════════════════════════════════════
        01  HEADER
@@ -160,15 +167,19 @@
     .case-hd { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; padding:28px 28px 0; }
     .case-num { font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; color:var(--cyan); display:block; margin-bottom:7px; }
     .case-client { font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:.08em; color:var(--g700); background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.07); padding:6px 12px; border-radius:4px; white-space:nowrap; flex-shrink:0; margin-top:4px; }
-    .case-cols { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0; padding:20px 28px 26px; }
+    .case-cols { display:grid; grid-template-columns:1fr 1fr; gap:0; padding:20px 28px 20px; }
     .case-col { padding:0 18px; }
     .case-col:first-child { padding-left:0; }
     .case-col:last-child { padding-right:0; }
-    .case-col+.case-col { border-left:1px solid rgba(255,255,255,.05); }
+    .case-col:nth-child(odd) { border-right:1px solid rgba(255,255,255,.05); }
     .col-lbl { font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--g700); margin-bottom:8px; }
     .col-txt { font-size:13px; font-weight:300; line-height:1.65; color:var(--g500); }
     .col-txt strong { color:var(--cyan); font-weight:500; }
-    .case-ft { padding:0 28px 22px; }
+    .col-metric { font-family:var(--mono); font-size:13px; font-weight:500; color:var(--cyan); margin-top:8px; padding-top:8px; border-top:1px solid rgba(0,229,255,.1); }
+    .case-ft { display:flex; justify-content:space-between; align-items:center; padding:0 28px 22px; gap:16px; }
+    .case-ft .tags { flex:1; margin:0; }
+    .btn-more { font-family:var(--mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); border:1px solid rgba(0,229,255,.24); padding:9px 16px; border-radius:4px; text-decoration:none; transition:all .2s; white-space:nowrap; }
+    .btn-more:hover { background:rgba(0,229,255,.06); border-color:var(--cyan); }
 
     /* ════════════════════════════════════════════
        AUTHORITY / ACHIEVEMENTS
@@ -267,6 +278,15 @@
   <ul class="nav-links">
     <li><a href="#header">Home</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li class="nav-item has-dropdown">
+      <a>Cases</a>
+      <ul class="nav-dropdown">
+        <li><a href="/cases/case-01-capgemini-kubernetes.html">Case 01 — Kubernetes at Enterprise</a></li>
+        <li><a href="/cases/case-02-aws-autonomous-driving.html">Case 02 — Autonomous Driving Platform</a></li>
+        <li><a href="/cases/case-03-enterprise-saas-optimization.html">Case 03 — SaaS Optimization</a></li>
+        <li><a href="/cases/case-04-baas-seed-startup.html">Case 04 — BaaS Startup to Production</a></li>
+      </ul>
+    </li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
@@ -504,57 +524,53 @@
     <!-- CASE STUDIES -->
     <div class="cases">
 
-      <div class="case reveal">
+      <a href="cases/case-01-capgemini-kubernetes.html" class="case reveal" style="text-decoration:none; color:inherit; display:block;">
         <div class="case-hd">
           <div><span class="case-num">Case 01</span><h3>Cloud Infrastructure Powering Enterprise Development at Scale</h3></div>
           <span class="case-client">Capgemini × Microsoft</span>
         </div>
         <div class="case-cols">
-          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Global engineering organisation needed a unified Kubernetes platform supporting thousands of developers across distributed teams — without operational bottlenecks or sacrificing security and governance at scale.</p></div>
-          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Multi-tenant Azure Kubernetes architecture with self-service provisioning, governance guardrails, and full infrastructure automation. Co-authored the platform design guidance published as a reference model with Microsoft.</p></div>
-          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform scaled to <strong>2,500 developers</strong>. Provisioning friction eliminated. Architecture guidance published externally as the enterprise reference model for Kubernetes platform design at scale.</p></div>
+          <div class="case-col"><div class="col-lbl">Situation</div><p class="col-txt">Global engineering organisation needed a unified Kubernetes platform supporting thousands of developers across distributed teams — without operational bottlenecks or sacrificing security and governance at scale.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform scaled to <strong>2,500 developers</strong>. Provisioning friction eliminated. Architecture guidance published externally as the enterprise reference model for Kubernetes platform design at scale.</p><div class="col-metric">✓ Zero provisioning bottlenecks<br/>✓ Published reference model</div></p></div>
         </div>
-        <div class="case-ft"><div class="tags"><span class="tag">Azure Kubernetes</span><span class="tag">Multi-Tenancy</span><span class="tag">Platform Engineering</span><span class="tag">IaC</span><span class="tag">Governance</span><span class="tag">Microsoft</span></div></div>
-      </div>
+        <div class="case-ft"><div class="tags"><span class="tag">Azure Kubernetes</span><span class="tag">Multi-Tenancy</span><span class="tag">Platform Engineering</span></div><a href="cases/case-01-capgemini-kubernetes.html" class="btn-more">More</a></div>
+      </a>
 
-      <div class="case reveal">
+      <a href="cases/case-02-aws-autonomous-driving.html" class="case reveal" style="text-decoration:none; color:inherit; display:block;">
         <div class="case-hd">
           <div><span class="case-num">Case 02</span><h3>Award-Winning Cloud Platform — Autonomous Driving</h3></div>
           <span class="case-client">AWS · Automotive</span>
         </div>
         <div class="case-cols">
-          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Autonomous vehicle development demands extreme data volumes, processing speed, and strict compliance across 1,700 engineers in distributed teams — without slowing development velocity.</p></div>
-          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">AWS-based platform with high-throughput data pipelines, automated infrastructure provisioning, and developer self-service. Designed for performance, reliability, and cost control at production scale under real operational constraints.</p></div>
-          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform enabled <strong>1,700 engineers</strong> with no delivery bottlenecks. Recognised with the <strong>AWS Global Partner Award</strong> for outstanding cloud platform delivery.</p></div>
+          <div class="case-col"><div class="col-lbl">Situation</div><p class="col-txt">Autonomous vehicle development demands extreme data volumes, processing speed, and strict compliance across 1,700 engineers in distributed teams — without slowing development velocity.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Platform enabled <strong>1,700 engineers</strong> with no delivery bottlenecks. Recognised with the <strong>AWS Global Partner Award</strong> for outstanding cloud platform delivery.</p><div class="col-metric">✓ 10,000+ GPU hours/month<br/>✓ AWS Partner Award</div></div>
         </div>
-        <div class="case-ft"><div class="tags"><span class="tag">AWS</span><span class="tag">Data Pipelines</span><span class="tag">Reliability Engineering</span><span class="tag">Self-Service Infra</span><span class="tag">AWS Partner Award</span></div></div>
-      </div>
+        <div class="case-ft"><div class="tags"><span class="tag">AWS</span><span class="tag">Data Pipelines</span><span class="tag">Reliability Engineering</span></div><a href="cases/case-02-aws-autonomous-driving.html" class="btn-more">More</a></div>
+      </a>
 
-      <div class="case reveal">
+      <a href="cases/case-03-enterprise-saas-optimization.html" class="case reveal" style="text-decoration:none; color:inherit; display:block;">
         <div class="case-hd">
           <div><span class="case-num">Case 03</span><h3>Platform Optimisation — 40% Sales Efficiency Improvement</h3></div>
           <span class="case-client">Enterprise SaaS</span>
         </div>
         <div class="case-cols">
-          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">SaaS company experiencing declining sales efficiency due to platform performance issues and operational complexity. International rollout stalling. Cloud cost growing faster than revenue with no clear cost model.</p></div>
-          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Architecture assessment surfaced bottlenecks and cost inefficiencies. Platform redesigned for international scalability with automation-first operations. Infrastructure cost realigned to business metrics and revenue growth.</p></div>
-          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Sales efficiency improved by <strong>40%</strong> following optimisation and international rollout. Cloud cost aligned to revenue. Engineering team unblocked for continued product development.</p></div>
+          <div class="case-col"><div class="col-lbl">Situation</div><p class="col-txt">SaaS company experiencing declining sales efficiency due to platform performance issues and operational complexity. International rollout stalling. Cloud cost growing faster than revenue with no clear cost model.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Sales efficiency improved following optimisation and international rollout. Cloud cost aligned to revenue. Engineering team unblocked for continued product development.</p><div class="col-metric"><strong style="color:var(--cyan)">+40% Sales Efficiency</strong><br/><strong style="color:var(--cyan)">-30% Cloud Cost</strong><br/>✓ Multi-region enabled</div></div>
         </div>
-        <div class="case-ft"><div class="tags"><span class="tag">Architecture Audit</span><span class="tag">Cost Optimisation</span><span class="tag">International Rollout</span><span class="tag">Automation</span><span class="tag">SaaS</span></div></div>
-      </div>
+        <div class="case-ft"><div class="tags"><span class="tag">Architecture Audit</span><span class="tag">Cost Optimisation</span><span class="tag">International Rollout</span></div><a href="cases/case-03-enterprise-saas-optimization.html" class="btn-more">More</a></div>
+      </a>
 
-      <div class="case reveal">
+      <a href="cases/case-04-baas-seed-startup.html" class="case reveal" style="text-decoration:none; color:inherit; display:block;">
         <div class="case-hd">
           <div><span class="case-num">Case 04</span><h3>BaaS Platform — Seed Startup to Production</h3></div>
           <span class="case-client">Seed Stage SaaS</span>
         </div>
         <div class="case-cols">
-          <div class="case-col"><div class="col-lbl">Challenge</div><p class="col-txt">Seed-stage SaaS startup needed to move prototype to production-grade backend infrastructure fast — 5-engineer team, no budget for over-engineering, but no tolerance for architectural debt that would block Series A scaling.</p></div>
-          <div class="case-col"><div class="col-lbl">Architecture</div><p class="col-txt">Led AWS Amplify Backend-as-a-Service architecture design and rollout. Balanced speed-to-market with structural foundations — ensuring the platform could scale with the business rather than requiring a costly rewrite at growth stage.</p></div>
-          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Time-to-market <strong>significantly accelerated</strong>. Developer experience and team autonomy improved. Platform foundation built to scale beyond seed stage — not just to ship the first version.</p></div>
+          <div class="case-col"><div class="col-lbl">Situation</div><p class="col-txt">Seed-stage SaaS startup needed to move prototype to production-grade backend infrastructure fast — 5-engineer team, no budget for over-engineering, but no tolerance for architectural debt that would block Series A scaling.</p></div>
+          <div class="case-col"><div class="col-lbl">Outcome</div><p class="col-txt">Time-to-market significantly accelerated. Developer experience and team autonomy improved. Platform foundation built to scale beyond seed stage — not just to ship the first version.</p><div class="col-metric">✓ 10 weeks to production<br/>✓ $1.8K monthly cost<br/>✓ 10x scalability headroom</div></div>
         </div>
-        <div class="case-ft"><div class="tags"><span class="tag">AWS Amplify</span><span class="tag">BaaS</span><span class="tag">Startup Architecture</span><span class="tag">Developer Experience</span><span class="tag">Seed Stage</span></div></div>
-      </div>
+        <div class="case-ft"><div class="tags"><span class="tag">AWS Amplify</span><span class="tag">BaaS</span><span class="tag">Startup Architecture</span></div><a href="cases/case-04-baas-seed-startup.html" class="btn-more">More</a></div>
+      </a>
 
     </div>
   </div>

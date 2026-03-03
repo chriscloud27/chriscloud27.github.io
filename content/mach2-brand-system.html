@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MaCh2.Cloud — Brand System</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #0B1F3A;
+  --navy2:  #0F2847;
+  --cyan:   #00E5FF;
+  --cyan2:  #00B8CC;
+  --white:  #FFFFFF;
+  --off:    #F0F4F8;
+  --gray:   #607080;
+  --gray2:  #8899AA;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+  --serif: 'DM Serif Display', serif;
+}
+
+body {
+  background: #07172B;
+  font-family: var(--sans);
+  color: var(--white);
+}
+
+/* ── SECTION SYSTEM ── */
+.section {
+  padding: 64px 64px 0;
+}
+.section:last-child { padding-bottom: 80px; }
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--cyan);
+  opacity: 0.6;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.07);
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 72px 64px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.hero-left h1 {
+  font-family: var(--serif);
+  font-size: 54px;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+.hero-left h1 em {
+  color: var(--cyan);
+  font-style: italic;
+}
+
+.hero-left .sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gray2);
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.keywords {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.kw {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0,229,255,0.3);
+  border-radius: 2px;
+  color: var(--cyan);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── LOGO MARK — reusable SVG inline ── */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* ── COLORS ── */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+}
+
+.swatch {
+  position: relative;
+  overflow: hidden;
+}
+.swatch-color {
+  height: 110px;
+}
+.swatch-info {
+  padding: 16px 18px;
+  background: #0B1F3A;
+}
+.swatch-name {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+.swatch-hex {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--gray2);
+}
+.swatch-role {
+  font-size: 10px;
+  color: var(--gray);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+/* ── TYPOGRAPHY ── */
+.type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+
+.type-card {
+  background: var(--navy);
+  padding: 36px 40px;
+}
+
+.type-sample-display {
+  font-family: var(--serif);
+  font-size: 52px;
+  line-height: 1;
+  color: white;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.type-sample-sans {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.type-sample-body {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.7;
+  font-weight: 300;
+  font-style: italic;
+}
+.type-sample-mono {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.type-meta {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  color: var(--gray);
+  text-transform: uppercase;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+/* ── LOGO VARIANTS ── */
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+}
+.logo-cell {
+  padding: 48px 44px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.logo-cell.dark   { background: var(--navy); }
+.logo-cell.light  { background: var(--white); }
+.logo-cell.paper  { background: #F5F3EE; }
+.logo-cell.black  { background: #0A0A0A; }
+
+.variant-tag {
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.25;
+}
+.logo-cell.dark .variant-tag,
+.logo-cell.black .variant-tag { color: white; }
+.logo-cell.light .variant-tag,
+.logo-cell.paper .variant-tag { color: #0B1F3A; }
+
+/* ── ICON ONLY ── */
+.icon-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-top: 3px;
+}
+.icon-cell {
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-cell.dark  { background: var(--navy); }
+.icon-cell.light { background: white; }
+.icon-cell.mid   { background: #607080; }
+.icon-cell.black { background: #0A0A0A; }
+
+/* ── SCALE ROW ── */
+.scale-strip {
+  background: var(--navy);
+  padding: 40px 44px;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 3px;
+}
+.scale-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.scale-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.2);
+  text-transform: uppercase;
+}
+
+/* ── MOCKUPS ── */
+.mockup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3px;
+}
+.mockup {
+  background: var(--navy);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Nav bar mockup */
+.mock-nav {
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: var(--navy);
+}
+.mock-nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 24px;
+}
+.mock-nav-links span {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+.mock-nav-cta {
+  margin-left: 20px;
+  padding: 6px 14px;
+  border: 1px solid rgba(0,229,255,0.4);
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--cyan);
+  text-transform: uppercase;
+}
+
+/* Hero section mockup */
+.mock-hero {
+  padding: 36px 28px 32px;
+  background: var(--navy);
+}
+.mock-hero-tag {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--cyan);
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+.mock-hero-h1 {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 6px;
+}
+.mock-hero-h1 em { color: var(--cyan); font-style: italic; }
+.mock-hero-body {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Business card mockup */
+.mock-card {
+  background: var(--off);
+  padding: 28px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mock-card-detail {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: #607080;
+  line-height: 1.9;
+}
+.mock-card-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+/* Social avatar */
+.mock-social {
+  background: #1A1A2E;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.avatar-sq {
+  width: 80px;
+  height: 80px;
+  background: var(--navy);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,229,255,0.15);
+}
+
+/* Email signature */
+.mock-email {
+  background: white;
+  padding: 24px 28px;
+}
+.email-hr {
+  height: 1px;
+  background: #E0E8EE;
+  margin-bottom: 16px;
+}
+.email-name {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.email-title {
+  font-family: var(--sans);
+  font-size: 11px;
+  color: #607080;
+  margin-bottom: 10px;
+}
+.email-detail {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: #8899AA;
+  line-height: 1.9;
+}
+
+/* ── BRAND VOICE ── */
+.voice-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3px;
+}
+.voice-card {
+  background: var(--navy);
+  padding: 28px 24px;
+  border-top: 2px solid var(--cyan);
+}
+.voice-word {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: white;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.voice-def {
+  font-size: 11px;
+  color: var(--gray2);
+  line-height: 1.6;
+}
+
+/* ── ANIMATION ── */
+@keyframes flicker {
+  0%, 100% { opacity: 0.85; }
+  50%       { opacity: 1;    }
+}
+.flame-anim { animation: flicker 1.8s ease-in-out infinite; }
+
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     HERO — Brand Identity
+════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="sub">MaCh2.Cloud — Brand System</div>
+    <h1>Built to<br/><em>accelerate</em><br/>what matters.</h1>
+    <div class="keywords">
+      <span class="kw">Intelligent</span>
+      <span class="kw">Sovereign</span>
+      <span class="kw">Trustworthy</span>
+      <span class="kw">Platform</span>
+      <span class="kw">Speed</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <!-- Full logo hero display -->
+    <svg viewBox="0 0 56 92" width="80" height="130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="hfg">
+          <feGaussianBlur stdDeviation="1.2" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- Fins -->
+      <path d="M 13,70 L 7,80 L 17,70 Z"  fill="white" opacity="0.45"/>
+      <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.45"/>
+      <!-- Row 3 -->
+      <rect x="6"  y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+      <line x1="6"  y1="62" x2="19"  y2="62" stroke="white" stroke-width="0.7" opacity="0.2"/>
+      <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.4"/>
+      <line x1="21" y1="62" x2="35"  y2="62" stroke="white" stroke-width="0.7" opacity="0.25"/>
+      <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+      <line x1="37" y1="62" x2="50"  y2="62" stroke="white" stroke-width="0.7" opacity="0.2"/>
+      <!-- Row 2 -->
+      <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85" filter="url(#hfg)"/>
+      <line x1="13" y1="49.5" x2="26" y2="49.5" stroke="white" stroke-width="0.8" opacity="0.3"/>
+      <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85" filter="url(#hfg)"/>
+      <line x1="30" y1="49.5" x2="43" y2="49.5" stroke="white" stroke-width="0.8" opacity="0.3"/>
+      <!-- Row 1 -->
+      <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+      <line x1="21" y1="36" x2="35"  y2="36" stroke="#0B1F3A" stroke-width="0.8" opacity="0.2"/>
+      <!-- Nose cone -->
+      <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+      <!-- Window -->
+      <circle cx="28" cy="23" r="3.5" fill="#00E5FF" filter="url(#hfg)"/>
+      <circle cx="28" cy="23" r="1.8" fill="#0B1F3A"/>
+      <!-- Flame -->
+      <path class="flame-anim" d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70"
+            fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" filter="url(#hfg)"/>
+      <path class="flame-anim" d="M 19,70 Q 22,76 24,72 Q 26,78 28,75 Q 30,78 32,72 Q 34,76 37,70"
+            fill="none" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+    </svg>
+
+    <div style="text-align:center;">
+      <div style="font-family:var(--serif);font-size:36px;color:white;letter-spacing:-0.5px;line-height:1;">
+        MaCh2<span style="color:var(--cyan)">.Cloud</span>
+      </div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:3.5px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-top:8px;">
+        AI-Native Cloud Architecture
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     01 — COLOR SYSTEM
+════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">01 — Color System</div>
+  <div class="color-grid">
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0B1F3A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Navy</div>
+        <div class="swatch-hex">#0B1F3A</div>
+        <div class="swatch-role">Primary background. Strategic depth. Sovereign authority.</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#00E5FF;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Mach Cyan</div>
+        <div class="swatch-hex">#00E5FF</div>
+        <div class="swatch-role">Primary accent. AI intelligence. Speed. Live signal.</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#00B8CC;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Deep Cyan</div>
+        <div class="swatch-hex">#00B8CC</div>
+        <div class="swatch-role">Light bg accent. Trustworthy, calmer signal.</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF;"></div>
+      <div class="swatch-info" style="background:white;border:1px solid #E0E8EE;">
+        <div class="swatch-name" style="color:#0B1F3A;">White</div>
+        <div class="swatch-hex" style="color:#607080;">#FFFFFF</div>
+        <div class="swatch-role" style="color:#8899AA;">Clarity. Clean space. Trustworthy contrast.</div>
+      </div>
+    </div>
+
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1A1A1A;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Graphite</div>
+        <div class="swatch-hex">#1A1A1A</div>
+        <div class="swatch-role">Text on light. Stability. Focus. Not pure black.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     02 — TYPOGRAPHY
+════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">02 — Typography</div>
+  <div class="type-grid">
+
+    <div class="type-card">
+      <div class="type-sample-display">Aa Bb Cc</div>
+      <div style="font-family:var(--serif);font-size:18px;color:white;margin-bottom:6px;">
+        Your platform should <em style="color:var(--cyan)">accelerate growth.</em>
+      </div>
+      <div style="font-family:var(--serif);font-size:13px;color:rgba(255,255,255,0.4);font-style:italic;line-height:1.5;">
+        Right now it probably isn't.
+      </div>
+      <div class="type-meta">DM Serif Display — Headlines, Hero, Impact statements</div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-sample-mono">01 — Platform Architecture</div>
+      <div class="type-sample-sans">AI-Native Cloud Architecture</div>
+      <div class="type-sample-body">
+        I help Seed–Series C SaaS CTOs design scalable, intelligent platforms that ship faster and scale without rewrites.
+      </div>
+      <div class="type-meta">IBM Plex Sans — Body / UI &nbsp;·&nbsp; IBM Plex Mono — Labels / Code / Tags</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     03 — LOGO VARIANTS
+════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">03 — Logo Variants</div>
+
+  <div class="logo-grid">
+
+    <!-- Dark primary -->
+    <div class="logo-cell dark">
+      <svg viewBox="0 0 280 80" width="320" height="91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="sg1"><feGaussianBlur stdDeviation="0.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path d="M 20,68 L 15,76 L 24,68 Z" fill="white" opacity="0.45"/>
+        <path d="M 48,68 L 53,76 L 44,68 Z" fill="white" opacity="0.45"/>
+        <rect x="14" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.28"/>
+        <rect x="28" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.42"/>
+        <rect x="42" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.28"/>
+        <rect x="21" y="42" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.8" filter="url(#sg1)"/>
+        <line x1="21" y1="47" x2="34" y2="47" stroke="white" stroke-width="0.7" opacity="0.35"/>
+        <rect x="35" y="42" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.8" filter="url(#sg1)"/>
+        <line x1="35" y1="47" x2="48" y2="47" stroke="white" stroke-width="0.7" opacity="0.35"/>
+        <rect x="28" y="29" width="14" height="11" rx="1.5" fill="white" opacity="0.95"/>
+        <path d="M 28,29 L 35,10 L 42,29 Z" fill="white"/>
+        <circle cx="35" cy="23" r="3" fill="#00E5FF" opacity="0.95" filter="url(#sg1)"/>
+        <circle cx="35" cy="23" r="1.5" fill="#0B1F3A"/>
+        <path d="M 22,68 Q 26,76 28,72 Q 30,80 35,76 Q 40,80 42,72 Q 44,76 48,68" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" filter="url(#sg1)"/>
+        <line x1="72" y1="14" x2="72" y2="66" stroke="white" stroke-width="1" opacity="0.12"/>
+        <text x="84" y="46" font-family="'IBM Plex Sans',sans-serif" font-size="34" font-weight="700" letter-spacing="-0.8" fill="white">MaCh2<tspan fill="#00E5FF">.Cloud</tspan></text>
+        <text x="85" y="60" font-family="'IBM Plex Mono',monospace" font-size="8.5" font-weight="400" letter-spacing="3.2" fill="white" opacity="0.38">AI-NATIVE CLOUD ARCHITECTURE</text>
+      </svg>
+      <span class="variant-tag">Primary · Dark</span>
+    </div>
+
+    <!-- Light primary -->
+    <div class="logo-cell light">
+      <svg viewBox="0 0 280 80" width="320" height="91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 20,68 L 15,76 L 24,68 Z" fill="#0B1F3A" opacity="0.35"/>
+        <path d="M 48,68 L 53,76 L 44,68 Z" fill="#0B1F3A" opacity="0.35"/>
+        <rect x="14" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.2"/>
+        <rect x="28" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.32"/>
+        <rect x="42" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.2"/>
+        <rect x="21" y="42" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+        <rect x="35" y="42" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+        <rect x="28" y="29" width="14" height="11" rx="1.5" fill="#0B1F3A" opacity="0.9"/>
+        <path d="M 28,29 L 35,10 L 42,29 Z" fill="#0B1F3A"/>
+        <circle cx="35" cy="23" r="3" fill="#00B8CC" opacity="0.9"/>
+        <circle cx="35" cy="23" r="1.5" fill="white"/>
+        <path d="M 22,68 Q 26,76 28,72 Q 30,80 35,76 Q 40,80 42,72 Q 44,76 48,68" fill="none" stroke="#00B8CC" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="72" y1="14" x2="72" y2="66" stroke="#0B1F3A" stroke-width="1" opacity="0.1"/>
+        <text x="84" y="46" font-family="'IBM Plex Sans',sans-serif" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#0B1F3A">MaCh2<tspan fill="#00B8CC">.Cloud</tspan></text>
+        <text x="85" y="60" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="3.2" fill="#0B1F3A" opacity="0.35">AI-NATIVE CLOUD ARCHITECTURE</text>
+      </svg>
+      <span class="variant-tag">Primary · Light</span>
+    </div>
+
+    <!-- Mono dark -->
+    <div class="logo-cell black">
+      <svg viewBox="0 0 280 80" width="320" height="91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 20,68 L 15,76 L 24,68 Z" fill="white" opacity="0.4"/>
+        <path d="M 48,68 L 53,76 L 44,68 Z" fill="white" opacity="0.4"/>
+        <rect x="14" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="28" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.4"/>
+        <rect x="42" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="21" y="42" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="35" y="42" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="28" y="29" width="14" height="11" rx="1.5" fill="white" opacity="0.95"/>
+        <path d="M 28,29 L 35,10 L 42,29 Z" fill="white"/>
+        <circle cx="35" cy="23" r="3" fill="#0A0A0A"/>
+        <path d="M 22,68 Q 26,76 28,72 Q 30,80 35,76 Q 40,80 42,72 Q 44,76 48,68" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+        <line x1="72" y1="14" x2="72" y2="66" stroke="white" stroke-width="1" opacity="0.1"/>
+        <text x="84" y="46" font-family="'IBM Plex Sans',sans-serif" font-size="34" font-weight="700" letter-spacing="-0.8" fill="white">MaCh2.Cloud</text>
+        <text x="85" y="60" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="3.2" fill="white" opacity="0.35">AI-NATIVE CLOUD ARCHITECTURE</text>
+      </svg>
+      <span class="variant-tag">Mono · 1-Color</span>
+    </div>
+
+    <!-- Paper / print -->
+    <div class="logo-cell paper">
+      <svg viewBox="0 0 280 80" width="320" height="91" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 20,68 L 15,76 L 24,68 Z" fill="#0B1F3A" opacity="0.3"/>
+        <path d="M 48,68 L 53,76 L 44,68 Z" fill="#0B1F3A" opacity="0.3"/>
+        <rect x="14" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.15"/>
+        <rect x="28" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.28"/>
+        <rect x="42" y="55" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.15"/>
+        <rect x="21" y="42" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.75"/>
+        <rect x="35" y="42" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.75"/>
+        <rect x="28" y="29" width="14" height="11" rx="1.5" fill="#0B1F3A" opacity="0.85"/>
+        <path d="M 28,29 L 35,10 L 42,29 Z" fill="#0B1F3A"/>
+        <circle cx="35" cy="23" r="3" fill="#00B8CC" opacity="0.85"/>
+        <path d="M 22,68 Q 26,76 28,72 Q 30,80 35,76 Q 40,80 42,72 Q 44,76 48,68" fill="none" stroke="#00B8CC" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="72" y1="14" x2="72" y2="66" stroke="#0B1F3A" stroke-width="1" opacity="0.08"/>
+        <text x="84" y="46" font-family="'IBM Plex Sans',sans-serif" font-size="34" font-weight="700" letter-spacing="-0.8" fill="#0B1F3A">MaCh2<tspan fill="#00B8CC">.Cloud</tspan></text>
+        <text x="85" y="60" font-family="'IBM Plex Mono',monospace" font-size="8.5" letter-spacing="3.2" fill="#0B1F3A" opacity="0.3">AI-NATIVE CLOUD ARCHITECTURE</text>
+      </svg>
+      <span class="variant-tag">Print · Paper</span>
+    </div>
+
+  </div>
+
+  <!-- Icon only row -->
+  <div class="icon-strip">
+    <!-- Dark -->
+    <div class="icon-cell dark">
+      <svg viewBox="0 0 56 92" width="52" height="85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="ig1"><feGaussianBlur stdDeviation="1" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.45"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.45"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.4"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85" filter="url(#ig1)"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85" filter="url(#ig1)"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+        <circle cx="28" cy="23" r="3.5" fill="#00E5FF" filter="url(#ig1)"/>
+        <circle cx="28" cy="23" r="1.8" fill="#0B1F3A"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round" filter="url(#ig1)"/>
+      </svg>
+    </div>
+    <!-- Light -->
+    <div class="icon-cell light">
+      <svg viewBox="0 0 56 92" width="52" height="85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="#0B1F3A" opacity="0.35"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="#0B1F3A" opacity="0.35"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="#0B1F3A" opacity="0.3"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="#0B1F3A" opacity="0.9"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="#0B1F3A"/>
+        <circle cx="28" cy="23" r="3.5" fill="#00B8CC"/>
+        <circle cx="28" cy="23" r="1.8" fill="white"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="#00B8CC" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <!-- Mid -->
+    <div class="icon-cell mid">
+      <svg viewBox="0 0 56 92" width="52" height="85" fill="none">
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.4"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.4"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.4"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.9"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <!-- Black -->
+    <div class="icon-cell black">
+      <svg viewBox="0 0 56 92" width="52" height="85" fill="none">
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.4"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.4"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.38"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="white" opacity="0.7"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+        <circle cx="28" cy="23" r="3.5" fill="#0A0A0A"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity="0.55"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Scale test -->
+  <div class="scale-strip">
+    <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);text-transform:uppercase;width:72px;flex-shrink:0;">Scale<br/>test</div>
+    <!-- 80px -->
+    <div class="scale-item">
+      <svg viewBox="0 0 56 92" width="48" height="80" fill="none">
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.4"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.4"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.38"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+        <circle cx="28" cy="23" r="3.5" fill="#00E5FF"/>
+        <circle cx="28" cy="23" r="1.8" fill="#0B1F3A"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+      <span class="scale-label">80px</span>
+    </div>
+    <!-- 48px -->
+    <div class="scale-item">
+      <svg viewBox="0 0 56 92" width="30" height="48" fill="none">
+        <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.4"/>
+        <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.4"/>
+        <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.3"/>
+        <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.45"/>
+        <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.3"/>
+        <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF"/>
+        <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF"/>
+        <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white"/>
+        <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+        <circle cx="28" cy="23" r="3.5" fill="#00E5FF"/>
+        <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="#00E5FF" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="scale-label">48px</span>
+    </div>
+    <!-- 32px favicon -->
+    <div class="scale-item">
+      <svg viewBox="0 0 32 32" width="32" height="32" fill="none">
+        <rect width="32" height="32" rx="6" fill="#0B1F3A"/>
+        <path d="M 9,24 L 6,28 L 11,24 Z" fill="white" opacity="0.4"/>
+        <path d="M 23,24 L 26,28 L 21,24 Z" fill="white" opacity="0.4"/>
+        <rect x="5" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/>
+        <rect x="13" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.45"/>
+        <rect x="21" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/>
+        <rect x="9" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9"/>
+        <rect x="17" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9"/>
+        <rect x="13" y="8" width="6" height="4.5" rx="0.8" fill="white" opacity="0.95"/>
+        <path d="M 13,8 L 16,2 L 19,8 Z" fill="white"/>
+        <circle cx="16" cy="5.5" r="1.2" fill="#00E5FF"/>
+        <path d="M 10,23.5 Q 12,27 13.5,25 Q 15,29 16,27 Q 17,29 18.5,25 Q 20,27 22,23.5" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-linecap="round" opacity="0.9"/>
+      </svg>
+      <span class="scale-label">32px favicon</span>
+    </div>
+    <!-- 16px -->
+    <div class="scale-item">
+      <svg viewBox="0 0 32 32" width="16" height="16" fill="none">
+        <rect width="32" height="32" rx="6" fill="#0B1F3A"/>
+        <rect x="5" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/>
+        <rect x="13" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.5"/>
+        <rect x="21" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/>
+        <rect x="9" y="13" width="6" height="5" rx="0.8" fill="#00E5FF"/>
+        <rect x="17" y="13" width="6" height="5" rx="0.8" fill="#00E5FF"/>
+        <rect x="13" y="8" width="6" height="4.5" rx="0.8" fill="white"/>
+        <path d="M 13,8 L 16,2 L 19,8 Z" fill="white"/>
+        <circle cx="16" cy="5.5" r="1.5" fill="#00E5FF"/>
+      </svg>
+      <span class="scale-label">16px</span>
+    </div>
+
+    <div style="margin-left:auto;font-family:var(--mono);font-size:10px;color:rgba(255,255,255,0.2);line-height:2;letter-spacing:0.5px;text-align:right;">
+      Readable at all sizes.<br/>
+      Cyan blocks hold at 16px.<br/>
+      Nose cone reads at 32px.
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     04 — REAL-WORLD MOCKUPS
+════════════════════════════════════ -->
+<div class="section">
+  <div class="section-label">04 — Real-World Contexts</div>
+  <div class="mockup-grid">
+
+    <!-- Website nav -->
+    <div class="mockup">
+      <div class="mock-nav">
+        <svg viewBox="0 0 56 92" width="18" height="28" fill="none" style="margin-right:10px;flex-shrink:0">
+          <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.3"/>
+          <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.42"/>
+          <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.3"/>
+          <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85"/>
+          <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.85"/>
+          <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+          <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+          <circle cx="28" cy="23" r="3.5" fill="#00E5FF"/>
+        </svg>
+        <span style="font-family:var(--sans);font-size:15px;font-weight:700;color:white;letter-spacing:-0.3px;">MaCh2<span style="color:var(--cyan)">.Cloud</span></span>
+        <div class="mock-nav-links">
+          <span>Services</span>
+          <span>About</span>
+          <div class="mock-nav-cta">Book Call</div>
+        </div>
+      </div>
+      <div class="mock-hero">
+        <div class="mock-hero-tag">Principal AI-Native Cloud Architect</div>
+        <div class="mock-hero-h1">Your platform should <em>accelerate growth.</em></div>
+        <div class="mock-hero-body">Right now it probably isn't. I help Seed–Series C SaaS CTOs build scalable cloud foundations.</div>
+      </div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.2);padding:12px 28px;text-transform:uppercase;">Website</div>
+    </div>
+
+    <!-- Business card -->
+    <div class="mockup">
+      <div class="mock-card">
+        <div>
+          <svg viewBox="0 0 56 92" width="24" height="38" fill="none" style="margin-bottom:14px">
+            <rect x="6" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+            <rect x="21" y="57" width="14" height="10" rx="1.5" fill="#0B1F3A" opacity="0.3"/>
+            <rect x="37" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+            <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+            <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+            <rect x="21" y="30" width="14" height="12" rx="1.5" fill="#0B1F3A" opacity="0.9"/>
+            <path d="M 21,30 L 28,10 L 35,30 Z" fill="#0B1F3A"/>
+            <circle cx="28" cy="23" r="3.5" fill="#00B8CC"/>
+          </svg>
+          <div class="mock-card-name">Christian Weber</div>
+          <div style="font-size:11px;color:#607080;font-family:var(--sans);margin-bottom:16px;">Principal AI-Native Cloud Architect</div>
+        </div>
+        <div class="mock-card-detail">
+          mach2.cloud<br/>
+          cwcs@gmail.com<br/>
+          Remote · US–EU
+        </div>
+      </div>
+      <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;color:var(--gray);padding:10px 28px;text-transform:uppercase;background:white;border-top:1px solid #E0E8EE;">Business Card</div>
+    </div>
+
+    <!-- Social + email sig -->
+    <div class="mockup" style="display:flex;flex-direction:column;">
+      <!-- Social avatar -->
+      <div class="mock-social" style="flex:1;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:16px;">
+          <div class="avatar-sq">
+            <svg viewBox="0 0 56 92" width="44" height="72" fill="none">
+              <path d="M 13,70 L 7,80 L 17,70 Z" fill="white" opacity="0.4"/>
+              <path d="M 43,70 L 49,80 L 39,70 Z" fill="white" opacity="0.4"/>
+              <rect x="6" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+              <rect x="21" y="57" width="14" height="10" rx="1.5" fill="white" opacity="0.38"/>
+              <rect x="37" y="57" width="13" height="10" rx="1.5" fill="white" opacity="0.25"/>
+              <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.9"/>
+              <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.9"/>
+              <rect x="21" y="30" width="14" height="12" rx="1.5" fill="white" opacity="0.95"/>
+              <path d="M 21,30 L 28,10 L 35,30 Z" fill="white"/>
+              <circle cx="28" cy="23" r="3.5" fill="#00E5FF"/>
+              <circle cx="28" cy="23" r="1.8" fill="#0B1F3A"/>
+              <path d="M 14,70 Q 18,79 21,74 Q 24,83 28,78 Q 32,83 35,74 Q 38,79 42,70" fill="none" stroke="#00E5FF" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div style="font-family:var(--mono);font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.25);text-transform:uppercase;">LinkedIn / GitHub Avatar</div>
+        </div>
+      </div>
+      <!-- Email sig -->
+      <div class="mock-email">
+        <div class="email-hr"></div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+          <svg viewBox="0 0 56 92" width="18" height="30" fill="none">
+            <rect x="6" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+            <rect x="21" y="57" width="14" height="10" rx="1.5" fill="#0B1F3A" opacity="0.3"/>
+            <rect x="37" y="57" width="13" height="10" rx="1.5" fill="#0B1F3A" opacity="0.18"/>
+            <rect x="13" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+            <rect x="30" y="44" width="13" height="11" rx="1.5" fill="#00B8CC" opacity="0.85"/>
+            <rect x="21" y="30" width="14" height="12" rx="1.5" fill="#0B1F3A" opacity="0.9"/>
+            <path d="M 21,30 L 28,10 L 35,30 Z" fill="#0B1F3A"/>
+            <circle cx="28" cy="23" r="3.5" fill="#00B8CC"/>
+          </svg>
+          <div>
+            <div class="email-name">Christian Weber</div>
+            <div class="email-title">Principal AI-Native Cloud Architect</div>
+          </div>
+        </div>
+        <div class="email-detail">mach2.cloud &nbsp;·&nbsp; cwcs@gmail.com</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     05 — BRAND VOICE
+════════════════════════════════════ -->
+<div class="section" style="padding-bottom:80px;">
+  <div class="section-label">05 — Brand Voice</div>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <div class="voice-word">Intelligent</div>
+      <div class="voice-def">The cyan window on the nose cone. AI is not added-on — it is the eye of the rocket, built in from the start.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-word">Sovereign</div>
+      <div class="voice-def">The rocket answers to no single cloud. The blocks below it are portable. Cloud-agnostic by design.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-word">Trustworthy</div>
+      <div class="voice-def">The base is three blocks wide. The foundation is always the largest layer. Stability precedes speed.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-word">Platform</div>
+      <div class="voice-def">Every block is a layer of the platform. Terraform. Kubernetes. IaC. The mark is architecture made visible.</div>
+    </div>
+    <div class="voice-card">
+      <div class="voice-word">Speed</div>
+      <div class="voice-def">The name is Mach 2. The flame below is live. The rocket is already in motion. You arrive ready to launch.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
