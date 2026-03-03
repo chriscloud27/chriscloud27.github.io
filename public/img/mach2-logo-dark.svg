@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="560" height="160">
+  <defs>
+    <linearGradient id="flameGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#00E5FF" stop-opacity="0.9"/>
+      <stop offset="60%"  stop-color="#00E5FF" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="flameInner" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#00E5FF" stop-opacity="0.3"/>
+    </linearGradient>
+    <filter id="flameglow">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ─── ROCKET MARK — centered at x=34, full height 72px, y:4–76 ─── -->
+
+  <!-- Fins — bottom left and right, small geometric triangles -->
+  <path d="M 20,68 L 15,76 L 24,68 Z" fill="white" opacity="0.45"/>
+  <path d="M 48,68 L 53,76 L 44,68 Z" fill="white" opacity="0.45"/>
+
+  <!-- ROW 3 — Base layer: 3 blocks (platform foundation) -->
+  <!-- B3 left -->
+  <rect x="14" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.28"/>
+  <line x1="14" y1="59" x2="27" y2="59" stroke="white" stroke-width="0.6" opacity="0.2"/>
+  <!-- B3 center -->
+  <rect x="28" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.42"/>
+  <line x1="28" y1="59" x2="41" y2="59" stroke="white" stroke-width="0.6" opacity="0.25"/>
+  <!-- B3 right -->
+  <rect x="42" y="55" width="13" height="10" rx="1.5" fill="white" opacity="0.28"/>
+  <line x1="42" y1="59" x2="55" y2="59" stroke="white" stroke-width="0.6" opacity="0.2"/>
+
+  <!-- ROW 2 — AI/Cloud layer: 2 blocks (cyan — the intelligence) -->
+  <!-- B2 left -->
+  <rect x="21" y="42" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.8" filter="url(#softglow)"/>
+  <line x1="21" y1="47" x2="34" y2="47" stroke="white" stroke-width="0.7" opacity="0.35"/>
+  <!-- B2 right -->
+  <rect x="35" y="42" width="13" height="11" rx="1.5" fill="#00E5FF" opacity="0.8" filter="url(#softglow)"/>
+  <line x1="35" y1="47" x2="48" y2="47" stroke="white" stroke-width="0.7" opacity="0.35"/>
+
+  <!-- ROW 1 — Top single block (the pinnacle payload) -->
+  <rect x="28" y="29" width="14" height="11" rx="1.5" fill="white" opacity="0.95"/>
+  <line x1="28" y1="34" x2="42" y2="34" stroke="#0B1F3A" stroke-width="0.8" opacity="0.25"/>
+
+  <!-- NOSE CONE — sharp geometric triangle, sovereign and precise -->
+  <path d="M 28,29 L 35,10 L 42,29 Z" fill="white"/>
+  <!-- Window on nose — the AI eye -->
+  <circle cx="35" cy="23" r="3" fill="#00E5FF" opacity="0.95" filter="url(#softglow)"/>
+  <circle cx="35" cy="23" r="1.5" fill="#0B1F3A"/>
+
+  <!-- FLAME — below fins, structured not wild -->
+  <!-- Outer flame -->
+  <path d="M 22,68 Q 26,76 28,72 Q 30,80 35,76 Q 40,80 42,72 Q 44,76 48,68"
+        fill="none" stroke="url(#flameGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#flameglow)"/>
+  <!-- Inner flame core — tighter, brighter -->
+  <path d="M 27,68 Q 30,74 32,71 Q 34,76 35,73 Q 36,76 38,71 Q 40,74 43,68"
+        fill="none" stroke="url(#flameInner)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+        filter="url(#flameglow)"/>
+
+  <!-- ─── WORDMARK ─── -->
+  <!-- Vertical rule separator -->
+  <line x1="72" y1="14" x2="72" y2="66" stroke="white" stroke-width="1" opacity="0.12"/>
+
+  <!-- Main name -->
+  <text x="84" y="46"
+    font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="34"
+    font-weight="700"
+    letter-spacing="-0.8"
+    fill="#FFFFFF">MaCh2<tspan fill="#00E5FF">.Cloud</tspan></text>
+
+  <!-- Tagline -->
+  <text x="85" y="60"
+    font-family="'IBM Plex Mono', 'Courier New', monospace"
+    font-size="8.5"
+    font-weight="400"
+    letter-spacing="3.2"
+    fill="#FFFFFF"
+    opacity="0.38">AI-NATIVE CLOUD ARCHITECTURE</text>
+</svg>
