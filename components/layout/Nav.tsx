@@ -76,10 +76,6 @@ export default function Nav() {
       </ul>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-        <Link href={localeHref('/blog')} className="nav-blog-quick">
-          {t('blog')}
-        </Link>
-
         {/* Language switcher */}
         <div style={{ display: 'flex', gap: '6px' }}>
           {routing.locales.map((loc) => (
@@ -109,6 +105,10 @@ export default function Nav() {
         >
           {t('getInTouch')}
         </a>
+
+        <div className="nav-mobile-trigger">
+          <MobileNav />
+        </div>
       </div>
     </nav>
   )
