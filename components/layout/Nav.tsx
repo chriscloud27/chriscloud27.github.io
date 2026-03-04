@@ -21,7 +21,7 @@ export default function Nav() {
   }
 
   return (
-    <nav>
+    <nav className="site-nav">
       <Link href={localeHref('/')} className="nav-logo">
         <Mach2Logo size={40} />
         <span style={{ color: 'var(--cyan)' }}>
@@ -77,7 +77,7 @@ export default function Nav() {
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         {/* Language switcher */}
-        <div style={{ display: 'flex', gap: '6px' }}>
+        <div className="nav-lang-switcher" style={{ display: 'flex', gap: '6px' }}>
           {routing.locales.map((loc) => (
             <Link
               key={loc}
@@ -101,7 +101,7 @@ export default function Nav() {
           href="https://calendly.com/chriscloud-weber/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-p"
+          className="btn btn-p nav-cta"
         >
           {t('getInTouch')}
         </a>
