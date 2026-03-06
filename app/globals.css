@@ -200,7 +200,7 @@ nav {
   padding: 0 var(--pad);
   background: rgba(11,31,58,.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0,229,255,.07);
+  border-bottom: 2px solid rgba(0,229,255,.45);
 }
 .nav-logo {
   font-family: var(--mono);
@@ -396,6 +396,12 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* Mobile breakpoint: hide desktop links, show mobile trigger */
+@media (max-width: 800px) {
+  .nav-links { display: none; }
+  .nav-mobile-trigger { display: block; }
 }
 
 .mobile-menu-locales {

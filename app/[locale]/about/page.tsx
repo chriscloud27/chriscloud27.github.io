@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+import Experience from '@/components/sections/Experience'
+import CoreValues from '@/components/sections/CoreValues'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -77,74 +79,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           </div>
         </section>
 
-        {/* Core Values Section */}
-        <section style={{ padding: '80px 0 120px', background: 'var(--blue-mid)' }}>
-          <div className="wrap">
-            <h2 style={{ marginBottom: '20px' }}>
-              Built to <em>accelerate</em>
-              <br />
-              what matters.
-            </h2>
-            <p
-              style={{
-                fontSize: '15px',
-                fontWeight: 300,
-                lineHeight: 1.75,
-                color: 'var(--g500)',
-                maxWidth: '680px',
-                marginBottom: '60px',
-              }}
-            >
-              MaCh2.Cloud embodies five core values that guide every architectural decision and partnership. These principles define who we are and how we deliver impact.
-            </p>
-            
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '3px',
-              }}
-            >
-              {values.map((value, index) => (
-                <div
-                  key={value.title}
-                  className="reveal value-card"
-                  style={{
-                    background: 'rgba(255,255,255,.02)',
-                    border: '1px solid rgba(255,255,255,.06)',
-                    borderTop: '3px solid var(--cyan)',
-                    borderRadius: '8px',
-                    padding: '32px 24px',
-                    transition: 'border-color .25s, transform .2s',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontSize: '24px',
-                      fontFamily: 'var(--serif)',
-                      color: 'var(--white)',
-                      marginBottom: '16px',
-                      fontWeight: 400,
-                    }}
-                  >
-                    {value.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: '14px',
-                      fontWeight: 300,
-                      lineHeight: 1.72,
-                      color: 'var(--g500)',
-                      margin: 0,
-                    }}
-                  >
-                    {value.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+                    <Experience />
+              
+
+        <CoreValues />
       </main>
   )
 }

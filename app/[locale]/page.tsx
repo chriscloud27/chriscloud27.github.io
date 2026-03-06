@@ -1,15 +1,19 @@
-import Hero from '@/components/sections/Hero'
-import Experience from '@/components/sections/Experience'
-import Portfolio from '@/components/sections/Portfolio'
-import Authority from '@/components/sections/Authority'
+import HeroSection from '@/components/sections/HeroSection'
+import ProblemSection from '@/components/sections/ProblemSection'
+import ServicesSection from '@/components/sections/ServicesSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import CredibilitySection from '@/components/sections/CredibilitySection'
+import CtaSection from '@/components/sections/CtaSection'
 
 export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <Experience />
-      <Portfolio />
-      <Authority />
-    </>
+    <main>
+      <HeroSection />
+      <ProblemSection />
+      <ServicesSection />
+      <HowItWorksSection />
+      <CredibilitySection />
+      <CtaSection />
+    </main>
   )
 }

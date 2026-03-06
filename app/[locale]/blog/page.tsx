@@ -22,7 +22,7 @@ export default async function BlogPage() {
           <div className="wrap">
             <div className="eyebrow">{t('eyebrow')}</div>
             <h1>
-              Architecture
+              Architectural
               <br />
               <em>Thinking</em>
             </h1>
