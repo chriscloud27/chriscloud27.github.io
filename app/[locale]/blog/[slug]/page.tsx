@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getTranslations, getLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPost, getBlogSlugs } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
-
-export const revalidate = 3600 // ISR: revalidate every hour
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugs()
@@ -15,7 +13,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
   const { slug } = await params
   const post = await getBlogPost(slug)
@@ -29,13 +27,14 @@ export async function generateMetadata({
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params
-  const [post, t, locale] = await Promise.all([
+  const { slug, locale } = await params
+  setRequestLocale(locale)
+
+  const [post, t] = await Promise.all([
     getBlogPost(slug),
     getTranslations('blog'),
-    getLocale(),
   ])
 
   if (!post) notFound()

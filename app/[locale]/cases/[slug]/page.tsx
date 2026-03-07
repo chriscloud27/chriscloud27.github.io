@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { setRequestLocale } from 'next-intl/server'
 
 const CASE_SLUGS = [
   'case-01-capgemini-kubernetes',
@@ -94,6 +95,7 @@ export default async function LocalizedCasePage({
   params: Promise<{ slug: string; locale: string }>
 }) {
   const { slug, locale } = await params
+  setRequestLocale(locale)
 
   const caseData = await getCaseContent(slug, locale)
   if (!caseData) {

@@ -1,19 +1,27 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getTranslations, getLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPosts } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
 
-export const revalidate = 3600 // ISR: revalidate every hour
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('blog')
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'blog' })
   return { title: `${t('eyebrow')} — MaCh2.cloud` }
 }
 
-export default async function BlogPage() {
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('blog')
-  const locale = await getLocale()
   const posts = await getBlogPosts()
 
   return (
