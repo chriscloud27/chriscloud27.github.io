@@ -99,10 +99,11 @@ export default function MobileNav() {
                   key={loc}
                   href={`/${loc}${pathnameWithoutLocale}`}
                   onClick={handleNavClick}
-                  className="mobile-menu-locale"
-                  style={{
-                    color: loc === locale ? 'var(--cyan)' : 'var(--g500)',
-                  }}
+                  className={[
+                    'mobile-menu-locale',
+                    /* brand: active locale electric-cyan, inactive grey-mid */
+                    loc === locale ? 'text-electric-cyan' : 'text-grey-mid',
+                  ].join(' ')}
                 >
                   {loc.toUpperCase()}
                 </Link>
@@ -112,8 +113,7 @@ export default function MobileNav() {
               href="https://calendly.com/chriscloud-weber/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-p"
-              style={{ width: '100%' }}
+              className="btn btn-p w-full justify-center"
             >
               {t('getInTouch')}
             </a>

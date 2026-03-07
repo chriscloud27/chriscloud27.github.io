@@ -172,7 +172,8 @@ export async function getBlogPosts(): Promise<NotionBlogPost[]> {
       sorts: [{ property: 'Date', direction: 'descending' }],
     })
 
-    return (response.results as PageObjectResponse[]).map(pageToPost)
+    const posts = (response.results as PageObjectResponse[]).map(pageToPost)
+    return posts.length > 0 ? posts : FALLBACK_POSTS
   } catch (err) {
     console.error('[Notion] Failed to fetch posts:', err)
     return FALLBACK_POSTS

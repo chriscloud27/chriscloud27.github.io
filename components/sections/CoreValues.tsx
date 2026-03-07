@@ -28,66 +28,30 @@ export default function CoreValues() {
   ]
 
   return (
-    <section style={{ padding: '80px 0 120px', background: 'var(--blue-mid)' }}>
+    <section className="bg-deep-blue-mid py-20 pb-[120px]">
       <div className="wrap">
-        <h2 style={{ marginBottom: '20px' }}>
+        <h2 className="mb-5">
           Built to <em>accelerate</em>
           <br />
           what matters.
         </h2>
-        <p
-          style={{
-            fontSize: '15px',
-            fontWeight: 300,
-            lineHeight: 1.75,
-            color: 'var(--g500)',
-            maxWidth: '680px',
-            marginBottom: '60px'
-          }}
-        >
+        {/* brand: max-w-text caps prose at 680px */}
+        <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid max-w-text mb-[60px]">
           MaCh2.Cloud embodies five core values that guide every architectural decision and partnership. These principles define who we are and how we deliver impact.
         </p>
 
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '3px'
-          }}
-        >
+        {/* brand: dark card variant with electric-cyan top accent */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[3px]">
           {values.map((value) => (
             <div
               key={value.title}
-              className="reveal value-card"
-              style={{
-                background: 'rgba(255,255,255,.02)',
-                border: '1px solid rgba(255,255,255,.06)',
-                borderTop: '3px solid var(--cyan)',
-                borderRadius: '8px',
-                padding: '32px 24px',
-                transition: 'border-color .25s, transform .2s'
-              }}
+              className="reveal value-card bg-electric-cyan/[0.02] border border-white/[0.06] border-t-[3px] border-t-electric-cyan rounded-btn p-8 transition-all duration-200"
             >
-              <h3
-                style={{
-                  fontSize: '24px',
-                  fontFamily: 'var(--serif)',
-                  color: 'var(--white)',
-                  marginBottom: '16px',
-                  fontWeight: 400
-                }}
-              >
+              {/* brand: Syne for value titles */}
+              <h3 className="font-display text-[24px] font-bold text-white mb-4">
                 {value.title}
               </h3>
-              <p
-                style={{
-                  fontSize: '14px',
-                  fontWeight: 300,
-                  lineHeight: 1.72,
-                  color: 'var(--g500)',
-                  margin: 0
-                }}
-              >
+              <p className="font-body text-[14px] font-light leading-[1.72] text-grey-mid m-0">
                 {value.description}
               </p>
             </div>

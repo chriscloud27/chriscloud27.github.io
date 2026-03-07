@@ -27,130 +27,46 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section
-      id="how-it-works"
-      style={{ background: '#fff', padding: '120px 0', position: 'relative' }}
-    >
+    <section id="how-it-works" className="bg-white py-[120px] relative">
       <div className="wrap">
         {/* Section header */}
-        <div style={{ maxWidth: '560px', marginBottom: '80px' }}>
-          <p className="eyebrow" style={{ color: 'var(--cyan)' }}>
-            Process
-          </p>
-          <h2 style={{ color: 'var(--blue)', marginBottom: 0 }}>
+        <div className="max-w-[560px] mb-20">
+          <p className="eyebrow" style={{ color: 'var(--cyan)' }}>Process</p>
+          <h2 className="text-deep-blue mb-0">
             From chaos to{' '}
-            <em style={{ color: 'var(--cyan)', fontStyle: 'italic' }}>clarity</em>
+            <em className="text-electric-cyan italic">clarity</em>
           </h2>
         </div>
 
-        {/* Desktop: horizontal step flow | Mobile: vertical */}
+        {/* Step flow — .hiw-steps / .hiw-step CSS in globals.css
+            brand: horizontal connector line uses ::before — cannot be Tailwind */}
         <div className="hiw-steps">
           {steps.map((step, idx) => (
             <div key={step.number} className="hiw-step">
-              {/* Connector line (not shown on last step) */}
-              {idx < steps.length - 1 && (
-                <div className="hiw-connector" aria-hidden="true" />
-              )}
-
-              {/* Step number circle */}
+              {/* Step number circle — alternating filled / outlined */}
               <div
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '50%',
-                  background: idx % 2 === 0 ? 'var(--cyan)' : 'transparent',
-                  border: idx % 2 === 0 ? 'none' : '1.5px solid var(--cyan)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontFamily: 'var(--mono)',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  color: idx % 2 === 0 ? 'var(--blue)' : 'var(--cyan)',
-                  flexShrink: 0,
-                  marginBottom: '20px',
-                }}
+                className={[
+                  'w-12 h-12 rounded-full flex items-center justify-center',
+                  'font-mono text-[13px] font-medium flex-shrink-0 mb-5',
+                  idx % 2 === 0
+                    ? 'bg-electric-cyan text-deep-blue'
+                    : 'bg-transparent text-electric-cyan border border-electric-cyan',
+                ].join(' ')}
               >
                 {step.number}
               </div>
 
-              <h3
-                style={{
-                  fontFamily: 'var(--body)',
-                  fontSize: '16px',
-                  fontWeight: 600,
-                  color: 'var(--blue)',
-                  marginBottom: '10px',
-                  lineHeight: 1.2,
-                }}
-              >
+              {/* brand: Syne for step name headings */}
+              <h3 className="font-display text-[16px] font-bold text-deep-blue mb-[10px] leading-[1.2]">
                 {step.name}
               </h3>
-              <p
-                style={{
-                  fontSize: '13.5px',
-                  fontWeight: 300,
-                  lineHeight: 1.72,
-                  color: '#4a5a72',
-                  margin: 0,
-                }}
-              >
+
+              <p className="font-body text-[13.5px] font-light leading-[1.72] text-grey-700 m-0">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
-
-        <style>{`
-          .hiw-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0;
-            position: relative;
-          }
-          .hiw-steps::before {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: calc(48px / 2);
-            right: calc(48px / 2);
-            height: 1px;
-            background: linear-gradient(90deg, var(--cyan), rgba(0,229,255,.2));
-            z-index: 0;
-          }
-          .hiw-step {
-            position: relative;
-            z-index: 1;
-            padding: 0 24px 0 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          @media (max-width: 768px) {
-            .hiw-steps {
-              grid-template-columns: 1fr;
-              gap: 0;
-            }
-            .hiw-steps::before {
-              top: 24px;
-              left: 24px;
-              right: auto;
-              width: 1px;
-              height: calc(100% - 48px);
-              background: linear-gradient(180deg, var(--cyan), rgba(0,229,255,.1));
-            }
-            .hiw-step {
-              flex-direction: row;
-              align-items: flex-start;
-              gap: 20px;
-              padding: 0 0 40px 0;
-            }
-            .hiw-step > div:first-child {
-              margin-bottom: 0 !important;
-              flex-shrink: 0;
-            }
-          }
-        `}</style>
       </div>
     </section>
   )

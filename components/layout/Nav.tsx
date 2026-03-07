@@ -16,17 +16,19 @@ export default function Nav() {
     <nav>
       <Link href={localeHref('/')} className="nav-logo">
         <Mach2Logo size={36} />
-        MaCh2<span style={{ color: 'var(--cyan)' }}>.Cloud</span>
+        {/* brand: .Cloud suffix in electric-cyan */}
+        MaCh2<span className="text-electric-cyan">.Cloud</span>
       </Link>
 
       <ul className="nav-links">
         <li><a href={localeHref('/#services')}>Services</a></li>
         <li><a href={localeHref('/#how-it-works')}>How It Works</a></li>
         <li><Link href={localeHref('/about')}>About</Link></li>
+        <li><Link href={localeHref('/blog')}>Blog</Link></li>
         <li><a href={localeHref('/#connect')}>Contact</a></li>
       </ul>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+      <div className="flex items-center gap-3">
         <a
           href="https://calendly.com/chriscloud-weber/30min"
           target="_blank"

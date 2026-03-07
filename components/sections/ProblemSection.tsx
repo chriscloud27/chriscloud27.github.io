@@ -21,77 +21,38 @@ const painPoints = [
 
 export default function ProblemSection() {
   return (
-    <section
-      id="problem"
-      style={{ background: '#fff', padding: '120px 0', position: 'relative' }}
-    >
-      <div className="s-top" style={{ background: 'linear-gradient(90deg, transparent, rgba(0,229,255,.1), transparent)' }} />
+    <section id="problem" className="bg-white py-[120px] relative">
+      {/* brand: cyan top divider line */}
+      <div aria-hidden="true" className="s-top" />
+
       <div className="wrap">
-        {/* Section title */}
-        <div style={{ maxWidth: '600px', marginBottom: '72px' }}>
-          <p className="eyebrow" style={{ color: 'var(--cyan)' }}>
-            The problem
-          </p>
-          <h2 style={{ color: 'var(--blue)', marginBottom: '0' }}>
+        {/* Section header */}
+        <div className="max-w-[600px] mb-[72px]">
+          <p className="eyebrow" style={{ color: 'var(--cyan)' }}>The problem</p>
+          <h2 className="text-deep-blue mb-0">
             What happens when architecture{' '}
-            <em style={{ color: 'var(--cyan)', fontStyle: 'italic' }}>
-              can&apos;t keep up
-            </em>
+            <em className="text-electric-cyan italic">can&apos;t keep up</em>
           </h2>
         </div>
 
-        {/* Pain point cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2px',
-          }}
-        >
+        {/* Pain point cards — light surface per brand surface rules */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
           {painPoints.map((point) => (
             <div
               key={point.number}
-              style={{
-                background: '#fff',
-                border: '1px solid rgba(11,31,58,.08)',
-                borderRadius: '8px',
-                padding: '40px 32px',
-                borderTop: '3px solid var(--cyan)',
-              }}
+              className="bg-white border border-deep-blue/[0.08] border-t-[3px] border-t-electric-cyan rounded-card p-10"
             >
-              <span
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: '11px',
-                  letterSpacing: '.12em',
-                  color: 'var(--cyan)',
-                  display: 'block',
-                  marginBottom: '20px',
-                }}
-              >
+              {/* brand: mono label for numbering */}
+              <span className="font-mono text-[11px] tracking-[0.12em] text-electric-cyan block mb-5">
                 {point.number}
               </span>
-              <h3
-                style={{
-                  fontFamily: 'var(--body)',
-                  fontSize: '18px',
-                  fontWeight: 600,
-                  color: 'var(--blue)',
-                  lineHeight: 1.3,
-                  marginBottom: '16px',
-                }}
-              >
+
+              {/* brand: Syne for all headings including h3 */}
+              <h3 className="font-display text-[18px] font-bold text-deep-blue leading-[1.3] mb-4">
                 {point.headline}
               </h3>
-              <p
-                style={{
-                  fontSize: '14px',
-                  fontWeight: 300,
-                  lineHeight: 1.75,
-                  color: '#4a5a72',
-                  margin: 0,
-                }}
-              >
+
+              <p className="font-body text-[14px] font-light leading-[1.75] text-grey-700 m-0">
                 {point.body}
               </p>
             </div>

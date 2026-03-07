@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
+import Image from 'next/image'
 import Experience from '@/components/sections/Experience'
 import CoreValues from '@/components/sections/CoreValues'
 
@@ -15,75 +16,64 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'about' })
 
-  const values = [
-    {
-      title: 'Intelligent',
-      description: 'We think systematically about tradeoffs. Every architecture decision is reasoned, documented, and optimized for your specific constraints — not generic best practices.'
-    },
-    {
-      title: 'Sovereign',
-      description: 'Your infrastructure serves your business, not vice versa. We design cloud-agnostic architectures that give you optionality and prevent lock-in to single vendors.'
-    },
-    {
-      title: 'Trustworthy',
-      description: 'Security and compliance are non-negotiable. We architect with defense-in-depth, audit trails, and zero-trust principles built in from day one.'
-    },
-    {
-      title: 'Platform',
-      description: 'Great infrastructure enables product velocity. We build platforms that scale with your team, not against it — enabling engineers to move faster and ship with confidence.'
-    },
-    {
-      title: 'Speed',
-      description: 'Slow infrastructure kills startups. We deliver rapid time-to-market without cutting corners on reliability, security, or long-term scalability.'
-    }
-  ]
-
   return (
-    <main style={{ paddingTop: 'var(--nav)' }}>
-        {/* Hero Section */}
-        <section style={{ padding: '80px 0 60px' }}>
-          <div className="wrap">
-            <div className="eyebrow">{t('eyebrow')}</div>
-            <h1>
-              Christian Weber
-              <br />
-              <em>AI-Native Cloud Architect</em>
-            </h1>
-            <p className="hero-sub" style={{ marginTop: '24px' }}>
-              {t('sub')}
-            </p>
-            <p
-              style={{
-                fontSize: '15px',
-                fontWeight: 300,
-                lineHeight: 1.75,
-                color: 'var(--g500)',
-                maxWidth: '680px',
-                marginBottom: '32px',
-              }}
-            >
-              {t('description')}
-            </p>
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a
-                href="https://calendly.com/chriscloud-weber/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-p"
-              >
-                {t('cta')}
-              </a>
-              <Link href={`/${locale}/#portfolio`} className="btn btn-g">
-                {t('ctaSecondary')}
-              </Link>
+    <main className="pt-16">
+      {/* Hero — brand: pt-16 = 64px nav offset */}
+      <section className="py-20">
+        <div className="wrap">
+          <div className="grid gap-10 items-start lg:grid-cols-[minmax(0,1fr)_320px]">
+            <div>
+              <div className="eyebrow">{t('eyebrow')}</div>
+              <h1>
+                Christian Weber
+                <br />
+                <em>AI-Native Cloud Architect</em>
+              </h1>
+              <p className="hero-sub mt-6">
+                {t('sub')}
+              </p>
+              {/* brand: max-w-text caps prose at 680px per token */}
+              <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid max-w-text mb-8">
+                {t('description')}
+              </p>
+              <div className="flex gap-3 flex-wrap">
+                <a
+                  href="https://calendly.com/chriscloud-weber/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-p"
+                >
+                  {t('cta')}
+                </a>
+                <Link href={`/${locale}/#portfolio`} className="btn btn-g">
+                  {t('ctaSecondary')}
+                </Link>
+              </div>
+            </div>
+
+            <div className="relative w-full max-w-[320px] lg:ml-auto">
+              <Image
+                src="/img/Chris.png"
+                alt="Christian Weber"
+                width={320}
+                height={400}
+                priority
+                className="w-full h-auto object-cover rounded-card border border-white/[0.1]"
+              />
+              <div className="absolute bottom-4 left-[-12px] bg-[var(--blue-mid)] border border-electric-cyan/25 rounded px-3 py-2">
+                <span className="block font-mono text-[9px] tracking-[0.1em] uppercase text-electric-cyan mb-1">
+                  Available
+                </span>
+                <span className="font-body text-[13px] text-white">Remote - US / EU</span>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-                    <Experience />
-              
+      <Experience />
 
-        <CoreValues />
-      </main>
+      <CoreValues />
+    </main>
   )
 }

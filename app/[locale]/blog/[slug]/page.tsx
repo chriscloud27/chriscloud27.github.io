@@ -40,57 +40,44 @@ export default async function BlogPostPage({
   if (!post) notFound()
 
   return (
-    <main style={{ paddingTop: 'var(--nav)' }}>
-        <article style={{ padding: '80px 0 120px', minHeight: '80vh' }}>
-          <div className="wrap" style={{ maxWidth: '760px' }}>
-            <Link
-              href={`/${locale}/blog`}
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '11px',
-                letterSpacing: '.08em',
-                color: 'var(--cyan)',
-                textDecoration: 'none',
-                display: 'block',
-                marginBottom: '32px',
-              }}
-            >
-              {t('backToBlog')}
-            </Link>
+    <main className="pt-16">
+      <article className="py-20 min-h-[80vh]">
+        {/* brand: constrain article prose to 760px — narrower than max-w-text for readability */}
+        <div className="wrap" style={{ maxWidth: '760px' }}>
+          {/* brand: back-link as mono label */}
+          <Link
+            href={`/${locale}/blog`}
+            className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan no-underline block mb-8"
+          >
+            {t('backToBlog')}
+          </Link>
 
-            <span
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '11px',
-                color: 'var(--cyan)',
-                letterSpacing: '.08em',
-                display: 'block',
-                marginBottom: '12px',
-              }}
-            >
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
+          {/* brand: date in mono label style */}
+          <span className="font-mono text-[11px] text-electric-cyan tracking-[0.08em] block mb-3">
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </span>
 
-            <h1 style={{ marginBottom: '20px' }}>{post.title}</h1>
+          <h1 className="mb-5">{post.title}</h1>
 
-            {post.tags.length > 0 && (
-              <div className="tags" style={{ marginBottom: '40px' }}>
-                {post.tags.map((tag) => (
-                  <Badge key={tag}>{tag}</Badge>
-                ))}
-              </div>
-            )}
+          {post.tags.length > 0 && (
+            <div className="tags mb-10">
+              {post.tags.map((tag) => (
+                <Badge key={tag}>{tag}</Badge>
+              ))}
+            </div>
+          )}
 
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: post.blocks }}
-            />
-          </div>
-        </article>
-      </main>
+          {/* brand: .blog-post-content uses Tailwind tokens via @apply in globals.css */}
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: post.blocks }}
+          />
+        </div>
+      </article>
+    </main>
   )
 }

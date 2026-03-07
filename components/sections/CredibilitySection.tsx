@@ -19,81 +19,40 @@ const stats = [
 
 export default function CredibilitySection() {
   return (
-    <section
-      id="credibility"
-      style={{ background: 'var(--blue)', padding: '120px 0', position: 'relative' }}
-    >
-      <div className="s-top" />
+    <section id="credibility" className="bg-deep-blue py-[120px] relative">
+      {/* brand: cyan top divider line */}
+      <div aria-hidden="true" className="s-top" />
+
       <div className="wrap">
-        {/* Section header */}
-        <div style={{ textAlign: 'center', maxWidth: '560px', margin: '0 auto 80px' }}>
-          <p className="eyebrow" style={{ justifyContent: 'center' }}>
-            Credibility
-          </p>
+        {/* Section header — centred */}
+        <div className="text-center max-w-[560px] mx-auto mb-20">
+          <p className="eyebrow justify-center">Credibility</p>
           <h2>
             Built on real systems.{' '}
             <em>Real scale.</em>
           </h2>
         </div>
 
-        {/* Stats grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            borderTop: '1px solid rgba(255,255,255,.07)',
-          }}
-        >
+        {/* Stats grid — divider lines form a table-like structure */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-white/[0.07]">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              style={{
-                padding: '48px 32px',
-                borderRight: '1px solid rgba(255,255,255,.07)',
-                borderBottom: '1px solid rgba(255,255,255,.07)',
-              }}
+              className="p-12 border-r border-b border-white/[0.07]"
             >
-              <span
-                style={{
-                  fontFamily: 'var(--serif)',
-                  fontSize: 'clamp(40px, 5vw, 56px)',
-                  color: 'var(--cyan)',
-                  display: 'block',
-                  lineHeight: 1,
-                  marginBottom: '16px',
-                }}
-              >
+              {/* brand: Syne display weight for large stat values */}
+              <span className="font-display font-bold text-[clamp(40px,5vw,56px)] text-electric-cyan block leading-none mb-4">
                 {stat.value}
               </span>
-              <p
-                style={{
-                  fontFamily: 'var(--mono)',
-                  fontSize: '11px',
-                  fontWeight: 300,
-                  lineHeight: 1.65,
-                  letterSpacing: '.04em',
-                  color: 'var(--g500)',
-                  margin: 0,
-                }}
-              >
+              <p className="font-mono text-[11px] font-light leading-[1.65] tracking-[0.04em] text-grey-mid m-0">
                 {stat.label}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Authority note */}
-        <p
-          style={{
-            fontFamily: 'var(--mono)',
-            fontSize: '11px',
-            letterSpacing: '.08em',
-            textTransform: 'uppercase',
-            color: 'var(--g700)',
-            textAlign: 'center',
-            marginTop: '48px',
-          }}
-        >
+        {/* Authority footnote */}
+        <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-grey-700 text-center mt-12">
           Authority grounded in real systems. Real scale. Real responsibility.
         </p>
       </div>

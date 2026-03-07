@@ -9,22 +9,15 @@ export default async function Footer() {
   }
 
   return (
-    <footer style={{ background: 'var(--blue)', borderTop: '1px solid rgba(0,229,255,.08)' }}>
+    <footer className="bg-deep-blue border-t border-electric-cyan/[0.08]">
       <div className="wrap">
         <div className="foot-inner">
           <Link href={localeHref('/')} className="foot-logo">
-            MaCh2<span style={{ color: 'var(--cyan)' }}>Cloud</span>
+            {/* brand: .Cloud suffix in electric-cyan */}
+            MaCh2<span className="text-electric-cyan">Cloud</span>
           </Link>
 
-          <span
-            style={{
-              fontFamily: 'var(--mono)',
-              fontSize: '10px',
-              letterSpacing: '.1em',
-              textTransform: 'uppercase',
-              color: 'var(--g700)',
-            }}
-          >
+          <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-grey-700">
             AI-Native Cloud Architecture
           </span>
 
@@ -32,6 +25,7 @@ export default async function Footer() {
             <li><a href={localeHref('/#services')}>Services</a></li>
             <li><a href={localeHref('/#how-it-works')}>How It Works</a></li>
             <li><Link href={localeHref('/about')}>About</Link></li>
+            <li><Link href={localeHref('/blog')}>Blog</Link></li>
             <li><a href={localeHref('/#connect')}>Contact</a></li>
           </ul>
         </div>
