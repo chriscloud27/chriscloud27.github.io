@@ -56,6 +56,36 @@ jobs:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_BLOG_DATABASE_ID: ${{ secrets.NOTION_BLOG_DATABASE_ID }}
 
+      - name: Create root redirect for locale detection
+        run: |
+          cat > ./out/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>Redirecting...</title>
+            <script>
+              // Detect browser language
+              const browserLang = navigator.language.split('-')[0];
+              const supportedLocales = ['en', 'de', 'es'];
+              const defaultLocale = 'en';
+              
+              // Use browser language if supported, otherwise default to English
+              const locale = supportedLocales.includes(browserLang) ? browserLang : defaultLocale;
+              
+              // Redirect to locale-specific page
+              window.location.replace('/' + locale + '/');
+            </script>
+            <noscript>
+              <meta http-equiv="refresh" content="0; url=/en/">
+            </noscript>
+          </head>
+          <body>
+            <p>Redirecting to your language...</p>
+          </body>
+          </html>
+          EOF
+
       - run: touch ./out/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3

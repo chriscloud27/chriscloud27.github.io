@@ -52,9 +52,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right: profile photo */}
-          <div className="hphoto">
+            <div className="hphoto">
             <Image
-              src="https://mach2.cloud/assets/img/Chris.png"
+              src="/img/Chris.png"
               alt="Christian Weber — AI-Native Cloud Architect"
               width={272}
               height={340}
@@ -65,7 +65,7 @@ export default function HeroSection() {
               <span className="pb-l">Available</span>
               <span className="pb-v">Remote · US / EU</span>
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </section>

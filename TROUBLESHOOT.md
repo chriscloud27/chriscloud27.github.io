@@ -221,3 +221,52 @@ git push
 ✅ CI automatically upgrades to matching version
 ✅ Lock file generated with consistent npm version across all environments
 
+---
+
+## Root Domain 404 Error (mach2.cloud)
+
+### The Error
+
+Visiting `https://mach2.cloud` shows a 404 page, but `https://mach2.cloud/en/` works fine.
+
+### Root Cause: Static Export + i18n Routing
+
+This site uses:
+- **Static export** (`output: 'export'` in next.config.ts)
+- **i18n routing** with locale prefixes (`/en/`, `/de/`, `/es/`)
+
+**Problem:** With static exports, Next.js middleware doesn't run at runtime. The build generates pages under `/en/`, `/de/`, `/es/` but no root `index.html` for automatic locale detection.
+
+### The Fix ✅
+
+The deployment workflow automatically creates a root redirect page:
+
+**What happens:**
+1. User visits `https://mach2.cloud`
+2. JavaScript detects browser language (e.g., `de` from German browser)
+3. Redirects to `https://mach2.cloud/de/`
+4. Falls back to `/en/` if language not supported or JavaScript disabled
+
+**Implementation:** See `.github/workflows/deploy.yml` → "Create root redirect for locale detection" step
+
+### If You Still Get 404
+
+**Check deployment:**
+```bash
+# Verify the out/ directory has index.html at root
+ls -la out/index.html
+
+# Should show the redirect HTML
+cat out/index.html
+```
+
+**Verify on GitHub Pages:**
+- Go to GitHub repo → Actions tab
+- Check latest deployment run
+- Ensure "Create root redirect" step succeeded
+- Check artifact contents have `index.html` at root
+
+**Manual test:**
+1. Visit `https://mach2.cloud/en/` → should work
+2. Visit `https://mach2.cloud` → should auto-redirect to `/en/` or your browser language
+
