@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getLocale } from 'next-intl/server'
+import Mach2Logo from '@/components/Mach2Logo'
 
 export default async function Footer() {
   const locale = await getLocale()
@@ -13,8 +14,8 @@ export default async function Footer() {
       <div className="wrap">
         <div className="foot-inner">
           <Link href={localeHref('/')} className="foot-logo">
-            {/* brand: .Cloud suffix in electric-cyan */}
-            MaCh2<span className="text-electric-cyan">Cloud</span>
+            <Mach2Logo size={24} />
+            <span>MaCh2<span className="text-white">.Cloud</span></span>
           </Link>
 
           <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-grey-700">

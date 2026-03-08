@@ -16,8 +16,7 @@ export default function Nav() {
     <nav>
       <Link href={localeHref('/')} className="nav-logo">
         <Mach2Logo size={36} />
-        {/* brand: .Cloud suffix in electric-cyan */}
-        MaCh2<span className="text-electric-cyan">.Cloud</span>
+        <span>MaCh2<span className="text-white">.Cloud</span></span>
       </Link>
 
       <ul className="nav-links">

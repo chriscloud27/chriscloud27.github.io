@@ -667,7 +667,7 @@ nav {
 /* ── Footer ──────────────────────────────────────────────────────────────────── */
 footer { border-top: 1px solid rgba(255,255,255,.06); padding: 30px 0; }
 .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-.foot-logo { @apply font-mono text-[13px] text-electric-cyan font-medium; }
+.foot-logo { @apply font-mono text-[13px] text-electric-cyan font-medium flex items-center gap-2; }
 .foot-copy { @apply font-mono text-[11px] text-grey-700; }
 .foot-links { display: flex; gap: 18px; list-style: none; }
 .foot-links a {
