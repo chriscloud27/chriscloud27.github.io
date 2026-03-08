@@ -142,3 +142,82 @@ npm install
 npx husky install
 ```
 
+---
+
+## npm Version Mismatch Error
+
+### The Error
+```
+npm error `npm ci` can only install packages when your package.json and package-lock.json 
+or npm-shrinkwrap.json are in sync.
+```
+
+**Even though `npm ci --dry-run` works locally!**
+
+### Root Cause: Different npm Versions
+
+Your **local npm version** and **GitHub Actions npm version** generate lock files differently.
+
+#### Example Scenario:
+- **Local:** npm 11.11.0 → generates lock file in format v3+
+- **GitHub Actions:** npm 10.x → expects lock file in format v2/v3 (different interpretation)
+- **Result:** Lock file valid locally, rejected in CI
+
+### How to Verify
+
+**Check local version:**
+```bash
+node --version  # Should be >=20.0.0
+npm --version   # Should be >=11.11.0
+```
+
+**Check CI version:** Look at GitHub Actions logs in "Debug - Environment info" step
+
+### The Fix
+
+✅ **Version pinning is already configured:**
+
+1. **package.json** enforces minimum versions:
+```json
+{
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=11.11.0"
+  }
+}
+```
+
+2. **GitHub Actions** pins exact version in `.github/workflows/deploy.yml`:
+```yaml
+- name: Upgrade to npm 11.11.0
+  run: npm install -g npm@11.11.0
+```
+
+3. **Local development** warns if wrong version via `.npmrc`
+
+### If You Still Get the Error
+
+**Regenerate lock file with correct npm version:**
+```bash
+# Verify you have npm 11.11.0+
+npm --version
+
+# If not, upgrade first
+npm install -g npm@11.11.0
+
+# Regenerate lock file
+rm package-lock.json
+npm install
+
+# Commit and push
+git add package-lock.json
+git commit -m "Regenerate lock file with npm 11.11.0"
+git push
+```
+
+### Prevention
+
+✅ Always use npm 11.11.0+ for this project
+✅ CI automatically upgrades to matching version
+✅ Lock file generated with consistent npm version across all environments
+
