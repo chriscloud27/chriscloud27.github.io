@@ -105,6 +105,12 @@
     "cta": "Ponerse en contacto",
     "ctaSecondary": "Ver mi trabajo"
   },
+  "cookieConsent": {
+    "label": "Consentimiento de cookies",
+    "message": "Usamos cookies para analizar el tráfico del sitio y mejorar tu experiencia. Puedes aceptar o rechazar las cookies no esenciales.",
+    "accept": "Aceptar todo",
+    "decline": "Rechazar"
+  },
   "notFound": {
     "label": "404 — No encontrado",
     "h1Part1": "Esta página",

@@ -10,6 +10,55 @@ import RevealObserver from '@/components/RevealObserver'
 import Header from '@/components/layout/Header'
 import Connect from '@/components/sections/Connect'
 import Footer from '@/components/layout/Footer'
+import CookieConsent from '@/components/CookieConsent'
+
+const GTM_ID = 'GTM-M7VZPNZG'
+
+// Consent Mode V2 defaults — all denied except security_storage
+const consentInitScript = `
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'analytics_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'functionality_storage': 'denied',
+  'personalization_storage': 'denied',
+  'security_storage': 'granted',
+  'wait_for_update': 500
+});
+// Listen for consent updates from the CookieConsent component
+document.addEventListener('fairup_consent_update', function(e) {
+  const detail = e.detail || {};
+  dataLayer.push({
+    event: 'update_consent',
+    analytics_storage: detail.analytics_storage,
+    ad_storage: detail.ad_storage,
+    ad_user_data: detail.ad_user_data,
+    ad_personalization: detail.ad_personalization,
+    functionality_storage: detail.functionality_storage,
+    personalization_storage: detail.personalization_storage
+  });
+  gtag('consent', 'update', {
+    'analytics_storage': detail.analytics_storage,
+    'ad_storage': detail.ad_storage,
+    'ad_user_data': detail.ad_user_data,
+    'ad_personalization': detail.ad_personalization,
+    'functionality_storage': detail.functionality_storage,
+    'personalization_storage': detail.personalization_storage
+  });
+});
+`.trim()
+
+// GTM loader snippet
+const gtmScript = `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');
+`.trim()
 
 export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
@@ -106,6 +155,10 @@ export default async function LocaleLayout({
     <html lang={locale}>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <head>
+        {/* Google Consent Mode V2 defaults — must run before GTM */}
+        <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
+        {/* Google Tag Manager */}
+        <script dangerouslySetInnerHTML={{ __html: gtmScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* brand: Syne (display), Space Grotesk (body), JetBrains Mono (labels/code) */}
@@ -115,6 +168,15 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
@@ -130,6 +192,7 @@ export default async function LocaleLayout({
             <Connect />
             <Footer />
             <RevealObserver />
+            <CookieConsent />
           </Providers>
         </NextIntlClientProvider>
       </body>
