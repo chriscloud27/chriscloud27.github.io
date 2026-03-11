@@ -137,6 +137,10 @@
     "metaTitle": "Framework WAF++ — Siete Pilares para Arquitectura Cloud Soberana",
     "metaDescription": "WAF++ es un framework open-source para arquitectura cloud intencional y neutral ante proveedores. Siete pilares: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability y Sovereignty."
   },
+  "services": {
+    "metaTitle": "Servicios — Compromisos de Arquitectura Cloud Nativa con IA",
+    "metaDescription": "Cuatro compromisos de precisión — desde la claridad arquitectónica hasta el liderazgo continuo de la plataforma. Auditoría, Blueprint, Habilitación y Arquitecto Fraccionado para empresas SaaS Serie A–B."
+  },
   "notFound": {
     "label": "404 — No encontrado",
     "h1Part1": "Esta página",

@@ -71,6 +71,17 @@ export const WAF2P_KEYWORDS = [
   'fractional cloud architect',
 ]
 
+/** Services page — engagement-specific keywords */
+export const SERVICES_KEYWORDS = [
+  ...GLOBAL_KEYWORDS,
+  'architecture audit SaaS',
+  'cloud architecture blueprint',
+  'fractional architect engagement',
+  'cloud architecture consulting Series A',
+  'engineering enablement cloud',
+  'AI-native platform design',
+]
+
 /** Case study: enterprise Kubernetes platform */
 export const CASE_KUBERNETES_KEYWORDS = [
   'enterprise Kubernetes platform',

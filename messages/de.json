@@ -137,6 +137,10 @@
     "metaTitle": "WAF++ Framework — Sieben Säulen für souveräne Cloud-Architektur",
     "metaDescription": "WAF++ ist ein Open-Source-Framework für intentionale, herstellerneutrale Cloud-Architektur. Sieben Säulen: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability und Sovereignty."
   },
+  "services": {
+    "metaTitle": "Services — KI-native Cloud-Architektur-Engagements",
+    "metaDescription": "Vier präzise Engagements — von architektonischer Klarheit bis zur kontinuierlichen Plattformführung. Architektur-Audit, Blueprint, Enablement und Fractional Architect für Series A–B SaaS-Unternehmen."
+  },
   "notFound": {
     "label": "404 — Nicht gefunden",
     "h1Part1": "Diese Seite",

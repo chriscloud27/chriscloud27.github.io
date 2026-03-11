@@ -5,7 +5,7 @@ import { buildCanonical } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
-const STATIC_ROUTE_KEYS = ['/', '/about', '/blog', '/waf2p'] as const
+const STATIC_ROUTE_KEYS = ['/', '/about', '/blog', '/waf2p', '/services'] as const
 
 const CASE_SLUGS = [
   'case-01-capgemini-kubernetes',
@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: buildCanonical(localizedPath),
         lastModified: now,
         changeFrequency: routeKey === '/' ? 'weekly' : 'monthly',
-        priority: routeKey === '/' ? 1 : routeKey === '/blog' ? 0.8 : routeKey === '/waf2p' ? 0.9 : 0.7,
+        priority: routeKey === '/' ? 1 : routeKey === '/waf2p' ? 0.9 : routeKey === '/services' ? 0.85 : routeKey === '/blog' ? 0.8 : 0.7,
       })
     }
 

@@ -20,7 +20,7 @@ export default function Nav() {
       </Link>
 
       <ul className="nav-links">
-        <li><a href={localeHref('/#services')}>Services</a></li>
+        <li><Link href={localeHref('/services')}>Services</Link></li>
         <li><Link href={localeHref('/waf2p')}>WAF++</Link></li>
         <li><Link href={localeHref('/about')}>About</Link></li>
         <li><Link href={localeHref('/blog')}>Blog</Link></li>
