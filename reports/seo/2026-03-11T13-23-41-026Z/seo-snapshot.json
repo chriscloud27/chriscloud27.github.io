@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2026-03-11T13:23:41.032Z",
+  "results": [
+    {
+      "url": "https://mach2.cloud/en/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "description": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
+        "keywords": null,
+        "canonical": "https://mach2.cloud/en/",
+        "ogTitle": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/en/about/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "About — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs validated code, production-ready features, tests, and documentation in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to create platforms that are both technically robust and aligned with business objectives.",
+        "keywords": null,
+        "canonical": "https://mach2.cloud/en/about/",
+        "ogTitle": "About — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/about/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/about/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/about/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/about/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/en/blog/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Blog — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Practical writing on cloud architecture, AI-native platform design, and engineering leadership for growth-stage SaaS companies.",
+        "keywords": null,
+        "canonical": "https://mach2.cloud/en/blog/",
+        "ogTitle": "Blog — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Multi-tenant Azure Kubernetes platform design for 2,500+ developers with governance, self-service provisioning, and IaC.",
+        "keywords": null,
+        "canonical": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
+        "ogTitle": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Autonomous Driving Platform — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Cloud infrastructure powering autonomous vehicle development.",
+        "keywords": null,
+        "canonical": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
+        "ogTitle": "Autonomous Driving Platform — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing JSON-LD structured data (Article)"
+      ]
+    }
+  ]
+}

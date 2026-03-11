@@ -58,3 +58,29 @@ Expected behavior:
 5. Expand `Article` JSON-LD where possible (publisher URL, author URL, `sameAs`).
 6. Maintain a keyword-to-page map to avoid cannibalization between blog and service pages.
 7. Ensure all localized pages have reciprocal alternates and stable canonical patterns.
+
+## Monitoring & Automated Checks
+
+- Quick-check script: `scripts/check-seo.mjs` — a lightweight Node script that:
+	- fetches URLs (from sitemap or explicit list),
+	- validates presence of `title`, `meta[name="description"]`, `link[rel="canonical"]`, `meta[name="keywords"]`, Open Graph/Twitter tags and JSON-LD,
+	- writes a timestamped snapshot and machine report under `reports/seo/<ISO-timestamp>/`,
+	- can compare against an existing baseline `reports/seo/baseline/seo-baseline.json` to surface applied changes.
+
+- Run locally (Node 18+):
+	```bash
+	node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
+	node scripts/check-seo.mjs --urls=https://mach2.cloud/,https://mach2.cloud/blog --baseline=reports/seo/baseline/seo-baseline.json
+	node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --keywords-file=lib/keywords.ts
+	```
+
+- How to accept a snapshot as baseline:
+	```bash
+	cp reports/seo/<timestamp>/seo-snapshot.json reports/seo/baseline/seo-baseline.json
+	```
+
+- CI recommendation: run `node scripts/check-seo.mjs` on PRs or nightly and upload the `reports/seo/<timestamp>/` folder as the artifact. For simpler automation, copy the latest run to `reports/seo/latest/` or maintain `reports/seo/baseline/` for the persistent baseline file.
+
+- Interpreting the report: the human-readable output highlights `OK / WARN / ERROR` per URL, lists missing metadata, and shows diffs vs the baseline. The `seo-report.json` contains a machine-friendly summary useful for dashboards and alerts.
+
+- Migration note: legacy root SEO JSON artifacts were moved to `reports/seo/migrated-root/`; new generated outputs should only be written under `reports/seo/`.

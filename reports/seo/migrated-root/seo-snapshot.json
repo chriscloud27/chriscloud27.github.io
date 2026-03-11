@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-03-11T12:49:51.089Z",
+  "results": [
+    {
+      "url": "https://mach2.cloud/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Redirecting...",
+        "description": null,
+        "keywords": null,
+        "canonical": null,
+        "ogTitle": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "alternates": [],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing meta description",
+        "Missing canonical link",
+        "Missing og:title",
+        "Missing twitter:card",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/blog",
+      "httpOk": false,
+      "httpStatus": 404,
+      "meta": {
+        "title": null,
+        "description": null,
+        "keywords": null,
+        "canonical": null,
+        "ogTitle": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "alternates": [],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing <title>",
+        "Missing meta description",
+        "Missing canonical link",
+        "Missing og:title",
+        "Missing twitter:card",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    }
+  ]
+}

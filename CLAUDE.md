@@ -39,6 +39,27 @@
 - Tailwind CSS preferred
 - No external UI libraries unless necessary
 
+## Site Content & Architecture
+
+**Reference:** `docs/SITE-CONTENT-OUTLINE.md`
+
+This document maps the site structure, routes, content organization, and update workflows:
+- **Multi-locale routing:** `app/[locale]/` with i18n via `next-intl`
+- **Content sources:** `messages/*.json` (i18n), Notion API (blog), hardcoded (cases, waf2p)
+- **Homepage sections:** Modular components in `components/sections/`
+- **Navigation:** Multi-level routes (home, about, blog, cases, waf2p)
+- **Update workflow:** How to edit messages, blog posts, case studies, and validate changes
+
+When modifying site structure, routes, or content organization, consult this document first.
+
+## SEO Workflow (Repository)
+- Canonical SEO runbook: `reports/seo/SEO-SUMMARY.md`
+- SEO checker script: `scripts/check-seo.mjs`
+- Generated reports location: `reports/seo/<ISO-timestamp>/`
+- Baseline location: `reports/seo/baseline/seo-baseline.json`
+- Rule: do not create new root-level SEO artifacts (`seo-snapshot.json`, `seo-report.json`, `seo-baseline.json`)
+- Rule: if SEO paths or conventions change, update both `reports/seo/SEO-SUMMARY.md` and `README.md`
+
 ## Internationalization (next-intl)
 - All user-facing text lives in `messages/en.json` (and other locale files)
 - Rich text tags are configured globally in `i18n/request.ts` via `defaultTranslationValues`

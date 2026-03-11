@@ -137,7 +137,7 @@ Content keys structured by component/section:
 
 ## 🔍 SEO & Metadata
 
-**Canonical SEO docs:** See [README.md § SEO & Content](README.md#-seo--content)
+**Canonical SEO docs:** See [README.md § SEO & Content](../README.md#-seo--content)
 
 **Key files:**
 - `lib/keywords.ts` — Centralized keyword sets (GLOBAL, BLOG, etc.)
