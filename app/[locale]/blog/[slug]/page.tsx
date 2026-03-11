@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPost, getBlogSlugs } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
+import BlogImageLightbox from '@/components/blog/BlogImageLightbox'
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugs()
@@ -52,13 +53,6 @@ export default async function BlogPostPage({
             {t('backToBlog')}
           </Link>
 
-          {post.coverImage && (
-            <div className="blog-post-cover">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={post.coverImage} alt={post.title} loading="eager" />
-            </div>
-          )}
-
           {/* brand: date in mono label style */}
           <span className="font-mono text-[11px] text-electric-cyan tracking-[0.08em] block mb-3">
             {new Date(post.date).toLocaleDateString('en-US', {
@@ -78,10 +72,10 @@ export default async function BlogPostPage({
             </div>
           )}
 
-          {/* brand: .blog-post-content uses Tailwind tokens via @apply in globals.css */}
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: post.blocks }}
+          <BlogImageLightbox
+            contentHtml={post.blocks}
+            coverImage={post.coverImage}
+            coverAlt={post.title}
           />
         </div>
       </article>
