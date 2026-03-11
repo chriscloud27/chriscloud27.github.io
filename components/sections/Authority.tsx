@@ -71,12 +71,11 @@ const ACHIEVEMENTS = [
   },
   {
     icon: '📐',
-    titleKey: 'WAF2p — Open-Source Framework',
+    titleKey: 'WAF++ — Open Framework Contributor',
     desc: (
       <>
-        Creator of WAF2p — an open-source extension of the Well-Architected Framework for{' '}
-        <strong>AI-native, cloud-agnostic platform design</strong>. Actively contributed and
-        evolved.
+        WAF++ participant and contributor — applying the open-source seven-pillar framework for{' '}
+        <strong>sovereign, vendor-neutral cloud architecture</strong> across every engagement.
       </>
     ),
   },

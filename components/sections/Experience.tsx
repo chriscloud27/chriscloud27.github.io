@@ -21,7 +21,7 @@ const TIMELINE: TimelineEntry[] = [
     role: 'Principal AI-Native Cloud Architect',
     description:
       'Fractional architecture leadership for Growth SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, cost-effective platform foundations that give engineering teams clarity, speed, and cost predictability without the overhead of a full-time Principal hire.',
-    tags: ['AI-Native Architecture', 'Cloud-Agnostic', 'Backend-as-a-Service', 'IaC', 'WAF2p Framework', 'Fractional Leadership'],
+    tags: ['AI-Native Architecture', 'Cloud-Agnostic', 'Backend-as-a-Service', 'IaC', 'WAF++ Framework', 'Fractional Leadership'],
     useMach2Logo: true,
   },
   {

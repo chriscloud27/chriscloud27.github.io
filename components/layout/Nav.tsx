@@ -21,7 +21,7 @@ export default function Nav() {
 
       <ul className="nav-links">
         <li><a href={localeHref('/#services')}>Services</a></li>
-        <li><a href={localeHref('/#how-it-works')}>How It Works</a></li>
+        <li><Link href={localeHref('/waf2p')}>WAF++</Link></li>
         <li><Link href={localeHref('/about')}>About</Link></li>
         <li><Link href={localeHref('/blog')}>Blog</Link></li>
         <li><a href={localeHref('/#connect')}>Contact</a></li>

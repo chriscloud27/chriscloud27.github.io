@@ -81,6 +81,9 @@ export default function MobileNav() {
             <a href={localeHref('/#portfolio')} onClick={handleNavClick} className="mobile-menu-link">
               {t('portfolio')}
             </a>
+            <Link href={localeHref('/waf2p')} onClick={handleNavClick} className="mobile-menu-link">
+              {t('waf2p')}
+            </Link>
             <Link href={localeHref('/about')} onClick={handleNavClick} className="mobile-menu-link">
               {t('about')}
             </Link>

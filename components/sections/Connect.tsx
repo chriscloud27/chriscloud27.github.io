@@ -21,9 +21,9 @@ export default async function Connect() {
               <em>outlast your roadmap.</em>
             </h2>
             <p>
-              If you&apos;re a CTO or engineering leader at a SaaS company scaling from 10 to
-              100 engineers — and architecture is starting to create friction —{' '}
-              <strong>let&apos;s talk.</strong> A 30-minute call costs nothing and usually
+              Let&apos;s talk if you&apos;re a CTO or engineering leader at a SaaS company scaling from 10 to
+              100 engineers and architecture is starting to create friction {' '}
+              <strong></strong> A 30-minute call costs nothing and usually
               surfaces the one thing worth fixing first.
             </p>
           </div>

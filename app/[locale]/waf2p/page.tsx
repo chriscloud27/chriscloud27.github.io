@@ -55,6 +55,7 @@ const PILLARS = [
   { key: 'pillar4', number: '04' },
   { key: 'pillar5', number: '05' },
   { key: 'pillar6', number: '06' },
+  { key: 'pillar7', number: '07' },
 ] as const
 
 export default async function Waf2pPage({
@@ -65,7 +66,6 @@ export default async function Waf2pPage({
   const { locale } = await params
   setRequestLocale(locale)
   const t = await getTranslations({ locale, namespace: 'waf2p' })
-  const settings = getGlobalSettings(locale)
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -80,7 +80,7 @@ export default async function Waf2pPage({
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'WAF2p Framework',
+        name: 'WAF++',
         item: buildCanonical(`/${locale}/waf2p`),
       },
     ],
@@ -89,19 +89,15 @@ export default async function Waf2pPage({
   const softwareSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name: 'WAF2p',
+    name: 'WAF++',
     description: t('metaDescription'),
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Cloud',
-    author: {
-      '@type': 'Person',
-      name: 'Christian Weber',
-      url: buildCanonical(`/${locale}/about`),
-    },
+    url: 'https://waf2p.dev',
     publisher: {
       '@type': 'Organization',
-      name: settings.siteName,
-      url: settings.siteUrl,
+      name: 'WAF++ Community',
+      url: 'https://waf2p.dev',
     },
   }
 
@@ -163,12 +159,12 @@ export default async function Waf2pPage({
             {PILLARS.map(({ key, number }) => (
               <div
                 key={key}
-                className="reveal on bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7"
+                className="group reveal on bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7 hover:border-electric-cyan/30 hover:bg-electric-cyan/[0.04] transition-all duration-200"
               >
                 <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan block mb-3">
                   {number}
                 </span>
-                <h3 className="text-[1.05rem] font-display font-bold mb-2">
+                <h3 className="text-[1.05rem] font-display font-bold mb-2 group-hover:text-electric-cyan transition-colors duration-200">
                   {t(`${key}` as Parameters<typeof t>[0])}
                 </h3>
                 <p className="font-body text-[13px] font-light leading-[1.72] text-grey-mid">
@@ -176,6 +172,64 @@ export default async function Waf2pPage({
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Project links */}
+      <section className="py-16 border-t border-white/[0.06]">
+        <div className="wrap">
+          <div className="grid gap-[3px] sm:grid-cols-2">
+            <a
+              href="https://waf2p.dev/saeulen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7 hover:border-electric-cyan/30 hover:bg-electric-cyan/[0.04] transition-all duration-200"
+            >
+              <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan/60 block mb-3 uppercase">
+                Framework
+              </span>
+              <span className="block text-[1rem] font-display font-bold text-white mb-1 group-hover:text-electric-cyan transition-colors duration-200">
+                Explore WAF++ Framework
+              </span>
+              <span className="font-mono text-[12px] text-grey-mid">
+                waf2p.dev/saeulen
+              </span>
+              <svg
+                className="absolute bottom-7 right-7 w-4 h-4 text-electric-cyan/40 group-hover:text-electric-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
+            <a
+              href="https://waf2p.dev/cloud/2025/11/25/waf-ein-neuer-ansatz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7 hover:border-electric-cyan/30 hover:bg-electric-cyan/[0.04] transition-all duration-200"
+            >
+              <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan/60 block mb-3 uppercase">
+                Blog Article
+              </span>
+              <span className="block text-[1rem] font-display font-bold text-white mb-1 group-hover:text-electric-cyan transition-colors duration-200">
+                WAF++ — A New Approach
+              </span>
+              <span className="font-mono text-[12px] text-grey-mid">
+                waf2p.dev/cloud
+              </span>
+              <svg
+                className="absolute bottom-7 right-7 w-4 h-4 text-electric-cyan/40 group-hover:text-electric-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
