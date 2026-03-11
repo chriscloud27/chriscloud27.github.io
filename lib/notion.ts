@@ -80,7 +80,8 @@ function getUrlHash(value: string): string {
 
 function getAssetExtension(url: string): string {
   try {
-    const pathname = new URL(url).pathname
+    const cleanedUrl = url.split('?')[0] ?? ''
+    const pathname = cleanedUrl.split('#')[0] ?? ''
     const extension = path.extname(pathname).toLowerCase()
     return extension && extension.length <= 5 ? extension : '.img'
   } catch {

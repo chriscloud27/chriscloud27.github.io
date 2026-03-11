@@ -14,50 +14,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Setup Environment
       - uses: actions/checkout@v4
 
-      - name: Debug - Show package file hashes
+      - name: Setup Environment - Configure Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Setup Environment
         run: |
           echo "=== package.json SHA256 ==="
           sha256sum package.json
           echo "=== package-lock.json SHA256 ==="
           sha256sum package-lock.json
-          
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
 
-      - name: Upgrade to npm 11.11.0
-        run: npm install -g npm@11.11.0
+          npm install -g npm@11.11.0
 
-      - name: Debug - Environment info
-        run: |
           echo "=== Environment Info ==="
           node --version
           npm --version
           echo "=== npm config ==="
           npm config get lockfileVersion
-          
-      - name: Clear npm cache
-        run: npm cache clean --force
 
-      - name: Debug - Verify lock file sync (dry-run)
-        run: |
+          npm cache clean --force
+
           echo "=== Testing lock file sync with dry-run ==="
           npm ci --dry-run || echo "❌ SYNC CHECK FAILED"
-          
-      - name: Install dependencies
-        run: npm ci
 
-      - name: Build static export
-        run: npm run export
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_BLOG_DATABASE_ID: ${{ secrets.NOTION_BLOG_DATABASE_ID }}
+          npm ci
 
-      - name: Create root redirect for locale detection
+      # Build
+      - name: Build
         run: |
+          npm run export
+
           cat > ./out/index.html << 'EOF'
           <!DOCTYPE html>
           <html>
@@ -69,10 +61,10 @@ jobs:
               const browserLang = navigator.language.split('-')[0];
               const supportedLocales = ['en', 'de', 'es'];
               const defaultLocale = 'en';
-              
+
               // Use browser language if supported, otherwise default to English
               const locale = supportedLocales.includes(browserLang) ? browserLang : defaultLocale;
-              
+
               // Redirect to locale-specific page
               window.location.replace('/' + locale + '/');
             </script>
@@ -86,9 +78,13 @@ jobs:
           </html>
           EOF
 
-      - run: touch ./out/.nojekyll
+          touch ./out/.nojekyll
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_BLOG_DATABASE_ID: ${{ secrets.NOTION_BLOG_DATABASE_ID }}
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Build - Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
@@ -99,5 +95,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
+      # Deploy
+      - name: Deploy
+        run: |
+          echo "Deploying Pages artifact to GitHub Pages"
+
+      - name: Deploy - Publish to GitHub Pages
+        uses: actions/deploy-pages@v4
         id: deployment

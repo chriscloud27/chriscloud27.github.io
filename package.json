@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS=--no-deprecation next dev",
     "sync:notion-assets": "node scripts/sync-notion-assets.mjs",
-    "build": "npm run sync:notion-assets && next build",
+    "build": "npm run sync:notion-assets && NODE_OPTIONS=--no-deprecation next build",
     "export": "npm run build",
     "serve": "serve out",
     "start": "next start",
