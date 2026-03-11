@@ -1,0 +1,197 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { getGlobalSettings } from '@/lib/settings'
+import { WAF2P_KEYWORDS } from '@/lib/keywords'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'waf2p' })
+  const settings = getGlobalSettings(locale)
+  const title = t('metaTitle')
+  const description = t('metaDescription')
+  const i18n = buildCanonicalAndAlternates('/waf2p', locale)
+  const ogImage = settings.defaultSeo?.shareImage
+
+  return {
+    title,
+    description,
+    keywords: WAF2P_KEYWORDS,
+    openGraph: {
+      type: 'website',
+      url: buildCanonical(`/${locale}/waf2p`),
+      title,
+      description,
+      images: ogImage
+        ? [
+            {
+              url: ogImage.url,
+              width: ogImage.width,
+              height: ogImage.height,
+              alt: ogImage.alternativeText ?? settings.siteName,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ogImage ? [ogImage.url] : undefined,
+    },
+    ...i18n,
+  }
+}
+
+const PILLARS = [
+  { key: 'pillar1', number: '01' },
+  { key: 'pillar2', number: '02' },
+  { key: 'pillar3', number: '03' },
+  { key: 'pillar4', number: '04' },
+  { key: 'pillar5', number: '05' },
+  { key: 'pillar6', number: '06' },
+] as const
+
+export default async function Waf2pPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const t = await getTranslations({ locale, namespace: 'waf2p' })
+  const settings = getGlobalSettings(locale)
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: buildCanonical(`/${locale}`),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'WAF2p Framework',
+        item: buildCanonical(`/${locale}/waf2p`),
+      },
+    ],
+  }
+
+  const softwareSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'WAF2p',
+    description: t('metaDescription'),
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Cloud',
+    author: {
+      '@type': 'Person',
+      name: 'Christian Weber',
+      url: buildCanonical(`/${locale}/about`),
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: settings.siteName,
+      url: settings.siteUrl,
+    },
+  }
+
+  return (
+    <main className="pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+
+      {/* Hero */}
+      <section className="py-20">
+        <div className="wrap">
+          <div className="eyebrow">{t('eyebrow')}</div>
+          <h1>
+            {t('h1Part1')}
+            <br />
+            <em>{t('h1Emphasis')}</em>
+          </h1>
+          <p className="hero-sub mt-6">{t.rich('sub')}</p>
+        </div>
+      </section>
+
+      {/* What + Why */}
+      <section className="py-16 border-t border-white/[0.06]">
+        <div className="wrap">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="text-[1.4rem] font-display font-bold mb-4">{t('what')}</h2>
+              <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid">
+                {t('whatDesc')}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-[1.4rem] font-display font-bold mb-4">{t('why')}</h2>
+              <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid">
+                {t('whyDesc')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Six Pillars */}
+      <section className="py-16 border-t border-white/[0.06]">
+        <div className="wrap">
+          <h2 className="text-[1.6rem] font-display font-bold mb-10">{t('pillars')}</h2>
+          <div className="grid gap-[3px] sm:grid-cols-2 lg:grid-cols-3">
+            {PILLARS.map(({ key, number }) => (
+              <div
+                key={key}
+                className="reveal on bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7"
+              >
+                <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan block mb-3">
+                  {number}
+                </span>
+                <h3 className="text-[1.05rem] font-display font-bold mb-2">
+                  {t(`${key}` as Parameters<typeof t>[0])}
+                </h3>
+                <p className="font-body text-[13px] font-light leading-[1.72] text-grey-mid">
+                  {t(`${key}Desc` as Parameters<typeof t>[0])}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 border-t border-white/[0.06]">
+        <div className="wrap text-center">
+          <div className="flex gap-3 justify-center flex-wrap">
+            <a
+              href="https://calendly.com/chriscloud-weber/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-p"
+            >
+              {t('cta')}
+            </a>
+            <Link href={`/${locale}/#portfolio`} className="btn btn-g">
+              {t('ctaSecondary')}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
