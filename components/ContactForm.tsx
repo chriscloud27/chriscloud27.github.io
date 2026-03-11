@@ -45,6 +45,10 @@ export default function ContactForm() {
     if (data.company) formData.append('Company', data.company)
     formData.append('Message', data.message)
 
+    // TEST
+    // const response = await fetch('https://flow.mach2.cloud/webhook-test/contact-form', {
+
+    // PROD
     const response = await fetch('https://flow.mach2.cloud/webhook/contact-form', {
       method: 'POST',
       body: formData,

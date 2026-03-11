@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { readFile } from 'fs/promises'
 import { join } from 'path'
+import { setRequestLocale } from 'next-intl/server'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { getGlobalSettings } from '@/lib/settings'
+import { CASE_KEYWORDS } from '@/lib/keywords'
 
 const CASE_SLUGS = [
   'case-01-capgemini-kubernetes',
@@ -36,14 +40,50 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const meta = CASE_METADATA[slug as (typeof CASE_SLUGS)[number]]
-  if (!meta) return { title: 'Case not found — MaCh2.cloud' }
+  const settings = getGlobalSettings(locale)
+
+  if (!meta) {
+    return {
+      title: `Case not found — ${settings.siteName}`,
+      ...buildCanonicalAndAlternates('/cases', locale),
+    }
+  }
+
+  const canonicalPath = `/${locale}/cases/${slug}`
+  const i18n = buildCanonicalAndAlternates(`/cases/${slug}`, locale)
+  const ogImage = settings.defaultSeo?.shareImage
+
   return {
     title: meta.title,
     description: meta.description,
+    keywords: CASE_KEYWORDS[slug] ?? [],
+    openGraph: {
+      type: 'article',
+      url: buildCanonical(canonicalPath),
+      title: meta.title,
+      description: meta.description,
+      images: ogImage
+        ? [
+            {
+              url: ogImage.url,
+              width: ogImage.width,
+              height: ogImage.height,
+              alt: ogImage.alternativeText ?? settings.siteName,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: meta.title,
+      description: meta.description,
+      images: ogImage ? [ogImage.url] : undefined,
+    },
+    ...i18n,
   }
 }
 
@@ -94,6 +134,7 @@ export default async function LocalizedCasePage({
   params: Promise<{ slug: string; locale: string }>
 }) {
   const { slug, locale } = await params
+  setRequestLocale(locale)
 
   const caseData = await getCaseContent(slug, locale)
   if (!caseData) {

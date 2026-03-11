@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getTranslations, getLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPost, getBlogSlugs } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
-
-export const revalidate = 3600 // ISR: revalidate every hour
+import BlogImageLightbox from '@/components/blog/BlogImageLightbox'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { getGlobalSettings } from '@/lib/settings'
+import { GLOBAL_KEYWORDS } from '@/lib/keywords'
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugs()
@@ -15,83 +17,175 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
+  const { slug, locale } = await params
   const post = await getBlogPost(slug)
-  if (!post) return { title: 'Post not found — MaCh2.cloud' }
+  const settings = getGlobalSettings(locale)
+
+  if (!post) {
+    return {
+      title: `Post not found — ${settings.siteName}`,
+      ...buildCanonicalAndAlternates('/blog', locale),
+    }
+  }
+
+  const canonicalPath = `/${locale}/blog/${post.slug}`
+  const canonicalUrl = buildCanonical(canonicalPath)
+  const imageUrl = post.coverImage ?? settings.defaultSeo?.shareImage?.url
+  const publishedTime = new Date(post.date).toISOString()
+  const i18n = buildCanonicalAndAlternates(`/blog/${post.slug}`, locale)
+
   return {
-    title: `${post.title} — MaCh2.cloud`,
+    title: `${post.title} — ${settings.siteName}`,
     description: post.excerpt,
+    keywords: [...new Set([...post.tags, ...GLOBAL_KEYWORDS])],
+    openGraph: {
+      type: 'article',
+      url: canonicalUrl,
+      title: post.title,
+      description: post.excerpt,
+      publishedTime,
+      tags: post.tags,
+      images: imageUrl
+        ? [
+            {
+              url: imageUrl,
+              width: settings.defaultSeo?.shareImage?.width,
+              height: settings.defaultSeo?.shareImage?.height,
+              alt: post.title,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: imageUrl ? [imageUrl] : undefined,
+    },
+    ...i18n,
   }
 }
 
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params
-  const [post, t, locale] = await Promise.all([
+  const { slug, locale } = await params
+  setRequestLocale(locale)
+
+  const [post, t] = await Promise.all([
     getBlogPost(slug),
     getTranslations('blog'),
-    getLocale(),
   ])
 
   if (!post) notFound()
 
+  const settings = getGlobalSettings(locale)
+  const canonicalUrl = buildCanonical(`/${locale}/blog/${post.slug}`)
+  const imageUrl = post.coverImage
+    ? buildCanonical(post.coverImage)
+    : settings.defaultSeo?.shareImage
+      ? buildCanonical(settings.defaultSeo.shareImage.url)
+      : undefined
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    description: post.excerpt,
+    mainEntityOfPage: canonicalUrl,
+    image: imageUrl ? [imageUrl] : undefined,
+    author: {
+      '@type': 'Person',
+      name: 'Christian Weber',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: settings.siteName,
+      logo: {
+        '@type': 'ImageObject',
+        url: buildCanonical('/img/mach2-logo-light.svg'),
+      },
+    },
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: buildCanonical(`/${locale}`),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: buildCanonical(`/${locale}/blog`),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: post.title,
+        item: canonicalUrl,
+      },
+    ],
+  }
+
   return (
-    <main style={{ paddingTop: 'var(--nav)' }}>
-        <article style={{ padding: '80px 0 120px', minHeight: '80vh' }}>
-          <div className="wrap" style={{ maxWidth: '760px' }}>
-            <Link
-              href={`/${locale}/blog`}
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '11px',
-                letterSpacing: '.08em',
-                color: 'var(--cyan)',
-                textDecoration: 'none',
-                display: 'block',
-                marginBottom: '32px',
-              }}
-            >
-              {t('backToBlog')}
-            </Link>
+    <main className="pt-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <article className="py-20 min-h-[80vh]">
+        {/* brand: constrain article prose to 760px — narrower than max-w-text for readability */}
+        <div className="wrap" style={{ maxWidth: '760px' }}>
+          {/* brand: back-link as mono label */}
+          <Link
+            href={`/${locale}/blog`}
+            className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan no-underline block mb-8"
+          >
+            {t('backToBlog')}
+          </Link>
 
-            <span
-              style={{
-                fontFamily: 'var(--mono)',
-                fontSize: '11px',
-                color: 'var(--cyan)',
-                letterSpacing: '.08em',
-                display: 'block',
-                marginBottom: '12px',
-              }}
-            >
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </span>
+          {/* brand: date in mono label style */}
+          <span className="font-mono text-[11px] text-electric-cyan tracking-[0.08em] block mb-3">
+            {new Date(post.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </span>
 
-            <h1 style={{ marginBottom: '20px' }}>{post.title}</h1>
+          <h1 className="mb-5">{post.title}</h1>
 
-            {post.tags.length > 0 && (
-              <div className="tags" style={{ marginBottom: '40px' }}>
-                {post.tags.map((tag) => (
-                  <Badge key={tag}>{tag}</Badge>
-                ))}
-              </div>
-            )}
+          {post.tags.length > 0 && (
+            <div className="tags mb-10">
+              {post.tags.map((tag) => (
+                <Badge key={tag}>{tag}</Badge>
+              ))}
+            </div>
+          )}
 
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: post.blocks }}
-            />
-          </div>
-        </article>
-      </main>
+          <BlogImageLightbox
+            contentHtml={post.blocks}
+            coverImage={post.coverImage}
+            coverAlt={post.title}
+          />
+        </div>
+      </article>
+    </main>
   )
 }

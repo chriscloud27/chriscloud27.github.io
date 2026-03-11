@@ -1,117 +1,123 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getTranslations, getLocale } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPosts } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { getGlobalSettings } from '@/lib/settings'
+import { BLOG_KEYWORDS } from '@/lib/keywords'
 
-export const revalidate = 3600 // ISR: revalidate every hour
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'blog' })
+  const settings = getGlobalSettings(locale)
+  const title = `${t('eyebrow')} — ${settings.siteName}`
+  const description = t('sub')
+  const i18n = buildCanonicalAndAlternates('/blog', locale)
+  const ogImage = settings.defaultSeo?.shareImage
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations('blog')
-  return { title: `${t('eyebrow')} — MaCh2.cloud` }
+  return {
+    title,
+    description,
+    keywords: BLOG_KEYWORDS,
+    openGraph: {
+      type: 'website',
+      url: buildCanonical(`/${locale}/blog`),
+      title,
+      description,
+      images: ogImage
+        ? [
+            {
+              url: ogImage.url,
+              width: ogImage.width,
+              height: ogImage.height,
+              alt: ogImage.alternativeText ?? settings.siteName,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ogImage ? [ogImage.url] : undefined,
+    },
+    ...i18n,
+  }
 }
 
-export default async function BlogPage() {
+export default async function BlogPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('blog')
-  const locale = await getLocale()
   const posts = await getBlogPosts()
 
   return (
-    <main style={{ paddingTop: 'var(--nav)' }}>
-        <section style={{ padding: '80px 0 120px', minHeight: '80vh' }}>
-          <div className="wrap">
-            <div className="eyebrow">{t('eyebrow')}</div>
-            <h1>
-              Architecture
-              <br />
-              <em>Thinking</em>
-            </h1>
-            <p className="hero-sub" style={{ marginTop: '24px' }}>
-              {t('sub')}
-            </p>
+    <main className="pt-16">
+      <section className="py-20 min-h-[80vh]">
+        <div className="wrap">
+          <div className="eyebrow">{t('eyebrow')}</div>
+          <h1>
+            Architectural
+            <br />
+            <em>Thinking</em>
+          </h1>
+          <p className="hero-sub mt-6">{t('sub')}</p>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', marginTop: '52px' }}>
-              {posts.map((post) => (
-                <Link
-                  key={post.slug}
-                  href={`/${locale}/blog/${post.slug}`}
-                  className="case reveal"
-                >
-                  <div style={{ padding: '28px' }}>
-                    <span
-                      style={{
-                        fontFamily: 'var(--mono)',
-                        fontSize: '11px',
-                        color: 'var(--cyan)',
-                        letterSpacing: '.08em',
-                      }}
-                    >
-                      {new Date(post.date).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </span>
-                    <h3 style={{ marginTop: '10px', marginBottom: '12px' }}>{post.title}</h3>
-                    <p
-                      style={{
-                        fontSize: '14px',
-                        fontWeight: 300,
-                        lineHeight: 1.72,
-                        color: 'var(--g500)',
-                        marginBottom: '16px',
-                      }}
-                    >
-                      {post.excerpt}
-                    </p>
-                    <div className="tags">
-                      {post.tags.map((tag) => (
-                        <Badge key={tag}>{tag}</Badge>
-                      ))}
-                    </div>
-                    <div style={{ marginTop: '16px' }}>
-                      <span className="btn-more">{t('readMore')}</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {posts.length === 0 && (
-              <div
-                className="reveal on"
-                style={{
-                  marginTop: '52px',
-                  background: 'rgba(255,255,255,.02)',
-                  border: '1px solid rgba(255,255,255,.08)',
-                  borderTop: '3px solid var(--cyan)',
-                  borderRadius: '8px',
-                  padding: '36px 28px',
-                  textAlign: 'center',
-                  maxWidth: '760px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                }}
+          <div className="flex flex-col gap-[3px] mt-[52px]">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/${locale}/blog/${post.slug}`}
+                className="case reveal on"
               >
-                <h3 style={{ marginBottom: '12px' }}>{t('emptyTitle')}</h3>
-                <p
-                  style={{
-                    fontSize: '14px',
-                    fontWeight: 300,
-                    lineHeight: 1.72,
-                    color: 'var(--g500)',
-                    marginBottom: '20px',
-                  }}
-                >
-                  {t('emptyDescription')}
-                </p>
-                <Link href={`/${locale}/#connect`} className="btn btn-p">
-                  {t('contactCta')}
-                </Link>
-              </div>
-            )}
+                <div className="p-7">
+                  {/* brand: mono date label — electric-cyan on dark card */}
+                  <span className="font-mono text-[11px] text-electric-cyan tracking-[0.08em]">
+                    {new Date(post.date).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </span>
+                  <h3 className="mt-[10px] mb-3">{post.title}</h3>
+                  <p className="font-body text-[14px] font-light leading-[1.72] text-grey-mid mb-4">
+                    {post.excerpt}
+                  </p>
+                  <div className="tags">
+                    {post.tags.map((tag) => (
+                      <Badge key={tag}>{tag}</Badge>
+                    ))}
+                  </div>
+                  <div className="mt-4">
+                    <span className="btn-more">{t('readMore')}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
-        </section>
-      </main>
+
+          {posts.length === 0 && (
+            <div className="reveal on mt-[52px] bg-electric-cyan/[0.02] border border-white/[0.08] border-t-[3px] border-t-electric-cyan rounded-card p-9 text-center max-w-[760px] mx-auto">
+              <h3 className="mb-3">{t('emptyTitle')}</h3>
+              <p className="font-body text-[14px] font-light leading-[1.72] text-grey-mid mb-5">
+                {t('emptyDescription')}
+              </p>
+              <Link href={`/${locale}/#connect`} className="btn btn-p">
+                {t('contactCta')}
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+    </main>
   )
 }

@@ -1,0 +1,328 @@
+{
+  "generatedAt": "2026-03-11T13:23:41.032Z",
+  "summary": {
+    "okCount": 0,
+    "warnCount": 5,
+    "errCount": 0
+  },
+  "diffs": {
+    "https://mach2.cloud/en/": {
+      "note": "NEW_URL",
+      "diff": {
+        "title": {
+          "before": null,
+          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+        },
+        "description": {
+          "before": null,
+          "after": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
+        },
+        "keywords": {
+          "before": null,
+          "after": null
+        },
+        "canonical": {
+          "before": null,
+          "after": "https://mach2.cloud/en/"
+        },
+        "ogTitle": {
+          "before": null,
+          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+        },
+        "ogImage": {
+          "before": null,
+          "after": "https://mach2.cloud/img/LinkedIn-banner.jpg"
+        },
+        "twitterCard": {
+          "before": null,
+          "after": "summary_large_image"
+        },
+        "alternates": {
+          "before": null,
+          "after": [
+            {
+              "hreflang": "en",
+              "href": "https://mach2.cloud/en/"
+            },
+            {
+              "hreflang": "de",
+              "href": "https://mach2.cloud/de/"
+            },
+            {
+              "hreflang": "es",
+              "href": "https://mach2.cloud/es/"
+            },
+            {
+              "hreflang": "x-default",
+              "href": "https://mach2.cloud/en/"
+            }
+          ]
+        },
+        "jsonLd": {
+          "before": null,
+          "after": null
+        }
+      }
+    },
+    "https://mach2.cloud/en/about/": {
+      "note": "NEW_URL",
+      "diff": {
+        "title": {
+          "before": null,
+          "after": "About — MaCh2.Cloud | MaCh2.Cloud"
+        },
+        "description": {
+          "before": null,
+          "after": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs validated code, production-ready features, tests, and documentation in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to create platforms that are both technically robust and aligned with business objectives."
+        },
+        "keywords": {
+          "before": null,
+          "after": null
+        },
+        "canonical": {
+          "before": null,
+          "after": "https://mach2.cloud/en/about/"
+        },
+        "ogTitle": {
+          "before": null,
+          "after": "About — MaCh2.Cloud"
+        },
+        "ogImage": {
+          "before": null,
+          "after": "https://mach2.cloud/img/LinkedIn-banner.jpg"
+        },
+        "twitterCard": {
+          "before": null,
+          "after": "summary_large_image"
+        },
+        "alternates": {
+          "before": null,
+          "after": [
+            {
+              "hreflang": "en",
+              "href": "https://mach2.cloud/en/about/"
+            },
+            {
+              "hreflang": "de",
+              "href": "https://mach2.cloud/de/about/"
+            },
+            {
+              "hreflang": "es",
+              "href": "https://mach2.cloud/es/about/"
+            },
+            {
+              "hreflang": "x-default",
+              "href": "https://mach2.cloud/en/about/"
+            }
+          ]
+        },
+        "jsonLd": {
+          "before": null,
+          "after": null
+        }
+      }
+    },
+    "https://mach2.cloud/en/blog/": {
+      "note": "NEW_URL",
+      "diff": {
+        "title": {
+          "before": null,
+          "after": "Blog — MaCh2.Cloud | MaCh2.Cloud"
+        },
+        "description": {
+          "before": null,
+          "after": "Practical writing on cloud architecture, AI-native platform design, and engineering leadership for growth-stage SaaS companies."
+        },
+        "keywords": {
+          "before": null,
+          "after": null
+        },
+        "canonical": {
+          "before": null,
+          "after": "https://mach2.cloud/en/blog/"
+        },
+        "ogTitle": {
+          "before": null,
+          "after": "Blog — MaCh2.Cloud"
+        },
+        "ogImage": {
+          "before": null,
+          "after": "https://mach2.cloud/img/LinkedIn-banner.jpg"
+        },
+        "twitterCard": {
+          "before": null,
+          "after": "summary_large_image"
+        },
+        "alternates": {
+          "before": null,
+          "after": [
+            {
+              "hreflang": "en",
+              "href": "https://mach2.cloud/en/blog/"
+            },
+            {
+              "hreflang": "de",
+              "href": "https://mach2.cloud/de/blog/"
+            },
+            {
+              "hreflang": "es",
+              "href": "https://mach2.cloud/es/blog/"
+            },
+            {
+              "hreflang": "x-default",
+              "href": "https://mach2.cloud/en/blog/"
+            }
+          ]
+        },
+        "jsonLd": {
+          "before": null,
+          "after": null
+        }
+      }
+    },
+    "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/": {
+      "note": "NEW_URL",
+      "diff": {
+        "title": {
+          "before": null,
+          "after": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud | MaCh2.Cloud"
+        },
+        "description": {
+          "before": null,
+          "after": "Multi-tenant Azure Kubernetes platform design for 2,500+ developers with governance, self-service provisioning, and IaC."
+        },
+        "keywords": {
+          "before": null,
+          "after": null
+        },
+        "canonical": {
+          "before": null,
+          "after": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+        },
+        "ogTitle": {
+          "before": null,
+          "after": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud"
+        },
+        "ogImage": {
+          "before": null,
+          "after": "https://mach2.cloud/img/LinkedIn-banner.jpg"
+        },
+        "twitterCard": {
+          "before": null,
+          "after": "summary_large_image"
+        },
+        "alternates": {
+          "before": null,
+          "after": [
+            {
+              "hreflang": "en",
+              "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+            },
+            {
+              "hreflang": "de",
+              "href": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/"
+            },
+            {
+              "hreflang": "es",
+              "href": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/"
+            },
+            {
+              "hreflang": "x-default",
+              "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+            }
+          ]
+        },
+        "jsonLd": {
+          "before": null,
+          "after": null
+        }
+      }
+    },
+    "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/": {
+      "note": "NEW_URL",
+      "diff": {
+        "title": {
+          "before": null,
+          "after": "Autonomous Driving Platform — MaCh2.cloud | MaCh2.Cloud"
+        },
+        "description": {
+          "before": null,
+          "after": "Cloud infrastructure powering autonomous vehicle development."
+        },
+        "keywords": {
+          "before": null,
+          "after": null
+        },
+        "canonical": {
+          "before": null,
+          "after": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+        },
+        "ogTitle": {
+          "before": null,
+          "after": "Autonomous Driving Platform — MaCh2.cloud"
+        },
+        "ogImage": {
+          "before": null,
+          "after": "https://mach2.cloud/img/LinkedIn-banner.jpg"
+        },
+        "twitterCard": {
+          "before": null,
+          "after": "summary_large_image"
+        },
+        "alternates": {
+          "before": null,
+          "after": [
+            {
+              "hreflang": "en",
+              "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+            },
+            {
+              "hreflang": "de",
+              "href": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/"
+            },
+            {
+              "hreflang": "es",
+              "href": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/"
+            },
+            {
+              "hreflang": "x-default",
+              "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+            }
+          ]
+        },
+        "jsonLd": {
+          "before": null,
+          "after": null
+        }
+      }
+    },
+    "https://mach2.cloud/": {
+      "note": "REMOVED",
+      "diff": {
+        "title": "Redirecting...",
+        "description": null,
+        "keywords": null,
+        "canonical": null,
+        "ogTitle": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "alternates": [],
+        "jsonLd": null
+      }
+    },
+    "https://mach2.cloud/blog": {
+      "note": "REMOVED",
+      "diff": {
+        "title": null,
+        "description": null,
+        "keywords": null,
+        "canonical": null,
+        "ogTitle": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "alternates": [],
+        "jsonLd": null
+      }
+    }
+  }
+}

@@ -2,18 +2,12 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { useTranslations, useLocale } from 'next-intl'
+import { useLocale } from 'next-intl'
 import * as Dialog from '@radix-ui/react-dialog'
-import { routing } from '@/i18n/routing'
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
-  const t = useTranslations('nav')
   const locale = useLocale()
-  const pathname = usePathname()
-
-  const pathnameWithoutLocale = pathname.replace(`/${locale}`, '') || '/'
 
   function localeHref(path: string) {
     return `/${locale}${path === '/' ? '' : path}`
@@ -38,7 +32,7 @@ export default function MobileNav() {
         <Dialog.Overlay className="mobile-menu-overlay" />
         <Dialog.Content className="mobile-menu-content" aria-label="Navigation menu">
           <Dialog.Title className="sr-only">Navigation Menu</Dialog.Title>
-          <Dialog.Description className="sr-only">Site navigation links and language switcher</Dialog.Description>
+          <Dialog.Description className="sr-only">Site navigation links</Dialog.Description>
 
           <Dialog.Close asChild>
             <button className="mobile-menu-close" aria-label="Close menu">
@@ -50,63 +44,32 @@ export default function MobileNav() {
           </Dialog.Close>
 
           <nav className="mobile-menu-nav">
-            <Link href={localeHref('/')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('home')}
-            </Link>
-            <a href={localeHref('/#experience')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('experience')}
+            <a href={localeHref('/#services')} onClick={handleNavClick} className="mobile-menu-link">
+              Services
             </a>
-            <div className="mobile-menu-section">
-              <span className="mobile-menu-label">{t('cases')}</span>
-              <Link href={localeHref('/cases/case-01-capgemini-kubernetes')} onClick={handleNavClick} className="mobile-menu-sublink">
-                {t('case01')}
-              </Link>
-              <Link href={localeHref('/cases/case-02-aws-autonomous-driving')} onClick={handleNavClick} className="mobile-menu-sublink">
-                {t('case02')}
-              </Link>
-              <Link href={localeHref('/cases/case-03-enterprise-saas-optimization')} onClick={handleNavClick} className="mobile-menu-sublink">
-                {t('case03')}
-              </Link>
-              <Link href={localeHref('/cases/case-04-baas-seed-startup')} onClick={handleNavClick} className="mobile-menu-sublink">
-                {t('case04')}
-              </Link>
-            </div>
-            <a href={localeHref('/#portfolio')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('portfolio')}
+            <a href={localeHref('/#how-it-works')} onClick={handleNavClick} className="mobile-menu-link">
+              How It Works
             </a>
             <Link href={localeHref('/about')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('about')}
+              About
             </Link>
             <Link href={localeHref('/blog')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('blog')}
+              Blog
             </Link>
             <a href={localeHref('/#connect')} onClick={handleNavClick} className="mobile-menu-link">
-              {t('connect')}
+              Contact
             </a>
           </nav>
 
           <div className="mobile-menu-footer">
-            <div className="mobile-menu-locales">
-              {routing.locales.map((loc) => (
-                <Link
-                  key={loc}
-                  href={`/${loc}${pathnameWithoutLocale}`}
-                  onClick={handleNavClick}
-                  className={`mobile-menu-locale${loc === locale ? ' active' : ''}`}
-                >
-                  {loc.toUpperCase()}
-                </Link>
-              ))}
-            </div>
             <a
               href="https://calendly.com/chriscloud-weber/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-p"
-              style={{ justifyContent: 'center' }}
+              className="btn btn-p w-full justify-center"
               onClick={handleNavClick}
             >
-              {t('getInTouch')}
+              Get in Touch
             </a>
           </div>
         </Dialog.Content>

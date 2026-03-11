@@ -1,5 +1,5 @@
 # Christian — AI-Native Cloud Architect
-## Personal Brand Value Proposition
+## MaCh2.Cloud — Personal Brand Value Proposition
 
 ---
 
@@ -16,18 +16,18 @@ I operate where architectural decisions determine whether a company accelerates 
 # 2. Core Value Proposition
 
 ## Who I Help
-- AI-enabled SaaS companies (early growth to scale-up)
-- CTOs and Technical Founders
-- VP Engineering / Head of Platform
-- Engineering teams building AI-powered production systems
+- Series A–B SaaS companies past early chaos, not yet enterprise scale
+- CTOs and Technical Founders carrying architectural debt from the build-fast phase
+- VP Engineering / Head of Platform facing the gap between current infrastructure and next growth stage
+- Engineering teams that are firefighting their own platform instead of shipping product
 
 ## Core Problems I Solve
 - AI features that work in demo but fail under production load
 - Cloud costs increasing faster than revenue
 - Architectural bottlenecks slowing delivery
-- Fragmented platform foundations
-- Lack of clear system direction as teams scale
-- Over-engineered or under-engineed infrastructure decisions
+- Fragmented platform foundations without clear system direction
+- Lack of architectural clarity as teams and complexity scale
+- Over-engineered or under-engineered infrastructure decisions
 
 ## Outcomes I Enable
 - Production-ready AI-native cloud architecture
@@ -37,7 +37,7 @@ I operate where architectural decisions determine whether a company accelerates 
 - Systems that evolve with business growth
 - Reduced long-term re-architecture risk
 
-I do not optimize isolated components.
+I do not optimize isolated components.  
 I design the system foundation.
 
 ---
@@ -45,7 +45,7 @@ I design the system foundation.
 # 3. Differentiators
 
 ## 1. AI-Native, Not AI-Add-On
-Architecture is designed with AI workloads, inference latency, scaling patterns, and cost dynamics in mind from the beginning.
+Architecture is designed with AI workloads, inference latency, scaling patterns, and cost dynamics in mind from the beginning — not retrofitted after the platform is built.
 
 ## 2. System-Level Thinking
 I design across:
@@ -57,11 +57,11 @@ I design across:
 - Organizational scalability
 
 ## 3. Architecture as Economic Strategy
-Cloud cost is not an afterthought.
+Cloud cost is not an afterthought.  
 It is an architectural design variable.
 
 ## 4. Automation-First Design
-Up to 90% operational automation in prior platforms.
+Up to 90% operational automation in prior platforms.  
 Manual processes do not scale.
 
 ## 5. Production Reality Over Theory
@@ -71,10 +71,23 @@ Architectures designed to survive:
 - Real constraints
 - Real budget pressure
 
+## 6. WAF2p — Proprietary Architectural Framework
+WAF2p (Well-Architected Framework — Open Extension) is my active, public methodology that extends standard Well-Architected Frameworks for AI-native SaaS systems.
+
+It integrates:
+- AI-native architecture patterns
+- Governance and security modeling
+- Automation lifecycle integration
+- Cloud economics and risk metrics
+- Cross-cloud portability design
+
+Architecture through WAF2p becomes measurable, sovereign, and continuously adaptive — not a one-time deliverable.
+
 ---
 
 # 4. Conceptual Frameworks I Operate From
 
+- WAF2p — AI-Native Well-Architected Extension
 - Systems Thinking (architecture + org + economics)
 - AI-Native Lifecycle Architecture
 - Cloud-Native Design Principles
@@ -84,7 +97,7 @@ Architectures designed to survive:
 - Continuous Architectural Evolution
 - Automation as Force Multiplier
 
-Architecture is not static.
+Architecture is not static.  
 It is a continuously evolving system.
 
 ---
@@ -148,6 +161,8 @@ Tone:
 
 # 7. Message Themes
 
+- "You survived early chaos. Now your architecture is the chaos."
+- "Architectures built to survive growth — not to be replaced by it."
 - "AI demos are easy. AI systems are hard."
 - "Cloud cost is an architectural decision."
 - "Architecture determines organizational speed."
@@ -155,6 +170,7 @@ Tone:
 - "Systems must evolve as the business evolves."
 - "Reliability is engineered, not hoped for."
 - "Short-term speed without architecture creates long-term drag."
+- "Cloud-agnostic by principle. AI-native by design."
 
 ---
 
@@ -167,10 +183,11 @@ Tone:
 5. Leadership of global engineering teams
 6. Multiple industry and cloud architecture excellence awards
 7. Proven production-scale system design
+8. Creator of WAF2p — active open-source architectural framework
 
-Authority grounded in:
-Real systems.
-Real scale.
+Authority grounded in:  
+Real systems.  
+Real scale.  
 Real responsibility.
 
 ---
@@ -192,8 +209,8 @@ If you work with me or follow my work, you will:
 
 To become the reference authority for AI-native cloud architecture in modern SaaS.
 
-Not a migration consultant.
-Not a tooling expert.
+Not a migration consultant.  
+Not a tooling expert.  
 Not a trend commentator.
 
 A system architect shaping the foundations that allow AI-native companies to scale with confidence, speed, and economic discipline.

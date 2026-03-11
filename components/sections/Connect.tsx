@@ -11,7 +11,8 @@ export default async function Connect() {
       <div className="wrap">
         <div className="connect-body">
           <div className="connect-cta reveal">
-            <div className="eyebrow" style={{ justifyContent: 'center' }}>
+            {/* brand: centred eyebrow label */}
+            <div className="eyebrow justify-center">
               {t('eyebrow')}
             </div>
             <h2>
@@ -29,10 +30,8 @@ export default async function Connect() {
 
           <ContactForm />
 
-          <div
-            className="cnote"
-            style={{ textAlign: 'center', marginBottom: '84px' }}
-          >
+          {/* brand: mono footnote — see .cnote in globals.css */}
+          <div className="cnote text-center mb-[84px]">
             {t('note')}
           </div>
 

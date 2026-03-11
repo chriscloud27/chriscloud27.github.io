@@ -35,7 +35,7 @@
   "experience": {
     "eyebrow": "Experience",
     "heading": "Built at <em>real scale.</em>",
-    "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. <strong>Not theory. Production systems that shipped.</strong>",
+    "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. Not theory. <strong>Production systems that shipped.</strong>",
     "waf2pTitle": "WAF2p — Open-Source Framework",
     "waf2pDesc": "Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved."
   },
@@ -100,10 +100,37 @@
   "about": {
     "eyebrow": "About",
     "heading": "Christian Weber <em>AI-Native Cloud Architect</em>",
-    "sub": "I help Seed–Series C SaaS CTOs and engineering leaders build scalable SaaS infrastructure for growth-stage velocity.",
-    "description": "With 13+ years of experience designing enterprise cloud systems across AWS, Azure, and GCP, I specialise in cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability.",
+    "sub": "I help Startup Series A-C SaaS CTOs and engineering leaders <highlight>build scalable SaaS infrastructure for growth-stage velocity</highlight>.",
+    "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs <highlight>validated code, production-ready features, tests, and documentation</highlight> in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to <highlight>create platforms that are both technically robust and aligned with business objectives</highlight>.",
     "cta": "Get in touch",
     "ctaSecondary": "See My Work"
+  },
+  "waf2p": {
+    "eyebrow": "WAF2p Framework",
+    "h1Part1": "Well-Architected Framework",
+    "h1Emphasis": "for AI-Native Platforms.",
+    "sub": "WAF2p is an open-source extension of the <strong>AWS Well-Architected Framework</strong> — redesigned for <strong>AI-native, cloud-agnostic platform design</strong> at Series A–B scale.",
+    "what": "What is WAF2p?",
+    "whatDesc": "WAF2p extends the five pillars of the Well-Architected Framework with a sixth pillar focused on AI workload patterns, platform engineering, and cloud-agnostic design. Built from production experience across AWS, GCP, and Azure.",
+    "why": "Why WAF2p?",
+    "whyDesc": "Standard cloud framework guidance was written for monolithic workloads. AI-native SaaS products — with LLM inference, vector stores, event-driven pipelines, and multi-cloud dependencies — need a framework that reflects how modern platforms actually work.",
+    "pillars": "The Six Pillars",
+    "pillar1": "Operational Excellence",
+    "pillar1Desc": "Automate everything that can be automated. Observe everything that runs in production.",
+    "pillar2": "Security",
+    "pillar2Desc": "Zero-trust by default. Identity-first. No perimeter assumptions.",
+    "pillar3": "Reliability",
+    "pillar3Desc": "Design for failure. Eliminate single points of failure before they find you.",
+    "pillar4": "Performance Efficiency",
+    "pillar4Desc": "Right-size for workload type. AI inference ≠ web serving ≠ batch processing.",
+    "pillar5": "Cost Optimization",
+    "pillar5Desc": "Cloud costs grow faster than revenue when there's no architecture discipline. WAF2p includes cost governance patterns from the ground up.",
+    "pillar6": "AI-Native Platform Design",
+    "pillar6Desc": "The sixth pillar. Covers LLM integration patterns, vector data infrastructure, AI feature flags, and staging-to-production parity for AI workloads.",
+    "cta": "Diagnose Your Architecture",
+    "ctaSecondary": "See My Work",
+    "metaTitle": "WAF2p Framework — Well-Architected Framework for AI-Native Platforms",
+    "metaDescription": "WAF2p is an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic SaaS platform design. Covers all six pillars including AI workload patterns."
   },
   "notFound": {
     "label": "404 — Not Found",

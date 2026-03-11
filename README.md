@@ -87,4 +87,8 @@ Architecture is not just infrastructure. It is the foundation that enables engin
 
 ---
 
+## 🛠️ For Developers
+
+Technical documentation, site architecture, and SEO workflow guidelines: **[docs/PROJECT-README.md](docs/PROJECT-README.md)**
+
 *Last updated: February 2026*
