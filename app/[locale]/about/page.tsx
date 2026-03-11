@@ -6,6 +6,7 @@ import Image from 'next/image'
 import CoreValues from '@/components/sections/CoreValues'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
+import { ABOUT_KEYWORDS } from '@/lib/keywords'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
+    keywords: ABOUT_KEYWORDS,
     openGraph: {
       type: 'website',
       url: buildCanonical(`/${locale}/about`),

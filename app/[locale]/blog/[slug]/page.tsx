@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge'
 import BlogImageLightbox from '@/components/blog/BlogImageLightbox'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
+import { GLOBAL_KEYWORDS } from '@/lib/keywords'
 
 export async function generateStaticParams() {
   const slugs = await getBlogSlugs()
@@ -38,6 +39,7 @@ export async function generateMetadata({
   return {
     title: `${post.title} — ${settings.siteName}`,
     description: post.excerpt,
+    keywords: [...new Set([...post.tags, ...GLOBAL_KEYWORDS])],
     openGraph: {
       type: 'article',
       url: canonicalUrl,

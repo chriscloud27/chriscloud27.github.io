@@ -5,6 +5,7 @@ import { getBlogPosts } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
+import { BLOG_KEYWORDS } from '@/lib/keywords'
 
 export async function generateMetadata({
   params,
@@ -22,6 +23,7 @@ export async function generateMetadata({
   return {
     title,
     description,
+    keywords: BLOG_KEYWORDS,
     openGraph: {
       type: 'website',
       url: buildCanonical(`/${locale}/blog`),

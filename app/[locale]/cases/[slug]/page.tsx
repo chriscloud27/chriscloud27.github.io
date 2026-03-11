@@ -5,6 +5,7 @@ import { join } from 'path'
 import { setRequestLocale } from 'next-intl/server'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
+import { CASE_KEYWORDS } from '@/lib/keywords'
 
 const CASE_SLUGS = [
   'case-01-capgemini-kubernetes',
@@ -59,6 +60,7 @@ export async function generateMetadata({
   return {
     title: meta.title,
     description: meta.description,
+    keywords: CASE_KEYWORDS[slug] ?? [],
     openGraph: {
       type: 'article',
       url: buildCanonical(canonicalPath),

@@ -355,24 +355,24 @@ export async function getBlogSlugs(): Promise<string[]> {
 // Fallback data (shown when Notion env vars are not configured)
 // ---------------------------------------------------------------------------
 const FALLBACK_POSTS: NotionBlogPost[] = [
-  // {
-  //   id: '1',
-  //   slug: 'ai-native-platform-design',
-  //   title: 'What "AI-Native" Actually Means for Your Platform Architecture',
-  //   date: '2026-03-01',
-  //   excerpt:
-  //     'Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.',
-  //   tags: ['AI-Native', 'Architecture', 'Platform Design'],
-  //   published: true,
-  // },
-  // {
-  //   id: '2',
-  //   slug: 'baas-vs-custom-infra',
-  //   title: 'BaaS vs Custom Infrastructure: When to Choose Each',
-  //   date: '2026-02-15',
-  //   excerpt:
-  //     'Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.',
-  //   tags: ['BaaS', 'AWS Amplify', 'Startup Architecture'],
-  //   published: true,
-  // },
+  {
+    id: '1',
+    slug: 'ai-native-platform-design',
+    title: 'What "AI-Native" Actually Means for Your Platform Architecture',
+    date: '2026-03-01',
+    excerpt:
+      'Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.',
+    tags: ['AI-Native', 'Architecture', 'Platform Design'],
+    published: true,
+  },
+  {
+    id: '2',
+    slug: 'baas-vs-custom-infra',
+    title: 'BaaS vs Custom Infrastructure: When to Choose Each',
+    date: '2026-02-15',
+    excerpt:
+      'Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.',
+    tags: ['BaaS', 'AWS Amplify', 'Startup Architecture'],
+    published: true,
+  },
 ]

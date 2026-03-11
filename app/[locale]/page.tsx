@@ -8,6 +8,7 @@ import CredibilitySection from '@/components/sections/CredibilitySection'
 import CtaSection from '@/components/sections/CtaSection'
 import { getGlobalSettings } from '@/lib/settings'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { HOME_KEYWORDS } from '@/lib/keywords'
 
 export async function generateMetadata({
   params,
@@ -22,6 +23,7 @@ export async function generateMetadata({
   return {
     title: settings.defaultSeo?.metaTitle ?? settings.siteName,
     description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+    keywords: HOME_KEYWORDS,
     openGraph: {
       type: 'website',
       url: buildCanonical(`/${locale}`),
