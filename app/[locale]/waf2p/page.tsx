@@ -125,7 +125,13 @@ export default async function Waf2pPage({
             <br />
             <em>{t('h1Emphasis')}</em>
           </h1>
-          <p className="hero-sub mt-6">{t.rich('sub')}</p>
+          <p className="hero-sub mt-6">
+            {t.rich('sub', {
+              strong: (chunks) => (
+                <strong className="font-semibold text-white">{chunks}</strong>
+              ),
+            })}
+          </p>
         </div>
       </section>
 
