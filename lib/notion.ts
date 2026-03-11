@@ -1,4 +1,7 @@
 import { Client } from '@notionhq/client'
+import { createHash } from 'node:crypto'
+import { existsSync } from 'node:fs'
+import path from 'node:path'
 import type {
   PageObjectResponse,
   BlockObjectResponse,
@@ -13,6 +16,7 @@ const notion = new Client({
 })
 
 const DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? ''
+const LOCAL_ASSET_BASE_PATH = '/notion-assets/blog'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -28,6 +32,7 @@ export interface NotionBlogPost {
 }
 
 export interface NotionBlogPostDetail extends NotionBlogPost {
+  coverImage?: string
   blocks: string // rendered HTML string
 }
 
@@ -54,8 +59,72 @@ function richTextToHtml(rich: RichTextItemResponse[]): string {
     .join('')
 }
 
-function blocksToHtml(blocks: BlockObjectResponse[]): string {
+function escapeHtmlAttribute(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
+function slugifySegment(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'post'
+}
+
+function getUrlHash(value: string): string {
+  return createHash('sha1').update(value).digest('hex').slice(0, 12)
+}
+
+function getAssetExtension(url: string): string {
+  try {
+    const pathname = new URL(url).pathname
+    const extension = path.extname(pathname).toLowerCase()
+    return extension && extension.length <= 5 ? extension : '.img'
+  } catch {
+    return '.img'
+  }
+}
+
+function getAssetFileName(slug: string, kind: string, sourceUrl: string): string {
+  const safeSlug = slugifySegment(slug)
+  const hash = getUrlHash(sourceUrl)
+  const extension = getAssetExtension(sourceUrl)
+  return `${safeSlug}/${kind}-${hash}${extension}`
+}
+
+function getLocalAssetUrl(slug: string, kind: string, sourceUrl: string): string | undefined {
+  const relativeFileName = getAssetFileName(slug, kind, sourceUrl)
+  const absolutePath = path.join(
+    process.cwd(),
+    'public',
+    'notion-assets',
+    'blog',
+    relativeFileName,
+  )
+
+  if (!existsSync(absolutePath)) return undefined
+  return `${LOCAL_ASSET_BASE_PATH}/${relativeFileName}`
+}
+
+function getNotionFileUrl(
+  asset:
+    | { type?: 'external'; external?: { url: string } }
+    | { type?: 'file'; file?: { url: string } }
+    | null
+    | undefined,
+): string | undefined {
+  if (!asset?.type) return undefined
+  if (asset.type === 'external') return asset.external?.url
+  if (asset.type === 'file') return asset.file?.url
+  return undefined
+}
+
+function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
   const lines: string[] = []
+  let imageIndex = 0
 
   for (const block of blocks) {
     switch (block.type) {
@@ -102,6 +171,23 @@ function blocksToHtml(blocks: BlockObjectResponse[]): string {
       }
       case 'divider': {
         lines.push('<hr />')
+        break
+      }
+      case 'image': {
+        const sourceUrl = getNotionFileUrl(block.image)
+        if (!sourceUrl) break
+
+        const caption = richTextToHtml(block.image.caption)
+        const altText = richTextToPlain(block.image.caption) || 'Blog image'
+        const imageUrl = getLocalAssetUrl(
+          slug,
+          `inline-${String(imageIndex).padStart(2, '0')}`,
+          sourceUrl,
+        ) ?? sourceUrl
+        lines.push(
+          `<figure><img src="${escapeHtmlAttribute(imageUrl)}" alt="${escapeHtmlAttribute(altText)}" loading="lazy" />${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`,
+        )
+        imageIndex += 1
         break
       }
       default:
@@ -244,10 +330,14 @@ export async function getBlogPost(slug: string): Promise<NotionBlogPostDetail | 
     if (!page) return null
 
     const post = pageToPost(page)
+    const coverSourceUrl = getNotionFileUrl(page.cover)
+    const coverImage = coverSourceUrl
+      ? getLocalAssetUrl(post.slug, 'cover', coverSourceUrl) ?? coverSourceUrl
+      : undefined
     const blocksResponse = await notion.blocks.children.list({ block_id: page.id })
-    const blocks = blocksToHtml(blocksResponse.results as BlockObjectResponse[])
+    const blocks = blocksToHtml(blocksResponse.results as BlockObjectResponse[], post.slug)
 
-    return { ...post, blocks }
+    return { ...post, coverImage, blocks }
   } catch (err) {
     console.error('[Notion] Failed to fetch post:', err)
     return null
@@ -264,24 +354,24 @@ export async function getBlogSlugs(): Promise<string[]> {
 // Fallback data (shown when Notion env vars are not configured)
 // ---------------------------------------------------------------------------
 const FALLBACK_POSTS: NotionBlogPost[] = [
-  {
-    id: '1',
-    slug: 'ai-native-platform-design',
-    title: 'What "AI-Native" Actually Means for Your Platform Architecture',
-    date: '2026-03-01',
-    excerpt:
-      'Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.',
-    tags: ['AI-Native', 'Architecture', 'Platform Design'],
-    published: true,
-  },
-  {
-    id: '2',
-    slug: 'baas-vs-custom-infra',
-    title: 'BaaS vs Custom Infrastructure: When to Choose Each',
-    date: '2026-02-15',
-    excerpt:
-      'Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.',
-    tags: ['BaaS', 'AWS Amplify', 'Startup Architecture'],
-    published: true,
-  },
+  // {
+  //   id: '1',
+  //   slug: 'ai-native-platform-design',
+  //   title: 'What "AI-Native" Actually Means for Your Platform Architecture',
+  //   date: '2026-03-01',
+  //   excerpt:
+  //     'Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.',
+  //   tags: ['AI-Native', 'Architecture', 'Platform Design'],
+  //   published: true,
+  // },
+  // {
+  //   id: '2',
+  //   slug: 'baas-vs-custom-infra',
+  //   title: 'BaaS vs Custom Infrastructure: When to Choose Each',
+  //   date: '2026-02-15',
+  //   excerpt:
+  //     'Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.',
+  //   tags: ['BaaS', 'AWS Amplify', 'Startup Architecture'],
+  //   published: true,
+  // },
 ]

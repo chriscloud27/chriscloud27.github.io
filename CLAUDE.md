@@ -38,6 +38,13 @@
 - Next.js / React
 - Tailwind CSS preferred
 - No external UI libraries unless necessary
+
+## Internationalization (next-intl)
+- All user-facing text lives in `messages/en.json` (and other locale files)
+- Rich text tags are configured globally in `i18n/request.ts` via `defaultTranslationValues`
+- Available tags: `<highlight>` (Electric Cyan text), `<strong>` (semibold white text)
+- Rule: when adding or editing translatable text that needs styled words/phrases, wrap them in these tags in the JSON
+- Rule: always use `t.rich('key')` instead of `t('key')` for any field that contains rich text tags — plain `t()` will not render them
 ```
 
 ---

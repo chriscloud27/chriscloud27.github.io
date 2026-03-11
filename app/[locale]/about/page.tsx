@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import Link from 'next/link'
 import Image from 'next/image'
-import Experience from '@/components/sections/Experience'
+// import Experience from '@/components/sections/Experience'
 import CoreValues from '@/components/sections/CoreValues'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -30,11 +30,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <em>AI-Native Cloud Architect</em>
               </h1>
               <p className="hero-sub mt-6">
-                {t('sub')}
+                {t.rich('sub')}
               </p>
               {/* brand: max-w-text caps prose at 680px per token */}
               <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid max-w-text mb-8">
-                {t('description')}
+                {t.rich('description')}
               </p>
               <div className="flex gap-3 flex-wrap">
                 <a
@@ -71,7 +71,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      <Experience />
+      {/* <Experience /> */}
 
       <CoreValues />
     </main>

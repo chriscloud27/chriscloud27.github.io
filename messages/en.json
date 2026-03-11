@@ -35,7 +35,7 @@
   "experience": {
     "eyebrow": "Experience",
     "heading": "Built at <em>real scale.</em>",
-    "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. <strong>Not theory. Production systems that shipped.</strong>",
+    "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. Not theory. <strong>Production systems that shipped.</strong>",
     "waf2pTitle": "WAF2p — Open-Source Framework",
     "waf2pDesc": "Creator of WAF2p — an open-source extension of the Well-Architected Framework for AI-native, cloud-agnostic platform design. Actively contributed and evolved."
   },
@@ -100,8 +100,8 @@
   "about": {
     "eyebrow": "About",
     "heading": "Christian Weber <em>AI-Native Cloud Architect</em>",
-    "sub": "I help Seed–Series C SaaS CTOs and engineering leaders build scalable SaaS infrastructure for growth-stage velocity.",
-    "description": "With 13+ years of experience designing enterprise cloud systems across AWS, Azure, and GCP, I specialise in cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability.",
+    "sub": "I help Startup Series A-C SaaS CTOs and engineering leaders <highlight>build scalable SaaS infrastructure for growth-stage velocity</highlight>.",
+    "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs <highlight>validated code, production-ready features, tests, and documentation</highlight> in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to <highlight>create platforms that are both technically robust and aligned with business objectives</highlight>.",
     "cta": "Get in touch",
     "ctaSecondary": "See My Work"
   },

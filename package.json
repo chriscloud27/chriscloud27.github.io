@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next build",
+    "sync:notion-assets": "node scripts/sync-notion-assets.mjs",
+    "build": "npm run sync:notion-assets && next build",
+    "export": "npm run build",
     "serve": "serve out",
     "start": "next start",
     "lint": "next lint",

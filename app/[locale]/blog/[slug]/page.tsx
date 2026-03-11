@@ -52,6 +52,13 @@ export default async function BlogPostPage({
             {t('backToBlog')}
           </Link>
 
+          {post.coverImage && (
+            <div className="blog-post-cover">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={post.coverImage} alt={post.title} loading="eager" />
+            </div>
+          )}
+
           {/* brand: date in mono label style */}
           <span className="font-mono text-[11px] text-electric-cyan tracking-[0.08em] block mb-3">
             {new Date(post.date).toLocaleDateString('en-US', {

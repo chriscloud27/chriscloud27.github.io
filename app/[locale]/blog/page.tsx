@@ -41,7 +41,7 @@ export default async function BlogPage({
               <Link
                 key={post.slug}
                 href={`/${locale}/blog/${post.slug}`}
-                className="case reveal"
+                className="case reveal on"
               >
                 <div className="p-7">
                   {/* brand: mono date label — electric-cyan on dark card */}

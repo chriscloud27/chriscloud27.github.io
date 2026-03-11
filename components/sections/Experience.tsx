@@ -20,8 +20,8 @@ const TIMELINE: TimelineEntry[] = [
     location: 'Remote · Global',
     role: 'Principal AI-Native Cloud Architect',
     description:
-      'Fractional architecture leadership for Seed–Series C SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, security-first platform foundations that give engineering teams clarity, speed, and cost predictability — without the overhead of a full-time Principal hire.',
-    tags: ['AI-Native Architecture', 'Cloud-Agnostic', 'IaC', 'Cost Architecture', 'WAF2p Framework', 'Fractional Leadership'],
+      'Fractional architecture leadership for Growth SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, cost-effective platform foundations that give engineering teams clarity, speed, and cost predictability without the overhead of a full-time Principal hire.',
+    tags: ['AI-Native Architecture', 'Cloud-Agnostic', 'Backend-as-a-Service', 'IaC', 'WAF2p Framework', 'Fractional Leadership'],
     useMach2Logo: true,
   },
   {
@@ -31,8 +31,8 @@ const TIMELINE: TimelineEntry[] = [
     location: 'Remote',
     role: 'CIO & Product Owner',
     description:
-      'SaaS platform for career and recruiting events — responsible for product direction, platform architecture, and operational readiness. Led Backend-as-a-Service architecture using AWS Amplify, deliberately trading low-level infrastructure control for faster time-to-market and improved developer experience.',
-    tags: ['AWS Amplify', 'BaaS', 'Product Leadership', 'SaaS Architecture', 'API Design', 'Developer Experience'],
+      'SaaS platform for career and recruiting events. Responsible for product direction, platform architecture, and operational readiness. Led Backend-as-a-Service architecture using AWS Amplify. Ensuring a low-level infrastructure allowing the Staff Engineer to faster time-to-market and improved developer experience.',
+    tags: ['AWS Amplify', 'BaaS', 'Product Leadership', 'SaaS Architecture', 'API Design', 'Developer Experience', 'Business Strategy', 'Customer Requirements'],
     logoSrc: 'https://www.google.com/s2/favicons?domain=fairup.dev&sz=32',
   },
   {
@@ -42,8 +42,8 @@ const TIMELINE: TimelineEntry[] = [
     location: 'Düsseldorf · Germany',
     role: 'Tech Team Lead & Co-Innovation Manager',
     description:
-      'Led AWS Amplify Backend-as-a-Service rollout for SaaS platform. Architected platform foundation that enabled rapid feature delivery across five countries while maintaining scalability for enterprise customers. Standardized incident detection (+50% efficiency), managed key accounts and co-innovation requests.',
-    tags: ['AWS Amplify', 'BaaS', 'Product Leadership', 'SaaS Platform', 'Developer Experience', 'International Rollout'],
+      'Led architectural decisions and advised engineering teams to enhance the Sales platform SaaS product "FoxBase". Standardization of incident / request detection and management as basis for company growth (+50% efficiency). Requirement engineering and roadmap creation of co-innovation requests for leading key accounts. Solution rollout and rapid feature delivery for an Enterprise customer across five countries while maintaining scalability.',
+    tags: ['API first', 'Product Leadership', 'SaaS Platform', 'Developer Experience', 'International Rollout', 'ITIL', 'Management Advisory'],
     logoSrc: 'https://www.google.com/s2/favicons?domain=foxbase.de&sz=32',
   },
   {
@@ -120,9 +120,10 @@ export default async function Experience() {
             </h2>
           </div>
           <p className="s-sub">
-            Since 2010: building system infrastructure that powers organisations at scale.
-            Since 2019: architecting cloud platforms that accelerate engineering velocity and
-            unlock growth. <strong>Not theory. Production systems that shipped.</strong>
+            Since 2010: Building system infrastructure that powers organisations at scale.<br></br>
+            Since 2019: Architecting cloud platforms that accelerate engineering velocity and
+            unlock growth. <br></br>
+            <strong>Production systems that shipped.</strong>
           </p>
         </div>
 
