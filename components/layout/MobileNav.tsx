@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing'
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
+  const triggerRef = useRef<HTMLButtonElement>(null)
   const t = useTranslations('nav')
   const locale = useLocale()
   const pathname = usePathname()
@@ -19,42 +20,44 @@ export default function MobileNav() {
     return `/${locale}${path === '/' ? '' : path}`
   }
 
+  const handleOpenChange = useCallback((v: boolean) => {
+    setOpen(v)
+    if (!v) {
+      requestAnimationFrame(() => triggerRef.current?.focus())
+    }
+  }, [])
+
   const handleNavClick = () => setOpen(false)
 
   return (
-    <Dialog.Root open={open} onOpenChange={setOpen}>
-      <Dialog.Trigger asChild>
-        <button
-          className="mobile-menu-trigger"
-          aria-label="Open menu"
-          title="Open menu"
-        >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <Dialog.Root open={open} onOpenChange={handleOpenChange}>
+      {/* Toggle button — shows hamburger when closed, X when open */}
+      <button
+        ref={triggerRef}
+        className="mobile-menu-trigger"
+        onClick={() => setOpen((v) => !v)}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+      >
+        {open ? (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <line x1="3" y1="6" x2="21" y2="6" />
             <line x1="3" y1="12" x2="21" y2="12" />
             <line x1="3" y1="18" x2="21" y2="18" />
           </svg>
-        </button>
-      </Dialog.Trigger>
+        )}
+      </button>
 
       <Dialog.Portal>
         <Dialog.Overlay className="mobile-menu-overlay" />
-        <Dialog.Content className="mobile-menu-content" aria-label="Navigation menu">
-          <div className="mobile-menu-header">
-            <Dialog.Title className="mobile-menu-title">Menu</Dialog.Title>
-            <Dialog.Close asChild>
-              <button
-                className="mobile-menu-close"
-                aria-label="Close menu"
-                title="Close menu"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-            </Dialog.Close>
-          </div>
+        <Dialog.Content className="mobile-menu-content" aria-label="Menu menu">
+          <Dialog.Title className="sr-only">Menu</Dialog.Title>
 
           <nav className="mobile-menu-nav">
             <Link href={localeHref('/')} onClick={handleNavClick} className="mobile-menu-link">
@@ -104,7 +107,6 @@ export default function MobileNav() {
                   onClick={handleNavClick}
                   className={[
                     'mobile-menu-locale',
-                    /* brand: active locale electric-cyan, inactive grey-mid */
                     loc === locale ? 'text-electric-cyan' : 'text-grey-mid',
                   ].join(' ')}
                 >

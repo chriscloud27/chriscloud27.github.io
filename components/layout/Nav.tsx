@@ -32,7 +32,7 @@ export default function Nav() {
           href="https://calendly.com/chriscloud-weber/30min"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-p"
+          className="btn btn-p nav-cta-desktop"
         >
           Get in Touch
         </a>
