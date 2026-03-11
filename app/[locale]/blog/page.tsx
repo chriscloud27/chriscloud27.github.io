@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getBlogPosts } from '@/lib/notion'
 import { Badge } from '@/components/ui/badge'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
+import { getGlobalSettings } from '@/lib/settings'
 
 export async function generateMetadata({
   params,
@@ -11,7 +13,39 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'blog' })
-  return { title: `${t('eyebrow')} — MaCh2.cloud` }
+  const settings = getGlobalSettings(locale)
+  const title = `${t('eyebrow')} — ${settings.siteName}`
+  const description = t('sub')
+  const i18n = buildCanonicalAndAlternates('/blog', locale)
+  const ogImage = settings.defaultSeo?.shareImage
+
+  return {
+    title,
+    description,
+    openGraph: {
+      type: 'website',
+      url: buildCanonical(`/${locale}/blog`),
+      title,
+      description,
+      images: ogImage
+        ? [
+            {
+              url: ogImage.url,
+              width: ogImage.width,
+              height: ogImage.height,
+              alt: ogImage.alternativeText ?? settings.siteName,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ogImage ? [ogImage.url] : undefined,
+    },
+    ...i18n,
+  }
 }
 
 export default async function BlogPage({

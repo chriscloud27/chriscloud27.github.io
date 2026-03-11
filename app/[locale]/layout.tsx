@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { getGlobalSettings } from '@/lib/settings'
+import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { Providers } from '@/lib/providers'
 import RevealObserver from '@/components/RevealObserver'
 import Header from '@/components/layout/Header'
@@ -13,10 +15,57 @@ export async function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
 
-export const metadata: Metadata = {
-  title: 'Christian Weber — AI-Native Cloud Architect',
-  description:
-    'I help Seed–Series C SaaS CTOs design AI-native cloud architectures that scale reliably — cloud-agnostic, security-first, production-ready.',
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const safeLocale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale
+  const settings = getGlobalSettings(safeLocale)
+  const i18n = buildCanonicalAndAlternates('/', safeLocale)
+  const ogImage = settings.defaultSeo?.shareImage
+
+  return {
+    metadataBase: new URL(settings.siteUrl ?? 'https://mach2.cloud'),
+    title: {
+      default: settings.defaultSeo?.metaTitle ?? settings.siteName,
+      template: `%s | ${settings.siteName}`,
+    },
+    description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+    icons: {
+      icon: '/favicon.svg',
+      shortcut: '/favicon.svg',
+    },
+    openGraph: {
+      type: 'website',
+      url: buildCanonical(`/${safeLocale}`),
+      siteName: settings.siteName,
+      title: settings.defaultSeo?.metaTitle ?? settings.siteName,
+      description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+      images: ogImage
+        ? [
+            {
+              url: ogImage.url,
+              width: ogImage.width,
+              height: ogImage.height,
+              alt: ogImage.alternativeText ?? settings.siteName,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: settings.defaultSeo?.metaTitle ?? settings.siteName,
+      description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+      images: ogImage ? [ogImage.url] : undefined,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    ...i18n,
+  }
 }
 
 export default async function LocaleLayout({
@@ -34,6 +83,24 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale)
   const messages = await getMessages()
+  const settings = getGlobalSettings(locale)
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: settings.siteName,
+    url: settings.siteUrl,
+    description: settings.siteDescription,
+    inLanguage: locale,
+  }
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: settings.siteName,
+    url: settings.siteUrl,
+    logo: buildCanonical('/img/mach2-logo-light.svg'),
+  }
 
   return (
     <html lang={locale}>
@@ -48,6 +115,14 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <Header />
