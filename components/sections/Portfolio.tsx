@@ -1,5 +1,4 @@
 import { getTranslations, getLocale } from 'next-intl/server'
-import Link from 'next/link'
 
 interface CaseStudy {
   num: string
@@ -64,23 +63,15 @@ const CASES: CaseStudy[] = [
   },
 ]
 
-const PROCESS_STEPS = [
-  { n: '01', title: 'Discovery Call', desc: '30 min. Map your platform, team, and where growth is creating friction.' },
-  { n: '02', title: 'Architecture Assessment', desc: 'Audit current state, identify risks, surface what needs to change and why.' },
-  { n: '03', title: 'Blueprint & Roadmap', desc: 'Clear architecture design with a prioritised plan your engineers can execute.' },
-  { n: '04', title: 'Enablement & Build', desc: 'Hands-on guidance through implementation — reviews, decisions, unblocking.' },
-  { n: '05', title: 'Continuous Evolution', desc: 'Ongoing advisory keeps the platform ahead of growth, not catching up to it.' },
-]
-
 export default async function Portfolio() {
   const t = await getTranslations('portfolio')
-  const locale = await getLocale()
+  const [featured, ...compact] = CASES
 
   return (
     <section id="portfolio">
       <div className="s-top" />
       <div className="wrap">
-        <div className="port-top reveal">
+        <div className="port-top">
           <div>
             <div className="eyebrow">{t('eyebrow')}</div>
             <h2>
@@ -96,61 +87,65 @@ export default async function Portfolio() {
           </p>
         </div>
 
-        {/* Process */}
-        <div className="process reveal">
-          <div className="proc-label">{t('processLabel')}</div>
-          <div className="proc-steps">
-            {PROCESS_STEPS.map((step) => (
-              <div key={step.n} className="pstep">
-                <div className="pstep-n">{step.n}</div>
-                <div>
-                  <div className="pstep-t">{step.title}</div>
-                  <div className="pstep-d">{step.desc}</div>
-                </div>
+        {/* Featured case */}
+        <div className="cases">
+          <div className="case case--featured">
+            <div className="case-hd">
+              <div>
+                <span className="case-num">{featured.num}</span>
+                <h3>{featured.title}</h3>
               </div>
-            ))}
+              <span className="case-client">{featured.client}</span>
+            </div>
+            <div className="case-cols">
+              <div className="case-col">
+                <div className="col-lbl">{t('situation')}</div>
+                <p className="col-txt">{featured.situation}</p>
+              </div>
+              <div className="case-col">
+                <div className="col-lbl">{t('outcome')}</div>
+                <p
+                  className="col-txt"
+                  dangerouslySetInnerHTML={{ __html: featured.outcome }}
+                />
+                <div
+                  className="col-metric"
+                  dangerouslySetInnerHTML={{ __html: featured.metric }}
+                />
+              </div>
+            </div>
+            <div className="case-ft">
+              <div className="tags">
+                {featured.tags.map((tag) => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+              {/* <span className="btn-more">{t('more')}</span> */}
+            </div>
           </div>
         </div>
 
-        {/* Case Studies */}
-        <div className="cases">
-          {CASES.map((c) => (
-            <Link key={c.num} href={`/${locale}/cases/${c.slug}`} className="case reveal">
-              <div className="case-hd">
-                <div>
-                  <span className="case-num">{c.num}</span>
-                  <h3>{c.title}</h3>
-                </div>
-                <span className="case-client">{c.client}</span>
+        {/* Compact 3-up grid */}
+        <div className="cases-compact">
+          {compact.map((c) => (
+            <div key={c.num} className="case-compact">
+              <div className="case-compact-hd">
+                <span className="case-num">{c.num}</span>
+                <span className="case-client case-client--compact">{c.client}</span>
               </div>
-              <div className="case-cols">
-                <div className="case-col">
-                  <div className="col-lbl">{t('situation')}</div>
-                  <p className="col-txt">{c.situation}</p>
-                </div>
-                <div className="case-col">
-                  <div className="col-lbl">{t('outcome')}</div>
-                  <p
-                    className="col-txt"
-                    dangerouslySetInnerHTML={{ __html: c.outcome }}
-                  />
-                  <div
-                    className="col-metric"
-                    dangerouslySetInnerHTML={{ __html: c.metric }}
-                  />
-                </div>
-              </div>
-              <div className="case-ft">
+              <h3 className="case-compact-title">{c.title}</h3>
+              <div
+                className="case-compact-metric"
+                dangerouslySetInnerHTML={{ __html: c.metric }}
+              />
+              <div className="case-compact-ft">
                 <div className="tags">
                   {c.tags.map((tag) => (
-                    <span key={tag} className="tag">
-                      {tag}
-                    </span>
+                    <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
-                <span className="btn-more">{t('more')}</span>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

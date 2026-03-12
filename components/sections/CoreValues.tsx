@@ -45,7 +45,7 @@ export default function CoreValues() {
           {values.map((value) => (
             <div
               key={value.title}
-              className="reveal value-card bg-electric-cyan/[0.02] border border-white/[0.06] border-t-[3px] border-t-electric-cyan rounded-btn p-8 transition-all duration-200"
+              className="value-card bg-electric-cyan/[0.02] border border-white/[0.06] border-t-[3px] border-t-electric-cyan rounded-btn p-8 transition-all duration-200"
             >
               {/* brand: Syne for value titles */}
               <h3 className="font-display text-[24px] font-bold text-white mb-4">

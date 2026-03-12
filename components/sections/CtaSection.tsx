@@ -13,7 +13,7 @@ export default function CtaSection() {
           </h2>
 
           <p className="font-body text-base font-light leading-[1.75] text-grey-mid mb-10">
-            Start with an architecture audit — clarity before commitment.
+            Start with an architecture audit. Clarity before commitment.
           </p>
 
           <a

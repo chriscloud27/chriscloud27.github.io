@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { Bot, Cloud, DollarSign, Workflow } from 'lucide-react'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
 import { SERVICES_KEYWORDS } from '@/lib/keywords'
+import StatsGrid from '@/components/sections/StatsGrid'
+import ServicesSection from '@/components/sections/ServicesSection'
 
 export async function generateMetadata({
   params,
@@ -47,14 +50,6 @@ export async function generateMetadata({
     ...i18n,
   }
 }
-
-const STEPS = [
-  { num: '00', label: 'Diagnosis', sub: '30-min call. One clear finding.' },
-  { num: '01', label: 'Audit', sub: 'Full platform assessment. Prioritized roadmap.' },
-  { num: '02', label: 'Blueprint', sub: 'Target architecture. Production-ready design.' },
-  { num: '03', label: 'Enablement', sub: 'Guided implementation. Team ownership.' },
-  { num: '04', label: 'Fractional', sub: 'Ongoing architecture leadership. Monthly cadence.' },
-]
 
 const OFFERS = [
   {
@@ -145,31 +140,24 @@ const OFFERS = [
   },
 ]
 
-const STATS = [
-  { value: '13', suffix: '+', label: 'Years designing and operating enterprise and SaaS cloud systems' },
-  { value: '1k', suffix: '+', label: 'Engineers supported on global platforms and cloud-native architectures' },
-  { value: '90', suffix: '%', label: 'Operational automation achieved on prior production-scale platforms' },
-  { value: '~0', suffix: '', label: 'Architectural rewrites on systems designed with a clear foundation from the start' },
-]
-
 const PHILOSOPHY = [
   {
-    icon: '◈',
+    icon: Bot,
     title: 'AI-Native by Design',
     text: 'AI workloads, inference patterns, and cost dynamics built into the architecture from day one — not retrofitted.',
   },
   {
-    icon: '◎',
+    icon: Cloud,
     title: 'Cloud-Agnostic by Principle',
     text: 'Vendor lock-in is a risk, not a feature. Open standards and portability by design.',
   },
   {
-    icon: '◦',
+    icon: DollarSign,
     title: 'Cost as Architecture',
     text: 'Cloud cost is not an afterthought. It is a design variable with direct business impact.',
   },
   {
-    icon: '⬡',
+    icon: Workflow,
     title: 'Automation as Default',
     text: 'Manual processes do not scale. Automation is the only viable operating model at growth stage.',
   },
@@ -210,9 +198,11 @@ export default async function ServicesPage({
       />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32">
-        <div className="wrap">
-          <p className="eyebrow">AI-Native Cloud Architecture · MaCh2.Cloud</p>
+      <section className="bg-deep-blue py-24 lg:py-32 relative overflow-hidden">
+        <div aria-hidden="true" className="grid-overlay" />
+
+        <div className="wrap relative z-10">
+          <p className="eyebrow">Offers to your needs</p>
           <h1 className="mt-7 mb-8 max-w-3xl">
             Architecture that compounds{' '}
             <em>velocity.</em>
@@ -238,36 +228,7 @@ export default async function ServicesPage({
       </section>
 
       {/* ── Engagement Path ──────────────────────────────────────────────── */}
-      <section id="journey" className="py-16 border-t border-white/[0.06]">
-        <div className="wrap">
-          <p className="eyebrow mb-6">Engagement Path</p>
-          <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-display font-bold mb-14 max-w-lg leading-[1.2]">
-            From first conversation to{' '}
-            <em>full platform ownership</em>
-          </h2>
-
-          {/* Journey track */}
-          <div className="relative">
-            <div
-              aria-hidden="true"
-              className="hidden lg:block absolute top-7 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-electric-cyan/35 to-transparent"
-            />
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-0">
-              {STEPS.map((step) => (
-                <div key={step.num} className="flex flex-col items-center text-center px-2">
-                  <div className="relative z-10 w-14 h-14 rounded-full border border-electric-cyan/10 bg-electric-cyan/[0.03] flex items-center justify-center mb-5">
-                    <span className="font-mono text-[11px] font-semibold tracking-[0.1em] text-electric-cyan">
-                      {step.num}
-                    </span>
-                  </div>
-                  <p className="text-[13px] font-semibold text-white mb-1.5 m-0">{step.label}</p>
-                  <p className="font-mono text-[11px] text-grey-mid leading-[1.5] m-0">{step.sub}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesSection sectionId="journey" />
 
       {/* ── Services (Offer Cards) ───────────────────────────────────────── */}
       <section id="services" className="py-16 border-t border-white/[0.06]">
@@ -379,22 +340,7 @@ export default async function ServicesPage({
       {/* ── Stats ────────────────────────────────────────────────────────── */}
       <section className="py-16 border-t border-white/[0.06]">
         <div className="wrap">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[1px] bg-white/[0.06] border border-white/[0.06] rounded-lg overflow-hidden">
-            {STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="bg-electric-cyan/[0.02] px-9 py-10 hover:bg-electric-cyan/[0.04] transition-colors duration-200"
-              >
-                <p className="font-display text-[3rem] font-bold text-white leading-none mb-2.5 tracking-tight">
-                  {stat.value}
-                  <span className="text-electric-cyan">{stat.suffix}</span>
-                </p>
-                <p className="font-body text-[13px] font-light text-grey-mid leading-[1.5]">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          <StatsGrid showHeader={true} />
         </div>
       </section>
 
@@ -410,12 +356,12 @@ export default async function ServicesPage({
               </h2>
               <p className="font-body text-[15px] font-light text-grey-mid leading-[1.8] mb-4">
                 It is a continuously evolving system aligned with product and business growth. My role is not
-                to replace your engineering team — it is to give them the clarity, direction, and frameworks
+                to replace your engineering team. It is to give them the clarity, direction, and frameworks
                 to build at a level they couldn&apos;t reach alone.
               </p>
               <p className="font-body text-[15px] font-light text-grey-mid leading-[1.8]">
                 The result is a platform that accelerates execution, supports product scalability, and enables
-                sustainable business growth — independent of my continued involvement.
+                sustainable business growth independent of my continued involvement.
               </p>
             </div>
 
@@ -426,7 +372,7 @@ export default async function ServicesPage({
                   key={cell.title}
                   className="bg-electric-cyan/[0.02] p-6 lg:p-7 hover:bg-electric-cyan/[0.04] transition-colors duration-200"
                 >
-                  <p className="font-mono text-xl text-electric-cyan mb-3">{cell.icon}</p>
+                  <cell.icon className="w-6 h-6 text-electric-cyan mb-3" strokeWidth={1.8} aria-hidden="true" />
                   <p className="text-[13px] font-semibold text-white mb-1.5">{cell.title}</p>
                   <p className="font-body text-[12px] font-light text-grey-mid leading-[1.6]">{cell.text}</p>
                 </div>
@@ -439,10 +385,10 @@ export default async function ServicesPage({
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="py-24 lg:py-32 border-t border-white/[0.06] text-center">
         <div className="wrap">
-          <p className="eyebrow mb-7">Start Here</p>
+          {/* <p className="eyebrow mb-7">Start Here</p> */}
           <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-display font-bold leading-[1.1] mb-6 tracking-tight max-w-3xl mx-auto">
-            The platform that got you here won&apos;t{' '}
-            <em>take you there.</em>
+            Diagnose your architecture before{' '}
+            <em>growth exposes it.</em>
           </h2>
           <p className="font-body text-[16px] font-light text-grey-mid max-w-md mx-auto mb-12 leading-[1.7]">
             Start with an Architecture Diagnosis Call — 30 minutes to surface the highest-leverage thing
@@ -455,23 +401,14 @@ export default async function ServicesPage({
               rel="noopener noreferrer"
               className="btn btn-p"
             >
-              Book a Diagnosis Call →
+              Book a 30-minute Diagnosis →
             </a>
             <p className="font-mono text-[11px] tracking-[0.08em] text-white/20">
-              No sales pitch. No commitment. Architectural clarity in 30 minutes.
+              No pitch. One high-leverage finding you can act on.
             </p>
           </div>
         </div>
       </section>
-
-      {/* ── Back nav ─────────────────────────────────────────────────────── */}
-      <div className="border-t border-white/[0.06] py-6">
-        <div className="wrap">
-          <Link href={`/${locale}`} className="font-mono text-[12px] text-grey-mid hover:text-electric-cyan transition-colors duration-200 no-underline">
-            ← Back to Home
-          </Link>
-        </div>
-      </div>
     </main>
   )
 }

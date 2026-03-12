@@ -11,12 +11,16 @@ const STEPS = [
   { num: '04', label: 'Fractional', sub: 'Ongoing architecture leadership. Monthly cadence.' },
 ]
 
-export default function ServicesSection() {
+type ServicesSectionProps = {
+  sectionId?: string
+}
+
+export default function ServicesSection({ sectionId = 'services' }: ServicesSectionProps) {
   const locale = useLocale()
   const servicesHref = `/${locale}/services`
 
   return (
-    <section id="services" className="bg-deep-blue py-[120px] relative">
+    <section id={sectionId} className="bg-deep-blue py-[120px] relative">
       {/* brand: cyan top divider line */}
       <div aria-hidden="true" className="s-top" />
 
