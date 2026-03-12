@@ -1,55 +1,77 @@
 const painPoints = [
   {
-    number: '01',
-    headline: '"We\'re firefighting instead of building."',
-    body:
-      'Engineering cycles that should go toward product are consumed by maintenance, incidents, and platform fragility. Every sprint, the same recurring issues. The backlog grows — and the team never catches up.',
+    headline: 'AI features work in demos but fail in production',
+    body: "Inference latency, scaling, and cost dynamics weren't part of the architecture",
   },
   {
-    number: '02',
-    headline: 'Cloud costs growing faster than revenue.',
-    body:
-      'The bill arrives and no one can explain where it went. Infrastructure decisions made under delivery pressure are now running at full cost — with no visibility, no unit economics, and no model to control it.',
+    headline: 'Cloud costs growing faster than revenue',
+    body: 'No clear cost model tied to business value',
   },
   {
-    number: '03',
-    headline: 'AI that works in staging but breaks under production load.',
-    body:
-      'The demo runs clean. Production is a different story. Fragile integrations, latency spikes, and silent failures compound under real traffic. The gap between prototype and production-grade never closes.',
+    headline: 'Architectural bottlenecks slowing delivery',
+    body: 'Teams wait on infrastructure instead of shipping features',
+  },
+  {
+    headline: 'Over-engineered or under-engineered foundations',
+    body: 'Either premature complexity or technical debt stalling growth',
+  },
+  {
+    headline: 'Fragmented platform strategy',
+    body: 'No clear system direction as teams scale',
+  },
+  {
+    headline: 'Re-architecture risk ahead',
+    body: "You know the current path won't scale another 12 months",
   },
 ]
 
 export default function ProblemSection() {
   return (
     <section id="problem" className="bg-deep-blue py-[120px] relative">
-      {/* brand: cyan top divider line */}
       <div aria-hidden="true" className="s-top" />
 
       <div className="wrap">
-        {/* Section header */}
         <div className="max-w-[600px] mb-[72px]">
-          <p className="eyebrow" style={{ color: 'var(--cyan)' }}>The problem</p>
-          <h2 className="text-white mb-0">
+          <p className="eyebrow">The Problem</p>
+          <h2>
             What happens when architecture{' '}
-            <em className="text-electric-cyan italic">can&apos;t keep up</em>
+            <em>can&apos;t keep up</em>
           </h2>
         </div>
 
-        {/* Pain point cards — reuse portfolio compact card style */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[2px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {painPoints.map((point) => (
             <div
-              key={point.number}
-              className="case-compact overflow-visible"
+              key={point.headline}
+              className="flex flex-col gap-3 rounded-xl p-6 border-l-2 transition-all duration-300 hover:border-electric-cyan/60"
+              style={{
+                background: 'rgba(0,229,255,0.025)',
+                border: '1px solid rgba(255,255,255,0.07)',
+                borderLeft: '2px solid rgba(0,229,255,0.35)',
+              }}
             >
-              <div className="case-compact-hd">
-                <span className="case-num">{point.number}</span>
-              </div>
-              <h3 className="case-compact-title !leading-[1.4]">{point.headline}</h3>
-              <p className="col-txt m-0">{point.body}</p>
+              <h3
+                className="text-[15px] font-semibold leading-snug m-0"
+                style={{ color: 'var(--white)', fontFamily: 'var(--body)' }}
+              >
+                {point.headline}
+              </h3>
+              <p
+                className="text-[13px] font-light leading-[1.65] m-0"
+                style={{ color: 'var(--g500)' }}
+              >
+                {point.body}
+              </p>
             </div>
           ))}
         </div>
+
+        <p
+          className="text-center italic mt-12 text-[14px]"
+          style={{ color: 'rgba(255,255,255,0.38)' }}
+        >
+          These aren&apos;t engineering failures — they&apos;re architectural gaps.
+        </p>
       </div>
     </section>
   )

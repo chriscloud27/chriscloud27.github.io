@@ -19,7 +19,7 @@ export default function HeroSection() {
         <div className="hgrid">
           {/* Left: copy */}
           <div>
-            <p className="eyebrow">MY MISSION</p>
+            <p className="eyebrow">AI Native Cloud Architect</p>
 
             <h1>
               Build architecture that <em>compounds velocity.</em>

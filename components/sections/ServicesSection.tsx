@@ -27,7 +27,7 @@ export default function ServicesSection({ sectionId = 'services' }: ServicesSect
       <div className="wrap">
         {/* Section header */}
         <div className="max-w-[640px] mb-[72px]">
-          <p className="eyebrow">Engagement Path</p>
+          <p className="eyebrow">Solution Path</p>
           <h2>
             From first conversation to{' '}
             <em>full platform ownership</em>

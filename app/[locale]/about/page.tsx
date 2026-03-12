@@ -7,6 +7,8 @@ import CoreValues from '@/components/sections/CoreValues'
 import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
 import { getGlobalSettings } from '@/lib/settings'
 import { ABOUT_KEYWORDS } from '@/lib/keywords'
+import Portfolio from '@/components/sections/Portfolio'
+import FeaturedCredentials from '@/components/sections/FeaturedCredentials'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
@@ -108,7 +110,8 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* <Experience /> */}
-
+      <Portfolio />
+      <FeaturedCredentials />
       <CoreValues />
     </main>
   )

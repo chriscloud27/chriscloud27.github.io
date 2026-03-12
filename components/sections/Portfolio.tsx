@@ -33,7 +33,7 @@ const CASES: CaseStudy[] = [
       'Autonomous vehicle development demands extreme data volumes, processing speed, and strict compliance across 1,700 engineers in distributed teams — without slowing development velocity.',
     outcome:
       'Platform enabled <strong>1,700 engineers</strong> with no delivery bottlenecks. Recognised with the <strong>AWS Global Partner Award</strong> for outstanding cloud platform delivery.',
-    metric: '✓ 10,000+ GPU hours/month<br/>✓ AWS Partner Award',
+    metric: '✓ Sprints and Features on time<br/>✓ AWS Partner Award<br/>✓ AWS Partner Award',
     tags: ['AWS', 'Data Pipelines', 'Reliability Engineering'],
   },
   {
@@ -58,7 +58,7 @@ const CASES: CaseStudy[] = [
       'Seed-stage SaaS startup needed to move prototype to production-grade backend infrastructure fast — 5-engineer team, no budget for over-engineering, but no tolerance for architectural debt that would block Series A scaling.',
     outcome:
       'Time-to-market significantly accelerated. Developer experience and team autonomy improved. Platform foundation built to scale beyond seed stage — not just to ship the first version.',
-    metric: '✓ 10 weeks to production<br/>✓ $1.8K monthly cost<br/>✓ 10x scalability headroom',
+    metric: '✓ 10 weeks to production<br/>✓ $100 monthly cost<br/>✓ 10x scalability headroom',
     tags: ['AWS Amplify', 'BaaS', 'Startup Architecture'],
   },
 ]
