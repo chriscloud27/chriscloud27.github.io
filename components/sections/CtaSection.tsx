@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function CtaSection() {
   return (
     <section id="cta" className="bg-deep-blue py-[120px] relative overflow-hidden">
@@ -16,14 +18,12 @@ export default function CtaSection() {
             Start with an architecture audit. Clarity before commitment.
           </p>
 
-          <a
-            href="https://calendly.com/chriscloud-weber/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/en/diagnose"
             className="btn btn-p"
           >
             Diagnose Your Architecture
-          </a>
+          </Link>
         </div>
       </div>
     </section>

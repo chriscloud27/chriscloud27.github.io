@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { getTranslations } from 'next-intl/server'
 import Image from 'next/image'
 
@@ -22,14 +23,12 @@ export default async function Hero() {
               AI-native products without architectural rewrites.
             </p>
             <div className="hero-btns rise r4">
-              <a
-                href="https://calendly.com/chriscloud-weber/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/en/diagnose"
                 className="btn btn-p"
               >
                 {t('cta')}
-              </a>
+              </Link>
               <a href="#portfolio" className="btn btn-g">
                 {t('ctaSecondary')}
               </a>

@@ -238,14 +238,12 @@ export default async function Waf2pPage({
       <section className="py-20 border-t border-white/[0.06]">
         <div className="wrap text-center">
           <div className="flex gap-3 justify-center flex-wrap">
-            <a
-              href="https://calendly.com/chriscloud-weber/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/en/diagnose"
               className="btn btn-p"
             >
               {t('cta')}
-            </a>
+            </Link>
             <Link href={`/${locale}/#portfolio`} className="btn btn-g">
               {t('ctaSecondary')}
             </Link>

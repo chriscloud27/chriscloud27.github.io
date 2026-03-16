@@ -13,13 +13,16 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "package.json": ["npm ci --dry-run"]
+    "package.json": [
+      "npm ci --dry-run"
+    ]
   },
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=11.11.0"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
     "@hookform/resolvers": "^5.2.2",
     "@notionhq/client": "^2.3.0",
     "@radix-ui/react-dialog": "^1.1.15",

@@ -28,14 +28,12 @@ export default function Nav() {
       </ul>
 
       <div className="flex items-center gap-3">
-        <a
-          href="https://calendly.com/chriscloud-weber/30min"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href="/en/diagnose"
           className="btn btn-p"
         >
-          Get in Touch
-        </a>
+          Diagnose
+        </Link>
         <div className="nav-mobile-trigger">
           <MobileNav />
         </div>

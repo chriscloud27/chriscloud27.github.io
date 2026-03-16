@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HeroSection() {
   return (
@@ -37,14 +38,12 @@ export default function HeroSection() {
             </p>
 
             <div className="hero-btns">
-              <a
-                href="https://calendly.com/chriscloud-weber/30min"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/en/diagnose"
                 className="btn btn-p"
               >
                 Diagnose Your Architecture
-              </a>
+              </Link>
               <a href="#how-it-works" className="btn btn-g">
                 See How It Works
               </a>

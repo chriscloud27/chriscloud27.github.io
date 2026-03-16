@@ -75,14 +75,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {t.rich('description')}
               </p>
               <div className="flex gap-3 flex-wrap">
-                <a
-                  href="https://calendly.com/chriscloud-weber/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/en/diagnose"
                   className="btn btn-p"
                 >
                   {t('cta')}
-                </a>
+                </Link>
                 <Link href={`/${locale}/#portfolio`} className="btn btn-g">
                   {t('ctaSecondary')}
                 </Link>

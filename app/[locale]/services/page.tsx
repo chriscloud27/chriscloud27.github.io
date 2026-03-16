@@ -212,14 +212,12 @@ export default async function ServicesPage({
             Designed for Series A–B SaaS companies that are done firefighting and ready to build.
           </p>
           <div className="flex flex-wrap gap-4 items-center">
-            <a
-              href="https://calendly.com/chriscloud-weber/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/en/diagnose"
               className="btn btn-p"
             >
               Start with a Diagnosis →
-            </a>
+            </Link>
             <a href="#journey" className="btn btn-g">
               See how it works →
             </a>
@@ -283,14 +281,12 @@ export default async function ServicesPage({
                       </div>
                     </div>
 
-                    <a
-                      href="https://calendly.com/chriscloud-weber/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <Link
+                      href="/en/diagnose"
                       className="inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-electric-cyan no-underline transition-[gap] duration-200 hover:gap-4"
                     >
                       {offer.cta} <span className="text-base">→</span>
-                    </a>
+                    </Link>
                   </div>
 
                   {/* Right — outcomes */}
@@ -395,14 +391,12 @@ export default async function ServicesPage({
             worth fixing first. No commitment. No pitch. Just clarity.
           </p>
           <div className="flex flex-col items-center gap-4">
-            <a
-              href="https://calendly.com/chriscloud-weber/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/en/diagnose"
               className="btn btn-p"
             >
               Book a 30-minute Diagnosis →
-            </a>
+            </Link>
             <p className="font-mono text-[11px] tracking-[0.08em] text-white/20">
               No pitch. One high-leverage finding you can act on.
             </p>
