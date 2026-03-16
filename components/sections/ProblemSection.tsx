@@ -1,27 +1,27 @@
 const painPoints = [
   {
     headline: 'AI features work in demos but fail in production',
-    body: "Inference latency, scaling, and cost dynamics weren't part of the architecture",
+    body: "Inference latency, scaling and cost dynamics weren't part of the architecture.",
   },
   {
     headline: 'Cloud costs growing faster than revenue',
-    body: 'No clear cost model tied to business value',
+    body: 'No clear AI / Cloud usage cost model tied to business value.',
   },
   {
     headline: 'Architectural bottlenecks slowing delivery',
-    body: 'Teams wait on infrastructure instead of shipping features',
+    body: 'Teams wait on infrastructure instead of shipping features.',
   },
   {
     headline: 'Over-engineered or under-engineered foundations',
-    body: 'Either premature complexity or technical debt stalling growth',
+    body: 'Either premature complexity or technical debt stalling growth.',
   },
   {
     headline: 'Fragmented platform strategy',
-    body: 'No clear system direction as teams scale',
+    body: 'No clear system direction as teams scale and re-architecture risk are almost programmed. You know the current path won\'t scale another 12 months.',
   },
   {
-    headline: 'Re-architecture risk ahead',
-    body: "You know the current path won't scale another 12 months",
+    headline: 'Your platform isn\'t investor-ready',
+    body: "VCs at Series B and beyond aren't just evaluating your product — they're evaluating your technical foundation.",
   },
 ]
 
