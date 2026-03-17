@@ -28,10 +28,10 @@ const jsonLd = {
 const steps = [
   {
     num: '01',
-    name: 'Status Quo',
+    name: 'Situation Mapping',
     tag: ['context'],
     subtitle: 'Review where your platform currently is',
-    body: 'You describe the system as it actually exists. I listen for the gap between the architecture you intended and the one that got shipped.',
+    body: 'We start where you are, not where you think you should be. You describe the platform as it actually exists: how it was built, under what constraints, what the team looks like today. I\'m listening for the gap between the system you intended and the system that got shipped. Most architectural problems reveal themselves here. Not in the symptoms but in the decisions that made sense at the time.',
     instructions: 'We may indentify structural problems reveal themselves here. Not in the symptoms, but in the decisions that made sense at the time.',
   },
   {
@@ -39,8 +39,8 @@ const steps = [
     name: 'Pain Points Identification',
     tag: ['locate'],
     subtitle: 'Identify where business is fighting tech',
-    body: 'Every company makes decisions that impact their platform. They may directly or indirectly be costing velocity, margin, or reliability.',
-    instructions: 'We name them specifically — slowing deploy cycles, unexplained cloud spend, AI features degrading under load, infrastructure only two engineers understand. Not a category. A location.',
+    body: 'Every platform has one or two places where the structure is actively fighting the business. We find them. Slowing delivery cycles, unpredictable cloud spend, AI features that degrade under real load, infrastructure that only two engineers understand. We name the specific friction points not the general category. This is where most teams realize the problem they came in with isn\'t the problem worth solving first.',
+    instructions: 'Every company makes decisions that impact their platform. They may directly or indirectly be costing velocity, margin, or reliability. We name them specifically — slowing deploy cycles, unexplained cloud spend, AI features degrading under load, infrastructure only two engineers understand. Not a category. A location.',
   },
   {
     num: '03',
@@ -56,6 +56,34 @@ const stats = [
   { value: "60'", label: 'Structured session', sub: 'no extensions' },
   { value: 'one', label: 'Concrete finding', sub: 'not a slide deck' },
   { value: 'zero', label: 'Commitment required', sub: 'to book' },
+]
+
+const faqs = [
+  {
+    question: 'Who is this not for?',
+    answer:
+    'This is not for pre-product teams, companies without an active engineering team, or leaders looking for someone to simply build infrastructure for them. It is for CTOs and technical founders who want to think clearly about structural constraints before they compound.',
+  },
+  {
+    question: 'What should I prepare before the call?',
+    answer:
+      'Bring the current reality, not a polished narrative. A short architecture diagram or stack overview, your top one to three bottlenecks, and recent examples where delivery, reliability, or cloud spend created business friction are enough. If useful, share those in advance. If not, we can map it live in the first phase.',
+  },
+  {
+    question: 'How do you prepare for the call?',
+    answer:
+      'I do prep work before we meet. I review what you send, research your product and company context, and arrive with an initial diagnostic hypothesis to pressure-test together. The call starts informed, not generic.',
+  },
+  {
+    question: 'Is this confidential?',
+    answer:
+      'Yes. You can request an NDA before the call. Nothing from the session is shared or reused without your explicit permission.',
+  },
+  {
+    question: 'What happens after the call?',
+    answer:
+      'Within 24 hours, you receive the core finding in writing so you can use it internally. If there is a clear fit for deeper work, I outline what that can look like. No pressure and no automated follow-up sequence.',
+  },
 ]
 
 export default async function DiagnosisPage({
@@ -164,7 +192,7 @@ export default async function DiagnosisPage({
                 {/* Title row */}
                 <div className="flex flex-wrap items-center gap-2 mb-3">
                   <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-electric-cyan font-medium">
-                    One Concrete Finding
+                    One concrete finding
                   </span>
                   <span className="font-mono text-[9px] tracking-[0.08em] border border-electric-cyan/30 text-electric-cyan/60 px-2 py-0.5 rounded-sm">
                     output
@@ -213,6 +241,43 @@ export default async function DiagnosisPage({
           </p>
           <div className="overflow-hidden bg-deep-blue" style={{ minHeight: '600px' }}>
             <CalEmbed />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/[0.06] py-20">
+        <div className="wrap max-w-[860px]">
+          <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white mb-3 leading-[1.2]">
+            FAQs before booking
+          </h2>
+          <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-10 max-w-[640px]">
+            Direct answers to the questions most CTOs ask when they are almost ready to book.
+          </p>
+
+          <div className="space-y-3">
+            {faqs.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-lg border border-electric-cyan/20 bg-electric-cyan/[0.03] open:border-electric-cyan/40"
+              >
+                <summary className="list-none cursor-pointer px-5 py-4 flex items-start justify-between gap-4">
+                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-white/90">
+                    {item.question}
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 text-electric-cyan text-[18px] leading-none transition-transform group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+                <div className="px-5 pb-5 pt-0 border-t border-white/[0.08]">
+                  <p className="pt-4 font-body text-[14px] font-light leading-[1.75] text-grey-mid">
+                    {item.answer}
+                  </p>
+                </div>
+              </details>
+            ))}
           </div>
         </div>
       </section>

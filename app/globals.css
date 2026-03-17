@@ -359,8 +359,10 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
 /* Panel — sits inside the fixed header, height driven by JS */
 /* overflow-hidden + height animation handled via inline style      */
 #mobile-menu {
-  background: #0a0a0a;
-  border-top: 1px solid rgba(0,229,255,.10);
+  background:
+    linear-gradient(180deg, rgba(11,31,58,.98) 0%, rgba(13,36,71,.98) 100%);
+  border-top: 1px solid rgba(0,229,255,.22);
+  box-shadow: inset 0 1px 0 rgba(0,229,255,.08);
   overflow-y: auto;
 }
 
@@ -370,7 +372,7 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
 .mobile-panel-link {
   display: block;
   padding: 18px var(--pad);
-  @apply font-sans text-[22px] font-bold text-white no-underline transition-colors duration-200;
+  @apply font-display text-[22px] font-bold tracking-tight text-white no-underline transition-colors duration-200;
 }
 .mobile-panel-link:hover,
 .mobile-panel-link:focus-visible { @apply text-electric-cyan; outline: none; }
@@ -391,7 +393,7 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
   padding: 15px 24px;
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 8px;
-  @apply font-sans text-[16px] font-semibold text-white no-underline transition-colors duration-200;
+  @apply font-body text-[16px] font-semibold text-white no-underline transition-colors duration-200;
 }
 .mobile-menu-btn-secondary:hover { border-color: rgba(0,229,255,.5); @apply text-electric-cyan; }
 
@@ -402,7 +404,7 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
   padding: 15px 24px;
   border-radius: 8px;
   background: #00E5FF;
-  @apply font-sans text-[16px] font-semibold text-[#0B1F3A] no-underline transition-opacity duration-200;
+  @apply font-body text-[16px] font-semibold text-[#0B1F3A] no-underline transition-opacity duration-200;
 }
 .mobile-menu-btn-primary:hover { opacity: 0.9; }
 
