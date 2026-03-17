@@ -29,10 +29,10 @@ export default function Nav() {
 
       <div className="flex items-center gap-3">
         <Link
-          href="/en/diagnose"
+          href="/en/diagnosis"
           className="btn btn-p"
         >
-          Diagnose
+          diagnosis
         </Link>
         <div className="nav-mobile-trigger">
           <MobileNav />

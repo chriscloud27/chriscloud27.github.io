@@ -34,7 +34,7 @@
   compounding in your platform, so your engineering team ships faster
   instead of firefighting what already exists.
 - Proof line: Architectures built to survive growth — not to be replaced by it.
-- Primary CTA: Diagnose Your Architecture
+- Primary CTA: diagnosis Your Architecture
 - Secondary CTA: See How It Works
 
 ## Stack

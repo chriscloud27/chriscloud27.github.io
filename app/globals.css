@@ -196,19 +196,26 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
   background-size: 64px 64px;
 }
 
-/* ── Nav ─────────────────────────────────────────────────────────────────── */
-nav {
+/* ── Site Header ─────────────────────────────────────────────────────────── */
+.site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 200;
+  background: rgba(11,31,58,.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 2px solid rgba(0,229,255,.45);
+  transition: background 300ms, box-shadow 300ms;
+}
+.site-header--scrolled {
+  background: rgba(11,31,58,.98);
+  box-shadow: 0 1px 0 rgba(0,229,255,.25);
+}
+.site-header-bar {
   height: var(--nav);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--pad);
-  background: rgba(11,31,58,.92);
-  backdrop-filter: blur(14px);
-  border-bottom: 2px solid rgba(0,229,255,.45);
 }
 .nav-logo {
   @apply font-mono text-[14px] font-medium text-electric-cyan no-underline tracking-[0.04em] flex items-center gap-2;
@@ -256,85 +263,44 @@ nav {
 .nav-dropdown a:hover { @apply text-electric-cyan bg-electric-cyan/[0.06]; }
 
 /* ── Mobile Menu ────────────────────────────────────────────────────────────── */
-.nav-mobile-trigger { display: none; }
 
+/* Hamburger / close button */
 .mobile-menu-trigger {
   background: none;
   border: none;
   cursor: pointer;
-  @apply text-white transition-colors duration-200;
   padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  @apply text-white transition-colors duration-200;
 }
 .mobile-menu-trigger:hover { @apply text-electric-cyan; }
-.mobile-menu-trigger svg { stroke: currentColor; }
+.mobile-menu-trigger svg  { stroke: currentColor; }
 
-/* Full-screen overlay */
-.mobile-menu-content {
-  position: fixed;
-  inset: 0;
+/* Panel — sits inside the fixed header, height driven by JS */
+/* overflow-hidden + height animation handled via inline style      */
+#mobile-menu {
   background: #0a0a0a;
-  z-index: 1001;
-  display: flex;
-  flex-direction: column;
-  animation: fadeInMenu .2s ease-out;
+  border-top: 1px solid rgba(0,229,255,.10);
+  overflow-y: auto;
 }
-
-@keyframes fadeInMenu {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-/* Header: logo + close */
-.mobile-menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 24px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-
-.mobile-menu-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  @apply font-sans text-[18px] font-semibold text-electric-cyan;
-}
-
-.mobile-menu-close {
-  background: none;
-  border: none;
-  cursor: pointer;
-  @apply text-white transition-colors duration-200;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.mobile-menu-close:hover { @apply text-electric-cyan; }
-.mobile-menu-close svg { stroke: currentColor; }
 
 /* Nav links */
-.mobile-menu-nav {
-  flex: 1;
-  overflow-y: auto;
-  padding: 12px 0;
-}
+.mobile-panel-nav { padding: 8px 0; }
 
-.mobile-menu-link {
+.mobile-panel-link {
   display: block;
-  padding: 20px 24px;
+  padding: 18px var(--pad);
   @apply font-sans text-[22px] font-bold text-white no-underline transition-colors duration-200;
 }
-.mobile-menu-link:hover { @apply text-electric-cyan; }
+.mobile-panel-link:hover,
+.mobile-panel-link:focus-visible { @apply text-electric-cyan; outline: none; }
 
 /* Footer CTAs */
-.mobile-menu-footer {
-  padding: 24px;
-  border-top: 1px solid rgba(255,255,255,.08);
+.mobile-panel-footer {
+  padding: 20px var(--pad) 28px;
+  border-top: 1px solid rgba(255,255,255,.07);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -344,7 +310,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  padding: 15px 24px;
   border: 1px solid rgba(255,255,255,.2);
   border-radius: 8px;
   @apply font-sans text-[16px] font-semibold text-white no-underline transition-colors duration-200;
@@ -355,22 +321,12 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  padding: 15px 24px;
   border-radius: 8px;
   background: #00E5FF;
   @apply font-sans text-[16px] font-semibold text-[#0B1F3A] no-underline transition-opacity duration-200;
 }
 .mobile-menu-btn-primary:hover { opacity: 0.9; }
-
-/* Mobile: hide desktop nav, show trigger */
-@media (max-width: 800px) {
-  .nav-links { display: none; }
-  .nav-mobile-trigger { display: block; }
-}
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .nav-mobile-trigger { display: block; }
-}
 
 /* ── Hero section ────────────────────────────────────────────────────────────── */
 #hero::before {

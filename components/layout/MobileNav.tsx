@@ -70,8 +70,8 @@ export default function MobileNav() {
             <Link href={localeHref('/#connect')} onClick={handleNavClick} className="mobile-menu-btn-secondary">
               Get in touch
             </Link>
-            <Link href="/en/diagnose" onClick={handleNavClick} className="mobile-menu-btn-primary">
-              Diagnose your architecture
+            <Link href="/en/diagnosis" onClick={handleNavClick} className="mobile-menu-btn-primary">
+              diagnosis your architecture
             </Link>
           </div>
         </Dialog.Content>

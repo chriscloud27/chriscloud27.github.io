@@ -19,10 +19,10 @@ export default function CtaSection() {
           </p>
 
           <Link
-            href="/en/diagnose"
+            href="/en/diagnosis"
             className="btn btn-p"
           >
-            Diagnose Your Architecture
+            diagnosis Your Architecture
           </Link>
         </div>
       </div>

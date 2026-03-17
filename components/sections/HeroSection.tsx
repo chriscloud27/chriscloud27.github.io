@@ -39,10 +39,10 @@ export default function HeroSection() {
 
             <div className="hero-btns">
               <Link
-                href="/en/diagnose"
+                href="/en/diagnosis"
                 className="btn btn-p"
               >
-                Diagnose Your Architecture
+                diagnosis Your Architecture
               </Link>
               <a href="#how-it-works" className="btn btn-g">
                 See How It Works

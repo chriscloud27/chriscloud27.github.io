@@ -213,7 +213,7 @@ export default async function ServicesPage({
           </p>
           <div className="flex flex-wrap gap-4 items-center">
             <Link
-              href="/en/diagnose"
+              href="/en/diagnosis"
               className="btn btn-p"
             >
               Start with a Diagnosis →
@@ -282,7 +282,7 @@ export default async function ServicesPage({
                     </div>
 
                     <Link
-                      href="/en/diagnose"
+                      href="/en/diagnosis"
                       className="inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-electric-cyan no-underline transition-[gap] duration-200 hover:gap-4"
                     >
                       {offer.cta} <span className="text-base">→</span>
@@ -383,7 +383,7 @@ export default async function ServicesPage({
         <div className="wrap">
           {/* <p className="eyebrow mb-7">Start Here</p> */}
           <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-display font-bold leading-[1.1] mb-6 tracking-tight max-w-3xl mx-auto">
-            Diagnose your architecture before{' '}
+            diagnosis your architecture before{' '}
             <em>growth exposes it.</em>
           </h2>
           <p className="font-body text-[16px] font-light text-grey-mid max-w-md mx-auto mb-12 leading-[1.7]">
@@ -392,7 +392,7 @@ export default async function ServicesPage({
           </p>
           <div className="flex flex-col items-center gap-4">
             <Link
-              href="/en/diagnose"
+              href="/en/diagnosis"
               className="btn btn-p"
             >
               Book a 30-minute Diagnosis →

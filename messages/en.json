@@ -8,7 +8,7 @@
     "about": "About",
     "blog": "Blog",
     "connect": "Connect",
-    "getInTouch": "Diagnose",
+    "getInTouch": "diagnosis",
     "case01": "Case 01 — Kubernetes at Enterprise",
     "case02": "Case 02 — Autonomous Driving Platform",
     "case03": "Case 03 — SaaS Optimization",
@@ -57,7 +57,7 @@
   "connect": {
     "eyebrow": "Connect",
     "heading": "Your platform should <em>outlast your roadmap.</em>",
-    "sub": "If you're a CTO or engineering leader at a SaaS company scaling from 10 to 100 engineers — and architecture is starting to create friction — <strong>let's talk.</strong> A 30-minute call costs nothing and usually surfaces the one thing worth fixing first.",
+    "sub": "<strong>Let's talk</strong> if you're a CTO or engineering leader at a SaaS company scaling from 10 to 100 engineers and architecture is starting to create friction. Structured preparation. One concrete finding — regardless of what comes next.",
     "note": "No sales pitch. No commitment. Just architectural clarity."
   },
   "form": {
@@ -132,7 +132,7 @@
     "pillar7Desc": "Data sovereignty, compliance, vendor neutrality, and exit strategies — your platform should never be held hostage by a provider.",
     "learnMore": "Explore WAF++ Framework →",
     "blogArticle": "Read: WAF++ — A New Approach →",
-    "cta": "Diagnose Your Architecture",
+    "cta": "diagnosis Your Architecture",
     "ctaSecondary": "See Our Work",
     "metaTitle": "WAF++ Framework — Seven Pillars for Sovereign Cloud Architecture",
     "metaDescription": "WAF++ is an open-source framework for intentional, vendor-neutral cloud architecture. Seven pillars: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability, and Sovereignty."

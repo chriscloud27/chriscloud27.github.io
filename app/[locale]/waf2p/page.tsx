@@ -239,7 +239,7 @@ export default async function Waf2pPage({
         <div className="wrap text-center">
           <div className="flex gap-3 justify-center flex-wrap">
             <Link
-              href="/en/diagnose"
+              href="/en/diagnosis"
               className="btn btn-p"
             >
               {t('cta')}

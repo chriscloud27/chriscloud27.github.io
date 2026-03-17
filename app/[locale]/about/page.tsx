@@ -76,7 +76,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               </p>
               <div className="flex gap-3 flex-wrap">
                 <Link
-                  href="/en/diagnose"
+                  href="/en/diagnosis"
                   className="btn btn-p"
                 >
                   {t('cta')}

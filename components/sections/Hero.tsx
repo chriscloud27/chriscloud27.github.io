@@ -24,7 +24,7 @@ export default async function Hero() {
             </p>
             <div className="hero-btns rise r4">
               <Link
-                href="/en/diagnose"
+                href="/en/diagnosis"
                 className="btn btn-p"
               >
                 {t('cta')}

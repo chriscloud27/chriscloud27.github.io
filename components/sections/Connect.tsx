@@ -24,8 +24,7 @@ export default async function Connect() {
             <p>
               Let&apos;s talk if you&apos;re a CTO or engineering leader at a SaaS company scaling from 10 to
               100 engineers and architecture is starting to create friction {' '}
-              <strong></strong> A 30-minute call costs nothing and usually
-              surfaces the one thing worth fixing first.
+              <strong></strong> A short call usually surfaces the one thing worth fixing first.
             </p>
           </div>
 
@@ -66,7 +65,7 @@ export default async function Connect() {
               Email
             </a>
             <Link
-              href="/en/diagnose"
+              href="/en/diagnosis"
               className="soc"
             >
               <svg viewBox="0 0 24 24">
