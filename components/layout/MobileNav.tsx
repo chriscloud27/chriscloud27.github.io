@@ -71,7 +71,7 @@ export default function MobileNav() {
               Get in touch
             </Link>
             <Link href="/en/diagnosis" onClick={handleNavClick} className="mobile-menu-btn-primary">
-              diagnosis your architecture
+              Free Architecture Diagnosis
             </Link>
           </div>
         </Dialog.Content>

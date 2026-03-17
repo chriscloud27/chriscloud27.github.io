@@ -31,7 +31,7 @@
   in your platform, so your engineering team ships faster instead of 
   firefighting what already exists.
 - Proof line: Architectures built to survive growth — not to be replaced by it.
-- Primary CTA: diagnosis Your Architecture
+- Primary CTA: Free Architecture Diagnosis
 - Secondary CTA: See How It Works
 
 ## Stack
@@ -85,7 +85,7 @@ Sections in order:
 4. How It Works — Audit → Blueprint → Enablement → Fractional
 5. Credibility — 13+ years, 90% automation, global teams, 
    architecture excellence awards
-6. CTA section — "diagnosis Your Architecture" with a short 
+6. CTA section — "Architecture Diagnosis" with a short 
    supporting line
 7. Footer — minimal, MaCh2.Cloud logo reference, navigation
 

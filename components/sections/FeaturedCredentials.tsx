@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const MicrosoftLogo = () => (
   <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" className="w-14 h-14">
     <rect width="40" height="40" fill="white" rx="3" />
@@ -66,14 +68,9 @@ export default function FeaturedCredentials() {
             </p>
 
             <div className="mt-auto pt-2">
-              <a
-                href="https://prod.ucwe.capgemini.com/de-de/wp-content/uploads/sites/8/2023/11/function-apps-versus-kubernetes.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ach-btn"
-              >
+              <Link href="/en/whitepaper" className="ach-btn">
                 Download Whitepaper →
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -42,7 +42,7 @@ export default function HeroSection() {
                 href="/en/diagnosis"
                 className="btn btn-p"
               >
-                diagnosis Your Architecture
+                Free Architecture Diagnosis
               </Link>
               <a href="#how-it-works" className="btn btn-g">
                 See How It Works

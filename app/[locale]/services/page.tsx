@@ -383,7 +383,7 @@ export default async function ServicesPage({
         <div className="wrap">
           {/* <p className="eyebrow mb-7">Start Here</p> */}
           <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-display font-bold leading-[1.1] mb-6 tracking-tight max-w-3xl mx-auto">
-            diagnosis your architecture before{' '}
+            Free Architecture Diagnosis before{' '}
             <em>growth exposes it.</em>
           </h2>
           <p className="font-body text-[16px] font-light text-grey-mid max-w-md mx-auto mb-12 leading-[1.7]">

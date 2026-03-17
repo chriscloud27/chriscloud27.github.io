@@ -22,7 +22,7 @@ export default function CtaSection() {
             href="/en/diagnosis"
             className="btn btn-p"
           >
-            diagnosis Your Architecture
+            Free Architecture Diagnosis
           </Link>
         </div>
       </div>

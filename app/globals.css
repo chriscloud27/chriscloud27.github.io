@@ -264,6 +264,84 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
 
 /* ── Mobile Menu ────────────────────────────────────────────────────────────── */
 
+/* Radix Dialog panel */
+.mobile-menu-content {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  background: #0B1F3A;
+  border-right: 1px solid rgba(0,229,255,.10);
+  overflow-y: auto;
+  /* slide-in from right */
+  animation: mobileMenuIn 220ms cubic-bezier(0.16,1,0.3,1);
+}
+@keyframes mobileMenuIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Header row: logo + close */
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(0,229,255,.08);
+}
+
+/* Logo wordmark */
+.mobile-menu-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  @apply font-display text-[18px] font-bold text-electric-cyan;
+}
+
+/* Close button */
+.mobile-menu-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @apply text-grey-mid transition-colors duration-200;
+}
+.mobile-menu-close:hover { @apply text-electric-cyan; }
+.mobile-menu-close svg   { stroke: currentColor; }
+
+/* Nav list */
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 12px 0;
+}
+
+/* Individual nav links */
+.mobile-menu-link {
+  display: block;
+  padding: 22px 24px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  @apply font-display text-[26px] font-bold text-white tracking-tight transition-colors duration-200;
+}
+.mobile-menu-link:hover,
+.mobile-menu-link:focus-visible { @apply text-electric-cyan; outline: none; }
+
+/* Footer CTAs */
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
 /* Hamburger / close button */
 .mobile-menu-trigger {
   background: none;
