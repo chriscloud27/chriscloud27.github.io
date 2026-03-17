@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { useLocale } from 'next-intl'
 
 const STEPS = [
-  { num: '00', label: 'Diagnosis', sub: '30-min call. One clear finding.' },
-  { num: '01', label: 'Audit', sub: 'Full platform assessment. Prioritized roadmap.' },
-  { num: '02', label: 'Blueprint', sub: 'Target architecture. Production-ready design.' },
-  { num: '03', label: 'Enablement', sub: 'Guided implementation. Team ownership.' },
-  { num: '04', label: 'Fractional', sub: 'Ongoing architecture leadership. Monthly cadence.' },
+  { num: '00', slug: 'diagnosis', label: 'Diagnosis', sub: '30-min call. One clear finding.' },
+  { num: '01', slug: 'audit', label: 'Audit', sub: 'Full platform assessment. Prioritized roadmap.' },
+  { num: '02', slug: 'blueprint', label: 'Blueprint', sub: 'Target architecture. Production-ready design.' },
+  { num: '03', slug: 'enablement', label: 'Enablement', sub: 'Guided implementation. Team ownership.' },
+  { num: '04', slug: 'fractional', label: 'Fractional', sub: 'Ongoing architecture leadership. Monthly cadence.' },
 ]
 
 type ServicesSectionProps = {
@@ -46,7 +46,7 @@ export default function ServicesSection({ sectionId = 'services' }: ServicesSect
             {STEPS.map((step) => (
               <Link
                 key={step.num}
-                href={servicesHref}
+                href={`${servicesHref}#${step.slug}`}
                 className="group flex flex-col items-center text-center px-2 no-underline"
               >
                 {/* Number dot */}

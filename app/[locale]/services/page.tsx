@@ -7,6 +7,7 @@ import { getGlobalSettings } from '@/lib/settings'
 import { SERVICES_KEYWORDS } from '@/lib/keywords'
 import StatsGrid from '@/components/sections/StatsGrid'
 import ServicesSection from '@/components/sections/ServicesSection'
+import FinalCta from '@/components/sections/FinalCta'
 
 export async function generateMetadata({
   params,
@@ -52,6 +53,25 @@ export async function generateMetadata({
 }
 
 const OFFERS = [
+  {
+    num: '00',
+    slug: 'diagnosis',
+    label: 'DIAGNOSIS',
+    title: 'Architecture\nDiagnosis',
+    subtitle: 'Free Diagnosis',
+    description:
+      'A focused 30-minute architecture diagnosis to surface the highest-leverage constraint worth fixing first. A concrete finding and next step.',
+    trigger: '"We need a clear starting point — fast."',
+    cta: 'Book Diagnosis',
+    outcomesLabel: 'What You Walk Away With',
+    outcomes: [
+      'One concrete architectural finding you can act on immediately',
+      'Concise written summary to share with your team',
+      'A recommended next step and priority roadmap item',
+    ],
+    deliverablesLabel: 'Deliverables',
+    deliverables: ['One finding', 'Written summary', 'Next-step recommendation'],
+  },
   {
     num: '01',
     slug: 'audit',
@@ -212,10 +232,7 @@ export default async function ServicesPage({
             Designed for Series A–B SaaS companies that are done firefighting and ready to build.
           </p>
           <div className="flex flex-wrap gap-4 items-center">
-            <Link
-              href="/en/diagnosis"
-              className="btn btn-p"
-            >
+            <Link href="/en/diagnosis" className="btn btn-p btn-p-lg">
               Start with a Diagnosis →
             </Link>
             <a href="#journey" className="btn btn-g">
@@ -234,7 +251,7 @@ export default async function ServicesPage({
           <p className="eyebrow mb-6">Services</p>
           <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-display font-bold mb-14 max-w-lg leading-[1.2]">
             Four engagements.{' '}
-            <em>One architectural trajectory.</em>
+            <em>One architectural trajectory</em>
           </h2>
 
           <div className="flex flex-col gap-[2px]">
@@ -243,6 +260,8 @@ export default async function ServicesPage({
               return (
                 <div
                   key={offer.slug}
+                  id={offer.slug}
+                  tabIndex={-1}
                   className={`grid grid-cols-1 lg:grid-cols-2 border rounded-lg overflow-hidden ${
                     offer.featured
                       ? 'border-electric-cyan/15 bg-electric-cyan/[0.02]'
@@ -348,7 +367,7 @@ export default async function ServicesPage({
             <div>
               <p className="eyebrow mb-6">Engagement Philosophy</p>
               <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-display font-bold leading-[1.15] mb-6">
-                Architecture is not a one-time <em>delivery.</em>
+                Architecture is not a one-time <em>delivery</em>
               </h2>
               <p className="font-body text-[15px] font-light text-grey-mid leading-[1.8] mb-4">
                 It is a continuously evolving system aligned with product and business growth. My role is not
@@ -378,31 +397,8 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      {/* ── Final CTA ────────────────────────────────────────────────────── */}
-      <section className="py-24 lg:py-32 border-t border-white/[0.06] text-center">
-        <div className="wrap">
-          {/* <p className="eyebrow mb-7">Start Here</p> */}
-          <h2 className="text-[clamp(2.25rem,5vw,4.5rem)] font-display font-bold leading-[1.1] mb-6 tracking-tight max-w-3xl mx-auto">
-            Free Architecture Diagnosis before{' '}
-            <em>growth exposes it.</em>
-          </h2>
-          <p className="font-body text-[16px] font-light text-grey-mid max-w-md mx-auto mb-12 leading-[1.7]">
-            Start with an Architecture Diagnosis Call — 30 minutes to surface the highest-leverage thing
-            worth fixing first. No commitment. No pitch. Just clarity.
-          </p>
-          <div className="flex flex-col items-center gap-4">
-            <Link
-              href="/en/diagnosis"
-              className="btn btn-p"
-            >
-              Book a 30-minute Diagnosis →
-            </Link>
-            <p className="font-mono text-[11px] tracking-[0.08em] text-white/20">
-              No pitch. One high-leverage finding you can act on.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* ── Final CTA (component) ───────────────────────────────────────────── */}
+      <FinalCta locale={locale} />
     </main>
   )
 }

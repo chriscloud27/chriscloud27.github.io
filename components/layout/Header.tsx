@@ -124,7 +124,7 @@ export default function Header() {
           {/* Right actions */}
           <div className="flex items-center gap-3">
             <Link href="/en/diagnosis" className="btn btn-p">
-              Diagnose
+              Diagnosis
             </Link>
 
             {/* Hamburger: visible below lg only */}

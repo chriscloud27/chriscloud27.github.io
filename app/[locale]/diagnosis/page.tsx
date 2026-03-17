@@ -46,8 +46,8 @@ const steps = [
     num: '03',
     name: 'Root Cause Isolation',
     tag: 'architectural decisions',
-    subtitle: 'We will focus to identify one main problem',
-    body: 'We will identify quick wins for your team and name what they need to resolve from what will compound until it is addressed at the architectural level. The type of problem determines the type of intervention. ',
+    subtitle: 'One finding. Framed to be immediately usable',
+    body: 'We name what you and your team need to resolve from what will compound until it is addressed at the architectural level. The type of problem determines the type of intervention. ',
     instructions: 'Implementation problem or structural problem. Treating a structural constraint as an implementation issue is the most common reason platform work fails to hold.',
   },
 ]
@@ -112,8 +112,8 @@ export default async function DiagnosisPage({
 
           {/* Headline */}
           <h1 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-bold italic leading-[1.15] text-white mb-5 max-w-[760px]">
-            A <em> structured</em> 60-minute 
-            <em> diagnosis</em>
+            The Architecture<br></br>
+            <em>Diagnosis</em>
           </h1>
 
           {/* Sub */}

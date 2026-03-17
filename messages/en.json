@@ -17,7 +17,7 @@
   "hero": {
     "eyebrow": "Principal AI-Native Cloud Architect",
     "h1Part1": "Your platform should",
-    "h1Emphasis": "accelerate growth.",
+    "h1Emphasis": "accelerate growth",
     "h1Part2": "Right now it probably isn't.",
     "sub": "I help <strong>Seed–Series C SaaS CTOs and engineering leaders</strong> build scalable SaaS infrastructure for growth-stage velocity. I design <strong>automated, secure, high-leverage cloud platforms</strong> that scale AI-native products without architectural rewrites.",
     "cta": "Get in touch",
@@ -108,8 +108,8 @@
   },
   "waf2p": {
     "eyebrow": "Open Framework",
-    "h1Part1": "WAF++ — Cloud Architecture",
-    "h1Emphasis": "Done Intentionally.",
+    "h1Part1": "WAF++ Cloud Architecture",
+    "h1Emphasis": "Done Intentionally",
     "sub": "WAF++ is an open-source framework for designing cloud architectures <strong>securely, intentionally, and vendor-neutral</strong>. MaCh2.Cloud uses and contributes to WAF++ as the structural backbone of every architecture engagement.",
     "what": "What is WAF++?",
     "whatDesc": "WAF++ structures cloud architecture decisions across seven pillars — from Security to Sovereignty. It provides a vendor-neutral assessment framework built for multi-cloud reality, regulatory compliance, and the operational risks that matter most: misconfiguration, lock-in, and lack of transparency. 69% of data breaches involve misconfiguration. WAF++ is built to close that gap.",

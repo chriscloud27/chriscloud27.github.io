@@ -17,7 +17,7 @@
   "hero": {
     "eyebrow": "Arquitecto Principal de Cloud AI-Nativo",
     "h1Part1": "Tu plataforma debería",
-    "h1Emphasis": "acelerar el crecimiento.",
+    "h1Emphasis": "acelerar el crecimiento",
     "h1Part2": "Ahora mismo probablemente no lo hace.",
     "sub": "Ayudo a <strong>CTOs de SaaS Seed–Series C y líderes de ingeniería</strong> a construir infraestructura SaaS escalable. Diseño <strong>plataformas cloud automatizadas, seguras y de alto apalancamiento</strong>.",
     "cta": "Ponerse en contacto",
@@ -108,7 +108,7 @@
   },
   "waf2p": {
     "eyebrow": "Framework Abierto",
-    "h1Part1": "WAF++ — Arquitectura Cloud",
+    "h1Part1": "WAF++ Arquitectura Cloud",
     "h1Emphasis": "diseñada con intención.",
     "sub": "WAF++ es un framework open-source para diseñar arquitecturas cloud de forma <strong>segura, intencional y neutral ante proveedores</strong>. MaCh2.Cloud usa y contribuye a WAF++ como columna vertebral estructural de cada engagement de arquitectura.",
     "what": "¿Qué es WAF++?",
