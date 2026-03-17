@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'about' })
   const settings = getGlobalSettings(locale)
   const title = `${t('eyebrow')} — ${settings.siteName}`
-  const description = t('description').replace(/<[^>]*>/g, '')
+  const description = t.raw('description').replace(/<[^>]*>/g, '')
   const i18n = buildCanonicalAndAlternates('/about', locale)
   const ogImage = settings.defaultSeo?.shareImage
 
@@ -68,11 +68,11 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <em>AI-Native Cloud Architect</em>
               </h1>
               <p className="hero-sub mt-6">
-                {t.rich('sub')}
+                {t.rich('sub', { highlight: (c) => <span className="text-electric-cyan">{c}</span> })}
               </p>
               {/* brand: max-w-text caps prose at 680px per token */}
               <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid max-w-text mb-8">
-                {t.rich('description')}
+                {t.rich('description', { highlight: (c) => <span className="text-electric-cyan">{c}</span> })}
               </p>
               <div className="flex gap-3 flex-wrap">
                 <Link

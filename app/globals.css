@@ -683,7 +683,7 @@ h1 em, h2 em { font-style: italic; color: var(--cyan); }
 /* ── Form ────────────────────────────────────────────────────────────────────── */
 .contact-form { max-width: 620px; margin: 0 auto 84px; }
 .form-group { margin-bottom: 24px; display: grid; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
 .form-row .form-group { margin-bottom: 0; }
 .form-label { @apply font-body text-[14px] font-medium text-white mb-2 block; }
 .required { @apply text-electric-cyan; }

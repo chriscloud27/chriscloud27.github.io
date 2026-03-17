@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -7,12 +8,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-const WEBHOOK_URL = 'https://flow.mach2.cloud/form/056425f2-f887-4a41-a848-5108e13049ea'
+const WEBHOOK_URL = 'https://flow.mach2.cloud/webhook/whitepaper'
 const WHITEPAPER_URL =
   'https://prod.ucwe.capgemini.com/de-de/wp-content/uploads/sites/8/2023/11/function-apps-versus-kubernetes.pdf'
 
 const schema = z.object({
-  name: z.string().min(1, 'Your name is required'),
+  name_first: z.string().min(1, 'Your first name is required'),
+  name_family: z.string().min(1, 'Your last name is required'),
   email: z.string().email('Please enter a valid email address'),
   company: z.string().optional(),
   consent: z.literal(true, {
@@ -23,6 +25,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>
 
 export default function WhitepaperForm() {
+  const [submitError, setSubmitError] = useState<string | null>(null)
+
   const {
     register,
     handleSubmit,
@@ -33,22 +37,29 @@ export default function WhitepaperForm() {
   })
 
   async function onSubmit(data: FormValues) {
-    const formData = new FormData()
-    formData.append('Name', data.name)
-    formData.append('Email', data.email)
-    if (data.company) formData.append('Company', data.company)
-    formData.append('Consent', 'true')
+    setSubmitError(null)
 
-    const response = await fetch(WEBHOOK_URL, {
-      method: 'POST',
-      body: formData,
+    const params = new URLSearchParams({
+      name_first: data.name_first,
+      name_family: data.name_family,
+      Email: data.email,
+      Consent: 'true',
     })
 
-    if (!response.ok) {
-      throw new Error(`Status: ${response.status}`)
+    if (data.company) {
+      params.set('Company', data.company)
     }
 
-    reset()
+    try {
+      await fetch(`${WEBHOOK_URL}?${params.toString()}`, {
+        method: 'GET',
+        mode: 'no-cors',
+      })
+
+      reset()
+    } catch {
+      setSubmitError('The request could not be sent. Please try again in a moment.')
+    }
   }
 
   if (isSubmitSuccessful) {
@@ -75,19 +86,36 @@ export default function WhitepaperForm() {
   return (
     <form className="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
       {/* Name */}
-      <div className="form-group">
-        <Label htmlFor="name" className="form-label">
-          What is your name? <span className="required">*</span>
-        </Label>
-        <Input
-          id="name"
-          type="text"
-          {...register('name')}
-          aria-invalid={!!errors.name}
-        />
-        {errors.name && (
-          <span className="form-error show">{errors.name.message}</span>
-        )}
+      <div className="form-row">
+        <div className="form-group">
+          <Label htmlFor="name_first" className="form-label">
+            What is your first name? <span className="required">*</span>
+          </Label>
+          <Input
+            id="name_first"
+            type="text"
+            {...register('name_first')}
+            aria-invalid={!!errors.name_first}
+          />
+          {errors.name_first && (
+            <span className="form-error show">{errors.name_first.message}</span>
+          )}
+        </div>
+
+        <div className="form-group">
+          <Label htmlFor="name_family" className="form-label">
+            What is your last name? <span className="required">*</span>
+          </Label>
+          <Input
+            id="name_family"
+            type="text"
+            {...register('name_family')}
+            aria-invalid={!!errors.name_family}
+          />
+          {errors.name_family && (
+            <span className="form-error show">{errors.name_family.message}</span>
+          )}
+        </div>
       </div>
 
       {/* Email */}
@@ -144,6 +172,10 @@ export default function WhitepaperForm() {
       >
         {isSubmitting ? 'Sending…' : 'Submit'}
       </Button>
+
+      {submitError && (
+        <div className="form-message error mt-4">{submitError}</div>
+      )}
     </form>
   )
 }

@@ -27,7 +27,7 @@ export default async function WhitepaperPage({
       <section className="relative overflow-hidden">
         <div aria-hidden="true" className="grid-overlay" />
 
-        <div className="wrap relative z-10 py-20 lg:py-28">
+        <div className="wrap relative z-10 py-20">
           {/* Eyebrow */}
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-8">
             <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-electric-cyan">
