@@ -200,7 +200,7 @@ export default async function DiagnosisPage({
                 </div>
                 {/* Subtitle — cyan */}
                 <h2 className="font-display text-[19px] font-bold text-electric-cyan leading-[1.3] mb-3">
-                  A quick win to be implemented immediately
+                  A highest-leverage thing to be implemented immediately
                 </h2>
                 {/* Body */}
                 <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-8">
