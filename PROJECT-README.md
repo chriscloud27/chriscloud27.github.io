@@ -86,16 +86,32 @@ reports/seo/
 
 ## Pre-Commit Checks
 
-**Status:** lint-staged check is **SKIPPED**.
+The `.husky/pre-commit` hook runs the following checks **in order**:
 
-The `.husky/pre-commit` hook runs the following checks in order:
+1. **Prettier formatting** — Auto-fixes without prompts, stages changes
+2. **TypeScript type check** — Validates types with `tsc --noEmit`
+3. **Dependency audit** — Checks for security vulnerabilities
+4. **Spellcheck** — Validates spelling in docs and content
+5. **Build verification** — Runs full `npm run build`
 
-- Prettier formatting check (with auto-fix option on user input)
-- TypeScript type check (`tsc --noEmit`)
-- **Dependency audit** (`npm audit`) — warnings allowed, non-interactive auto-fix enabled
-- Spellcheck (docs and content)
-- Full build verification (`npm run build`)
+### When commits FAIL (abort):
 
-**Skipped checks:**
+- ❌ **TypeScript type errors** — `tsc --noEmit` finds issues
+- ❌ **Build failure** — `npm run build` fails
 
-- ~~lint-staged~~ — Disabled to reduce friction in commit workflow
+### When commits PASS with WARNINGS (non-blocking):
+
+- ⚠️ **Prettier auto-fix fails** — Logs warning but continues
+- ⚠️ **Dependency audit issues** — Logs warning but continues
+- ⚠️ **Spellcheck failures** — Logs but never blocks (`|| true`)
+
+### Skipped checks:
+
+- ~~**lint-staged**~~ — Disabled to reduce friction
+
+### Notes:
+
+- **No interactive prompts** — All checks run silently, output to console
+- **Spellcheck:** `npx cspell \"content/**\" \"docs/**\" || true`
+- **Audit level:** Moderate (`--audit-level=moderate`)
+- **Build:** Full Next.js build with all validation included

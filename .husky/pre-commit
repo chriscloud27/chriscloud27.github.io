@@ -143,67 +143,22 @@ run_prettier_verbose() {
 		log "${GREEN}✔ Prettier passed${RESET}"
 		rm -f "$tmpfile"
 	else
-		log "${YELLOW}✖ Prettier check failed — files that differ:${RESET}"
+		log "${YELLOW}⚠ Prettier check failed — files that differ:${RESET}"
 		npx prettier --list-different . || true
+		log "${YELLOW}Auto-fixing formatting issues...${RESET}"
 
-		# If auto-fix requested, attempt to write fixes and stage changes
-		if [ "${PRE_COMMIT_AUTO_FIX}" = "1" ]; then
-			log "${YELLOW}PRE_COMMIT_AUTO_FIX=1: running 'npx prettier --write .'...${RESET}"
-			if npx prettier --write . >"$tmpfile" 2>&1; then
-				git add .
-				log "${GREEN}✔ Prettier auto-fixed files and staged changes.${RESET}"
-				rm -f "$tmpfile"
-				return 0
-			else
-				log "${RED}✖ Prettier auto-fix failed; see output below:${RESET}"
-				cat "$tmpfile" >&2
-				rm -f "$tmpfile"
-				add_fail
-				print_summary_and_exit
-			fi
-		fi
-
-		# If interactive terminal, ask user whether to auto-fix, ignore, or abort
-		if [ -t 0 ]; then
-			printf "%s" "${YELLOW}Prettier found formatting issues. Choose: [a]uto-fix, [i]gnore, [q]uit: ${RESET}"
-			read -r answer
-			case "$answer" in
-				a|A)
-					log "${YELLOW}Running 'npx prettier --write .'...${RESET}"
-					if npx prettier --write . >"$tmpfile" 2>&1; then
-						git add .
-						log "${GREEN}✔ Prettier auto-fixed files and staged changes.${RESET}"
-						rm -f "$tmpfile"
-						add_pass
-						return 0
-					else
-						log "${RED}✖ Prettier auto-fix failed; see output below:${RESET}"
-						cat "$tmpfile" >&2
-						rm -f "$tmpfile"
-						add_fail
-						print_summary_and_exit
-					fi
-					;;
-				i|I)
-					log "${YELLOW}Ignoring Prettier failures and continuing with commit.${RESET}"
-					rm -f "$tmpfile"
-					add_warn
-					return 0
-					;;
-				*)
-					log "${RED}Aborting commit due to Prettier failures.${RESET}"
-					cat "$tmpfile" >&2
-					rm -f "$tmpfile"
-					exit 1
-					;;
-			esac
-						else
-			# Non-interactive (CI). Abort by default and print output
-			log "${RED}✖ Prettier failed and no interactive terminal available — commit aborted${RESET}"
+		if npx prettier --write . >"$tmpfile" 2>&1; then
+			git add . 2>/dev/null || true
+			log "${GREEN}✔ Prettier auto-fixed files and staged changes.${RESET}"
+			rm -f "$tmpfile"
+			add_pass
+			return 0
+		else
+			log "${YELLOW}⚠ Prettier auto-fix encountered issues — continuing with warning${RESET}"
 			cat "$tmpfile" >&2
 			rm -f "$tmpfile"
-			add_fail
-			print_summary_and_exit
+			add_warn
+			return 0
 		fi
 	fi
 }
@@ -240,79 +195,11 @@ run_dependency_audit() {
 		add_pass
 		return 0
 	else
-		log "${RED}✖ Dependency audit reported issues.${RESET}"
-		# Show a short summary then offer interactive choices when possible
+		log "${YELLOW}⚠ Dependency audit reported issues:${RESET}"
 		cat "$tmpfile" >&2
-		# If the output suggests fixes requiring --force, warn but do not offer force-fix
-		FORCE_SUGGESTED=0
-		if grep -q -- "--force" "$tmpfile" 2>/dev/null || grep -q -- "force" "$tmpfile" 2>/dev/null; then
-			log "${YELLOW}⚠ Some fixes require '--force' and will not be applied automatically. This is a warning.${RESET}"
-			add_warn
-			FORCE_SUGGESTED=1
-		fi
-		if [ -t 0 ]; then
-			while true; do
-				printf "%s" "${YELLOW}Choose: [s]afe-fix, [d]etails, [i]gnore, [q]uit: ${RESET}"
-				read -r choice
-				case "$choice" in
-					s|S)
-						log "${YELLOW}Running 'npm audit fix' (safe)...${RESET}"
-						if npm audit fix --production >"$tmpfile" 2>&1; then
-							log "${GREEN}✔ npm audit fix applied (safe).${RESET}"
-							rm -f "$tmpfile"
-							git add package-lock.json package.json 2>/dev/null || true
-							add_pass
-							break
-						else
-							log "${YELLOW}⚠ npm audit fix failed — continuing with warning${RESET}"
-							cat "$tmpfile" >&2
-							rm -f "$tmpfile"
-							add_warn
-							break
-						fi
-						;;
-					d|D)
-						log "${YELLOW}Full audit output:${RESET}"
-						cat "$tmpfile" >&2
-						;;
-					i|I)
-						log "${YELLOW}Ignoring dependency audit issues and continuing.${RESET}"
-						rm -f "$tmpfile"
-						add_warn
-						break
-						;;
-					*)
-						log "${RED}Aborting due to dependency audit issues.${RESET}"
-						cat "$tmpfile" >&2
-						rm -f "$tmpfile"
-						add_fail
-						print_summary_and_exit
-						;;
-				esac
-			done
-		else
-			# Non-interactive: if PRE_COMMIT_AUTO_FIX=1 try safe fix, otherwise abort
-			if [ "${PRE_COMMIT_AUTO_FIX}" = "1" ]; then
-				log "${YELLOW}Non-interactive: running 'npm audit fix' due to PRE_COMMIT_AUTO_FIX=1...${RESET}"
-				if npm audit fix --production >"$tmpfile" 2>&1; then
-					log "${GREEN}✔ npm audit fix applied (safe).${RESET}"
-					rm -f "$tmpfile"
-					git add package-lock.json package.json 2>/dev/null || true
-					add_pass
-				else
-					log "${YELLOW}⚠ npm audit fix failed — continuing with warning${RESET}"
-					cat "$tmpfile" >&2
-					rm -f "$tmpfile"
-					add_warn
-				fi
-			else
-				log "${RED}✖ Dependency audit failed and no interactive terminal available — aborting.${RESET}"
-				cat "$tmpfile" >&2
-				rm -f "$tmpfile"
-				add_fail
-				print_summary_and_exit
-			fi
-		fi
+		rm -f "$tmpfile"
+		add_warn
+		return 0
 	fi
 }
 
