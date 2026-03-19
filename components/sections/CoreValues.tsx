@@ -1,31 +1,31 @@
 export default function CoreValues() {
   const values = [
     {
-      title: 'Intelligent',
+      title: "Intelligent",
       description:
-        'We think systematically about tradeoffs. Every architecture decision is reasoned, documented, and optimized for your specific constraints — not generic best practices.'
+        "We think systematically about tradeoffs. Every architecture decision is reasoned, documented, and optimized for your specific constraints — not generic best practices.",
     },
     {
-      title: 'Sovereign',
+      title: "Sovereign",
       description:
-        'Your infrastructure serves your business, not vice versa. We design cloud-agnostic architectures that give you optionality and prevent lock-in to single vendors.'
+        "Your infrastructure serves your business, not vice versa. We design cloud-agnostic architectures that give you optionality and prevent lock-in to single vendors.",
     },
     {
-      title: 'Trustworthy',
+      title: "Trustworthy",
       description:
-        'Security and compliance are non-negotiable. We architect with defense-in-depth, audit trails, and zero-trust principles built in from day one.'
+        "Security and compliance are non-negotiable. We architect with defense-in-depth, audit trails, and zero-trust principles built in from day one.",
     },
     {
-      title: 'Platform',
+      title: "Platform",
       description:
-        'Great infrastructure enables product velocity. We build platforms that scale with your team, not against it — enabling engineers to move faster and ship with confidence.'
+        "Great infrastructure enables product velocity. We build platforms that scale with your team, not against it — enabling engineers to move faster and ship with confidence.",
     },
     {
-      title: 'Speed',
+      title: "Speed",
       description:
-        'Slow infrastructure kills startups. We deliver rapid time-to-market without cutting corners on reliability, security, or long-term scalability.'
-    }
-  ]
+        "Slow infrastructure kills startups. We deliver rapid time-to-market without cutting corners on reliability, security, or long-term scalability.",
+    },
+  ];
 
   return (
     <section className="bg-deep-blue-mid py-20 pb-[120px]">
@@ -37,7 +37,9 @@ export default function CoreValues() {
         </h2>
         {/* brand: max-w-text caps prose at 680px */}
         <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid max-w-text mb-[60px]">
-          MaCh2.Cloud embodies five core values that guide every architectural decision and partnership. These principles define who we are and how we deliver impact.
+          MaCh2.Cloud embodies five core values that guide every architectural
+          decision and partnership. These principles define who we are and how
+          we deliver impact.
         </p>
 
         {/* brand: dark card variant with electric-cyan top accent */}
@@ -59,5 +61,5 @@ export default function CoreValues() {
         </div>
       </div>
     </section>
-  )
+  );
 }

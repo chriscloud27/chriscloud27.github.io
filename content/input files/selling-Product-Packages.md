@@ -26,7 +26,7 @@ This ensures your platform can:
 â€” scale product capabilities and revenue efficiently  
 â€” integrate AI as a core product capability  
 â€” maintain predictable and optimized Cloud cost  
-â€” evolve continuously without architectural bottlenecks  
+â€” evolve continuously without architectural bottlenecks
 
 Cloud architecture becomes a strategic capability that accelerates business growth â€” not a technical dependency that slows it down.
 
@@ -46,7 +46,7 @@ This leads to systemic friction:
 â€” slower engineering execution  
 â€” unpredictable Cloud cost  
 â€” fragile scalability and reliability  
-â€” difficulty integrating and operating AI workloads reliably  
+â€” difficulty integrating and operating AI workloads reliably
 
 The result is reduced engineering velocity and increased operational risk.
 
@@ -64,7 +64,7 @@ I work directly with engineering teams to:
 â€” design scalable, reliable, and cost-efficient AI-native platform architectures  
 â€” guide teams during infrastructure and platform implementation  
 â€” solve architectural and scaling challenges hands-on when needed  
-â€” teach and enable teams to operate and evolve their platform independently  
+â€” teach and enable teams to operate and evolve their platform independently
 
 I combine strategic architecture leadership with practical execution experience.
 
@@ -73,7 +73,7 @@ Architecture decisions are evaluated based on their impact on:
 â€” product delivery speed  
 â€” system reliability and customer experience  
 â€” cost efficiency and Cloud unit economics  
-â€” long-term scalability and platform evolution  
+â€” long-term scalability and platform evolution
 
 The result is a Cloud platform architecture that supports engineering velocity, product scalability, and sustainable business growth.
 
@@ -91,20 +91,20 @@ Establish architectural clarity and identify risks, inefficiencies, and scaling 
 
 â€” clear understanding of current platform architecture  
 â€” identification of scalability, reliability, and cost risks  
-â€” prioritized roadmap for architectural evolution  
+â€” prioritized roadmap for architectural evolution
 
 ### Deliverables
 
 â€” architecture assessment report  
 â€” platform architecture analysis and risk evaluation  
-â€” prioritized architectural improvement plan  
+â€” prioritized architectural improvement plan
 
 ### Ideal Use Cases
 
 â€” platform scaling challenges  
 â€” integrating AI capabilities into an existing platform  
 â€” increasing Cloud cost or operational complexity  
-â€” lack of architectural clarity or direction  
+â€” lack of architectural clarity or direction
 
 ---
 
@@ -118,21 +118,21 @@ Design a scalable, production-ready platform architecture aligned with product a
 
 â€” clear and scalable Cloud and platform architecture  
 â€” architecture optimized for reliability, scalability, and cost efficiency  
-â€” engineering teams enabled to implement with confidence  
+â€” engineering teams enabled to implement with confidence
 
 ### Deliverables
 
 â€” architecture diagrams and platform blueprint  
 â€” Cloud infrastructure and platform design specification  
 â€” scalability and cost optimization strategy  
-â€” implementation roadmap  
+â€” implementation roadmap
 
 ### Ideal Use Cases
 
 â€” building new SaaS platforms  
 â€” redesigning or evolving existing architecture  
 â€” preparing platform for scaling and AI integration  
-â€” enabling long-term platform scalability  
+â€” enabling long-term platform scalability
 
 ---
 
@@ -146,19 +146,19 @@ Enable engineering teams to build, operate, and evolve platform architecture cor
 
 â€” faster and safer infrastructure and platform implementation  
 â€” reduced architectural risk  
-â€” engineering teams enabled to operate independently  
+â€” engineering teams enabled to operate independently
 
 ### Deliverables
 
 â€” architecture reviews and implementation guidance  
 â€” hands-on architectural support  
-â€” engineering enablement sessions and technical guidance  
+â€” engineering enablement sessions and technical guidance
 
 ### Ideal Use Cases
 
 â€” platform implementation and scaling phases  
 â€” solving architectural bottlenecks  
-â€” enabling engineering teams to operate scalable infrastructure  
+â€” enabling engineering teams to operate scalable infrastructure
 
 ---
 
@@ -172,19 +172,19 @@ Provide continuous architectural leadership and platform evolution support.
 
 â€” architectural leadership aligned with business and product strategy  
 â€” scalable and continuously evolving platform architecture  
-â€” engineering teams supported with architectural clarity  
+â€” engineering teams supported with architectural clarity
 
 ### Deliverables
 
 â€” ongoing architectural leadership and direction  
 â€” platform architecture reviews and evolution planning  
-â€” engineering and platform enablement  
+â€” engineering and platform enablement
 
 ### Ideal Use Cases
 
 â€” growing SaaS companies without dedicated Principal Architect  
 â€” scaling AI-native SaaS platforms  
-â€” long-term platform architecture ownership  
+â€” long-term platform architecture ownership
 
 ---
 

@@ -33,9 +33,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/about/",
@@ -69,9 +67,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/blog/",
@@ -105,9 +101,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/waf2p/",
@@ -141,9 +135,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
@@ -177,9 +169,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
@@ -213,9 +203,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/",
@@ -249,9 +237,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/",
@@ -285,9 +271,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/",
@@ -321,9 +305,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/about/",
@@ -357,9 +339,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/blog/",
@@ -393,9 +373,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/waf2p/",
@@ -429,9 +407,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/",
@@ -465,9 +441,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/",
@@ -501,9 +475,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/",
@@ -537,9 +509,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/",
@@ -573,9 +543,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/",
@@ -609,9 +577,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/about/",
@@ -645,9 +611,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/blog/",
@@ -681,9 +645,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/waf2p/",
@@ -717,9 +679,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/",
@@ -753,9 +713,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/",
@@ -789,9 +747,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/",
@@ -825,9 +781,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/",
@@ -861,9 +815,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/",
@@ -934,9 +886,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/blog/baas-vs-custom-infra/",
@@ -970,9 +920,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/",
@@ -1043,9 +991,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/de/blog/baas-vs-custom-infra/",
@@ -1079,9 +1025,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/",
@@ -1152,9 +1096,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/es/blog/baas-vs-custom-infra/",
@@ -1188,9 +1130,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/",

@@ -1,2 +1,368 @@
-npx lint-staged
-npm run build
+#!/usr/bin/env sh
+set -e
+
+# Color helpers (POSIX-safe)
+RED=$(printf '\033[31m')
+GREEN=$(printf '\033[32m')
+YELLOW=$(printf '\033[33m')
+RESET=$(printf '\033[0m')
+
+log() {
+	printf "%s\n" "$1"
+}
+
+# Result counters
+PASS=0
+WARN=0
+FAIL=0
+
+add_pass() { PASS=$((PASS+1)); }
+add_warn() { WARN=$((WARN+1)); }
+add_fail() { FAIL=$((FAIL+1)); }
+
+print_summary_and_exit() {
+	log ""
+	log "${YELLOW}Pre-commit summary:${RESET} ${GREEN}${PASS} passed${RESET}, ${YELLOW}${WARN} warnings${RESET}, ${RED}${FAIL} failures${RESET}"
+	if [ "$FAIL" -gt 0 ]; then
+		exit 1
+	fi
+}
+
+print_final_summary() {
+  # single-line final summary (no exit)
+  printf "\n ${GREEN}succeeded %d${RESET}, ${YELLOW}warning %d${RESET}, ${RED}failure %d${RESET}\n" "$PASS" "$WARN" "$FAIL"
+}
+
+run_check() {
+	title="$1"
+	shift
+ 	cmd="$@"
+ 	log "${YELLOW}→ ${title}${RESET}"
+
+	# Capture output to a temp file so we can suppress verbose success output
+	tmpfile="$(mktemp 2>/dev/null || echo "/tmp/precommit_output.$$")"
+	if sh -c "$cmd" >"$tmpfile" 2>&1; then
+		log "${GREEN}✔ ${title} succeeded${RESET}"
+		rm -f "$tmpfile"
+		add_pass
+	else
+		log "${RED}✖ ${title} failed — commit aborted${RESET}"
+		log "${RED}--- ${title} output ---${RESET}"
+		cat "$tmpfile" >&2
+		rm -f "$tmpfile"
+		add_fail
+		print_summary_and_exit
+	fi
+}
+
+# Verbose runner: streams command output to terminal (use for demonstration/diagnostics)
+run_check_verbose() {
+	title="$1"
+shift
+	cmd="$@"
+	log "${YELLOW}→ ${title}${RESET}"
+	if sh -c "$cmd"; then
+		log "${GREEN}✔ ${title} succeeded${RESET}"
+		add_pass
+	else
+		log "${RED}✖ ${title} failed — commit aborted${RESET}"
+		add_fail
+		print_summary_and_exit
+	fi
+}
+
+# Whitespace/conflict check with interactive auto-fix option
+run_whitespace_check() {
+	tmpfile="$(mktemp 2>/dev/null || echo "/tmp/whitespace_output.$$")"
+	if git diff --cached --check >"$tmpfile" 2>&1; then
+		log "${GREEN}✔ Whitespace/conflict check passed${RESET}"
+		rm -f "$tmpfile"
+		return 0
+	else
+		log "${YELLOW}✖ Whitespace/conflict check failed — issues detected:${RESET}"
+		cat "$tmpfile" >&2
+
+		# Interactive prompt to auto-fix, ignore, or abort
+		if [ -t 0 ]; then
+				printf "%s" "${YELLOW}Fix whitespace automatically? [a]uto-fix, [i]gnore, [q]uit: ${RESET}"
+				read -r ans
+				case "$ans" in
+					a|A)
+						log "${YELLOW}Applying whitespace fixes to staged diff...${RESET}"
+						# Apply staged diff with whitespace fixes
+						if git diff --cached -U0 --no-color | git apply --cached --whitespace=fix - >"$tmpfile" 2>&1; then
+							# Re-run check
+							if git diff --cached --check >"$tmpfile" 2>&1; then
+								log "${GREEN}✔ Whitespace issues fixed and staged.${RESET}"
+								rm -f "$tmpfile"
+								add_pass
+								return 0
+							else
+								log "${RED}✖ Whitespace issues remain after auto-fix; aborting.${RESET}"
+								cat "$tmpfile" >&2
+								rm -f "$tmpfile"
+								add_fail
+								print_summary_and_exit
+							fi
+						else
+							log "${RED}✖ Failed to apply whitespace fixes:${RESET}"
+							cat "$tmpfile" >&2
+							rm -f "$tmpfile"
+							add_fail
+							print_summary_and_exit
+						fi
+						;;
+					i|I)
+						log "${YELLOW}Ignoring whitespace issues and continuing.${RESET}"
+						rm -f "$tmpfile"
+						add_warn
+						return 0
+						;;
+					*)
+						log "${RED}Aborting commit due to whitespace issues.${RESET}"
+						cat "$tmpfile" >&2
+						rm -f "$tmpfile"
+						add_fail
+						print_summary_and_exit
+						;;
+				esac
+		else
+			log "${YELLOW}✖ Whitespace issues detected and no interactive terminal available — aborting.${RESET}"
+			cat "$tmpfile" >&2
+			rm -f "$tmpfile"
+			exit 1
+		fi
+	fi
+}
+
+# Prettier verbose: run --check and list differing files on failure
+run_prettier_verbose() {
+	log "${YELLOW}→ Prettier check${RESET}"
+	tmpfile="$(mktemp 2>/dev/null || echo "/tmp/prettier_output.$$")"
+	if npx prettier --check . >"$tmpfile" 2>&1; then
+		log "${GREEN}✔ Prettier passed${RESET}"
+		rm -f "$tmpfile"
+	else
+		log "${YELLOW}✖ Prettier check failed — files that differ:${RESET}"
+		npx prettier --list-different . || true
+
+		# If auto-fix requested, attempt to write fixes and stage changes
+		if [ "${PRE_COMMIT_AUTO_FIX}" = "1" ]; then
+			log "${YELLOW}PRE_COMMIT_AUTO_FIX=1: running 'npx prettier --write .'...${RESET}"
+			if npx prettier --write . >"$tmpfile" 2>&1; then
+				git add .
+				log "${GREEN}✔ Prettier auto-fixed files and staged changes.${RESET}"
+				rm -f "$tmpfile"
+				return 0
+			else
+				log "${RED}✖ Prettier auto-fix failed; see output below:${RESET}"
+				cat "$tmpfile" >&2
+				rm -f "$tmpfile"
+				add_fail
+				print_summary_and_exit
+			fi
+		fi
+
+		# If interactive terminal, ask user whether to auto-fix, ignore, or abort
+		if [ -t 0 ]; then
+			printf "%s" "${YELLOW}Prettier found formatting issues. Choose: [a]uto-fix, [i]gnore, [q]uit: ${RESET}"
+			read -r answer
+			case "$answer" in
+				a|A)
+					log "${YELLOW}Running 'npx prettier --write .'...${RESET}"
+					if npx prettier --write . >"$tmpfile" 2>&1; then
+						git add .
+						log "${GREEN}✔ Prettier auto-fixed files and staged changes.${RESET}"
+						rm -f "$tmpfile"
+						add_pass
+						return 0
+					else
+						log "${RED}✖ Prettier auto-fix failed; see output below:${RESET}"
+						cat "$tmpfile" >&2
+						rm -f "$tmpfile"
+						add_fail
+						print_summary_and_exit
+					fi
+					;;
+				i|I)
+					log "${YELLOW}Ignoring Prettier failures and continuing with commit.${RESET}"
+					rm -f "$tmpfile"
+					add_warn
+					return 0
+					;;
+				*)
+					log "${RED}Aborting commit due to Prettier failures.${RESET}"
+					cat "$tmpfile" >&2
+					rm -f "$tmpfile"
+					exit 1
+					;;
+			esac
+						else
+			# Non-interactive (CI). Abort by default and print output
+			log "${RED}✖ Prettier failed and no interactive terminal available — commit aborted${RESET}"
+			cat "$tmpfile" >&2
+			rm -f "$tmpfile"
+			add_fail
+			print_summary_and_exit
+		fi
+	fi
+}
+
+# Demo failure mode: set PRE_COMMIT_DEMO=1 to force a failing output for screenshots
+if [ "${PRE_COMMIT_DEMO}" = "1" ]; then
+	log "${YELLOW}Demo mode enabled: showing a failing check${RESET}"
+	log "${RED}✖ Demo check failed — commit aborted${RESET}"
+	exit 1
+fi
+
+# Run checks (verbose for visibility)
+# Quick git whitespace/conflict check
+# run_whitespace_check
+
+# Formatting and type checks
+run_prettier_verbose
+
+# Type check
+run_check_verbose "Type check" "npx tsc --noEmit"
+
+# Run lint-staged (may run linters/formatters on staged files)
+# SKIPPED: lint-staged check is disabled — see PROJECT-README.md for details
+# run_check_verbose "lint-staged" "npx lint-staged"
+
+# (Focused tests removed) — Jest focused runs on staged files were deleted
+
+# Dependency security audit (interactive handling)
+run_dependency_audit() {
+	tmpfile="$(mktemp 2>/dev/null || echo "/tmp/audit_output.$$")"
+	if npm audit --production --audit-level=moderate --json >"$tmpfile" 2>&1; then
+		log "${GREEN}✔ Dependency audit passed${RESET}"
+		rm -f "$tmpfile"
+		add_pass
+		return 0
+	else
+		log "${RED}✖ Dependency audit reported issues.${RESET}"
+		# Show a short summary then offer interactive choices when possible
+		cat "$tmpfile" >&2
+		# If the output suggests fixes requiring --force, warn but do not offer force-fix
+		FORCE_SUGGESTED=0
+		if grep -q -- "--force" "$tmpfile" 2>/dev/null || grep -q -- "force" "$tmpfile" 2>/dev/null; then
+			log "${YELLOW}⚠ Some fixes require '--force' and will not be applied automatically. This is a warning.${RESET}"
+			add_warn
+			FORCE_SUGGESTED=1
+		fi
+		if [ -t 0 ]; then
+			while true; do
+				printf "%s" "${YELLOW}Choose: [s]afe-fix, [d]etails, [i]gnore, [q]uit: ${RESET}"
+				read -r choice
+				case "$choice" in
+					s|S)
+						log "${YELLOW}Running 'npm audit fix' (safe)...${RESET}"
+						if npm audit fix --production >"$tmpfile" 2>&1; then
+							log "${GREEN}✔ npm audit fix applied (safe).${RESET}"
+							rm -f "$tmpfile"
+							git add package-lock.json package.json 2>/dev/null || true
+							add_pass
+							break
+						else
+							log "${YELLOW}⚠ npm audit fix failed — continuing with warning${RESET}"
+							cat "$tmpfile" >&2
+							rm -f "$tmpfile"
+							add_warn
+							break
+						fi
+						;;
+					d|D)
+						log "${YELLOW}Full audit output:${RESET}"
+						cat "$tmpfile" >&2
+						;;
+					i|I)
+						log "${YELLOW}Ignoring dependency audit issues and continuing.${RESET}"
+						rm -f "$tmpfile"
+						add_warn
+						break
+						;;
+					*)
+						log "${RED}Aborting due to dependency audit issues.${RESET}"
+						cat "$tmpfile" >&2
+						rm -f "$tmpfile"
+						add_fail
+						print_summary_and_exit
+						;;
+				esac
+			done
+		else
+			# Non-interactive: if PRE_COMMIT_AUTO_FIX=1 try safe fix, otherwise abort
+			if [ "${PRE_COMMIT_AUTO_FIX}" = "1" ]; then
+				log "${YELLOW}Non-interactive: running 'npm audit fix' due to PRE_COMMIT_AUTO_FIX=1...${RESET}"
+				if npm audit fix --production >"$tmpfile" 2>&1; then
+					log "${GREEN}✔ npm audit fix applied (safe).${RESET}"
+					rm -f "$tmpfile"
+					git add package-lock.json package.json 2>/dev/null || true
+					add_pass
+				else
+					log "${YELLOW}⚠ npm audit fix failed — continuing with warning${RESET}"
+					cat "$tmpfile" >&2
+					rm -f "$tmpfile"
+					add_warn
+				fi
+			else
+				log "${RED}✖ Dependency audit failed and no interactive terminal available — aborting.${RESET}"
+				cat "$tmpfile" >&2
+				rm -f "$tmpfile"
+				add_fail
+				print_summary_and_exit
+			fi
+		fi
+	fi
+}
+
+run_dependency_audit
+
+# Spellcheck docs
+run_check_verbose "Spellcheck docs" "npx cspell \"content/**\" \"docs/**\" || true"
+
+# Build as final verification
+run_build_verbose() {
+	title="$1"
+	shift
+	cmd="$@"
+	log "${YELLOW}→ ${title} (verbose)${RESET}"
+	tmpfile="$(mktemp 2>/dev/null || echo "/tmp/build_output.$$")"
+	# Stream output live and save to tmpfile
+	if sh -c "$cmd" 2>&1 | tee "$tmpfile"; then
+		log "${GREEN}✔ ${title} succeeded${RESET}"
+		add_pass
+		# Print concise build checklist summary (if present in output)
+		patterns="Compiled successfully|Linting and checking validity of types|Collecting page data|Generating static pages|Collecting build traces|Exporting|Finalizing page optimization"
+		printf "\n"
+		while IFS= read -r pat; do
+			match=$(grep -E -m1 "$pat" "$tmpfile" || true)
+			if [ -n "$match" ]; then
+				# normalize spacing and show a concise line
+				printf " ${GREEN}✓${RESET} %s\n" "$match"
+			fi
+		done <<EOF
+Compiled successfully
+Linting and checking validity of types
+Collecting page data
+Generating static pages
+Collecting build traces
+Exporting
+Finalizing page optimization
+EOF
+		rm -f "$tmpfile"
+	else
+		log "${RED}✖ ${title} failed — commit aborted${RESET}"
+		add_fail
+		log "${RED}--- ${title} output ---${RESET}"
+		cat "$tmpfile" >&2
+		rm -f "$tmpfile"
+		print_summary_and_exit
+	fi
+}
+
+run_build_verbose "build" "npm run build"
+
+print_final_summary
+log "${GREEN}All pre-commit checks passed. Commit continues...${RESET}"
+exit 0

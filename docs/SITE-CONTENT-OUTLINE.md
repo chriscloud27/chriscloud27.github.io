@@ -1,10 +1,11 @@
 # Site Content Architecture
+
 ## AI-Native Cloud Architecture for SaaS CTOs
 
 **Target Audience:** SaaS CTOs, Technical Founders, VP Engineering  
 **Conversion Goal:** Book a 30-minute architectural clarity call  
 **Platform:** Next.js 14 + Next.intl (multi-locale, static export)  
-**Tech Stack:** React 18, TypeScript, Tailwind CSS, Next.js App Router  
+**Tech Stack:** React 18, TypeScript, Tailwind CSS, Next.js App Router
 
 ---
 
@@ -13,19 +14,19 @@
 **Framework:** `app/[locale]/` directory structure with i18n routing  
 **Locales:** English (en), German (de), Spanish (es)  
 **Content:** Messages in `messages/en.json`, `messages/de.json`, `messages/es.json`  
-**Styling:** Tailwind CSS with custom brand colors and component system  
+**Styling:** Tailwind CSS with custom brand colors and component system
 
 ### URL Routes
 
-| Route | Component | Purpose | Content Source |
-|-------|-----------|---------|-----------------|
-| `/` | `app/[locale]/page.tsx` | Homepage (all sections) | `messages/*.json` + component sections |
-| `/about` | `app/[locale]/about/page.tsx` | About / Bio page | `messages/*.json` |
-| `/blog` | `app/[locale]/blog/page.tsx` | Blog listing | `messages/*.json` + Notion DB |
-| `/blog/[slug]` | `app/[locale]/blog/[slug]/page.tsx` | Individual blog post | Notion API (`lib/notion.ts`) |
-| `/cases` | `app/[locale]/cases/page.tsx` | Case studies | Hardcoded case slugs + component |
-| `/cases/[slug]` | `app/[locale]/cases/[slug]/page.tsx` | Individual case study | Hardcoded case details |
-| `/waf2p` | `app/[locale]/waf2p/page.tsx` | WAF2p Framework | Dedicated page component |
+| Route           | Component                            | Purpose                 | Content Source                         |
+| --------------- | ------------------------------------ | ----------------------- | -------------------------------------- |
+| `/`             | `app/[locale]/page.tsx`              | Homepage (all sections) | `messages/*.json` + component sections |
+| `/about`        | `app/[locale]/about/page.tsx`        | About / Bio page        | `messages/*.json`                      |
+| `/blog`         | `app/[locale]/blog/page.tsx`         | Blog listing            | `messages/*.json` + Notion DB          |
+| `/blog/[slug]`  | `app/[locale]/blog/[slug]/page.tsx`  | Individual blog post    | Notion API (`lib/notion.ts`)           |
+| `/cases`        | `app/[locale]/cases/page.tsx`        | Case studies            | Hardcoded case slugs + component       |
+| `/cases/[slug]` | `app/[locale]/cases/[slug]/page.tsx` | Individual case study   | Hardcoded case details                 |
+| `/waf2p`        | `app/[locale]/waf2p/page.tsx`        | WAF2p Framework         | Dedicated page component               |
 
 ---
 
@@ -34,18 +35,19 @@
 **File:** `app/[locale]/page.tsx`  
 **Components Location:** `components/sections/`
 
-| Section | Component | Purpose | Content Keys |
-|---------|-----------|---------|-----------------|
-| **Hero** | `HeroSection.tsx` | Hook + Value Prop | `hero_headline`, `hero_subheadline` |
-| **Problem** | `ProblemSection.tsx` | Pain Recognition | `problem_*` |
-| **How It Works** | `HowItWorksSection.tsx` | Process Overview | `how_it_works_*` |
-| **Services** | `ServicesSection.tsx` | Offerings | `service_*` |
-| **Portfolio** | `Portfolio.tsx` | Case Studies / Results | `portfolio_*` |
-| **Authority** | `Authority.tsx` | Trust & Credentials | `authority_*` |
-| **Credibility** | `CredibilitySection.tsx` | Stats & Social Proof | `credibility_*` |
-| **CTA** | `CtaSection.tsx` | Final Conversion | `cta_heading`, `cta_description` |
+| Section          | Component                | Purpose                | Content Keys                        |
+| ---------------- | ------------------------ | ---------------------- | ----------------------------------- |
+| **Hero**         | `HeroSection.tsx`        | Hook + Value Prop      | `hero_headline`, `hero_subheadline` |
+| **Problem**      | `ProblemSection.tsx`     | Pain Recognition       | `problem_*`                         |
+| **How It Works** | `HowItWorksSection.tsx`  | Process Overview       | `how_it_works_*`                    |
+| **Services**     | `ServicesSection.tsx`    | Offerings              | `service_*`                         |
+| **Portfolio**    | `Portfolio.tsx`          | Case Studies / Results | `portfolio_*`                       |
+| **Authority**    | `Authority.tsx`          | Trust & Credentials    | `authority_*`                       |
+| **Credibility**  | `CredibilitySection.tsx` | Stats & Social Proof   | `credibility_*`                     |
+| **CTA**          | `CtaSection.tsx`         | Final Conversion       | `cta_heading`, `cta_description`    |
 
 **Layout Components:**
+
 - `Header.tsx` — Sticky navigation with locale switcher
 - `Nav.tsx` — Desktop navigation links
 - `MobileNav.tsx` — Mobile hamburger menu
@@ -56,12 +58,14 @@
 ## 📝 Navigation & Layout
 
 **Header (Sticky):**
+
 - MaCh2.Cloud logo (left)
 - Nav links: Home → About → Blog → Cases → WAF2p
 - Locale switcher (en/de/es)
 - CTA button: "Book Clarity Call" (Calendly link)
 
 **Mobile:**
+
 - Hamburger menu with slide-out navigation
 - CTA button remains visible/accessible
 - Locale switcher in mobile menu
@@ -71,12 +75,15 @@
 ## 🗂️ Content Organization
 
 ### Messages (i18n) — `messages/*.json`
+
 International content organized by locale:
+
 - `messages/en.json` — English
 - `messages/de.json` — German
 - `messages/es.json` — Spanish
 
 Content keys structured by component/section:
+
 ```json
 {
   "hero_headline": "...",
@@ -87,17 +94,20 @@ Content keys structured by component/section:
 }
 ```
 
-**Rich text support:** 
+**Rich text support:**
+
 - Tags: `<highlight>` (Electric Cyan), `<strong>` (bold white)
 - Usage: Wrap styled phrases in JSON, render with `t.rich('key')` (not plain `t()`)
 - Config: Configured globally in `i18n/request.ts` via `defaultTranslationValues`
 
 ### Blog System
+
 **Source:** Notion database  
 **Location:** `lib/notion.ts` (API functions)  
-**Rendering:** `app/[locale]/blog/[slug]/page.tsx` fetches and renders post HTML  
+**Rendering:** `app/[locale]/blog/[slug]/page.tsx` fetches and renders post HTML
 
 **Metadata:**
+
 - Title, slug, publication date, tags (from Notion multi-select)
 - Keywords: Merged from `post.tags` + `GLOBAL_KEYWORDS` (lib/keywords.ts)
 - Deduplication: `[...new Set([...post.tags, ...GLOBAL_KEYWORDS])]`
@@ -105,12 +115,14 @@ Content keys structured by component/section:
 **Dynamic blog URLs:** Fetched via `getBlogSlugs()` function for sitemap generation
 
 ### Case Studies
+
 **Location:** Hardcoded case metadata  
 **Currently:** 4 case studies (Capgemini K8s, AWS Autonomous Driving, Enterprise SaaS Optimization, BaaS Seed Startup)  
 **Component:** `app/[locale]/cases/[slug]/page.tsx` (renders case details)  
 **Fallback:** Static HTML at `public/cases/case-*.html` (for compatibility)
 
 ### WAF2p Framework
+
 **File:** `app/[locale]/waf2p/page.tsx`  
 **Purpose:** Dedicated framework explainer page (separate from homepage)  
 **Content:** Framework methodology, steps, components, visual walkthrough
@@ -120,12 +132,14 @@ Content keys structured by component/section:
 ## 🎨 Brand & Design
 
 **Colors:** Defined in `CLAUDE.md` and Tailwind config
+
 - Deep Tech Blue: `#0B1F3A` (primary background)
 - Electric Cyan: `#00E5FF` (accents, highlights)
 - Graphite: `#1A1A1A` (body text)
 - White: `#FFFFFF` (content backgrounds)
 
 **Typography:**
+
 - Primary: Inter or IBM Plex Sans
 - Mono accents: JetBrains Mono
 - Style: Minimalist, technical, no decorative fonts
@@ -140,6 +154,7 @@ Content keys structured by component/section:
 **Canonical SEO docs:** See [README.md § SEO & Content](../README.md#-seo--content)
 
 **Key files:**
+
 - `lib/keywords.ts` — Centralized keyword sets (GLOBAL, BLOG, etc.)
 - `lib/seo.ts` — SEO helper functions
 - `app/sitemap.ts` — Sitemap generation (all locales, routes, blogs)
@@ -152,11 +167,13 @@ Content keys structured by component/section:
 ## 📊 Content Mapping (Deprecated → Current)
 
 **Old GitHub Pages approach:**
+
 - Standalone HTML/CSS/JS files
 - Single-page focus
 - Content in Markdown files in `content/input files/`
 
 **Current Next.js approach:**
+
 - Multi-locale, dynamic routing
 - Component-driven sections
 - Content in `messages/*.json` (i18n) + Notion (blog) + code (cases, waf2p)
@@ -176,6 +193,7 @@ When updating site content:
 6. **Keywords:** Add global or section-specific keywords to `lib/keywords.ts`
 
 **After content updates:**
+
 - Run `npm run build` to test static export
 - Run `node scripts/check-seo.mjs --max=20` to validate metadata
 - Commit to feature branch and push to PR
@@ -186,7 +204,7 @@ When updating site content:
 
 **Platform:** GitHub Pages (via GitHub Actions)  
 **Build:** `npm run build` → Static HTML export (Next.js static export mode)  
-**Source:** Pushes to `main` branch trigger deployment  
+**Source:** Pushes to `main` branch trigger deployment
 
 See `.github/workflows/` for CI/CD configuration.
 

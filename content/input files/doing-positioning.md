@@ -34,15 +34,15 @@ I help SaaS companies design and build scalable AI-native cloud platforms, enabl
 
 ## Cloud AI Architect Cert Stack (2026)
 
-| **Cert** | **Decision** | **Study Time** | **Cost (USD)** | **Cred Increase (1–10)** | **Ease of Pass (1–10, 10=easy)** | **Validity** |
-| --- | --- | --- | --- | --- | --- | --- |
-| **GCP Cloud Arch** | #1 Priority | 2–4 mo | $200 | 9 (high salary) | 7 (easier pro) | 2 yrs |
-| **CKA** | #2 Priority | 2–3 mo | $445 | 10 (gold standard) | 3 (66% pass, labs) | 2–3 yrs |
-| **AWS Sol Arch Pro** | Optional | 3–6 mo | $300 | 10 (S-tier, jobs gold) | 4 (toughest pro) | 3 yrs |
-| **GCP ML Eng** | Optional | 2–4 mo | $200 | 9 (AI demand) | 6 (niche hard) | 2 yrs |
-| **AWS ML Specialty** | Optional | 3–5 mo | $300 | 9 (AI scale) | 5 (specialty tough) | 3 yrs |
-| **Azure AZ-305** | Optional | 3–5 mo | $165 | 8 (enterprise) | 5 (tricky) | 1 yr (renew) |
-| **MS Agentic AI** | Monitor | 2–4 mo | $165 | 7 (new/emerging) | 6 (beta) | 1 yr |
+| **Cert**             | **Decision** | **Study Time** | **Cost (USD)** | **Cred Increase (1–10)** | **Ease of Pass (1–10, 10=easy)** | **Validity** |
+| -------------------- | ------------ | -------------- | -------------- | ------------------------ | -------------------------------- | ------------ |
+| **GCP Cloud Arch**   | #1 Priority  | 2–4 mo         | $200           | 9 (high salary)          | 7 (easier pro)                   | 2 yrs        |
+| **CKA**              | #2 Priority  | 2–3 mo         | $445           | 10 (gold standard)       | 3 (66% pass, labs)               | 2–3 yrs      |
+| **AWS Sol Arch Pro** | Optional     | 3–6 mo         | $300           | 10 (S-tier, jobs gold)   | 4 (toughest pro)                 | 3 yrs        |
+| **GCP ML Eng**       | Optional     | 2–4 mo         | $200           | 9 (AI demand)            | 6 (niche hard)                   | 2 yrs        |
+| **AWS ML Specialty** | Optional     | 3–5 mo         | $300           | 9 (AI scale)             | 5 (specialty tough)              | 3 yrs        |
+| **Azure AZ-305**     | Optional     | 3–5 mo         | $165           | 8 (enterprise)           | 5 (tricky)                       | 1 yr (renew) |
+| **MS Agentic AI**    | Monitor      | 2–4 mo         | $165           | 7 (new/emerging)         | 6 (beta)                         | 1 yr         |
 
 **Top Stack: GCP Cloud Arch + CKA** — establishes cloud-agnostic, AI-native SaaS principal-level authority.
 

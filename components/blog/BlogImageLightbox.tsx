@@ -1,74 +1,74 @@
-'use client'
+"use client";
 
-import { type MouseEvent, useCallback, useEffect, useState } from 'react'
+import { type MouseEvent, useCallback, useEffect, useState } from "react";
 
 type ActiveImage = {
-  src: string
-  alt: string
-}
+  src: string;
+  alt: string;
+};
 
 type BlogImageLightboxProps = {
-  contentHtml: string
-  coverImage?: string
-  coverAlt: string
-}
+  contentHtml: string;
+  coverImage?: string;
+  coverAlt: string;
+};
 
 export default function BlogImageLightbox({
   contentHtml,
   coverImage,
   coverAlt,
 }: BlogImageLightboxProps) {
-  const [activeImage, setActiveImage] = useState<ActiveImage | null>(null)
+  const [activeImage, setActiveImage] = useState<ActiveImage | null>(null);
 
   const openImage = useCallback((src: string, alt: string) => {
-    setActiveImage({ src, alt })
-  }, [])
+    setActiveImage({ src, alt });
+  }, []);
 
   const closeImage = useCallback(() => {
-    setActiveImage(null)
-  }, [])
+    setActiveImage(null);
+  }, []);
 
   const onContentClick = useCallback(
     (event: MouseEvent<HTMLDivElement>) => {
-      const target = event.target as HTMLElement
-      const imageElement = target.closest('img')
+      const target = event.target as HTMLElement;
+      const imageElement = target.closest("img");
 
       if (!imageElement) {
-        return
+        return;
       }
 
-      const src = imageElement.getAttribute('src')
+      const src = imageElement.getAttribute("src");
       if (!src) {
-        return
+        return;
       }
 
-      event.preventDefault()
-      const alt = imageElement.getAttribute('alt') || 'Blog image'
-      openImage(src, alt)
+      event.preventDefault();
+      const alt = imageElement.getAttribute("alt") || "Blog image";
+      openImage(src, alt);
     },
     [openImage],
-  )
+  );
 
   useEffect(() => {
     if (!activeImage) {
-      return
+      return;
     }
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        closeImage()
+      if (event.key === "Escape") {
+        closeImage();
       }
-    }
+    };
 
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('keydown', onKeyDown)
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
 
     return () => {
-      document.body.style.overflow = previousOverflow
-      window.removeEventListener('keydown', onKeyDown)
-    }
-  }, [activeImage, closeImage])
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeImage, closeImage]);
 
   return (
     <>
@@ -114,7 +114,10 @@ export default function BlogImageLightbox({
             Close
           </button>
 
-          <div className="flex h-full w-full items-center justify-center" onClick={(event) => event.stopPropagation()}>
+          <div
+            className="flex h-full w-full items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={activeImage.src}
@@ -125,5 +128,5 @@ export default function BlogImageLightbox({
         </div>
       )}
     </>
-  )
+  );
 }

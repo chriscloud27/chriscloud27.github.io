@@ -1,9 +1,9 @@
-import Link from 'next/link'
-import { getTranslations } from 'next-intl/server'
-import ContactForm from '@/components/ContactForm'
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+import ContactForm from "@/components/ContactForm";
 
 export default async function Connect() {
-  const t = await getTranslations('connect')
+  const t = await getTranslations("connect");
 
   return (
     <section id="connect">
@@ -13,27 +13,24 @@ export default async function Connect() {
         <div className="connect-body">
           <div className="connect-cta reveal">
             {/* brand: centred eyebrow label */}
-            <div className="eyebrow justify-center">
-              {t('eyebrow')}
-            </div>
+            <div className="eyebrow justify-center">{t("eyebrow")}</div>
             <h2>
               Your platform should
               <br />
               <em>outlast your roadmap.</em>
             </h2>
             <p>
-              Let&apos;s talk if you&apos;re a CTO or engineering leader at a SaaS company scaling from 10 to
-              100 engineers and architecture is starting to create friction {' '}
-              <strong></strong> A short call usually surfaces the one thing worth fixing first.
+              Let&apos;s talk if you&apos;re a CTO or engineering leader at a
+              SaaS company scaling from 10 to 100 engineers and architecture is
+              starting to create friction <strong></strong> A short call usually
+              surfaces the one thing worth fixing first.
             </p>
           </div>
 
           <ContactForm />
 
           {/* brand: mono footnote — see .cnote in globals.css */}
-          <div className="cnote text-center mb-[84px]">
-            {t('note')}
-          </div>
+          <div className="cnote text-center mb-[84px]">{t("note")}</div>
 
           <div className="socials reveal">
             <a
@@ -64,10 +61,7 @@ export default async function Connect() {
               </svg>
               Email
             </a>
-            <Link
-              href="/en/diagnosis"
-              className="soc"
-            >
+            <Link href="/en/diagnosis" className="soc">
               <svg viewBox="0 0 24 24">
                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5C3.346 4 2 5.346 2 7v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3V7c0-1.654-1.346-3-3-3zm1 17c0 .551-.449 1-1 1H5c-.551 0-1-.449-1-1v-9h16v9zm0-11H4V7c0-.551.449-1 1-1h1v1h2V6h8v1h2V6h1c.551 0 1 .449 1 1v3z" />
               </svg>
@@ -77,5 +71,5 @@ export default async function Connect() {
         </div>
       </div>
     </section>
-  )
+  );
 }

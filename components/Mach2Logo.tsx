@@ -19,12 +19,62 @@ export default function Mach2Logo({ size = 40 }: { size?: number }) {
       <rect width="32" height="32" rx="6" fill="#0B1F3A" />
       <path d="M 9,24 L 6,28 L 11,24 Z" fill="white" opacity="0.4" />
       <path d="M 23,24 L 26,28 L 21,24 Z" fill="white" opacity="0.4" />
-      <rect x="5" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3" />
-      <rect x="13" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.45" />
-      <rect x="21" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3" />
-      <rect x="9" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9" filter="url(#fg-logo)" />
-      <rect x="17" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9" filter="url(#fg-logo)" />
-      <rect x="13" y="8" width="6" height="4.5" rx="0.8" fill="white" opacity="0.95" />
+      <rect
+        x="5"
+        y="19"
+        width="6"
+        height="4.5"
+        rx="0.8"
+        fill="white"
+        opacity="0.3"
+      />
+      <rect
+        x="13"
+        y="19"
+        width="6"
+        height="4.5"
+        rx="0.8"
+        fill="white"
+        opacity="0.45"
+      />
+      <rect
+        x="21"
+        y="19"
+        width="6"
+        height="4.5"
+        rx="0.8"
+        fill="white"
+        opacity="0.3"
+      />
+      <rect
+        x="9"
+        y="13"
+        width="6"
+        height="5"
+        rx="0.8"
+        fill="#00E5FF"
+        opacity="0.9"
+        filter="url(#fg-logo)"
+      />
+      <rect
+        x="17"
+        y="13"
+        width="6"
+        height="5"
+        rx="0.8"
+        fill="#00E5FF"
+        opacity="0.9"
+        filter="url(#fg-logo)"
+      />
+      <rect
+        x="13"
+        y="8"
+        width="6"
+        height="4.5"
+        rx="0.8"
+        fill="white"
+        opacity="0.95"
+      />
       <path d="M 13,8 L 16,2 L 19,8 Z" fill="white" />
       <circle cx="16" cy="5.5" r="1.2" fill="#00E5FF" />
       <path
@@ -36,5 +86,5 @@ export default function Mach2Logo({ size = 40 }: { size?: number }) {
         opacity="0.85"
       />
     </svg>
-  )
+  );
 }

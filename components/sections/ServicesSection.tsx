@@ -1,23 +1,50 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 const STEPS = [
-  { num: '00', slug: 'diagnosis', label: 'Diagnosis', sub: '30-min call. One clear finding.' },
-  { num: '01', slug: 'audit', label: 'Audit', sub: 'Full platform assessment. Prioritized roadmap.' },
-  { num: '02', slug: 'blueprint', label: 'Blueprint', sub: 'Target architecture. Production-ready design.' },
-  { num: '03', slug: 'enablement', label: 'Enablement', sub: 'Guided implementation. Team ownership.' },
-  { num: '04', slug: 'fractional', label: 'Fractional', sub: 'Ongoing architecture leadership. Monthly cadence.' },
-]
+  {
+    num: "00",
+    slug: "diagnosis",
+    label: "Diagnosis",
+    sub: "30-min call. One clear finding.",
+  },
+  {
+    num: "01",
+    slug: "audit",
+    label: "Audit",
+    sub: "Full platform assessment. Prioritized roadmap.",
+  },
+  {
+    num: "02",
+    slug: "blueprint",
+    label: "Blueprint",
+    sub: "Target architecture. Production-ready design.",
+  },
+  {
+    num: "03",
+    slug: "enablement",
+    label: "Enablement",
+    sub: "Guided implementation. Team ownership.",
+  },
+  {
+    num: "04",
+    slug: "fractional",
+    label: "Fractional",
+    sub: "Ongoing architecture leadership. Monthly cadence.",
+  },
+];
 
 type ServicesSectionProps = {
-  sectionId?: string
-}
+  sectionId?: string;
+};
 
-export default function ServicesSection({ sectionId = 'services' }: ServicesSectionProps) {
-  const locale = useLocale()
-  const servicesHref = `/${locale}/services`
+export default function ServicesSection({
+  sectionId = "services",
+}: ServicesSectionProps) {
+  const locale = useLocale();
+  const servicesHref = `/${locale}/services`;
 
   return (
     <section id={sectionId} className="bg-deep-blue py-[120px] relative">
@@ -29,8 +56,7 @@ export default function ServicesSection({ sectionId = 'services' }: ServicesSect
         <div className="max-w-[640px] mb-[72px]">
           <p className="eyebrow">Solution Path</p>
           <h2>
-            From first conversation to{' '}
-            <em>full platform ownership</em>
+            From first conversation to <em>full platform ownership</em>
           </h2>
         </div>
 
@@ -68,5 +94,5 @@ export default function ServicesSection({ sectionId = 'services' }: ServicesSect
         </div>
       </div>
     </section>
-  )
+  );
 }

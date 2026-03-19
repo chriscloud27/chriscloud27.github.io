@@ -1,49 +1,53 @@
-import type { Metadata } from 'next'
-import Script from 'next/script'
-import { notFound } from 'next/navigation'
-import { NextIntlClientProvider, hasLocale } from 'next-intl'
-import { getMessages, setRequestLocale } from 'next-intl/server'
-import { routing } from '@/i18n/routing'
-import { getGlobalSettings } from '@/lib/settings'
-import { buildCanonical, buildCanonicalAndAlternates } from '@/lib/seo'
-import { Providers } from '@/lib/providers'
-import RevealObserver from '@/components/RevealObserver'
-import Header from '@/components/layout/Header'
-import Connect from '@/components/sections/Connect'
-import Footer from '@/components/layout/Footer'
+import type { Metadata } from "next";
+import Script from "next/script";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { routing } from "@/i18n/routing";
+import { getGlobalSettings } from "@/lib/settings";
+import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
+import { Providers } from "@/lib/providers";
+import RevealObserver from "@/components/RevealObserver";
+import Header from "@/components/layout/Header";
+import Connect from "@/components/sections/Connect";
+import Footer from "@/components/layout/Footer";
 
 export async function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }))
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params
-  const safeLocale = hasLocale(routing.locales, locale) ? locale : routing.defaultLocale
-  const settings = getGlobalSettings(safeLocale)
-  const i18n = buildCanonicalAndAlternates('/', safeLocale)
-  const ogImage = settings.defaultSeo?.shareImage
+  const { locale } = await params;
+  const safeLocale = hasLocale(routing.locales, locale)
+    ? locale
+    : routing.defaultLocale;
+  const settings = getGlobalSettings(safeLocale);
+  const i18n = buildCanonicalAndAlternates("/", safeLocale);
+  const ogImage = settings.defaultSeo?.shareImage;
 
   return {
-    metadataBase: new URL(settings.siteUrl ?? 'https://mach2.cloud'),
+    metadataBase: new URL(settings.siteUrl ?? "https://mach2.cloud"),
     title: {
       default: settings.defaultSeo?.metaTitle ?? settings.siteName,
       template: `%s | ${settings.siteName}`,
     },
-    description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+    description:
+      settings.defaultSeo?.metaDescription ?? settings.siteDescription,
     icons: {
-      icon: '/favicon.svg',
-      shortcut: '/favicon.svg',
+      icon: "/favicon.svg",
+      shortcut: "/favicon.svg",
     },
     openGraph: {
-      type: 'website',
+      type: "website",
       url: buildCanonical(`/${safeLocale}`),
       siteName: settings.siteName,
       title: settings.defaultSeo?.metaTitle ?? settings.siteName,
-      description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+      description:
+        settings.defaultSeo?.metaDescription ?? settings.siteDescription,
       images: ogImage
         ? [
             {
@@ -56,9 +60,10 @@ export async function generateMetadata({
         : undefined,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: settings.defaultSeo?.metaTitle ?? settings.siteName,
-      description: settings.defaultSeo?.metaDescription ?? settings.siteDescription,
+      description:
+        settings.defaultSeo?.metaDescription ?? settings.siteDescription,
       images: ogImage ? [ogImage.url] : undefined,
     },
     robots: {
@@ -66,49 +71,53 @@ export async function generateMetadata({
       follow: true,
     },
     ...i18n,
-  }
+  };
 }
 
 export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
-  params: Promise<{ locale: string }>
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params
+  const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
-    notFound()
+    notFound();
   }
 
-  setRequestLocale(locale)
-  const messages = await getMessages()
-  const settings = getGlobalSettings(locale)
+  setRequestLocale(locale);
+  const messages = await getMessages();
+  const settings = getGlobalSettings(locale);
 
   const websiteSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     name: settings.siteName,
     url: settings.siteUrl,
     description: settings.siteDescription,
     inLanguage: locale,
-  }
+  };
 
   const organizationSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
+    "@context": "https://schema.org",
+    "@type": "Organization",
     name: settings.siteName,
     url: settings.siteUrl,
-    logo: buildCanonical('/img/mach2-logo-light.svg'),
-  }
+    logo: buildCanonical("/img/mach2-logo-light.svg"),
+  };
 
   return (
     <html lang={locale}>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         {/* brand: Syne (display), Space Grotesk (body), JetBrains Mono (labels/code) */}
         <link
           href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
@@ -122,7 +131,9 @@ export default async function LocaleLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XHTWQW1HMY"
@@ -147,5 +158,5 @@ export default async function LocaleLayout({
         </NextIntlClientProvider>
       </body>
     </html>
-  )
+  );
 }

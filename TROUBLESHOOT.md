@@ -3,9 +3,10 @@
 ## Package Lock File Sync Error
 
 ### The Error
+
 ```
 npm error code EUSAGE
-npm error `npm ci` can only install packages when your package.json and package-lock.json 
+npm error `npm ci` can only install packages when your package.json and package-lock.json
 or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
 npm error Missing: @swc/helpers@0.5.19 from lock file
 ```
@@ -15,12 +16,14 @@ npm error Missing: @swc/helpers@0.5.19 from lock file
 Your **package.json** and **package-lock.json** files are out of sync.
 
 #### `package.json` (Dependency Declaration)
+
 - Lists the packages your project needs
 - Uses **flexible version ranges** (e.g., `^15.5.12`)
 - Updated when you run `npm install package-name`
 - Human-readable
 
 Example:
+
 ```json
 {
   "dependencies": {
@@ -31,12 +34,14 @@ Example:
 ```
 
 #### `package-lock.json` (Dependency Lock)
+
 - Records **exact versions** that were installed
 - Uses **fixed pinned versions** (e.g., `15.5.12`, not `^15.5.12`)
 - Ensures everyone gets identical builds
 - Machine-readable
 
 Example:
+
 ```json
 {
   "packages": {
@@ -62,6 +67,7 @@ Example:
 ### How to Solve
 
 #### Without Husky (Manual)
+
 ```bash
 # Local machine
 npm install
@@ -73,20 +79,24 @@ git push
 ```
 
 #### With Husky (Automatic Prevention) ✅
+
 Husky **catches this before you push**:
 
 1. You try to commit:
+
    ```bash
    git commit -m "Add new package"
    ```
 
 2. Husky runs the **pre-commit hook** automatically:
+
    ```bash
    npx lint-staged  # Checks if package.json changed
    npm run build    # Validates the entire project
    ```
 
 3. **lint-staged detects** you changed `package.json` without updating lock file:
+
    ```bash
    npm ci --dry-run  # Simulates install, catches sync issues
    ```
@@ -102,21 +112,23 @@ Husky **catches this before you push**:
 
 ### Key Difference: CI Detection vs. Pre-commit Prevention
 
-| Scenario | Without Husky | With Husky |
-|----------|---------------|-----------|
-| You run `npm install` locally | ✓ Works | ✓ Works |
-| You forget to commit lock file | ✓ Commits successfully | ❌ Blocks commit |
-| You push to GitHub | ❌ CI fails (wasted time) | ✓ Never pushed bad code |
-| You discover the error | On GitHub (after push) | On your machine (before push) |
+| Scenario                       | Without Husky             | With Husky                    |
+| ------------------------------ | ------------------------- | ----------------------------- |
+| You run `npm install` locally  | ✓ Works                   | ✓ Works                       |
+| You forget to commit lock file | ✓ Commits successfully    | ❌ Blocks commit              |
+| You push to GitHub             | ❌ CI fails (wasted time) | ✓ Never pushed bad code       |
+| You discover the error         | On GitHub (after push)    | On your machine (before push) |
 
 ### Best Practices
 
 ✅ **Always do this:**
+
 - Run `npm install` to add/update dependencies
 - Commit the **updated `package-lock.json`**
 - Let Husky catch sync issues before pushing
 
 ❌ **Never do this:**
+
 - Edit `package-lock.json` manually
 - Commit `package.json` without committing `package-lock.json`
 - Ignore pre-commit hook failures
@@ -137,6 +149,7 @@ grep -A2 "lint-staged" package.json
 ```
 
 If Husky hooks aren't running automatically, reinstall:
+
 ```bash
 npm install
 npx husky install
@@ -147,8 +160,9 @@ npx husky install
 ## npm Version Mismatch Error
 
 ### The Error
+
 ```
-npm error `npm ci` can only install packages when your package.json and package-lock.json 
+npm error `npm ci` can only install packages when your package.json and package-lock.json
 or npm-shrinkwrap.json are in sync.
 ```
 
@@ -159,6 +173,7 @@ or npm-shrinkwrap.json are in sync.
 Your **local npm version** and **GitHub Actions npm version** generate lock files differently.
 
 #### Example Scenario:
+
 - **Local:** npm 11.11.0 → generates lock file in format v3+
 - **GitHub Actions:** npm 10.x → expects lock file in format v2/v3 (different interpretation)
 - **Result:** Lock file valid locally, rejected in CI
@@ -166,6 +181,7 @@ Your **local npm version** and **GitHub Actions npm version** generate lock file
 ### How to Verify
 
 **Check local version:**
+
 ```bash
 node --version  # Should be >=20.0.0
 npm --version   # Should be >=11.11.0
@@ -178,6 +194,7 @@ npm --version   # Should be >=11.11.0
 ✅ **Version pinning is already configured:**
 
 1. **package.json** enforces minimum versions:
+
 ```json
 {
   "engines": {
@@ -188,6 +205,7 @@ npm --version   # Should be >=11.11.0
 ```
 
 2. **GitHub Actions** pins exact version in `.github/workflows/deploy.yml`:
+
 ```yaml
 - name: Upgrade to npm 11.11.0
   run: npm install -g npm@11.11.0
@@ -198,6 +216,7 @@ npm --version   # Should be >=11.11.0
 ### If You Still Get the Error
 
 **Regenerate lock file with correct npm version:**
+
 ```bash
 # Verify you have npm 11.11.0+
 npm --version
@@ -232,6 +251,7 @@ Visiting `https://mach2.cloud` shows a 404 page, but `https://mach2.cloud/en/` w
 ### Root Cause: Static Export + i18n Routing
 
 This site uses:
+
 - **Static export** (`output: 'export'` in next.config.ts)
 - **i18n routing** with locale prefixes (`/en/`, `/de/`, `/es/`)
 
@@ -242,6 +262,7 @@ This site uses:
 The deployment workflow automatically creates a root redirect page:
 
 **What happens:**
+
 1. User visits `https://mach2.cloud`
 2. JavaScript detects browser language (e.g., `de` from German browser)
 3. Redirects to `https://mach2.cloud/de/`
@@ -252,6 +273,7 @@ The deployment workflow automatically creates a root redirect page:
 ### If You Still Get 404
 
 **Check deployment:**
+
 ```bash
 # Verify the out/ directory has index.html at root
 ls -la out/index.html
@@ -261,12 +283,13 @@ cat out/index.html
 ```
 
 **Verify on GitHub Pages:**
+
 - Go to GitHub repo → Actions tab
 - Check latest deployment run
 - Ensure "Create root redirect" step succeeded
 - Check artifact contents have `index.html` at root
 
 **Manual test:**
+
 1. Visit `https://mach2.cloud/en/` → should work
 2. Visit `https://mach2.cloud` → should auto-redirect to `/en/` or your browser language
-

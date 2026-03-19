@@ -3,9 +3,10 @@
 ## Package Lock File Sync Error
 
 ### The Error
+
 ```
 npm error code EUSAGE
-npm error `npm ci` can only install packages when your package.json and package-lock.json 
+npm error `npm ci` can only install packages when your package.json and package-lock.json
 or npm-shrinkwrap.json are in sync. Please update your lock file with `npm install` before continuing.
 npm error Missing: @swc/helpers@0.5.19 from lock file
 ```
@@ -15,12 +16,14 @@ npm error Missing: @swc/helpers@0.5.19 from lock file
 Your **package.json** and **package-lock.json** files are out of sync.
 
 #### `package.json` (Dependency Declaration)
+
 - Lists the packages your project needs
 - Uses **flexible version ranges** (e.g., `^15.5.12`)
 - Updated when you run `npm install package-name`
 - Human-readable
 
 Example:
+
 ```json
 {
   "dependencies": {
@@ -31,12 +34,14 @@ Example:
 ```
 
 #### `package-lock.json` (Dependency Lock)
+
 - Records **exact versions** that were installed
 - Uses **fixed pinned versions** (e.g., `15.5.12`, not `^15.5.12`)
 - Ensures everyone gets identical builds
 - Machine-readable
 
 Example:
+
 ```json
 {
   "packages": {
@@ -62,6 +67,7 @@ Example:
 ### How to Solve
 
 #### Without Husky (Manual)
+
 ```bash
 # Local machine
 npm install
@@ -73,20 +79,24 @@ git push
 ```
 
 #### With Husky (Automatic Prevention) ✅
+
 Husky **catches this before you push**:
 
 1. You try to commit:
+
    ```bash
    git commit -m "Add new package"
    ```
 
 2. Husky runs the **pre-commit hook** automatically:
+
    ```bash
    npx lint-staged  # Checks if package.json changed
    npm run build    # Validates the entire project
    ```
 
 3. **lint-staged detects** you changed `package.json` without updating lock file:
+
    ```bash
    npm ci --dry-run  # Simulates install, catches sync issues
    ```
@@ -94,6 +104,7 @@ Husky **catches this before you push**:
 4. **Commit is blocked** with an error message
 
 5. **You fix it locally**:
+
    ```bash
    npm install
    git add package-lock.json
@@ -107,6 +118,7 @@ Husky **catches this before you push**:
 ### Prevention Strategy
 
 **Always run `npm install` after you add/remove a package:**
+
 ```bash
 npm install package-name
 npm install  # Always do this before committing

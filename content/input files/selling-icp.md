@@ -1,4 +1,5 @@
 # Ideal Customer Profile (ICP)
+
 ## AI-Native Cloud Architecture — MaCh2.Cloud
 
 ## Overview
@@ -18,19 +19,19 @@ This is the moment where architectural debt stops being invisible and starts cos
 — B2B SaaS  
 — AI-native startups and scaleups  
 — developer platforms and infrastructure companies  
-— data platforms and AI tooling companies  
+— data platforms and AI tooling companies
 
 ### Company Stage
 
 — Series A: Product is live, team is growing, cracks are appearing in the foundation  
-— Series B: Scaling actively, architectural debt is now visibly slowing delivery, investor scrutiny increasing  
+— Series B: Scaling actively, architectural debt is now visibly slowing delivery, investor scrutiny increasing
 
 These are companies large enough to have real complexity and real consequences — but still small enough to move fast and make architectural decisions without 12 months of internal process.
 
 ### Company Size
 
 — 10 to 80 engineers  
-— 20 to 300 total employees  
+— 20 to 300 total employees
 
 ---
 
@@ -44,7 +45,7 @@ Their internal monologue:
 — "Growth didn't create our problems. It just made them impossible to ignore."  
 — "We're firefighting instead of building."  
 — "I know we need to fix this before Series C — I don't want investors asking questions I can't answer."  
-— "I don't need someone to build it for me. I need someone who has done this before to tell me what the right thing to do is."  
+— "I don't need someone to build it for me. I need someone who has done this before to tell me what the right thing to do is."
 
 They are not looking for implementation capacity.  
 They are looking for architectural clarity from someone who has been here before.
@@ -59,7 +60,7 @@ These companies typically:
 — are building or integrating AI-powered features under pressure from the roadmap  
 — operate containerized or cloud-native infrastructure that was set up quickly and never revisited  
 — have growing cloud costs with limited visibility into why  
-— have engineering teams spending significant cycles on infrastructure firefighting  
+— have engineering teams spending significant cycles on infrastructure firefighting
 
 Common technical debt signatures:
 
@@ -67,7 +68,7 @@ Common technical debt signatures:
 — manual deployment processes or fragile CI/CD pipelines  
 — cloud costs growing faster than revenue without a clear model  
 — AI features that work in staging but degrade under production load  
-— no clear architectural ownership — everyone owns infrastructure, no one owns architecture  
+— no clear architectural ownership — everyone owns infrastructure, no one owns architecture
 
 ---
 
@@ -76,13 +77,13 @@ Common technical debt signatures:
 — CTO  
 — Technical Co-Founder  
 — VP Engineering  
-— Head of Platform  
+— Head of Platform
 
 ### Secondary Influencers
 
 — Staff Engineers  
 — Principal Engineers  
-— Platform / DevOps Engineers  
+— Platform / DevOps Engineers
 
 ---
 
@@ -95,7 +96,7 @@ The conversations that lead to an engagement typically start after one of these 
 — an engineering planning session where the team realized 30–40% of cycles are going to maintenance and firefighting  
 — a decision to integrate AI features that surfaced how fragile the existing platform is  
 — a hiring plan that makes clear the team is about to grow faster than the architecture can support  
-— a cloud bill conversation where no one could explain where the cost was going  
+— a cloud bill conversation where no one could explain where the cost was going
 
 These moments create urgency. They are not shopping for architecture in the abstract — they have a specific pressure point that made the problem undeniable.
 
@@ -108,7 +109,7 @@ These moments create urgency. They are not shopping for architecture in the abst
 — reduce and optimize cloud cost with full visibility  
 — improve system reliability and reduce blast radius of failures  
 — provide clear architectural direction so engineering teams ship product instead of managing infrastructure  
-— enable Series B → Series C transitions without platform becoming the constraint  
+— enable Series B → Series C transitions without platform becoming the constraint
 
 ---
 
@@ -120,7 +121,7 @@ The best customers:
 — move fast and make decisions with the information available  
 — value expertise and strategic clarity over implementation hours  
 — are building for the next 3 years, not patching for the next 3 months  
-— want to be enabled and independent — not dependent on an external consultant indefinitely  
+— want to be enabled and independent — not dependent on an external consultant indefinitely
 
 ---
 
@@ -129,7 +130,7 @@ The best customers:
 — AI-native B2B SaaS startups post-Series A  
 — developer infrastructure and tooling companies  
 — venture-backed SaaS companies approaching Series B or post-Series B  
-— engineering-driven product companies with active platform scaling challenges  
+— engineering-driven product companies with active platform scaling challenges
 
 Companies at a similar stage and profile to:
 
@@ -139,7 +140,7 @@ Companies at a similar stage and profile to:
 — Vercel  
 — Hugging Face  
 — Personio  
-— Contentful  
+— Contentful
 
 ---
 

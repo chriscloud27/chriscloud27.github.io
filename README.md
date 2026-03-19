@@ -1,12 +1,12 @@
 # Christian Weber — AI-Native Cloud Architect
 
 **Helping Series A–B SaaS teams eliminate architectural debt before it blocks scale**
+
 > The platform that got your company here was built to move fast.
 
 It was never designed to scale.
 AI features demo perfectly and silently degrade under real load. Cloud costs climb with no model explaining why. Engineers wait on infrastructure instead of shipping product.
 These aren't engineering failures. They're architectural gaps. And the longer they stay invisible, the more expensive they get.
-
 
 ## What I Do
 
@@ -15,16 +15,15 @@ My work sits at the intersection most companies can't staff internally: strategi
 
 **The engagement model:**
 
-| Stage | What happens |
-|---|---|
+| Stage                                                                    | What happens                                                                                                                  |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | [Architecture Diagnosis Call](https://cal.com/mach2cloud/diagnosis-call) | 60-minute structured diagnostic. You leave with clarity on what's actually driving the problem regardless of what comes next. |
-| Architecture Audit | Deep analysis of your current platform against the WAF2p framework. Clear picture of risk, cost, and velocity impact. |
-| Blueprint & System Design | A concrete architecture design your team can execute without external dependency. |
-| Engineering Enablement | Hands-on guidance through implementation — decisions, reviews, unblocking. |
-| Fractional Principal Architect | Ongoing architecture leadership without the cost or ramp time of a full-time hire. |
+| Architecture Audit                                                       | Deep analysis of your current platform against the WAF2p framework. Clear picture of risk, cost, and velocity impact.         |
+| Blueprint & System Design                                                | A concrete architecture design your team can execute without external dependency.                                             |
+| Engineering Enablement                                                   | Hands-on guidance through implementation — decisions, reviews, unblocking.                                                    |
+| Fractional Principal Architect                                           | Ongoing architecture leadership without the cost or ramp time of a full-time hire.                                            |
 
 The Diagnosis Call is the only entry point. Every engagement starts there.
-
 
 ## WAF2p Framework
 
@@ -34,11 +33,10 @@ It addresses what the standard framework doesn't: inference cost modeling, AI wo
 
 **→ [waf2p.dev](https://waf2p.dev)**
 
-
-
 ## Where This Applies
 
 The architectural moment I work with happens after one of these:
+
 - A production incident that exposed a structural failure, not just a bug
 - A board or investor conversation where infrastructure scalability was questioned
 - An engineering planning session where 30–40% of cycles are going to firefighting
@@ -46,8 +44,6 @@ The architectural moment I work with happens after one of these:
 - A cloud bill conversation where no one could explain where the cost was going
 
 If any of these have happened in the last quarter, the problem is already named. The question is what to do about it.
-
-
 
 ## Core Expertise
 
@@ -63,24 +59,22 @@ Kubernetes platform architecture (AKS, EKS). Infrastructure-as-Code (Terraform, 
 **Architecture Enablement**
 Engineering teams enabled to own and evolve architecture independently. The goal is always capability, not dependency.
 
-
-
 ## Selected Experience
-**MaCh2.Cloud** — Principal AI-Native Cloud Architect *(2022–Present)*
+
+**MaCh2.Cloud** — Principal AI-Native Cloud Architect _(2022–Present)_
 Fractional architecture leadership for Series A–B SaaS companies. Creator of WAF2p.
 
-**Capgemini** — Enterprise & Cloud Architect *(2020–2023)*
+**Capgemini** — Enterprise & Cloud Architect _(2020–2023)_
 Azure and AWS cloud platforms (landing zones) supporting 1,700 and 2,500 developers respectively. 90% automated AWS platform with CDK/Python. AWS Global Partner Award 2023.
 
-**BARMER** — Cloud Architect *(2019–2020)*
+**BARMER** — Cloud Architect _(2019–2020)_
 Public cloud infrastructure for online services. AWS CloudFormation automation to 80% cost efficiency on app cloud hosting.
 
-**BWI GmbH** — IT Architect *(2015–2019)*
+**BWI GmbH** — IT Architect _(2015–2019)_
 Container platform service design for the German Federal IT infrastructure. CloudLab service enabling independent software and hardware evaluation across hundreds of applications.
 
-
-
 ## Technology Stack
+
 ![AWS](https://img.shields.io/badge/AWS-orange?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-%230078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![GCP](https://img.shields.io/badge/GCP-%234285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
@@ -89,9 +83,8 @@ Container platform service design for the German Federal IT infrastructure. Clou
 ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub CI](https://img.shields.io/badge/GitHub%20CI-%23181717?style=for-the-badge&logo=github&logoColor=white)
 
-
-
 ## Connect
+
 - **Website:** [mach2.cloud](https://mach2.cloud)
 - **LinkedIn:** [linkedin.com/in/christian-weber-0591](https://linkedin.com/in/christian-weber-0591)
 - **WAF2p Framework:** [waf2p.dev](https://waf2p.dev)
@@ -99,4 +92,4 @@ Container platform service design for the German Federal IT infrastructure. Clou
 
 ---
 
-*Cloud-agnostic by principle. AI-native by design. US · Europe · South America. EST-anchored.*
+_Cloud-agnostic by principle. AI-native by design. US · Europe · South America. EST-anchored._

@@ -1,244 +1,274 @@
-import { Client } from '@notionhq/client'
-import { createHash } from 'node:crypto'
-import { existsSync } from 'node:fs'
-import path from 'node:path'
+import { Client } from "@notionhq/client";
+import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
+import path from "node:path";
 import type {
   PageObjectResponse,
   BlockObjectResponse,
   RichTextItemResponse,
-} from '@notionhq/client/build/src/api-endpoints'
+} from "@notionhq/client/build/src/api-endpoints";
 
 // ---------------------------------------------------------------------------
 // Client singleton
 // ---------------------------------------------------------------------------
 const notion = new Client({
   auth: process.env.NOTION_TOKEN,
-})
+});
 
-const DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? ''
-const LOCAL_ASSET_BASE_PATH = '/notion-assets/blog'
+const DATABASE_ID = process.env.NOTION_BLOG_DATABASE_ID ?? "";
+const LOCAL_ASSET_BASE_PATH = "/notion-assets/blog";
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 export interface NotionBlogPost {
-  id: string
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-  tags: string[]
-  published: boolean
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  tags: string[];
+  published: boolean;
 }
 
 export interface NotionBlogPostDetail extends NotionBlogPost {
-  coverImage?: string
-  blocks: string // rendered HTML string
+  coverImage?: string;
+  blocks: string; // rendered HTML string
 }
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
 function richTextToPlain(rich: RichTextItemResponse[]): string {
-  return rich.map((r) => r.plain_text).join('')
+  return rich.map((r) => r.plain_text).join("");
 }
 
 function richTextToHtml(rich: RichTextItemResponse[]): string {
   return rich
     .map((r) => {
       let text = r.plain_text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-      if (r.annotations?.bold) text = `<strong>${text}</strong>`
-      if (r.annotations?.italic) text = `<em>${text}</em>`
-      if (r.annotations?.code) text = `<code>${text}</code>`
-      if ('href' in r && r.href) text = `<a href="${r.href}">${text}</a>`
-      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+      if (r.annotations?.bold) text = `<strong>${text}</strong>`;
+      if (r.annotations?.italic) text = `<em>${text}</em>`;
+      if (r.annotations?.code) text = `<code>${text}</code>`;
+      if ("href" in r && r.href) text = `<a href="${r.href}">${text}</a>`;
+      return text;
     })
-    .join('')
+    .join("");
 }
 
 function escapeHtmlAttribute(value: string): string {
   return value
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
 
 function slugifySegment(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '') || 'post'
+  return (
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "post"
+  );
 }
 
 function getUrlHash(value: string): string {
-  return createHash('sha1').update(value).digest('hex').slice(0, 12)
+  return createHash("sha1").update(value).digest("hex").slice(0, 12);
 }
 
 function getAssetExtension(url: string): string {
   try {
-    const cleanedUrl = url.split('?')[0] ?? ''
-    const pathname = cleanedUrl.split('#')[0] ?? ''
-    const extension = path.extname(pathname).toLowerCase()
-    return extension && extension.length <= 5 ? extension : '.img'
+    const cleanedUrl = url.split("?")[0] ?? "";
+    const pathname = cleanedUrl.split("#")[0] ?? "";
+    const extension = path.extname(pathname).toLowerCase();
+    return extension && extension.length <= 5 ? extension : ".img";
   } catch {
-    return '.img'
+    return ".img";
   }
 }
 
-function getAssetFileName(slug: string, kind: string, sourceUrl: string): string {
-  const safeSlug = slugifySegment(slug)
-  const hash = getUrlHash(sourceUrl)
-  const extension = getAssetExtension(sourceUrl)
-  return `${safeSlug}/${kind}-${hash}${extension}`
+function getAssetFileName(
+  slug: string,
+  kind: string,
+  sourceUrl: string,
+): string {
+  const safeSlug = slugifySegment(slug);
+  const hash = getUrlHash(sourceUrl);
+  const extension = getAssetExtension(sourceUrl);
+  return `${safeSlug}/${kind}-${hash}${extension}`;
 }
 
-function getLocalAssetUrl(slug: string, kind: string, sourceUrl: string): string | undefined {
-  const relativeFileName = getAssetFileName(slug, kind, sourceUrl)
+function getLocalAssetUrl(
+  slug: string,
+  kind: string,
+  sourceUrl: string,
+): string | undefined {
+  const relativeFileName = getAssetFileName(slug, kind, sourceUrl);
   const absolutePath = path.join(
     process.cwd(),
-    'public',
-    'notion-assets',
-    'blog',
+    "public",
+    "notion-assets",
+    "blog",
     relativeFileName,
-  )
+  );
 
-  if (!existsSync(absolutePath)) return undefined
-  return `${LOCAL_ASSET_BASE_PATH}/${relativeFileName}`
+  if (!existsSync(absolutePath)) return undefined;
+  return `${LOCAL_ASSET_BASE_PATH}/${relativeFileName}`;
 }
 
 function getNotionFileUrl(
   asset:
-    | { type?: 'external'; external?: { url: string } }
-    | { type?: 'file'; file?: { url: string } }
+    | { type?: "external"; external?: { url: string } }
+    | { type?: "file"; file?: { url: string } }
     | null
     | undefined,
 ): string | undefined {
-  if (!asset?.type) return undefined
-  if (asset.type === 'external') return asset.external?.url
-  if (asset.type === 'file') return asset.file?.url
-  return undefined
+  if (!asset?.type) return undefined;
+  if (asset.type === "external") return asset.external?.url;
+  if (asset.type === "file") return asset.file?.url;
+  return undefined;
 }
 
 function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
-  const lines: string[] = []
-  let imageIndex = 0
+  const lines: string[] = [];
+  let imageIndex = 0;
 
   for (const block of blocks) {
     switch (block.type) {
-      case 'paragraph': {
-        const text = richTextToHtml(block.paragraph.rich_text)
-        if (text) lines.push(`<p>${text}</p>`)
-        break
+      case "paragraph": {
+        const text = richTextToHtml(block.paragraph.rich_text);
+        if (text) lines.push(`<p>${text}</p>`);
+        break;
       }
-      case 'heading_1': {
-        const text = richTextToHtml(block.heading_1.rich_text)
-        lines.push(`<h1>${text}</h1>`)
-        break
+      case "heading_1": {
+        const text = richTextToHtml(block.heading_1.rich_text);
+        lines.push(`<h1>${text}</h1>`);
+        break;
       }
-      case 'heading_2': {
-        const text = richTextToHtml(block.heading_2.rich_text)
-        lines.push(`<h2>${text}</h2>`)
-        break
+      case "heading_2": {
+        const text = richTextToHtml(block.heading_2.rich_text);
+        lines.push(`<h2>${text}</h2>`);
+        break;
       }
-      case 'heading_3': {
-        const text = richTextToHtml(block.heading_3.rich_text)
-        lines.push(`<h3>${text}</h3>`)
-        break
+      case "heading_3": {
+        const text = richTextToHtml(block.heading_3.rich_text);
+        lines.push(`<h3>${text}</h3>`);
+        break;
       }
-      case 'bulleted_list_item': {
-        const text = richTextToHtml(block.bulleted_list_item.rich_text)
-        lines.push(`<li>${text}</li>`)
-        break
+      case "bulleted_list_item": {
+        const text = richTextToHtml(block.bulleted_list_item.rich_text);
+        lines.push(`<li>${text}</li>`);
+        break;
       }
-      case 'numbered_list_item': {
-        const text = richTextToHtml(block.numbered_list_item.rich_text)
-        lines.push(`<li>${text}</li>`)
-        break
+      case "numbered_list_item": {
+        const text = richTextToHtml(block.numbered_list_item.rich_text);
+        lines.push(`<li>${text}</li>`);
+        break;
       }
-      case 'quote': {
-        const text = richTextToHtml(block.quote.rich_text)
-        lines.push(`<blockquote>${text}</blockquote>`)
-        break
+      case "quote": {
+        const text = richTextToHtml(block.quote.rich_text);
+        lines.push(`<blockquote>${text}</blockquote>`);
+        break;
       }
-      case 'code': {
-        const text = block.code.rich_text.map((r) => r.plain_text).join('')
-        const lang = block.code.language ?? ''
-        lines.push(`<pre><code class="language-${lang}">${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`)
-        break
-      }
-      case 'divider': {
-        lines.push('<hr />')
-        break
-      }
-      case 'image': {
-        const sourceUrl = getNotionFileUrl(block.image)
-        if (!sourceUrl) break
-
-        const caption = richTextToHtml(block.image.caption)
-        const altText = richTextToPlain(block.image.caption) || 'Blog image'
-        const imageUrl = getLocalAssetUrl(
-          slug,
-          `inline-${String(imageIndex).padStart(2, '0')}`,
-          sourceUrl,
-        ) ?? sourceUrl
+      case "code": {
+        const text = block.code.rich_text.map((r) => r.plain_text).join("");
+        const lang = block.code.language ?? "";
         lines.push(
-          `<figure><img src="${escapeHtmlAttribute(imageUrl)}" alt="${escapeHtmlAttribute(altText)}" loading="lazy" />${caption ? `<figcaption>${caption}</figcaption>` : ''}</figure>`,
-        )
-        imageIndex += 1
-        break
+          `<pre><code class="language-${lang}">${text.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</code></pre>`,
+        );
+        break;
+      }
+      case "divider": {
+        lines.push("<hr />");
+        break;
+      }
+      case "image": {
+        const sourceUrl = getNotionFileUrl(block.image);
+        if (!sourceUrl) break;
+
+        const caption = richTextToHtml(block.image.caption);
+        const altText = richTextToPlain(block.image.caption) || "Blog image";
+        const imageUrl =
+          getLocalAssetUrl(
+            slug,
+            `inline-${String(imageIndex).padStart(2, "0")}`,
+            sourceUrl,
+          ) ?? sourceUrl;
+        lines.push(
+          `<figure><img src="${escapeHtmlAttribute(imageUrl)}" alt="${escapeHtmlAttribute(altText)}" loading="lazy" />${caption ? `<figcaption>${caption}</figcaption>` : ""}</figure>`,
+        );
+        imageIndex += 1;
+        break;
       }
       default:
-        break
+        break;
     }
   }
 
-  return lines.join('\n')
+  return lines.join("\n");
 }
 
 function pageToPost(page: PageObjectResponse): NotionBlogPost {
-  const props = page.properties as Record<string, unknown>
+  const props = page.properties as Record<string, unknown>;
 
-  const titleProp = props['Title'] ?? props['Name']
+  const titleProp = props["Title"] ?? props["Name"];
   const title =
-    titleProp && typeof titleProp === 'object' && 'title' in (titleProp as object)
+    titleProp &&
+    typeof titleProp === "object" &&
+    "title" in (titleProp as object)
       ? richTextToPlain((titleProp as { title: RichTextItemResponse[] }).title)
-      : 'Untitled'
+      : "Untitled";
 
-  const slugProp = props['Slug']
+  const slugProp = props["Slug"];
   const slug =
-    slugProp && typeof slugProp === 'object' && 'rich_text' in (slugProp as object)
-      ? richTextToPlain((slugProp as { rich_text: RichTextItemResponse[] }).rich_text)
-      : page.id
+    slugProp &&
+    typeof slugProp === "object" &&
+    "rich_text" in (slugProp as object)
+      ? richTextToPlain(
+          (slugProp as { rich_text: RichTextItemResponse[] }).rich_text,
+        )
+      : page.id;
 
-  const dateProp = props['Date'] ?? props['Published']
+  const dateProp = props["Date"] ?? props["Published"];
   const date =
-    dateProp && typeof dateProp === 'object' && 'date' in (dateProp as object)
-      ? ((dateProp as { date: { start: string } | null }).date?.start ?? page.last_edited_time)
-      : page.last_edited_time
+    dateProp && typeof dateProp === "object" && "date" in (dateProp as object)
+      ? ((dateProp as { date: { start: string } | null }).date?.start ??
+        page.last_edited_time)
+      : page.last_edited_time;
 
-  const excerptProp = props['Excerpt'] ?? props['Summary']
+  const excerptProp = props["Excerpt"] ?? props["Summary"];
   const excerpt =
-    excerptProp && typeof excerptProp === 'object' && 'rich_text' in (excerptProp as object)
-      ? richTextToPlain((excerptProp as { rich_text: RichTextItemResponse[] }).rich_text)
-      : ''
+    excerptProp &&
+    typeof excerptProp === "object" &&
+    "rich_text" in (excerptProp as object)
+      ? richTextToPlain(
+          (excerptProp as { rich_text: RichTextItemResponse[] }).rich_text,
+        )
+      : "";
 
-  const tagsProp = props['Tags']
+  const tagsProp = props["Tags"];
   const tags =
-    tagsProp && typeof tagsProp === 'object' && 'multi_select' in (tagsProp as object)
-      ? (tagsProp as { multi_select: { name: string }[] }).multi_select.map((t) => t.name)
-      : []
+    tagsProp &&
+    typeof tagsProp === "object" &&
+    "multi_select" in (tagsProp as object)
+      ? (tagsProp as { multi_select: { name: string }[] }).multi_select.map(
+          (t) => t.name,
+        )
+      : [];
 
-  const publishedProp = props['Published']
+  const publishedProp = props["Published"];
   const published =
-    publishedProp && typeof publishedProp === 'object' && 'checkbox' in (publishedProp as object)
+    publishedProp &&
+    typeof publishedProp === "object" &&
+    "checkbox" in (publishedProp as object)
       ? (publishedProp as { checkbox: boolean }).checkbox
-      : true
+      : true;
 
-  return { id: page.id, slug, title, date, excerpt, tags, published }
+  return { id: page.id, slug, title, date, excerpt, tags, published };
 }
 
 // ---------------------------------------------------------------------------
@@ -247,35 +277,37 @@ function pageToPost(page: PageObjectResponse): NotionBlogPost {
 
 /** Fetch all published blog posts from Notion. Revalidate every hour. */
 export async function getBlogPosts(): Promise<NotionBlogPost[]> {
-  if (!DATABASE_ID) return FALLBACK_POSTS
+  if (!DATABASE_ID) return FALLBACK_POSTS;
 
   try {
     const response = await notion.databases.query({
       database_id: DATABASE_ID,
       filter: {
-        property: 'Published',
+        property: "Published",
         checkbox: { equals: true },
       },
-      sorts: [{ property: 'Date', direction: 'descending' }],
-    })
+      sorts: [{ property: "Date", direction: "descending" }],
+    });
 
-    const posts = (response.results as PageObjectResponse[]).map(pageToPost)
-    return posts.length > 0 ? posts : FALLBACK_POSTS
+    const posts = (response.results as PageObjectResponse[]).map(pageToPost);
+    return posts.length > 0 ? posts : FALLBACK_POSTS;
   } catch (err) {
-    console.error('[Notion] Failed to fetch posts:', err)
-    return FALLBACK_POSTS
+    console.error("[Notion] Failed to fetch posts:", err);
+    return FALLBACK_POSTS;
   }
 }
 
 /** Fetch a single blog post with rendered HTML content. */
-export async function getBlogPost(slug: string): Promise<NotionBlogPostDetail | null> {
+export async function getBlogPost(
+  slug: string,
+): Promise<NotionBlogPostDetail | null> {
   if (!DATABASE_ID) {
-    const fallback = FALLBACK_POSTS.find((p) => p.slug === slug)
-    if (!fallback) return null
-    
+    const fallback = FALLBACK_POSTS.find((p) => p.slug === slug);
+    if (!fallback) return null;
+
     // Return fallback content for demonstration
     const fallbackContent: Record<string, string> = {
-      'ai-native-platform-design': `
+      "ai-native-platform-design": `
         <p>Most teams add AI features on top of existing platforms. But this approach creates compounding complexity:</p>
         <ul style="margin: 16px 0; padding-left: 24px;">
           <li>Existing data pipelines aren't optimized for ML workloads</li>
@@ -291,7 +323,7 @@ export async function getBlogPost(slug: string): Promise<NotionBlogPostDetail | 
         <p>Infrastructure costs scale with inference volume, not request count. You pay for compute utilization, not API calls. This changes how you think about caching, batching, and request patterns.</p>
         <p style="margin-top: 24px;"><em>When is this worth it? When your product is fundamentally built on predictions—search ranking, personalization, fraud detection, recommendation systems. Not for teams adding a chatbot to an e-commerce platform.</em></p>
       `,
-      'baas-vs-custom-infra': `
+      "baas-vs-custom-infra": `
         <p>The most overrated infrastructure decision is choosing between BaaS and custom infrastructure as if it's permanent.</p>
         <h3 style="margin-top: 24px; margin-bottom: 12px;">Why BaaS Wins Early</h3>
         <p>In your first 18 months, you need to validate product-market fit, not manage Kubernetes. BaaS gives you:</p>
@@ -310,45 +342,50 @@ export async function getBlogPost(slug: string): Promise<NotionBlogPostDetail | 
         <h3 style="margin-top: 24px; margin-bottom: 12px;">The Architecture That Actually Works</h3>
         <p>Hybrid approach: Core API on BaaS (Amplify, Firebase). Async jobs and batch workloads on managed Kubernetes. Feature flags to swap implementations. This lets you grow without a rip-and-replace migration.</p>
       `,
-    }
-    
-    return { 
-      ...fallback, 
-      blocks: fallbackContent[slug] || '<p>Content coming soon.</p>'
-    }
+    };
+
+    return {
+      ...fallback,
+      blocks: fallbackContent[slug] || "<p>Content coming soon.</p>",
+    };
   }
 
   try {
     const response = await notion.databases.query({
       database_id: DATABASE_ID,
       filter: {
-        property: 'Slug',
+        property: "Slug",
         rich_text: { equals: slug },
       },
-    })
+    });
 
-    const page = response.results[0] as PageObjectResponse | undefined
-    if (!page) return null
+    const page = response.results[0] as PageObjectResponse | undefined;
+    if (!page) return null;
 
-    const post = pageToPost(page)
-    const coverSourceUrl = getNotionFileUrl(page.cover)
+    const post = pageToPost(page);
+    const coverSourceUrl = getNotionFileUrl(page.cover);
     const coverImage = coverSourceUrl
-      ? getLocalAssetUrl(post.slug, 'cover', coverSourceUrl) ?? coverSourceUrl
-      : undefined
-    const blocksResponse = await notion.blocks.children.list({ block_id: page.id })
-    const blocks = blocksToHtml(blocksResponse.results as BlockObjectResponse[], post.slug)
+      ? (getLocalAssetUrl(post.slug, "cover", coverSourceUrl) ?? coverSourceUrl)
+      : undefined;
+    const blocksResponse = await notion.blocks.children.list({
+      block_id: page.id,
+    });
+    const blocks = blocksToHtml(
+      blocksResponse.results as BlockObjectResponse[],
+      post.slug,
+    );
 
-    return { ...post, coverImage, blocks }
+    return { ...post, coverImage, blocks };
   } catch (err) {
-    console.error('[Notion] Failed to fetch post:', err)
-    return null
+    console.error("[Notion] Failed to fetch post:", err);
+    return null;
   }
 }
 
 /** Return slugs for generateStaticParams. */
 export async function getBlogSlugs(): Promise<string[]> {
-  const posts = await getBlogPosts()
-  return posts.map((p) => p.slug)
+  const posts = await getBlogPosts();
+  return posts.map((p) => p.slug);
 }
 
 // ---------------------------------------------------------------------------
@@ -356,23 +393,23 @@ export async function getBlogSlugs(): Promise<string[]> {
 // ---------------------------------------------------------------------------
 const FALLBACK_POSTS: NotionBlogPost[] = [
   {
-    id: '1',
-    slug: 'ai-native-platform-design',
+    id: "1",
+    slug: "ai-native-platform-design",
     title: 'What "AI-Native" Actually Means for Your Platform Architecture',
-    date: '2026-03-01',
+    date: "2026-03-01",
     excerpt:
-      'Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.',
-    tags: ['AI-Native', 'Architecture', 'Platform Design'],
+      "Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start — different data flows, different compute patterns, different cost models.",
+    tags: ["AI-Native", "Architecture", "Platform Design"],
     published: true,
   },
   {
-    id: '2',
-    slug: 'baas-vs-custom-infra',
-    title: 'BaaS vs Custom Infrastructure: When to Choose Each',
-    date: '2026-02-15',
+    id: "2",
+    slug: "baas-vs-custom-infra",
+    title: "BaaS vs Custom Infrastructure: When to Choose Each",
+    date: "2026-02-15",
     excerpt:
-      'Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.',
-    tags: ['BaaS', 'AWS Amplify', 'Startup Architecture'],
+      "Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.",
+    tags: ["BaaS", "AWS Amplify", "Startup Architecture"],
     published: true,
   },
-]
+];

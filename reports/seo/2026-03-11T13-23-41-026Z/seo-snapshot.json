@@ -33,9 +33,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/about/",
@@ -69,9 +67,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/blog/",
@@ -105,9 +101,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
@@ -141,9 +135,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     },
     {
       "url": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
@@ -177,9 +169,7 @@
         ],
         "jsonLd": null
       },
-      "issues": [
-        "Missing JSON-LD structured data (Article)"
-      ]
+      "issues": ["Missing JSON-LD structured data (Article)"]
     }
   ]
 }

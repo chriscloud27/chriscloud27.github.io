@@ -1,37 +1,46 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { useLocale } from 'next-intl'
-import Mach2Logo from '@/components/Mach2Logo'
-import MobileNav from '@/components/layout/MobileNav'
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import Mach2Logo from "@/components/Mach2Logo";
+import MobileNav from "@/components/layout/MobileNav";
 
 export default function Nav() {
-  const locale = useLocale()
+  const locale = useLocale();
 
   function localeHref(path: string) {
-    return `/${locale}${path === '/' ? '' : path}`
+    return `/${locale}${path === "/" ? "" : path}`;
   }
 
   return (
     <nav>
-      <Link href={localeHref('/')} className="nav-logo">
+      <Link href={localeHref("/")} className="nav-logo">
         <Mach2Logo size={36} />
-        <span>MaCh2<span className="text-white">.Cloud</span></span>
+        <span>
+          MaCh2<span className="text-white">.Cloud</span>
+        </span>
       </Link>
 
       <ul className="nav-links">
-        <li><Link href={localeHref('/services')}>Services</Link></li>
-        <li><Link href={localeHref('/waf2p')}>WAF++</Link></li>
-        <li><Link href={localeHref('/about')}>About</Link></li>
-        <li><Link href={localeHref('/blog')}>Blog</Link></li>
-        <li><a href={localeHref('/#connect')}>Contact</a></li>
+        <li>
+          <Link href={localeHref("/services")}>Services</Link>
+        </li>
+        <li>
+          <Link href={localeHref("/waf2p")}>WAF++</Link>
+        </li>
+        <li>
+          <Link href={localeHref("/about")}>About</Link>
+        </li>
+        <li>
+          <Link href={localeHref("/blog")}>Blog</Link>
+        </li>
+        <li>
+          <a href={localeHref("/#connect")}>Contact</a>
+        </li>
       </ul>
 
       <div className="flex items-center gap-3">
-        <Link
-          href="/en/diagnosis"
-          className="btn btn-p"
-        >
+        <Link href="/en/diagnosis" className="btn btn-p">
           diagnosis
         </Link>
         <div className="nav-mobile-trigger">
@@ -39,5 +48,5 @@ export default function Nav() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

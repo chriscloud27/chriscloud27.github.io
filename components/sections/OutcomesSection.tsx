@@ -1,42 +1,42 @@
 const OUTCOMES = [
   {
-    id: '01',
-    headline: 'Ship faster, not slower',
-    body: 'Deliver customer value faster with stable platform foundations',
+    id: "01",
+    headline: "Ship faster, not slower",
+    body: "Deliver customer value faster with stable platform foundations",
   },
   {
-    id: '02',
-    headline: 'Scale without ceilings',
-    body: 'Scale product and revenue without architectural bottlenecks',
+    id: "02",
+    headline: "Scale without ceilings",
+    body: "Scale product and revenue without architectural bottlenecks",
   },
   {
-    id: '03',
-    headline: 'AI that holds in production',
-    body: 'Integrate AI capabilities reliably into core products',
+    id: "03",
+    headline: "AI that holds in production",
+    body: "Integrate AI capabilities reliably into core products",
   },
   {
-    id: '04',
-    headline: 'Cost that stays predictable',
-    body: 'Maintain predictable cloud cost as business grows',
+    id: "04",
+    headline: "Cost that stays predictable",
+    body: "Maintain predictable cloud cost as business grows",
   },
   {
-    id: '05',
-    headline: 'No more full rewrites',
-    body: 'Reduce long-term re-architecture risk',
+    id: "05",
+    headline: "No more full rewrites",
+    body: "Reduce long-term re-architecture risk",
   },
   {
-    id: '06',
-    headline: 'A platform that evolves',
-    body: 'Enable continuous platform evolution',
+    id: "06",
+    headline: "A platform that evolves",
+    body: "Enable continuous platform evolution",
   },
-]
+];
 
 export default function OutcomesSection() {
   return (
     <section
       id="outcomes"
       className="relative overflow-hidden"
-      style={{ background: 'var(--blue)' }}
+      style={{ background: "var(--blue)" }}
     >
       {/* Cyan dot grid overlay */}
       <div
@@ -44,8 +44,8 @@ export default function OutcomesSection() {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            'radial-gradient(circle, rgba(0,229,255,0.045) 1px, transparent 1px)',
-          backgroundSize: '28px 28px',
+            "radial-gradient(circle, rgba(0,229,255,0.045) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
         }}
       />
 
@@ -54,7 +54,6 @@ export default function OutcomesSection() {
 
       <div className="wrap relative py-[120px]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-[80px] lg:gap-[100px] items-start">
-
           {/* Left — sticky statement */}
           <div className="lg:sticky lg:top-[100px]">
             <p className="eyebrow">Outcomes</p>
@@ -65,24 +64,25 @@ export default function OutcomesSection() {
 
             <p
               className="font-body text-[15px] font-light leading-[1.78] mb-10"
-              style={{ color: 'var(--g300)' }}
+              style={{ color: "var(--g300)" }}
             >
-              Most architecture problems aren&apos;t visible until they&apos;re expensive.
-              The right foundation doesn&apos;t just solve today&apos;s bottlenecks —
-              it removes the ones that would have appeared in six months.
+              Most architecture problems aren&apos;t visible until they&apos;re
+              expensive. The right foundation doesn&apos;t just solve
+              today&apos;s bottlenecks — it removes the ones that would have
+              appeared in six months.
             </p>
 
             {/* Direct contrast statement */}
             <div
               className="border-l-2 pl-5 py-1"
-              style={{ borderColor: 'var(--cyan)' }}
+              style={{ borderColor: "var(--cyan)" }}
             >
               <p
                 className="font-mono text-[12px] leading-[1.65]"
-                style={{ color: 'var(--g500)' }}
+                style={{ color: "var(--g500)" }}
               >
-                Production systems. Not prototypes. Not proofs of concept
-                that need replacing at Series B.
+                Production systems. Not prototypes. Not proofs of concept that
+                need replacing at Series B.
               </p>
             </div>
           </div>
@@ -96,16 +96,16 @@ export default function OutcomesSection() {
                 style={{
                   borderBottom:
                     i < OUTCOMES.length - 1
-                      ? '1px solid rgba(255,255,255,0.06)'
-                      : 'none',
+                      ? "1px solid rgba(255,255,255,0.06)"
+                      : "none",
                 }}
               >
                 {/* Check indicator */}
                 <div
                   className="mt-[3px] flex-shrink-0 w-[22px] h-[22px] rounded-full flex items-center justify-center"
                   style={{
-                    background: 'rgba(0,229,255,0.08)',
-                    border: '1px solid rgba(0,229,255,0.22)',
+                    background: "rgba(0,229,255,0.08)",
+                    border: "1px solid rgba(0,229,255,0.22)",
                   }}
                 >
                   <svg
@@ -130,13 +130,16 @@ export default function OutcomesSection() {
                 <div>
                   <p
                     className="font-semibold text-[16px] leading-[1.3] mb-1 m-0 transition-colors duration-200 group-hover:text-electric-cyan"
-                    style={{ color: 'var(--white)', fontFamily: 'var(--display)' }}
+                    style={{
+                      color: "var(--white)",
+                      fontFamily: "var(--display)",
+                    }}
                   >
                     {item.headline}
                   </p>
                   <p
                     className="font-body text-[13px] font-light leading-[1.65] m-0"
-                    style={{ color: 'var(--g500)' }}
+                    style={{ color: "var(--g500)" }}
                   >
                     {item.body}
                   </p>
@@ -145,16 +148,15 @@ export default function OutcomesSection() {
                 {/* Mono ID — right-aligned */}
                 <span
                   className="ml-auto pl-4 font-mono text-[10px] tracking-[0.08em] flex-shrink-0 mt-[4px]"
-                  style={{ color: 'rgba(255,255,255,0.12)' }}
+                  style={{ color: "rgba(255,255,255,0.12)" }}
                 >
                   {item.id}
                 </span>
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
-  )
+  );
 }

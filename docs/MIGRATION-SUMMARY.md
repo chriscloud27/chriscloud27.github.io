@@ -1,22 +1,27 @@
 # GitHub Pages Migration - Completed ✅
 
 ## Build Status
+
 ✅ **Static export build successful** (24 pages generated)
 
 ## What Was Changed
 
 ### 1. Configuration Files
+
 - ✅ **next.config.ts** - Added `output: 'export'`, `trailingSlash: true`, `images: { unoptimized: true }`
 - ✅ **i18n/routing.ts** - Removed French locale (now: en, de, es)
 - ✅ **package.json** - Added `"preview": "npx serve out"` script
 
 ### 2. Runtime Blockers Removed
+
 - ✅ **middleware.ts** - Deleted (incompatible with static export)
 - ✅ **app/api/** - Deleted entire directory (API routes incompatible)
 - ✅ **messages/fr.json** - Deleted French translations
 
 ### 3. Pages Fixed for Static Export
+
 All pages updated to pass `locale` via params instead of using headers:
+
 - ✅ **app/[locale]/layout.tsx** - Fixed `getMessages({ locale })`
 - ✅ **app/[locale]/blog/page.tsx** - Fixed getTranslations pattern
 - ✅ **app/[locale]/blog/[slug]/page.tsx** - Fixed getTranslations pattern
@@ -25,7 +30,9 @@ All pages updated to pass `locale` via params instead of using headers:
 - ✅ **app/[locale]/waf2p/page.tsx** - Fixed getTranslations pattern
 
 ### 4. Output Directory Structure
+
 Generated files now live in `/out`:
+
 ```
 out/
 ├── en/
@@ -49,11 +56,13 @@ out/
 ## Why This Matters
 
 ### Before (React Server Components + Headers)
+
 - **Pages required a server** — you couldn't host on static GitHub Pages
 - **Dynamic routing via middleware** — relied on runtime request headers
 - **Next.js API routes** — needed backend, incompatible with static export
 
 ### After (Static Export)
+
 - **Pure HTML + CSS + JS** — no server needed
 - **Static routing** — all pages pre-generated at build time
 - **GitHub Pages compatible** — deploy to any static CDN
@@ -64,12 +73,14 @@ out/
 ## Deployment Workflow
 
 ### Local Build
+
 ```bash
 npm run build
 # Output: /out (24 static HTML pages + assets)
 ```
 
 ### GitHub Pages Deploy
+
 ```bash
 git push origin main
 # GitHub Actions runs: npm run build
@@ -81,6 +92,7 @@ git push origin main
 ## Known Limitations of Static Export
 
 ✅ **Supported:**
+
 - Static pages (all your routes)
 - Dynamic routes via slug-based generation
 - Locale switching (all locales pre-generated)
@@ -88,6 +100,7 @@ git push origin main
 - Image optimization warnings are safe (images still load)
 
 ❌ **Not Supported (removed):**
+
 - Server-side middleware
 - API routes (`/api/*`)
 - Server-only database queries
@@ -98,13 +111,16 @@ git push origin main
 ## Testing Locally
 
 ### Build & Preview
+
 ```bash
 npm run build           # Generate /out
 npm run preview         # Serve /out locally on http://localhost:3000
 ```
 
 ### Verify All Routes
+
 Visit in browser:
+
 - http://localhost:3000/en/
 - http://localhost:3000/de/
 - http://localhost:3000/en/blog/
@@ -126,9 +142,11 @@ All should render without errors.
 ---
 
 ## Migration Date
+
 **March 2026**
 
 ## Next Steps (Optional)
+
 - Monitor build times and static export output size
 - Consider adding ISR (Incremental Static Regeneration) if needed
 - Explore edge caching strategies for optimal CDN performance

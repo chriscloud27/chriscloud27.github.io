@@ -1,4 +1,5 @@
 # Personal Brand Blueprint
+
 # Christian — MaCh2.Cloud
 
 ---

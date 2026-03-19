@@ -1,35 +1,38 @@
 const STATS = [
   {
-    value: '13',
-    suffix: '+',
-    label: 'Years designing and operating enterprise and SaaS cloud systems',
+    value: "13",
+    suffix: "+",
+    label: "Years designing and operating enterprise and SaaS cloud systems",
   },
   {
-    value: '5k',
-    suffix: '+',
-    label: 'Engineers supported on global platforms and cloud-native architectures',
+    value: "5k",
+    suffix: "+",
+    label:
+      "Engineers supported on global platforms and cloud-native architectures",
   },
   {
-    value: '90',
-    suffix: '%',
-    label: 'Operational automation achieved on prior production-scale platforms',
+    value: "90",
+    suffix: "%",
+    label:
+      "Operational automation achieved on prior production-scale platforms",
   },
   {
-    value: '0',
-    suffix: '%',
-    label: 'Architectural rewrites on systems designed with a clear foundation from the start',
+    value: "0",
+    suffix: "%",
+    label:
+      "Architectural rewrites on systems designed with a clear foundation from the start",
   },
-] as const
+] as const;
 
 type StatItem = {
-  value: string
-  suffix: string
-  label: string
-}
+  value: string;
+  suffix: string;
+  label: string;
+};
 
 type StatsGridProps = {
-  showHeader?: boolean
-}
+  showHeader?: boolean;
+};
 
 export default function StatsGrid({ showHeader = true }: StatsGridProps) {
   return (
@@ -60,9 +63,9 @@ export default function StatsGrid({ showHeader = true }: StatsGridProps) {
         ))}
       </div>
       {/* Authority footnote */}
-        <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-grey-700 text-center mt-12">
-          Real systems. Real scale. Real responsibility.
-        </p>
+      <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-grey-700 text-center mt-12">
+        Real systems. Real scale. Real responsibility.
+      </p>
     </>
-  )
+  );
 }

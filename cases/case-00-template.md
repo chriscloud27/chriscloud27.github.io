@@ -11,10 +11,10 @@
 
 ## 2. Situation (Business Context)
 
-- **Industry / Domain:**  
-- **Stakeholders (Roles):**  
-- **Initial Problem / Pain Point:**  
-- **Business Impact of the Problem:**  
+- **Industry / Domain:**
+- **Stakeholders (Roles):**
+- **Initial Problem / Pain Point:**
+- **Business Impact of the Problem:**
   - Revenue impact:
   - Risk exposure:
   - Operational inefficiencies:
@@ -25,16 +25,19 @@
 ## 3. Task (Requirements & Constraints)
 
 ### 3.1 Business Objectives
+
 - Objective 1:
 - Objective 2:
 - Objective 3:
 
 ### 3.2 Functional Requirements
+
 - FR1:
 - FR2:
 - FR3:
 
 ### 3.3 Non-Functional Requirements (NFRs)
+
 - Availability:
 - Scalability:
 - Performance / Latency:
@@ -45,6 +48,7 @@
 - Cost constraints:
 
 ### 3.4 Constraints
+
 - Budget:
 - Timeline:
 - Team skills:
@@ -53,6 +57,7 @@
 - Vendor requirements:
 
 ### 3.5 Success Criteria (Measurable)
+
 - Metric 1:
 - Metric 2:
 - Metric 3:
@@ -62,12 +67,14 @@
 ## 4. Architecture Overview
 
 ### 4.1 High-Level Architecture
+
 - Core components:
 - Data flow:
 - Integration points:
 - External dependencies:
 
 ### 4.2 Key Technologies / Stack
+
 - Compute:
 - Storage:
 - Database:
@@ -80,7 +87,7 @@
 
 ---
 
-# 5. Architecture Reasoning  ← Principal-Level Signal
+# 5. Architecture Reasoning ← Principal-Level Signal
 
 ## 5.1 Problem Framing
 
@@ -92,7 +99,7 @@
 
 ## 5.2 Architectural Hypothesis
 
-> If we implement <ARCHITECTURAL STYLE / STACK>, we will achieve <DESIRED OUTCOME>, 
+> If we implement <ARCHITECTURAL STYLE / STACK>, we will achieve <DESIRED OUTCOME>,
 > because <TECHNICAL RATIONALE>, while accepting <KNOWN TRADE-OFF>.
 
 ---
@@ -100,16 +107,19 @@
 ## 5.3 Option Space Considered
 
 ### Option A (Chosen)
+
 - Description:
 - Strengths:
 - Weaknesses:
 
 ### Option B (Alternative)
+
 - Description:
 - Strengths:
 - Weaknesses:
 
 ### Option C (Legacy / Traditional)
+
 - Description:
 - Strengths:
 - Weaknesses:
@@ -144,18 +154,21 @@ Rank the top drivers that influenced the final decision:
 ## 5.6 Trade-Offs Made (Explicitly)
 
 ### Trade-Off 1
+
 - Optimization:
 - Compromise:
 - Risk introduced:
 - Mitigation strategy:
 
 ### Trade-Off 2
+
 - Optimization:
 - Compromise:
 - Risk introduced:
 - Mitigation strategy:
 
 ### Trade-Off 3
+
 - Optimization:
 - Compromise:
 - Risk introduced:
@@ -184,6 +197,7 @@ Rank the top drivers that influenced the final decision:
 - Architectural evolution path:
 
 ### What I Would Keep
+
 - Decision 1:
 - Decision 2:
 - Decision 3:
@@ -227,5 +241,5 @@ Rank the top drivers that influenced the final decision:
 
 **Key Decision Statement:**
 
-> We optimized for <PRIMARY DRIVER> under constraint <CRITICAL CONSTRAINT>, 
+> We optimized for <PRIMARY DRIVER> under constraint <CRITICAL CONSTRAINT>,
 > accepting <TRADE-OFF>, which resulted in <MEASURABLE OUTCOME>.

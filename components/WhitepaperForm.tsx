@@ -1,31 +1,31 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-const WEBHOOK_URL = 'https://flow.mach2.cloud/webhook/whitepaper'
+const WEBHOOK_URL = "https://flow.mach2.cloud/webhook/whitepaper";
 const WHITEPAPER_URL =
-  'https://prod.ucwe.capgemini.com/de-de/wp-content/uploads/sites/8/2023/11/function-apps-versus-kubernetes.pdf'
+  "https://prod.ucwe.capgemini.com/de-de/wp-content/uploads/sites/8/2023/11/function-apps-versus-kubernetes.pdf";
 
 const schema = z.object({
-  name_first: z.string().min(1, 'Your first name is required'),
-  name_family: z.string().min(1, 'Your last name is required'),
-  email: z.string().email('Please enter a valid email address'),
+  name_first: z.string().min(1, "Your first name is required"),
+  name_family: z.string().min(1, "Your last name is required"),
+  email: z.string().email("Please enter a valid email address"),
   company: z.string().optional(),
   consent: z.literal(true, {
-    errorMap: () => ({ message: 'You must accept the terms and conditions' }),
+    errorMap: () => ({ message: "You must accept the terms and conditions" }),
   }),
-})
+});
 
-type FormValues = z.infer<typeof schema>
+type FormValues = z.infer<typeof schema>;
 
 export default function WhitepaperForm() {
-  const [submitError, setSubmitError] = useState<string | null>(null)
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -34,31 +34,33 @@ export default function WhitepaperForm() {
     formState: { errors, isSubmitting, isSubmitSuccessful },
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
-  })
+  });
 
   async function onSubmit(data: FormValues) {
-    setSubmitError(null)
+    setSubmitError(null);
 
     const params = new URLSearchParams({
       name_first: data.name_first,
       name_family: data.name_family,
       Email: data.email,
-      Consent: 'true',
-    })
+      Consent: "true",
+    });
 
     if (data.company) {
-      params.set('Company', data.company)
+      params.set("Company", data.company);
     }
 
     try {
       await fetch(`${WEBHOOK_URL}?${params.toString()}`, {
-        method: 'GET',
-        mode: 'no-cors',
-      })
+        method: "GET",
+        mode: "no-cors",
+      });
 
-      reset()
+      reset();
     } catch {
-      setSubmitError('The request could not be sent. Please try again in a moment.')
+      setSubmitError(
+        "The request could not be sent. Please try again in a moment.",
+      );
     }
   }
 
@@ -80,7 +82,7 @@ export default function WhitepaperForm() {
           Download Whitepaper →
         </a>
       </div>
-    )
+    );
   }
 
   return (
@@ -94,7 +96,7 @@ export default function WhitepaperForm() {
           <Input
             id="name_first"
             type="text"
-            {...register('name_first')}
+            {...register("name_first")}
             aria-invalid={!!errors.name_first}
           />
           {errors.name_first && (
@@ -109,11 +111,13 @@ export default function WhitepaperForm() {
           <Input
             id="name_family"
             type="text"
-            {...register('name_family')}
+            {...register("name_family")}
             aria-invalid={!!errors.name_family}
           />
           {errors.name_family && (
-            <span className="form-error show">{errors.name_family.message}</span>
+            <span className="form-error show">
+              {errors.name_family.message}
+            </span>
           )}
         </div>
       </div>
@@ -126,7 +130,7 @@ export default function WhitepaperForm() {
         <Input
           id="email"
           type="email"
-          {...register('email')}
+          {...register("email")}
           aria-invalid={!!errors.email}
         />
         {errors.email && (
@@ -139,22 +143,19 @@ export default function WhitepaperForm() {
         <Label htmlFor="company" className="form-label">
           Which company are you working for?
         </Label>
-        <Input
-          id="company"
-          type="text"
-          {...register('company')}
-        />
+        <Input id="company" type="text" {...register("company")} />
       </div>
 
       {/* Consent */}
       <div className="form-group">
         <Label className="form-label">
-          Do you consent with our terms and conditions? <span className="required">*</span>
+          Do you consent with our terms and conditions?{" "}
+          <span className="required">*</span>
         </Label>
         <label className="flex items-center gap-3 cursor-pointer mt-2">
           <input
             type="checkbox"
-            {...register('consent')}
+            {...register("consent")}
             className="w-4 h-4 accent-[#00E5FF] cursor-pointer"
           />
           <span className="font-body text-[14px] text-grey-mid">I consent</span>
@@ -170,12 +171,12 @@ export default function WhitepaperForm() {
         className="form-submit w-full justify-center"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Sending…' : 'Submit'}
+        {isSubmitting ? "Sending…" : "Submit"}
       </Button>
 
       {submitError && (
         <div className="form-message error mt-4">{submitError}</div>
       )}
     </form>
-  )
+  );
 }

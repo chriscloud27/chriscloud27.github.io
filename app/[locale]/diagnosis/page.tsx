@@ -1,98 +1,101 @@
-import type { Metadata } from 'next'
-import { setRequestLocale } from 'next-intl/server'
-import Link from 'next/link'
-import { CalEmbed } from './CalEmbed'
+import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import Link from "next/link";
+import { CalEmbed } from "./CalEmbed";
 
 export const metadata: Metadata = {
-  title: 'Architecture Diagnosis Call — MaCh2.Cloud',
+  title: "Architecture Diagnosis Call — MaCh2.Cloud",
   description:
-    'A structured 60-minute session to surface the one architectural constraint compounding your platform\'s problems. You leave with a clearer picture either way.',
+    "A structured 60-minute session to surface the one architectural constraint compounding your platform's problems. You leave with a clearer picture either way.",
   openGraph: {
-    title: 'Architecture Diagnosis Call — MaCh2.Cloud',
+    title: "Architecture Diagnosis Call — MaCh2.Cloud",
     description:
-      '60 minutes. One clear finding. Book a structured architecture diagnosis with Christian Weber.',
-    url: 'https://mach2.cloud/en/diagnosis',
+      "60 minutes. One clear finding. Book a structured architecture diagnosis with Christian Weber.",
+    url: "https://mach2.cloud/en/diagnosis",
   },
-}
+};
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  name: 'Architecture Diagnosis Call',
-  provider: { '@type': 'Person', name: 'Christian Weber' },
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Architecture Diagnosis Call",
+  provider: { "@type": "Person", name: "Christian Weber" },
   description:
-    'Structured 60-minute architecture diagnosis for Series A–B SaaS CTOs and technical founders.',
-  url: 'https://mach2.cloud/en/diagnosis',
-}
+    "Structured 60-minute architecture diagnosis for Series A–B SaaS CTOs and technical founders.",
+  url: "https://mach2.cloud/en/diagnosis",
+};
 
 const steps = [
   {
-    num: '01',
-    name: 'Situation Mapping',
-    tag: ['context'],
-    subtitle: 'Review where your platform currently is',
-    body: 'We start where you are, not where you think you should be. You describe the platform as it actually exists: how it was built, under what constraints, what the team looks like today. I\'m listening for the gap between the system you intended and the system that got shipped. Most architectural problems reveal themselves here. Not in the symptoms but in the decisions that made sense at the time.',
-    instructions: 'We may indentify structural problems reveal themselves here. Not in the symptoms, but in the decisions that made sense at the time.',
+    num: "01",
+    name: "Situation Mapping",
+    tag: ["context"],
+    subtitle: "Review where your platform currently is",
+    body: "We start where you are, not where you think you should be. You describe the platform as it actually exists: how it was built, under what constraints, what the team looks like today. I'm listening for the gap between the system you intended and the system that got shipped. Most architectural problems reveal themselves here. Not in the symptoms but in the decisions that made sense at the time.",
+    instructions:
+      "We may indentify structural problems reveal themselves here. Not in the symptoms, but in the decisions that made sense at the time.",
   },
   {
-    num: '02',
-    name: 'Pain Points Identification',
-    tag: ['locate'],
-    subtitle: 'Identify where business is fighting tech',
-    body: 'Every platform has one or two places where the structure is actively fighting the business. We find them. Slowing delivery cycles, unpredictable cloud spend, AI features that degrade under real load, infrastructure that only two engineers understand. We name the specific friction points not the general category. This is where most teams realize the problem they came in with isn\'t the problem worth solving first.',
-    instructions: 'Every company makes decisions that impact their platform. They may directly or indirectly be costing velocity, margin, or reliability. We name them specifically — slowing deploy cycles, unexplained cloud spend, AI features degrading under load, infrastructure only two engineers understand. Not a category. A location.',
+    num: "02",
+    name: "Pain Points Identification",
+    tag: ["locate"],
+    subtitle: "Identify where business is fighting tech",
+    body: "Every platform has one or two places where the structure is actively fighting the business. We find them. Slowing delivery cycles, unpredictable cloud spend, AI features that degrade under real load, infrastructure that only two engineers understand. We name the specific friction points not the general category. This is where most teams realize the problem they came in with isn't the problem worth solving first.",
+    instructions:
+      "Every company makes decisions that impact their platform. They may directly or indirectly be costing velocity, margin, or reliability. We name them specifically — slowing deploy cycles, unexplained cloud spend, AI features degrading under load, infrastructure only two engineers understand. Not a category. A location.",
   },
   {
-    num: '03',
-    name: 'Root Cause Isolation',
-    tag: 'architectural decisions',
-    subtitle: 'One finding. Framed to be immediately usable',
-    body: 'We name what you and your team need to resolve from what will compound until it is addressed at the architectural level. The type of problem determines the type of intervention. ',
-    instructions: 'Implementation problem or structural problem. Treating a structural constraint as an implementation issue is the most common reason platform work fails to hold.',
+    num: "03",
+    name: "Root Cause Isolation",
+    tag: "architectural decisions",
+    subtitle: "One finding. Framed to be immediately usable",
+    body: "We name what you and your team need to resolve from what will compound until it is addressed at the architectural level. The type of problem determines the type of intervention. ",
+    instructions:
+      "Implementation problem or structural problem. Treating a structural constraint as an implementation issue is the most common reason platform work fails to hold.",
   },
-]
+];
 
 const stats = [
-  { value: "60'", label: 'Structured session', sub: 'no extensions' },
-  { value: 'one', label: 'Concrete finding', sub: 'not a slide deck' },
-  { value: 'zero', label: 'Commitment required', sub: 'to book' },
-]
+  { value: "60'", label: "Structured session", sub: "no extensions" },
+  { value: "one", label: "Concrete finding", sub: "not a slide deck" },
+  { value: "zero", label: "Commitment required", sub: "to book" },
+];
 
 const faqs = [
   {
-    question: 'Who is this not for?',
+    question: "Who is this not for?",
     answer:
-    'This is not for pre-product teams, companies without an active engineering team, or leaders looking for someone to simply build infrastructure for them. It is for CTOs and technical founders who want to think clearly about structural constraints before they compound.',
+      "This is not for pre-product teams, companies without an active engineering team, or leaders looking for someone to simply build infrastructure for them. It is for CTOs and technical founders who want to think clearly about structural constraints before they compound.",
   },
   {
-    question: 'What should I prepare before the call?',
+    question: "What should I prepare before the call?",
     answer:
-      'Bring the current reality, not a polished narrative. A short architecture diagram or stack overview, your top one to three bottlenecks, and recent examples where delivery, reliability, or cloud spend created business friction are enough. If useful, share those in advance. If not, we can map it live in the first phase.',
+      "Bring the current reality, not a polished narrative. A short architecture diagram or stack overview, your top one to three bottlenecks, and recent examples where delivery, reliability, or cloud spend created business friction are enough. If useful, share those in advance. If not, we can map it live in the first phase.",
   },
   {
-    question: 'How do you prepare for the call?',
+    question: "How do you prepare for the call?",
     answer:
-      'I do prep work before we meet. I review what you send, research your product and company context, and arrive with an initial diagnostic hypothesis to pressure-test together. The call starts informed, not generic.',
+      "I do prep work before we meet. I review what you send, research your product and company context, and arrive with an initial diagnostic hypothesis to pressure-test together. The call starts informed, not generic.",
   },
   {
-    question: 'Is this confidential?',
+    question: "Is this confidential?",
     answer:
-      'Yes. You can request an NDA before the call. Nothing from the session is shared or reused without your explicit permission.',
+      "Yes. You can request an NDA before the call. Nothing from the session is shared or reused without your explicit permission.",
   },
   {
-    question: 'What happens after the call?',
+    question: "What happens after the call?",
     answer:
-      'Within 24 hours, you receive the core finding in writing so you can use it internally. If there is a clear fit for deeper work, I outline what that can look like. No pressure and no automated follow-up sequence.',
+      "Within 24 hours, you receive the core finding in writing so you can use it internally. If there is a clear fit for deeper work, I outline what that can look like. No pressure and no automated follow-up sequence.",
   },
-]
+];
 
 export default async function DiagnosisPage({
   params,
 }: {
-  params: Promise<{ locale: string }>
+  params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params
-  setRequestLocale(locale)
+  const { locale } = await params;
+  setRequestLocale(locale);
 
   return (
     <main className="bg-deep-blue min-h-screen pt-16">
@@ -106,9 +109,8 @@ export default async function DiagnosisPage({
         <div aria-hidden="true" className="grid-overlay" />
 
         <div className="wrap relative z-10 py-20 lg:py-28">
-
           {/* Eyebrow */}
-              <p className="eyebrow mb-6">Architecture Diagnosis</p>
+          <p className="eyebrow mb-6">Architecture Diagnosis</p>
 
           {/* Headline */}
           <h1 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-bold italic leading-[1.15] text-white mb-5 max-w-[760px]">
@@ -118,10 +120,14 @@ export default async function DiagnosisPage({
 
           {/* Sub */}
           <p className="font-body text-[15px] font-light leading-[1.7] text-grey-mid max-w-[560px] mb-12">
-            Four sequential phases. One concrete output. Prepared methodology applied to your specific system.
+            Four sequential phases. One concrete output. Prepared methodology
+            applied to your specific system.
           </p>
 
-          <Link href="#book-diagnosis-call" className="btn btn-p mb-12 inline-flex">
+          <Link
+            href="#book-diagnosis-call"
+            className="btn btn-p mb-12 inline-flex"
+          >
             Book diagnosis call
           </Link>
 
@@ -130,7 +136,6 @@ export default async function DiagnosisPage({
 
           {/* ── Timeline ──────────────────────────────────────────────────── */}
           <div className="relative max-w-[720px]">
-
             {/* Vertical connecting line */}
             <div
               aria-hidden="true"
@@ -144,12 +149,12 @@ export default async function DiagnosisPage({
                 <div className="flex-shrink-0 w-14 pt-0.5">
                   <div
                     className={[
-                      'w-12 h-12 rounded-full flex items-center justify-center',
-                      'font-mono text-[13px] font-medium flex-shrink-0',
-                      'bg-transparent text-electric-cyan border border-electric-cyan',
-                      'transition-colors duration-200',
-                      'group-hover:bg-electric-cyan group-hover:text-deep-blue',
-                    ].join(' ')}
+                      "w-12 h-12 rounded-full flex items-center justify-center",
+                      "font-mono text-[13px] font-medium flex-shrink-0",
+                      "bg-transparent text-electric-cyan border border-electric-cyan",
+                      "transition-colors duration-200",
+                      "group-hover:bg-electric-cyan group-hover:text-deep-blue",
+                    ].join(" ")}
                   >
                     {step.num}
                   </div>
@@ -204,9 +209,9 @@ export default async function DiagnosisPage({
                 </h2>
                 {/* Body */}
                 <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-8">
-                  The most architectural constraint worth understanding right now. Framed clearly
-                  enough to take into your next engineering planning session. Yours,
-                  regardless of what comes next.
+                  The most architectural constraint worth understanding right
+                  now. Framed clearly enough to take into your next engineering
+                  planning session. Yours, regardless of what comes next.
                 </p>
 
                 {/* Stats row */}
@@ -231,15 +236,22 @@ export default async function DiagnosisPage({
       </section>
 
       {/* ── Cal.com Booking ───────────────────────────────────────────────── */}
-      <section id="book-diagnosis-call" className="border-t border-white/[0.06] py-20">
+      <section
+        id="book-diagnosis-call"
+        className="border-t border-white/[0.06] py-20"
+      >
         <div className="wrap">
           <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white mb-3 max-w-lg leading-[1.2]">
             Book the call
           </h2>
           <p className="font-mono text-[12px] tracking-[0.08em] text-grey-mid mb-10">
-            60 minutes. The only requirement is that you come with a real problem.
+            60 minutes. The only requirement is that you come with a real
+            problem.
           </p>
-          <div className="overflow-hidden bg-deep-blue" style={{ minHeight: '600px' }}>
+          <div
+            className="overflow-hidden bg-deep-blue"
+            style={{ minHeight: "600px" }}
+          >
             <CalEmbed />
           </div>
         </div>
@@ -251,7 +263,8 @@ export default async function DiagnosisPage({
             FAQs before booking
           </h2>
           <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-10 max-w-[640px]">
-            Direct answers to the questions most CTOs ask when they are almost ready to book.
+            Direct answers to the questions most CTOs ask when they are almost
+            ready to book.
           </p>
 
           <div className="space-y-3">
@@ -282,5 +295,5 @@ export default async function DiagnosisPage({
         </div>
       </section>
     </main>
-  )
+  );
 }

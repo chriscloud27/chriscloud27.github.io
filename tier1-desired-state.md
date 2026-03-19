@@ -1,5 +1,7 @@
 # Tier 1 — Desired State for mach2.cloud
+
 ## Instructions for Copilot
+
 Replace the three sections below in the existing site.
 Match existing class naming conventions and CSS variables where possible.
 Do not change navigation, footer, contact form, experience timeline, or awards section.
@@ -12,11 +14,10 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
 <!-- HERO -->
 <section id="header" class="hero">
   <div class="hero-content">
-
     <div class="hero-label">Principal AI-Native Platform Architect</div>
 
     <h1>
-      Scalable AI SaaS infrastructure.<br>
+      Scalable AI SaaS infrastructure.<br />
       <em>Built for growth-stage velocity.</em>
     </h1>
 
@@ -41,19 +42,19 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
     </ul>
 
     <div class="hero-cta">
-      <a href="https://calendly.com/chriscloud-weber/30min" class="btn btn-primary">
+      <a
+        href="https://calendly.com/chriscloud-weber/30min"
+        class="btn btn-primary"
+      >
         Discuss Your Platform Architecture
       </a>
-      <a href="#what-i-build" class="btn btn-secondary">
-        See What I Build
-      </a>
+      <a href="#what-i-build" class="btn btn-secondary"> See What I Build </a>
     </div>
 
     <div class="hero-meta">
       <span class="badge available">Available</span>
       <span>Remote · US / EU · Growth-Stage AI SaaS</span>
     </div>
-
   </div>
 
   <div class="hero-stats">
@@ -94,7 +95,6 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
   </div>
 
   <div class="build-grid">
-
     <div class="build-card">
       <div class="build-icon">⬡</div>
       <h3>Automated Kubernetes Platforms</h3>
@@ -114,7 +114,9 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         model serving pipelines, and cost-controlled GPU/CPU routing. Designed
         for production load, not demo conditions.
       </p>
-      <span class="build-tag">Vertex AI · SageMaker · Kubernetes · Cost Architecture</span>
+      <span class="build-tag"
+        >Vertex AI · SageMaker · Kubernetes · Cost Architecture</span
+      >
     </div>
 
     <div class="build-card">
@@ -125,7 +127,9 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         retrofitted. Policy-as-code, least-privilege IAM, and automated
         compliance drift detection. Built to survive enterprise sales cycles.
       </p>
-      <span class="build-tag">OPA · IAM · Policy-as-Code · Compliance Automation</span>
+      <span class="build-tag"
+        >OPA · IAM · Policy-as-Code · Compliance Automation</span
+      >
     </div>
 
     <div class="build-card">
@@ -136,7 +140,9 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         provisioning, progressive deployment, and rollback-safe release
         strategies. Reduced deployment cycle time by 60%+ on prior platforms.
       </p>
-      <span class="build-tag">GitOps · ArgoCD · GitHub Actions · Terraform</span>
+      <span class="build-tag"
+        >GitOps · ArgoCD · GitHub Actions · Terraform</span
+      >
     </div>
 
     <div class="build-card">
@@ -144,10 +150,13 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
       <h3>Platform Systems That Scale Without Headcount</h3>
       <p>
         Developer self-service, automated runbooks, and operational abstraction
-        layers that let small infra teams support large engineering organisations.
-        90%+ automation achieved on production CDN and Kubernetes platforms.
+        layers that let small infra teams support large engineering
+        organisations. 90%+ automation achieved on production CDN and Kubernetes
+        platforms.
       </p>
-      <span class="build-tag">Internal Developer Platform · Automation · SRE Patterns</span>
+      <span class="build-tag"
+        >Internal Developer Platform · Automation · SRE Patterns</span
+      >
     </div>
 
     <div class="build-card">
@@ -155,12 +164,13 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
       <h3>Cloud Cost Architecture</h3>
       <p>
         Cost modeled as an architectural variable from day one — not an
-        afterthought. Unit economics aligned to revenue growth, automated
-        cost anomaly detection, and rightsizing built into the platform lifecycle.
+        afterthought. Unit economics aligned to revenue growth, automated cost
+        anomaly detection, and rightsizing built into the platform lifecycle.
       </p>
-      <span class="build-tag">FinOps · Cost Attribution · Cloud Unit Economics</span>
+      <span class="build-tag"
+        >FinOps · Cost Attribution · Cloud Unit Economics</span
+      >
     </div>
-
   </div>
 </section>
 ```
@@ -195,7 +205,10 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
     </div>
 
     <h3>Cloud Infrastructure Powering Enterprise Development at Scale</h3>
-    <p class="case-context">Capgemini × Microsoft · Enterprise · 2,500+ engineers · Global distributed teams</p>
+    <p class="case-context">
+      Capgemini × Microsoft · Enterprise · 2,500+ engineers · Global distributed
+      teams
+    </p>
 
     <div class="case-body">
       <div class="case-col">
@@ -215,13 +228,16 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
           The trade-off was blast radius risk, mitigated through namespace-level
           RBAC, OPA policy enforcement, and network policy segmentation.
           Infrastructure was fully codified in Terraform with a self-service
-          provisioning layer — teams could create environments without opening
-          a ticket. Co-authored the platform design guidance published externally
+          provisioning layer — teams could create environments without opening a
+          ticket. Co-authored the platform design guidance published externally
           as a Microsoft reference model.
         </p>
 
         <h4>Stack</h4>
-        <p>Azure Kubernetes Service · Terraform · OPA/Gatekeeper · Azure Policy · Helm · Jenkins · Azure Monitor</p>
+        <p>
+          Azure Kubernetes Service · Terraform · OPA/Gatekeeper · Azure Policy ·
+          Helm · Jenkins · Azure Monitor
+        </p>
       </div>
 
       <div class="case-col">
@@ -229,8 +245,13 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         <ul class="case-outcomes">
           <li>Platform scaled to <strong>2,500 developers</strong></li>
           <li>Provisioning friction eliminated via self-service IaC layer</li>
-          <li>Architecture guidance published externally as Microsoft enterprise reference model</li>
-          <li>Kubernetes know-how scaled to <strong>300+ architects</strong></li>
+          <li>
+            Architecture guidance published externally as Microsoft enterprise
+            reference model
+          </li>
+          <li>
+            Kubernetes know-how scaled to <strong>300+ architects</strong>
+          </li>
         </ul>
 
         <h4>What I'd Improve Today</h4>
@@ -238,9 +259,9 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
           I'd introduce Cilium network policies from day one rather than
           retrofitting them at scale. The security model becomes significantly
           cleaner when identity-aware networking is structural. I'd also
-          instrument FinOps attribution at the namespace level earlier —
-          cost visibility per team compresses cloud waste faster than any
-          rightsizing exercise after the fact.
+          instrument FinOps attribution at the namespace level earlier — cost
+          visibility per team compresses cloud waste faster than any rightsizing
+          exercise after the fact.
         </p>
       </div>
     </div>
@@ -260,49 +281,62 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
     </div>
 
     <h3>Award-Winning Cloud Platform — Autonomous Driving</h3>
-    <p class="case-context">AWS · Automotive · 1,700 engineers · Mission-critical workloads · Strict compliance</p>
+    <p class="case-context">
+      AWS · Automotive · 1,700 engineers · Mission-critical workloads · Strict
+      compliance
+    </p>
 
     <div class="case-body">
       <div class="case-col">
         <h4>Problem</h4>
         <p>
           Autonomous vehicle development generates extreme data volumes at
-          irregular velocity — sensor data, simulation runs, model training
-          jobs — all requiring strict processing guarantees and compliance
-          across a distributed team of 1,700 engineers. The architecture had
-          to handle production throughput without slowing development cycles.
+          irregular velocity — sensor data, simulation runs, model training jobs
+          — all requiring strict processing guarantees and compliance across a
+          distributed team of 1,700 engineers. The architecture had to handle
+          production throughput without slowing development cycles.
         </p>
 
         <h4>Architecture Decision</h4>
         <p>
-          AWS was the primary cloud for this platform given the ecosystem
-          depth for ML workloads and existing vendor relationships. The core
-          decision was to build a self-service developer layer on top of the
-          data infrastructure rather than centralising pipeline management —
-          teams needed autonomy to define their own ingestion and processing
-          jobs without creating infrastructure bottlenecks. Automated
-          provisioning ensured compliance guardrails were enforced without
-          slowing delivery.
+          AWS was the primary cloud for this platform given the ecosystem depth
+          for ML workloads and existing vendor relationships. The core decision
+          was to build a self-service developer layer on top of the data
+          infrastructure rather than centralising pipeline management — teams
+          needed autonomy to define their own ingestion and processing jobs
+          without creating infrastructure bottlenecks. Automated provisioning
+          ensured compliance guardrails were enforced without slowing delivery.
         </p>
 
         <h4>Stack</h4>
-        <p>AWS (S3 · EC2 · EKS · Lambda · SageMaker) · Terraform · CloudFormation · AWS IAM · CloudWatch · Data Pipeline automation</p>
+        <p>
+          AWS (S3 · EC2 · EKS · Lambda · SageMaker) · Terraform · CloudFormation
+          · AWS IAM · CloudWatch · Data Pipeline automation
+        </p>
       </div>
 
       <div class="case-col">
         <h4>Outcome</h4>
         <ul class="case-outcomes">
-          <li>Platform enabled <strong>1,700 engineers</strong> with no delivery bottlenecks</li>
-          <li>High-throughput data pipelines operational at production scale</li>
-          <li>Recognised with the <strong>AWS Global Partner Award</strong> for outstanding cloud platform delivery</li>
+          <li>
+            Platform enabled <strong>1,700 engineers</strong> with no delivery
+            bottlenecks
+          </li>
+          <li>
+            High-throughput data pipelines operational at production scale
+          </li>
+          <li>
+            Recognised with the <strong>AWS Global Partner Award</strong> for
+            outstanding cloud platform delivery
+          </li>
         </ul>
 
         <h4>What I'd Improve Today</h4>
         <p>
           The observability layer was added iteratively rather than designed
           upfront. For AI/ML workloads especially, I'd now instrument model
-          serving latency, pipeline throughput, and cost-per-inference from
-          the first deployment — not after performance issues surface. Reactive
+          serving latency, pipeline throughput, and cost-per-inference from the
+          first deployment — not after performance issues surface. Reactive
           observability in production AI systems is an expensive lesson.
         </p>
       </div>
@@ -323,38 +357,47 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
     </div>
 
     <h3>Platform Optimisation — 40% Sales Efficiency Improvement</h3>
-    <p class="case-context">Enterprise SaaS · International rollout · Cloud cost exceeding revenue growth</p>
+    <p class="case-context">
+      Enterprise SaaS · International rollout · Cloud cost exceeding revenue
+      growth
+    </p>
 
     <div class="case-body">
       <div class="case-col">
         <h4>Problem</h4>
         <p>
-          A SaaS company experiencing declining sales efficiency traced the
-          root cause to platform performance degradation and operational
-          complexity accumulating under international rollout pressure.
-          Cloud cost was growing faster than revenue with no cost attribution
-          model in place. Engineering was firefighting instead of shipping.
+          A SaaS company experiencing declining sales efficiency traced the root
+          cause to platform performance degradation and operational complexity
+          accumulating under international rollout pressure. Cloud cost was
+          growing faster than revenue with no cost attribution model in place.
+          Engineering was firefighting instead of shipping.
         </p>
 
         <h4>Architecture Decision</h4>
         <p>
           The audit surfaced three distinct failure modes: unattributed cloud
-          spend across regions, a deployment pipeline with no environment
-          parity between staging and production, and a database layer not
-          designed for multi-region read patterns. The rebuild prioritised
-          automation-first operations and cost attribution per customer segment
-          before addressing scale — fixing the visibility problem first made
-          every subsequent architectural decision cheaper and faster.
+          spend across regions, a deployment pipeline with no environment parity
+          between staging and production, and a database layer not designed for
+          multi-region read patterns. The rebuild prioritised automation-first
+          operations and cost attribution per customer segment before addressing
+          scale — fixing the visibility problem first made every subsequent
+          architectural decision cheaper and faster.
         </p>
 
         <h4>Stack</h4>
-        <p>AWS Amplify · Terraform · GitHub Actions · CloudWatch · Cost Explorer · Multi-region RDS · CDN optimisation</p>
+        <p>
+          AWS Amplify · Terraform · GitHub Actions · CloudWatch · Cost Explorer
+          · Multi-region RDS · CDN optimisation
+        </p>
       </div>
 
       <div class="case-col">
         <h4>Outcome</h4>
         <ul class="case-outcomes">
-          <li>Sales efficiency improved by <strong>40%</strong> following optimisation</li>
+          <li>
+            Sales efficiency improved by <strong>40%</strong> following
+            optimisation
+          </li>
           <li>Cloud cost realigned to revenue with per-segment attribution</li>
           <li>International rollout unblocked across five countries</li>
           <li>Engineering team returned to product delivery velocity</li>
@@ -386,17 +429,20 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
     </div>
 
     <h3>BaaS Platform — Seed Startup to Production</h3>
-    <p class="case-context">Seed-Stage SaaS · 5-engineer team · Zero budget for over-engineering · Series A readiness required</p>
+    <p class="case-context">
+      Seed-Stage SaaS · 5-engineer team · Zero budget for over-engineering ·
+      Series A readiness required
+    </p>
 
     <div class="case-body">
       <div class="case-col">
         <h4>Problem</h4>
         <p>
           A seed-stage SaaS startup needed to move from prototype to
-          production-grade backend infrastructure within weeks — not months.
-          The team had no dedicated infrastructure engineer. The constraint was
-          not ambition but resource reality: any architecture decision that
-          required ongoing ops overhead was a non-starter.
+          production-grade backend infrastructure within weeks — not months. The
+          team had no dedicated infrastructure engineer. The constraint was not
+          ambition but resource reality: any architecture decision that required
+          ongoing ops overhead was a non-starter.
         </p>
 
         <h4>Architecture Decision</h4>
@@ -413,7 +459,10 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         </p>
 
         <h4>Stack</h4>
-        <p>AWS Amplify · AppSync (GraphQL) · DynamoDB · Cognito · Lambda · S3 · CloudFront</p>
+        <p>
+          AWS Amplify · AppSync (GraphQL) · DynamoDB · Cognito · Lambda · S3 ·
+          CloudFront
+        </p>
       </div>
 
       <div class="case-col">
@@ -428,16 +477,15 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
         <h4>What I'd Improve Today</h4>
         <p>
           I'd formalise the architectural decision record (ADR) earlier — a
-          written record of why BaaS was chosen, what was traded off, and
-          what the migration trigger conditions are. Seed-stage teams move fast
-          and lose context. When the Series A infrastructure hire arrives six
-          months later, they need to understand the reasoning, not just
+          written record of why BaaS was chosen, what was traded off, and what
+          the migration trigger conditions are. Seed-stage teams move fast and
+          lose context. When the Series A infrastructure hire arrives six months
+          later, they need to understand the reasoning, not just
           reverse-engineer the implementation.
         </p>
       </div>
     </div>
   </div>
-
 </section>
 ```
 
@@ -451,7 +499,7 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
   font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #00E5FF;
+  color: #00e5ff;
   margin-bottom: 1rem;
 }
 
@@ -466,16 +514,16 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
 
 .hero-proof li {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   padding-left: 1.2rem;
   position: relative;
 }
 
 .hero-proof li::before {
-  content: '—';
+  content: "—";
   position: absolute;
   left: 0;
-  color: #00E5FF;
+  color: #00e5ff;
 }
 
 .hero-cta {
@@ -490,7 +538,7 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
   align-items: center;
   gap: 0.75rem;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* WHAT I BUILD */
@@ -507,27 +555,29 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
 }
 
 .build-card {
-  border: 1px solid rgba(11,31,58,0.1);
+  border: 1px solid rgba(11, 31, 58, 0.1);
   border-radius: 8px;
   padding: 1.75rem;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
 .build-card:hover {
-  border-color: #00E5FF;
-  box-shadow: 0 4px 20px rgba(0,229,255,0.08);
+  border-color: #00e5ff;
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.08);
 }
 
 .build-icon {
   font-size: 1.5rem;
-  color: #00E5FF;
+  color: #00e5ff;
   margin-bottom: 1rem;
 }
 
 .build-card h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: #0B1F3A;
+  color: #0b1f3a;
   margin-bottom: 0.75rem;
 }
 
@@ -540,26 +590,26 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
 
 .build-tag {
   font-size: 0.75rem;
-  color: #0B1F3A;
+  color: #0b1f3a;
   opacity: 0.5;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 /* CASE STUDIES — expanded */
 .case-study {
-  border-top: 1px solid rgba(11,31,58,0.1);
+  border-top: 1px solid rgba(11, 31, 58, 0.1);
   padding: 3rem 0;
 }
 
 .case-study:last-child {
-  border-bottom: 1px solid rgba(11,31,58,0.1);
+  border-bottom: 1px solid rgba(11, 31, 58, 0.1);
 }
 
 .case-context {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 1.5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 .case-body {
@@ -580,7 +630,7 @@ Do not change navigation, footer, contact form, experience timeline, or awards s
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #00E5FF;
+  color: #00e5ff;
   margin-bottom: 0.5rem;
   margin-top: 1.5rem;
 }

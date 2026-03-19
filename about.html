@@ -1,295 +1,492 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <title>About — MaCh2.Cloud</title>
-  <meta name="description" content="MaCh2.Cloud brand values: Intelligent, Sovereign, Trustworthy, Platform-driven, and Speed." />
-  <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://mach2.cloud/en/about/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --blue:      #0B1F3A;
-      --blue-mid:  #0D2447;
-      --cyan:      #00E5FF;
-      --cyan-dim:  #00b8cc;
-      --white:     #ffffff;
-      --g500:      #8a9bb0;
-      --g700:      #4a5a72;
-      --serif:     'DM Serif Display', Georgia, serif;
-      --body:      'DM Sans', sans-serif;
-      --mono:      'DM Mono', monospace;
-    }
-    
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--body); background: var(--blue); color: var(--white); line-height: 1.6; }
-    
-    nav {
-      background: rgba(11, 31, 58, 0.95);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    
-    .nav-logo { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--cyan); text-decoration: none; width:40px; height:40px; display:flex; align-items:center; }
-    
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 32px;
-      margin: 0;
-    }
-    
-    .nav-links a {
-      font-size: 12px;
-      font-family: var(--mono);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--g500);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    
-    .nav-links a:hover { color: var(--cyan); }
-    
-    @media (max-width: 800px) {
-      .nav-links { display: none; }
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <title>About — MaCh2.Cloud</title>
+    <meta
+      name="description"
+      content="MaCh2.Cloud brand values: Intelligent, Sovereign, Trustworthy, Platform-driven, and Speed."
+    />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="https://mach2.cloud/en/about/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue: #0b1f3a;
+        --blue-mid: #0d2447;
+        --cyan: #00e5ff;
+        --cyan-dim: #00b8cc;
+        --white: #ffffff;
+        --g500: #8a9bb0;
+        --g700: #4a5a72;
+        --serif: "DM Serif Display", Georgia, serif;
+        --body: "DM Sans", sans-serif;
+        --mono: "DM Mono", monospace;
+      }
 
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    
-    .header {
-      padding: 80px 0 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      margin-bottom: 80px;
-    }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--body);
+        background: var(--blue);
+        color: var(--white);
+        line-height: 1.6;
+      }
 
-    .header h1 {
-      font-family: var(--serif);
-      font-size: 52px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
+      nav {
+        background: rgba(11, 31, 58, 0.95);
+        backdrop-filter: blur(8px);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
 
-    .header h1 em { color: var(--cyan); font-style: italic; }
+      .nav-logo {
+        font-family: var(--mono);
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--cyan);
+        text-decoration: none;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+      }
 
-    .header p {
-      font-size: 16px;
-      color: var(--g500);
-      max-width: 620px;
-      line-height: 1.75;
-    }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 32px;
+        margin: 0;
+      }
 
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 24px;
-      margin-bottom: 120px;
-    }
+      .nav-links a {
+        font-size: 12px;
+        font-family: var(--mono);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--g500);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
 
-    .value-card {
-      background: var(--blue-mid);
-      padding: 40px 28px;
-      border-top: 3px solid var(--cyan);
-      border-radius: 6px;
-      transition: transform 0.2s, background 0.2s;
-    }
+      .nav-links a:hover {
+        color: var(--cyan);
+      }
 
-    .value-card:hover {
-      transform: translateY(-4px);
-      background: rgba(13, 36, 71, 0.8);
-    }
+      @media (max-width: 800px) {
+        .nav-links {
+          display: none;
+        }
+      }
 
-    .value-title {
-      font-family: var(--serif);
-      font-size: 28px;
-      color: var(--white);
-      margin-bottom: 14px;
-      letter-spacing: -0.5px;
-    }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-    .value-desc {
-      font-size: 14px;
-      color: var(--g500);
-      line-height: 1.7;
-    }
+      .header {
+        padding: 80px 0 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        margin-bottom: 80px;
+      }
 
-    .mission-section {
-      background: rgba(13, 36, 71, 0.5);
-      border: 1px solid rgba(0, 229, 255, 0.12);
-      padding: 60px 48px;
-      border-radius: 6px;
-      margin-bottom: 100px;
-    }
+      .header h1 {
+        font-family: var(--serif);
+        font-size: 52px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
 
-    .mission-section h2 {
-      font-family: var(--serif);
-      font-size: 40px;
-      margin-bottom: 24px;
-      color: var(--white);
-      line-height: 1.3;
-    }
+      .header h1 em {
+        color: var(--cyan);
+        font-style: italic;
+      }
 
-    .mission-section h2 em { color: var(--cyan); font-style: italic; }
+      .header p {
+        font-size: 16px;
+        color: var(--g500);
+        max-width: 620px;
+        line-height: 1.75;
+      }
 
-    .mission-section p {
-      font-size: 16px;
-      color: var(--g500);
-      line-height: 1.8;
-      max-width: 720px;
-      margin-bottom: 20px;
-    }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 24px;
+        margin-bottom: 120px;
+      }
 
-    .mission-section p:last-child { margin-bottom: 0; }
+      .value-card {
+        background: var(--blue-mid);
+        padding: 40px 28px;
+        border-top: 3px solid var(--cyan);
+        border-radius: 6px;
+        transition:
+          transform 0.2s,
+          background 0.2s;
+      }
 
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 40px 0 30px;
-      margin-top: 100px;
-    }
+      .value-card:hover {
+        transform: translateY(-4px);
+        background: rgba(13, 36, 71, 0.8);
+      }
 
-    .foot-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+      .value-title {
+        font-family: var(--serif);
+        font-size: 28px;
+        color: var(--white);
+        margin-bottom: 14px;
+        letter-spacing: -0.5px;
+      }
 
-    .foot-logo {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--cyan);
-      font-weight: 500;
-    }
+      .value-desc {
+        font-size: 14px;
+        color: var(--g500);
+        line-height: 1.7;
+      }
 
-    .foot-copy {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--g700);
-    }
+      .mission-section {
+        background: rgba(13, 36, 71, 0.5);
+        border: 1px solid rgba(0, 229, 255, 0.12);
+        padding: 60px 48px;
+        border-radius: 6px;
+        margin-bottom: 100px;
+      }
 
-    .foot-links {
-      display: flex;
-      gap: 18px;
-      list-style: none;
-    }
+      .mission-section h2 {
+        font-family: var(--serif);
+        font-size: 40px;
+        margin-bottom: 24px;
+        color: var(--white);
+        line-height: 1.3;
+      }
 
-    .foot-links a {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--g700);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+      .mission-section h2 em {
+        color: var(--cyan);
+        font-style: italic;
+      }
 
-    .foot-links a:hover { color: var(--cyan); }
+      .mission-section p {
+        font-size: 16px;
+        color: var(--g500);
+        line-height: 1.8;
+        max-width: 720px;
+        margin-bottom: 20px;
+      }
 
-    @media (max-width: 860px) {
-      .values-grid { grid-template-columns: repeat(3, 1fr); }
-      .header { padding: 60px 0 40px; }
-      .header h1 { font-size: 36px; }
-    }
+      .mission-section p:last-child {
+        margin-bottom: 0;
+      }
 
-    @media (max-width: 640px) {
-      .values-grid { grid-template-columns: 1fr; }
-      .header h1 { font-size: 28px; }
-      .mission-section { padding: 40px 24px; }
-      .mission-section h2 { font-size: 28px; }
-      .foot-inner { flex-direction: column; text-align: center; }
-      .foot-links { justify-content: center; }
-    }
-  </style>
-</head>
-<body>
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 40px 0 30px;
+        margin-top: 100px;
+      }
 
-<nav>
-  <a href="/" class="nav-logo" style="display:flex;align-items:center;gap:8px;">
-    <svg viewBox="0 0 32 32" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><filter id="fg"><feGaussianBlur stdDeviation="0.6"/><feMerge><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="32" height="32" rx="6" fill="#0B1F3A"/><path d="M 9,24 L 6,28 L 11,24 Z" fill="white" opacity="0.4"/><path d="M 23,24 L 26,28 L 21,24 Z" fill="white" opacity="0.4"/><rect x="5" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/><rect x="13" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.45"/><rect x="21" y="19" width="6" height="4.5" rx="0.8" fill="white" opacity="0.3"/><rect x="9" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9" filter="url(#fg)"/><rect x="17" y="13" width="6" height="5" rx="0.8" fill="#00E5FF" opacity="0.9" filter="url(#fg)"/><rect x="13" y="8" width="6" height="4.5" rx="0.8" fill="white" opacity="0.95"/><path d="M 13,8 L 16,2 L 19,8 Z" fill="white"/><circle cx="16" cy="5.5" r="1.2" fill="#00E5FF"/><path d="M 10,23.5 Q 12,27 13.5,25 Q 15,29 16,27 Q 17,29 18.5,25 Q 20,27 22,23.5" fill="none" stroke="#00E5FF" stroke-width="1.2" stroke-linecap="round" opacity="0.85"/></svg>
-    <span style="font-family:var(--mono); font-size: 14px; font-weight: 600; color: var(--cyan); text-decoration: none;">MaCh2<span style="opacity:0.6;">.cloud</span></span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="/">Home</a></li>
-    <li><a href="/#experience">Experience</a></li>
-    <li><a href="/#portfolio">Portfolio</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/#connect">Connect</a></li>
-  </ul>
-</nav>
+      .foot-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
 
-<div class="wrap">
-  <div class="header">
-    <h1>Built to <em>accelerate</em><br/>what matters.</h1>
-    <p>MaCh2.Cloud embodies five core values that guide every architectural decision and partnership. These principles define who we are and how we deliver impact.</p>
-  </div>
-</div>
+      .foot-logo {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--cyan);
+        font-weight: 500;
+      }
 
-<div class="wrap">
-  <div class="values-grid">
-    <div class="value-card">
-      <div class="value-title">Intelligent</div>
-      <div class="value-desc">We think systematically about tradeoffs. Every architecture decision is reasoned, documented, and optimized for your specific constraints — not generic best practices.</div>
-    </div>
+      .foot-copy {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--g700);
+      }
 
-    <div class="value-card">
-      <div class="value-title">Sovereign</div>
-      <div class="value-desc">Your infrastructure serves your business, not vice versa. We design cloud-agnostic architectures that give you optionality and prevent lock-in to single vendors.</div>
-    </div>
+      .foot-links {
+        display: flex;
+        gap: 18px;
+        list-style: none;
+      }
 
-    <div class="value-card">
-      <div class="value-title">Trustworthy</div>
-      <div class="value-desc">Security and compliance are non-negotiable. We architect with defense-in-depth, audit trails, and zero-trust principles built in from day one.</div>
-    </div>
+      .foot-links a {
+        font-family: var(--mono);
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--g700);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
 
-    <div class="value-card">
-      <div class="value-title">Platform</div>
-      <div class="value-desc">Great infrastructure enables product velocity. We build platforms that scale with your team, not against it — enabling engineers to move faster and ship with confidence.</div>
-    </div>
+      .foot-links a:hover {
+        color: var(--cyan);
+      }
 
-    <div class="value-card">
-      <div class="value-title">Speed</div>
-      <div class="value-desc">Slow infrastructure kills startups. We deliver rapid time-to-market without cutting corners on reliability, security, or long-term scalability.</div>
-    </div>
-  </div>
-</div>
+      @media (max-width: 860px) {
+        .values-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .header {
+          padding: 60px 0 40px;
+        }
+        .header h1 {
+          font-size: 36px;
+        }
+      }
 
-<div class="wrap">
-  <div class="mission-section">
-    <h2>Our Mission</h2>
-    <p>We help Seed through Series C SaaS CTOs design <em>AI-native cloud architectures</em> that scale reliably, remain secure and compliant, and empower teams to ship faster.</p>
-    <p>Whether you're architecting from scratch or optimizing an existing platform, we deliver cloud-agnostic, security-first, production-ready guidance that outlasts your roadmap.</p>
-  </div>
-</div>
-
-<div class="wrap">
-  <footer>
-    <div class="foot-inner">
-      <span class="foot-logo">MaCh2<span style="color: white;">.cloud</span></span>
-      <span class="foot-copy">© 2026 Christian Weber. All rights reserved.</span>
-      <ul class="foot-links">
+      @media (max-width: 640px) {
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .header h1 {
+          font-size: 28px;
+        }
+        .mission-section {
+          padding: 40px 24px;
+        }
+        .mission-section h2 {
+          font-size: 28px;
+        }
+        .foot-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .foot-links {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a
+        href="/"
+        class="nav-logo"
+        style="display: flex; align-items: center; gap: 8px"
+      >
+        <svg
+          viewBox="0 0 32 32"
+          width="40"
+          height="40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="fg">
+              <feGaussianBlur stdDeviation="0.6" />
+              <feMerge><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+          </defs>
+          <rect width="32" height="32" rx="6" fill="#0B1F3A" />
+          <path d="M 9,24 L 6,28 L 11,24 Z" fill="white" opacity="0.4" />
+          <path d="M 23,24 L 26,28 L 21,24 Z" fill="white" opacity="0.4" />
+          <rect
+            x="5"
+            y="19"
+            width="6"
+            height="4.5"
+            rx="0.8"
+            fill="white"
+            opacity="0.3"
+          />
+          <rect
+            x="13"
+            y="19"
+            width="6"
+            height="4.5"
+            rx="0.8"
+            fill="white"
+            opacity="0.45"
+          />
+          <rect
+            x="21"
+            y="19"
+            width="6"
+            height="4.5"
+            rx="0.8"
+            fill="white"
+            opacity="0.3"
+          />
+          <rect
+            x="9"
+            y="13"
+            width="6"
+            height="5"
+            rx="0.8"
+            fill="#00E5FF"
+            opacity="0.9"
+            filter="url(#fg)"
+          />
+          <rect
+            x="17"
+            y="13"
+            width="6"
+            height="5"
+            rx="0.8"
+            fill="#00E5FF"
+            opacity="0.9"
+            filter="url(#fg)"
+          />
+          <rect
+            x="13"
+            y="8"
+            width="6"
+            height="4.5"
+            rx="0.8"
+            fill="white"
+            opacity="0.95"
+          />
+          <path d="M 13,8 L 16,2 L 19,8 Z" fill="white" />
+          <circle cx="16" cy="5.5" r="1.2" fill="#00E5FF" />
+          <path
+            d="M 10,23.5 Q 12,27 13.5,25 Q 15,29 16,27 Q 17,29 18.5,25 Q 20,27 22,23.5"
+            fill="none"
+            stroke="#00E5FF"
+            stroke-width="1.2"
+            stroke-linecap="round"
+            opacity="0.85"
+          />
+        </svg>
+        <span
+          style="
+            font-family: var(--mono);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--cyan);
+            text-decoration: none;
+          "
+          >MaCh2<span style="opacity: 0.6">.cloud</span></span
+        >
+      </a>
+      <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/#experience">Experience</a></li>
         <li><a href="/#portfolio">Portfolio</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/#connect">Connect</a></li>
       </ul>
-    </div>
-  </footer>
-</div>
+    </nav>
 
-</body>
+    <div class="wrap">
+      <div class="header">
+        <h1>Built to <em>accelerate</em><br />what matters.</h1>
+        <p>
+          MaCh2.Cloud embodies five core values that guide every architectural
+          decision and partnership. These principles define who we are and how
+          we deliver impact.
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-title">Intelligent</div>
+          <div class="value-desc">
+            We think systematically about tradeoffs. Every architecture decision
+            is reasoned, documented, and optimized for your specific constraints
+            — not generic best practices.
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="value-title">Sovereign</div>
+          <div class="value-desc">
+            Your infrastructure serves your business, not vice versa. We design
+            cloud-agnostic architectures that give you optionality and prevent
+            lock-in to single vendors.
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="value-title">Trustworthy</div>
+          <div class="value-desc">
+            Security and compliance are non-negotiable. We architect with
+            defense-in-depth, audit trails, and zero-trust principles built in
+            from day one.
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="value-title">Platform</div>
+          <div class="value-desc">
+            Great infrastructure enables product velocity. We build platforms
+            that scale with your team, not against it — enabling engineers to
+            move faster and ship with confidence.
+          </div>
+        </div>
+
+        <div class="value-card">
+          <div class="value-title">Speed</div>
+          <div class="value-desc">
+            Slow infrastructure kills startups. We deliver rapid time-to-market
+            without cutting corners on reliability, security, or long-term
+            scalability.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="mission-section">
+        <h2>Our Mission</h2>
+        <p>
+          We help Seed through Series C SaaS CTOs design
+          <em>AI-native cloud architectures</em> that scale reliably, remain
+          secure and compliant, and empower teams to ship faster.
+        </p>
+        <p>
+          Whether you're architecting from scratch or optimizing an existing
+          platform, we deliver cloud-agnostic, security-first, production-ready
+          guidance that outlasts your roadmap.
+        </p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <footer>
+        <div class="foot-inner">
+          <span class="foot-logo"
+            >MaCh2<span style="color: white">.cloud</span></span
+          >
+          <span class="foot-copy"
+            >© 2026 Christian Weber. All rights reserved.</span
+          >
+          <ul class="foot-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#experience">Experience</a></li>
+            <li><a href="/#portfolio">Portfolio</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/#connect">Connect</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

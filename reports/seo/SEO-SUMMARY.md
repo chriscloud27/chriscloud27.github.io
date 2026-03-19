@@ -1,9 +1,11 @@
 # SEO Summary
 
 ## Executive Summary
+
 This site uses Next.js metadata APIs to generate canonical URLs, locale alternates, Open Graph/Twitter metadata, robots rules, and sitemap entries for static and dynamic pages. Keyword strategy is centralized in `lib/keywords.ts` and applied per route in each page's `generateMetadata()` function.
 
 ## Where To Add Keywords
+
 - Global keyword sets: `lib/keywords.ts`
 - Page-level assignment:
 - Blog listing: `app/[locale]/blog/page.tsx` -> `keywords: BLOG_KEYWORDS`
@@ -11,6 +13,7 @@ This site uses Next.js metadata APIs to generate canonical URLs, locale alternat
 - Additional routes (home/about/waf2p/cases): set `keywords` inside each route's `generateMetadata()` return object.
 
 ## How Blog Article Keywords Are Set
+
 In `app/[locale]/blog/[slug]/page.tsx`, article metadata keywords are built as:
 `[...new Set([...post.tags, ...GLOBAL_KEYWORDS])]`
 
@@ -19,7 +22,9 @@ In `app/[locale]/blog/[slug]/page.tsx`, article metadata keywords are built as:
 - `Set` removes duplicates before output.
 
 ## How Sitemap Is Built
+
 `app/sitemap.ts` generates entries by:
+
 1. Iterating all locales from `i18n/routing.ts`
 2. Adding static routes (`/`, `/about`, `/blog`, `/waf2p`)
 3. Adding case-study slugs from `CASE_SLUGS`
@@ -30,12 +35,15 @@ In `app/[locale]/blog/[slug]/page.tsx`, article metadata keywords are built as:
 `export const dynamic = 'force-static'` ensures compatibility with static export mode.
 
 ## How It Works Is Noted
+
 - Product/process "How It Works" section lives in: `components/sections/HowItWorksSection.tsx`
 - Homepage structure guidance referencing "How It Works" lives in: `CLAUDE.md`
 - Marketing text keys around workflow/process labels live in: `messages/en.json`
 
 ## How Search Engines Are Projected To React
+
 Expected behavior:
+
 - Production domain can be indexed and crawled (`robots.ts` allows `/` and provides sitemap).
 - Preview or non-production hosts are blocked from indexing (`disallow: '/'`).
 - Canonical plus hreflang alternates should reduce duplicate-content ambiguity across locales.
@@ -43,6 +51,7 @@ Expected behavior:
 - Meta keywords are a weak ranking signal today; title, description, internal linking, content quality, and crawlability have higher impact.
 
 ## Security Precautions And Hints
+
 - `robots.txt` is not access control; sensitive endpoints must be protected server-side.
 - Keep private/admin paths out of sitemap.
 - Continue blocking preview deployments from indexing.
@@ -51,6 +60,7 @@ Expected behavior:
 - Avoid leaking secrets in metadata, JSON-LD, or static content.
 
 ## Further Recommendations
+
 1. Keep this file updated whenever metadata, robots, sitemap, locales, or canonical logic changes.
 2. Add a short "SEO architecture" section in `README.md` linking to this summary.
 3. Add smoke checks for metadata generation, canonical tags, and sitemap URL coverage.
@@ -62,22 +72,24 @@ Expected behavior:
 ## Monitoring & Automated Checks
 
 - Quick-check script: `scripts/check-seo.mjs` — a lightweight Node script that:
-	- fetches URLs (from sitemap or explicit list),
-	- validates presence of `title`, `meta[name="description"]`, `link[rel="canonical"]`, `meta[name="keywords"]`, Open Graph/Twitter tags and JSON-LD,
-	- writes a timestamped snapshot and machine report under `reports/seo/<ISO-timestamp>/`,
-	- can compare against an existing baseline `reports/seo/baseline/seo-baseline.json` to surface applied changes.
+  - fetches URLs (from sitemap or explicit list),
+  - validates presence of `title`, `meta[name="description"]`, `link[rel="canonical"]`, `meta[name="keywords"]`, Open Graph/Twitter tags and JSON-LD,
+  - writes a timestamped snapshot and machine report under `reports/seo/<ISO-timestamp>/`,
+  - can compare against an existing baseline `reports/seo/baseline/seo-baseline.json` to surface applied changes.
 
 - Run locally (Node 18+):
-	```bash
-	node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
-	node scripts/check-seo.mjs --urls=https://mach2.cloud/,https://mach2.cloud/blog --baseline=reports/seo/baseline/seo-baseline.json
-	node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --keywords-file=lib/keywords.ts
-	```
+
+  ```bash
+  node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
+  node scripts/check-seo.mjs --urls=https://mach2.cloud/,https://mach2.cloud/blog --baseline=reports/seo/baseline/seo-baseline.json
+  node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --keywords-file=lib/keywords.ts
+  ```
 
 - How to accept a snapshot as baseline:
-	```bash
-	cp reports/seo/<timestamp>/seo-snapshot.json reports/seo/baseline/seo-baseline.json
-	```
+
+  ```bash
+  cp reports/seo/<timestamp>/seo-snapshot.json reports/seo/baseline/seo-baseline.json
+  ```
 
 - CI recommendation: run `node scripts/check-seo.mjs` on PRs or nightly and upload the `reports/seo/<timestamp>/` folder as the artifact. For simpler automation, copy the latest run to `reports/seo/latest/` or maintain `reports/seo/baseline/` for the persistent baseline file.
 

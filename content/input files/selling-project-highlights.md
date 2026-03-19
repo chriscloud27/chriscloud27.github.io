@@ -16,13 +16,13 @@ Impact:
 
 — improved sales process efficiency by 40% through platform and process optimization  
 — led international rollout across multiple teams and customer accounts  
-— enabled scalable and automated platform environments  
+— enabled scalable and automated platform environments
 
 Scope:
 
 — architecture leadership and platform rollout strategy  
 — cross-functional alignment across engineering, operations, and customer success  
-— governance and platform scalability enablement  
+— governance and platform scalability enablement
 
 ---
 
@@ -34,13 +34,13 @@ Impact:
 
 — enabled Cloud platform supporting 1,700 developers  
 — enabled highly automated platform using infrastructure automation  
-— contributed to AWS global partner award-winning platform environment  
+— contributed to AWS global partner award-winning platform environment
 
 Scope:
 
 — platform architecture enablement  
 — infrastructure automation and DevSecOps enablement  
-— platform scalability and operational architecture  
+— platform scalability and operational architecture
 
 ---
 
@@ -52,13 +52,13 @@ Impact:
 
 — enabled Cloud platform supporting 2,500 developers  
 — enabled scalable and secure enterprise platform environment  
-— enabled global engineering teams to operate scalable infrastructure  
+— enabled global engineering teams to operate scalable infrastructure
 
 Scope:
 
 — architecture leadership and platform design  
 — landing zone architecture and platform scalability  
-— strategic platform architecture alignment  
+— strategic platform architecture alignment
 
 ---
 
@@ -70,13 +70,13 @@ Impact:
 
 — enabled scalable Kubernetes-based microservice platform  
 — enabled migration from monolithic to scalable microservices architecture  
-— enabled automated and secure platform environments  
+— enabled automated and secure platform environments
 
 Scope:
 
 — platform architecture design  
 — infrastructure automation and security hardening  
-— microservice platform enablement  
+— microservice platform enablement
 
 ---
 
@@ -88,10 +88,10 @@ Impact:
 
 — enabled scalable AWS platform foundation  
 — implemented automated infrastructure provisioning  
-— enabled scalable and secure platform architecture  
+— enabled scalable and secure platform architecture
 
 Scope:
 
 — landing zone architecture design  
 — infrastructure automation  
-— platform scalability enablement  
+— platform scalability enablement

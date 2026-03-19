@@ -18,13 +18,13 @@ My role:
 
 — design scalable platform architecture  
 — implement infrastructure automation and self-service capabilities  
-— enable engineering teams to operate infrastructure independently  
+— enable engineering teams to operate infrastructure independently
 
 Impact:
 
 — enabled Cloud platforms supporting up to 2,500 developers  
 — reduced infrastructure provisioning friction  
-— improved engineering productivity and platform scalability  
+— improved engineering productivity and platform scalability
 
 ---
 
@@ -38,13 +38,13 @@ My role:
 
 — design Kubernetes-based platform architecture  
 — implement infrastructure-as-code automation  
-— enable secure, reliable platform environments  
+— enable secure, reliable platform environments
 
 Impact:
 
 — enabled scalable microservice platform architecture  
 — improved system scalability and operational reliability  
-— enabled long-term platform evolution  
+— enabled long-term platform evolution
 
 ---
 
@@ -58,13 +58,13 @@ My role:
 
 — design automated infrastructure provisioning  
 — implement infrastructure-as-code using Cloud-native tools  
-— enable automated platform lifecycle management  
+— enable automated platform lifecycle management
 
 Impact:
 
 — achieved high levels of platform automation  
 — reduced operational overhead  
-— enabled self-service platform operation  
+— enabled self-service platform operation
 
 ---
 
@@ -78,9 +78,9 @@ My role:
 
 — design scalable Cloud platform infrastructure  
 — enable reliable and scalable distributed systems  
-— enable engineering teams to build and operate scalable systems  
+— enable engineering teams to build and operate scalable systems
 
 Impact:
 
 — enabled reliable Cloud platform environments supporting distributed systems  
-— improved platform scalability and operational efficiency  
+— improved platform scalability and operational efficiency

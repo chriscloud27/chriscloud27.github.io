@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { useState, type ReactNode } from 'react'
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState, type ReactNode } from "react";
 
 export function Providers({ children }: { children: ReactNode }) {
   // Create a stable QueryClient per component tree
@@ -14,7 +14,9 @@ export function Providers({ children }: { children: ReactNode }) {
           },
         },
       }),
-  )
+  );
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  return (
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  );
 }

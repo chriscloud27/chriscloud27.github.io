@@ -1,4 +1,5 @@
 # 🔎 SEO & Content
+
 > Find the `/reports/seo/SEO-SUMMARY.md` for more details.
 
 This site uses **Next.js metadata APIs** to generate canonical URLs, locale alternates (hreflang), Open Graph/Twitter cards, robots rules, and sitemaps for static and dynamic pages.
@@ -20,6 +21,7 @@ Keyword strategy is centralized in `lib/keywords.ts` and applied per route:
 Lightweight checker that fetches URLs, validates metadata presence (title, description, canonical, keywords, OG/Twitter tags, JSON-LD), and generates reports.
 
 **Run locally:**
+
 ```bash
 # Check entire sitemap
 node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
@@ -33,6 +35,7 @@ node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --keywords-
 ```
 
 **Set new baseline after review:**
+
 ```bash
 cp reports/seo/<timestamp>/seo-snapshot.json reports/seo/baseline/seo-baseline.json
 ```
@@ -43,11 +46,13 @@ Run script on PRs or nightly; save `reports/seo/<timestamp>/` as artifact for au
 ## Reporting
 
 Output includes:
+
 - **Human-readable summary**: `OK / WARN / ERROR` per URL, missing metadata, diffs vs baseline
 - **Machine report**: `seo-report.json` with structured metadata for dashboards and alerts
 - **Snapshot**: `seo-snapshot.json` with full metadata snapshot for baseline updates or diffs
 
 **Output locations:**
+
 - Timestamped runs: `reports/seo/<ISO-timestamp>/seo-snapshot.json` and `seo-report.json`
 - Active baseline: `reports/seo/baseline/seo-baseline.json`
 - Legacy artifacts: `reports/seo/migrated-root/` (historical reference)
@@ -116,31 +121,34 @@ GitHub Actions (.github/workflows/deploy.yml)
 
 ## Local commands
 
-| Command | What it does |
-|---|---|
-| `npm run dev` | Dev server at localhost:3000 with hot reload |
-| `npm run build` | Static export → `./out/` |
+| Command         | What it does                                          |
+| --------------- | ----------------------------------------------------- |
+| `npm run dev`   | Dev server at localhost:3000 with hot reload          |
+| `npm run build` | Static export → `./out/`                              |
 | `npm run serve` | Serve `./out/` locally (mirrors GitHub Pages exactly) |
-| `npm run lint` | ESLint checks |
+| `npm run lint`  | ESLint checks                                         |
 
 ## Prerequisites
 
 ### DNS (at your registrar)
 
-| Type | Name | Value |
-|---|---|---|
-| `A` | `@` | `185.199.108.153` |
-| `A` | `@` | `185.199.109.153` |
-| `A` | `@` | `185.199.110.153` |
-| `A` | `@` | `185.199.111.153` |
+| Type    | Name  | Value                    |
+| ------- | ----- | ------------------------ |
+| `A`     | `@`   | `185.199.108.153`        |
+| `A`     | `@`   | `185.199.109.153`        |
+| `A`     | `@`   | `185.199.110.153`        |
+| `A`     | `@`   | `185.199.111.153`        |
 | `CNAME` | `www` | `chriscloud27.github.io` |
 
 ### GitHub repo settings
+
 - **Settings → Pages → Source:** must be set to **GitHub Actions**
 - **Settings → Secrets → Actions:** `NOTION_TOKEN` and `NOTION_BLOG_DATABASE_ID` must be set
 
 ### Lock file sync
+
 `npm ci` requires `package-lock.json` to be in sync with `package.json`. If it drifts:
+
 ```bash
 npm install          # regenerates package-lock.json
 git add package-lock.json

@@ -1,7 +1,11 @@
-import Link from 'next/link'
+import Link from "next/link";
 
 const MicrosoftLogo = () => (
-  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" className="w-14 h-14">
+  <svg
+    viewBox="0 0 40 40"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-14 h-14"
+  >
     <rect width="40" height="40" fill="white" rx="3" />
     <g transform="translate(6, 8)">
       <rect x="0" y="0" width="6" height="6" fill="#05a6f0" />
@@ -10,13 +14,24 @@ const MicrosoftLogo = () => (
       <rect x="10" y="10" width="6" height="6" fill="#ffb900" />
     </g>
   </svg>
-)
+);
 
 const AwsLogo = () => (
-  <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" className="w-14 h-14">
+  <svg
+    viewBox="0 0 40 40"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-14 h-14"
+  >
     <rect width="40" height="40" fill="white" rx="3" />
     <g transform="translate(4, 10)">
-      <text x="0" y="10" fontFamily="Arial, sans-serif" fontSize="8" fontWeight="bold" fill="#232f3e">
+      <text
+        x="0"
+        y="10"
+        fontFamily="Arial, sans-serif"
+        fontSize="8"
+        fontWeight="bold"
+        fill="#232f3e"
+      >
         aws
       </text>
       <path
@@ -28,14 +43,14 @@ const AwsLogo = () => (
       />
     </g>
   </svg>
-)
+);
 
 export default function FeaturedCredentials() {
   return (
     <section
       id="featured-credentials"
       className="relative py-[120px]"
-      style={{ background: 'var(--blue-mid)' }}
+      style={{ background: "var(--blue-mid)" }}
     >
       <div className="s-top" aria-hidden="true" />
 
@@ -59,12 +74,15 @@ export default function FeaturedCredentials() {
               Microsoft + Capgemini
             </p>
 
-            <h3 className="m-0 leading-[1.3] text-white">Function Apps vs Kubernetes</h3>
+            <h3 className="m-0 leading-[1.3] text-white">
+              Function Apps vs Kubernetes
+            </h3>
 
             <p className="font-body m-0 text-[14px] font-light leading-[1.72] text-grey-mid">
-              Executive architecture guidance comparing serverless and container orchestration
-              strategies for scalable cloud platforms. Co-authored with Microsoft and Capgemini —
-              covering trade-offs in operational complexity, cost, and scale.
+              Executive architecture guidance comparing serverless and container
+              orchestration strategies for scalable cloud platforms. Co-authored
+              with Microsoft and Capgemini — covering trade-offs in operational
+              complexity, cost, and scale.
             </p>
 
             <div className="mt-auto pt-2">
@@ -85,14 +103,19 @@ export default function FeaturedCredentials() {
               AWS Global Partner Award
             </p>
 
-            <h3 className="m-0 leading-[1.3] text-white">Autonomous Driving Cloud Platform</h3>
+            <h3 className="m-0 leading-[1.3] text-white">
+              Autonomous Driving Cloud Platform
+            </h3>
 
             <p className="font-body m-0 text-[14px] font-light leading-[1.72] text-grey-mid">
-              Contributed to the award-winning cloud platform powering autonomous vehicle
-              development — a mission-critical system supporting{' '}
-              <strong className="font-medium text-electric-cyan">1,700 engineers</strong> globally.
-              Multi-region orchestration, fault-tolerant architecture, and precision cost modeling
-              at enterprise scale.
+              Contributed to the award-winning cloud platform powering
+              autonomous vehicle development — a mission-critical system
+              supporting{" "}
+              <strong className="font-medium text-electric-cyan">
+                1,700 engineers
+              </strong>{" "}
+              globally. Multi-region orchestration, fault-tolerant architecture,
+              and precision cost modeling at enterprise scale.
             </p>
 
             <div className="mt-auto border-t border-white/[0.06] pt-5">
@@ -100,13 +123,13 @@ export default function FeaturedCredentials() {
                 AWS Cost Optimization
               </p>
               <p className="font-body m-0 text-[13px] font-light leading-[1.6] text-grey-mid">
-                Hands-on AWS pricing architecture — unit economics, reserved capacity strategy,
-                and FinOps governance at platform scale.
+                Hands-on AWS pricing architecture — unit economics, reserved
+                capacity strategy, and FinOps governance at platform scale.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

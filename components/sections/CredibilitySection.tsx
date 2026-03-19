@@ -1,4 +1,4 @@
-import StatsGrid from '@/components/sections/StatsGrid'
+import StatsGrid from "@/components/sections/StatsGrid";
 
 export default function CredibilitySection() {
   return (
@@ -11,5 +11,5 @@ export default function CredibilitySection() {
         <StatsGrid />
       </div>
     </section>
-  )
+  );
 }

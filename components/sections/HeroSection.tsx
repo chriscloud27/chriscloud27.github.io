@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -27,21 +27,20 @@ export default function HeroSection() {
             </h1>
 
             <p className="hero-sub">
-              My mission is to help growth-stage SaaS teams replace fragile cloud foundations
-              with AI-native systems that scale cleanly, stay cost-predictable, and let
-              engineers ship confidently instead of firefighting production friction.
+              My mission is to help growth-stage SaaS teams replace fragile
+              cloud foundations with AI-native systems that scale cleanly, stay
+              cost-predictable, and let engineers ship confidently instead of
+              firefighting production friction.
             </p>
 
             {/* brand: proof line — mono label style per spec */}
             <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-grey-mid mb-10">
-              System-first architecture for teams that want momentum, not rework.
+              System-first architecture for teams that want momentum, not
+              rework.
             </p>
 
             <div className="hero-btns">
-              <Link
-                href="/en/diagnosis"
-                className="btn btn-p"
-              >
+              <Link href="/en/diagnosis" className="btn btn-p">
                 Free Architecture Diagnosis
               </Link>
               <a href="#how-it-works" className="btn btn-g">
@@ -51,7 +50,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: profile photo */}
-            <div className="hphoto">
+          <div className="hphoto">
             <Image
               src="/img/Chris.png"
               alt="Christian Weber — AI-Native Cloud Architect"
@@ -64,9 +63,9 @@ export default function HeroSection() {
               <span className="pb-l">Available</span>
               <span className="pb-v">Remote · US / EU</span>
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

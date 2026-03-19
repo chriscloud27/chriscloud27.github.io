@@ -1,4 +1,5 @@
 # 🔎 SEO & Content
+
 > Find the `/reports/seo/SEO-SUMMARY.md` for more details.
 
 This site uses **Next.js metadata APIs** to generate canonical URLs, locale alternates (hreflang), Open Graph/Twitter cards, robots rules, and sitemaps for static and dynamic pages.
@@ -20,6 +21,7 @@ Keyword strategy is centralized in `lib/keywords.ts` and applied per route:
 Lightweight checker that fetches URLs, validates metadata presence (title, description, canonical, keywords, OG/Twitter tags, JSON-LD), and generates reports.
 
 **Run locally:**
+
 ```bash
 # Check entire sitemap
 node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
@@ -33,6 +35,7 @@ node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --keywords-
 ```
 
 **Set new baseline after review:**
+
 ```bash
 cp reports/seo/<timestamp>/seo-snapshot.json reports/seo/baseline/seo-baseline.json
 ```
@@ -43,11 +46,13 @@ Run script on PRs or nightly; save `reports/seo/<timestamp>/` as artifact for au
 ## Reporting
 
 Output includes:
+
 - **Human-readable summary**: `OK / WARN / ERROR` per URL, missing metadata, diffs vs baseline
 - **Machine report**: `seo-report.json` with structured metadata for dashboards and alerts
 - **Snapshot**: `seo-snapshot.json` with full metadata snapshot for baseline updates or diffs
 
 **Output locations:**
+
 - Timestamped runs: `reports/seo/<ISO-timestamp>/seo-snapshot.json` and `seo-report.json`
 - Active baseline: `reports/seo/baseline/seo-baseline.json`
 - Legacy artifacts: `reports/seo/migrated-root/` (historical reference)
@@ -78,3 +83,19 @@ reports/seo/
 - **Documentation**: Update this section + `reports/seo/SEO-SUMMARY.md` when metadata, robots, sitemap, or canonical logic changes
 
 ---
+
+## Pre-Commit Checks
+
+**Status:** lint-staged check is **SKIPPED**.
+
+The `.husky/pre-commit` hook runs the following checks in order:
+
+- Prettier formatting check (with auto-fix option on user input)
+- TypeScript type check (`tsc --noEmit`)
+- **Dependency audit** (`npm audit`) — warnings allowed, non-interactive auto-fix enabled
+- Spellcheck (docs and content)
+- Full build verification (`npm run build`)
+
+**Skipped checks:**
+
+- ~~lint-staged~~ — Disabled to reduce friction in commit workflow

@@ -1,0 +1,1261 @@
+{
+  "generatedAt": "2026-03-18T23:32:01.729Z",
+  "results": [
+    {
+      "url": "https://mach2.cloud/en/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "description": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/en/",
+        "ogTitle": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/about/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "About — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs validated code, production-ready features, tests, and documentation in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to create platforms that are both technically robust and aligned with business objectives.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design",
+        "canonical": "https://mach2.cloud/en/about/",
+        "ogTitle": "About — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/about/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/about/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/about/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/about/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/blog/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Blog — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Practical writing on cloud architecture, AI-native platform design, and engineering leadership for growth-stage SaaS companies.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/en/blog/",
+        "ogTitle": "Blog — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/waf2p/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "WAF++ Framework — Seven Pillars for Sovereign Cloud Architecture | MaCh2.Cloud",
+        "description": "WAF++ is an open-source framework for intentional, vendor-neutral cloud architecture. Seven pillars: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability, and Sovereignty.",
+        "keywords": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect",
+        "canonical": "https://mach2.cloud/en/waf2p/",
+        "ogTitle": "WAF++ Framework — Seven Pillars for Sovereign Cloud Architecture",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/waf2p/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/waf2p/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/waf2p/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/waf2p/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/services/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Services — AI-Native Cloud Architecture Engagements | MaCh2.Cloud",
+        "description": "Four precision engagements — from architectural clarity to continuous platform leadership. Architecture Audit, Blueprint, Enablement, and Fractional Architect for Series A–B SaaS companies.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design",
+        "canonical": "https://mach2.cloud/en/services/",
+        "ogTitle": "Services — AI-Native Cloud Architecture Engagements",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/services/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/services/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/services/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/services/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Multi-tenant Azure Kubernetes platform design for 2,500+ developers with governance, self-service provisioning, and IaC.",
+        "keywords": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/",
+        "ogTitle": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Autonomous Driving Platform — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Cloud infrastructure powering autonomous vehicle development.",
+        "keywords": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/",
+        "ogTitle": "Autonomous Driving Platform — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "SaaS Optimization — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Enterprise SaaS platform optimization and scaling.",
+        "keywords": "cloud cost optimization SaaS,cloud costs growing faster than revenue,SaaS architecture Series A technical debt,architectural debt Series B SaaS,cloud architecture audit SaaS,cloud architecture for SaaS",
+        "canonical": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/",
+        "ogTitle": "SaaS Optimization — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS Startup to Production — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service platform scaling from seed to production.",
+        "keywords": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/",
+        "ogTitle": "BaaS Startup to Production — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "description": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/de/",
+        "ogTitle": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/about/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Über mich — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Mit über 13 Jahren Erfahrung im Enterprise-Cloud-Systemdesign über AWS, Azure und GCP.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design",
+        "canonical": "https://mach2.cloud/de/about/",
+        "ogTitle": "Über mich — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/about/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/about/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/about/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/about/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/blog/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Blog — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Praktische Beiträge über Cloud-Architektur und KI-natives Plattformdesign.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/de/blog/",
+        "ogTitle": "Blog — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/waf2p/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "WAF++ Framework — Sieben Säulen für souveräne Cloud-Architektur | MaCh2.Cloud",
+        "description": "WAF++ ist ein Open-Source-Framework für intentionale, herstellerneutrale Cloud-Architektur. Sieben Säulen: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability und Sovereignty.",
+        "keywords": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect",
+        "canonical": "https://mach2.cloud/de/waf2p/",
+        "ogTitle": "WAF++ Framework — Sieben Säulen für souveräne Cloud-Architektur",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/waf2p/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/waf2p/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/waf2p/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/waf2p/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/services/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Services — KI-native Cloud-Architektur-Engagements | MaCh2.Cloud",
+        "description": "Vier präzise Engagements — von architektonischer Klarheit bis zur kontinuierlichen Plattformführung. Architektur-Audit, Blueprint, Enablement und Fractional Architect für Series A–B SaaS-Unternehmen.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design",
+        "canonical": "https://mach2.cloud/de/services/",
+        "ogTitle": "Services — KI-native Cloud-Architektur-Engagements",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/services/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/services/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/services/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/services/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Multi-tenant Azure Kubernetes platform design for 2,500+ developers with governance, self-service provisioning, and IaC.",
+        "keywords": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/",
+        "ogTitle": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Autonomous Driving Platform — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Cloud infrastructure powering autonomous vehicle development.",
+        "keywords": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/",
+        "ogTitle": "Autonomous Driving Platform — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "SaaS Optimization — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Enterprise SaaS platform optimization and scaling.",
+        "keywords": "cloud cost optimization SaaS,cloud costs growing faster than revenue,SaaS architecture Series A technical debt,architectural debt Series B SaaS,cloud architecture audit SaaS,cloud architecture for SaaS",
+        "canonical": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/",
+        "ogTitle": "SaaS Optimization — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS Startup to Production — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service platform scaling from seed to production.",
+        "keywords": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/",
+        "ogTitle": "BaaS Startup to Production — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "description": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/es/",
+        "ogTitle": "MaCh2.Cloud — AI-Native Cloud Architect",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/about/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Sobre mí — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Con más de 13 años de experiencia diseñando sistemas cloud empresariales en AWS, Azure y GCP.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design",
+        "canonical": "https://mach2.cloud/es/about/",
+        "ogTitle": "Sobre mí — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/about/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/about/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/about/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/about/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/blog/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Blog — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Escritura práctica sobre arquitectura cloud y diseño de plataformas AI-nativas.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling",
+        "canonical": "https://mach2.cloud/es/blog/",
+        "ogTitle": "Blog — MaCh2.Cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/waf2p/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Framework WAF++ — Siete Pilares para Arquitectura Cloud Soberana | MaCh2.Cloud",
+        "description": "WAF++ es un framework open-source para arquitectura cloud intencional y neutral ante proveedores. Siete pilares: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability y Sovereignty.",
+        "keywords": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect",
+        "canonical": "https://mach2.cloud/es/waf2p/",
+        "ogTitle": "Framework WAF++ — Siete Pilares para Arquitectura Cloud Soberana",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/waf2p/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/waf2p/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/waf2p/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/waf2p/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/services/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Servicios — Compromisos de Arquitectura Cloud Nativa con IA | MaCh2.Cloud",
+        "description": "Cuatro compromisos de precisión — desde la claridad arquitectónica hasta el liderazgo continuo de la plataforma. Auditoría, Blueprint, Habilitación y Arquitecto Fraccionado para empresas SaaS Serie A–B.",
+        "keywords": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design",
+        "canonical": "https://mach2.cloud/es/services/",
+        "ogTitle": "Servicios — Compromisos de Arquitectura Cloud Nativa con IA",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/services/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/services/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/services/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/services/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Multi-tenant Azure Kubernetes platform design for 2,500+ developers with governance, self-service provisioning, and IaC.",
+        "keywords": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/",
+        "ogTitle": "Enterprise Kubernetes Platform at Scale — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-01-capgemini-kubernetes/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-01-capgemini-kubernetes/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Autonomous Driving Platform — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Cloud infrastructure powering autonomous vehicle development.",
+        "keywords": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/",
+        "ogTitle": "Autonomous Driving Platform — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-02-aws-autonomous-driving/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-02-aws-autonomous-driving/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "SaaS Optimization — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Enterprise SaaS platform optimization and scaling.",
+        "keywords": "cloud cost optimization SaaS,cloud costs growing faster than revenue,SaaS architecture Series A technical debt,architectural debt Series B SaaS,cloud architecture audit SaaS,cloud architecture for SaaS",
+        "canonical": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/",
+        "ogTitle": "SaaS Optimization — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-03-enterprise-saas-optimization/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-03-enterprise-saas-optimization/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS Startup to Production — MaCh2.cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service platform scaling from seed to production.",
+        "keywords": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture",
+        "canonical": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/",
+        "ogTitle": "BaaS Startup to Production — MaCh2.cloud",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/cases/case-04-baas-seed-startup/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/cases/case-04-baas-seed-startup/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Why AI is not replacing humans — MaCh2.Cloud | MaCh2.Cloud",
+        "description": null,
+        "keywords": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/",
+        "ogTitle": "Why AI is not replacing humans",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing meta description",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/en/blog/ai-native-platform-design/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start. Different data flows, different compute patterns, different cost models.",
+        "keywords": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/en/blog/ai-native-platform-design/",
+        "ogTitle": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/en/blog/baas-vs-custom-infra/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS vs Custom Infrastructure: When to Choose Each — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.",
+        "keywords": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/en/blog/baas-vs-custom-infra/",
+        "ogTitle": "BaaS vs Custom Infrastructure: When to Choose Each",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Why AI is not replacing humans — MaCh2.Cloud | MaCh2.Cloud",
+        "description": null,
+        "keywords": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/",
+        "ogTitle": "Why AI is not replacing humans",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing meta description",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/de/blog/ai-native-platform-design/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start. Different data flows, different compute patterns, different cost models.",
+        "keywords": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/de/blog/ai-native-platform-design/",
+        "ogTitle": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/de/blog/baas-vs-custom-infra/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS vs Custom Infrastructure: When to Choose Each — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.",
+        "keywords": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/de/blog/baas-vs-custom-infra/",
+        "ogTitle": "BaaS vs Custom Infrastructure: When to Choose Each",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Why AI is not replacing humans — MaCh2.Cloud | MaCh2.Cloud",
+        "description": null,
+        "keywords": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/",
+        "ogTitle": "Why AI is not replacing humans",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/why-ai-is-not-replacing-humans/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/why-ai-is-not-replacing-humans/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing meta description",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    },
+    {
+      "url": "https://mach2.cloud/es/blog/ai-native-platform-design/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Most teams add AI features on top of existing platforms. AI-native means designing the platform around AI workloads from the start. Different data flows, different compute patterns, different cost models.",
+        "keywords": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/es/blog/ai-native-platform-design/",
+        "ogTitle": "What &quot;AI-Native&quot; Actually Means for Your Platform Architecture",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/ai-native-platform-design/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/ai-native-platform-design/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/es/blog/baas-vs-custom-infra/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "BaaS vs Custom Infrastructure: When to Choose Each — MaCh2.Cloud | MaCh2.Cloud",
+        "description": "Backend-as-a-Service accelerates early-stage velocity. Custom infrastructure gives you control at scale. The key is knowing when to switch — and how to architect for that transition from day one.",
+        "keywords": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS",
+        "canonical": "https://mach2.cloud/es/blog/baas-vs-custom-infra/",
+        "ogTitle": "BaaS vs Custom Infrastructure: When to Choose Each",
+        "ogImage": "https://mach2.cloud/img/LinkedIn-banner.jpg",
+        "twitterCard": "summary_large_image",
+        "alternates": [
+          {
+            "hreflang": "en",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "de",
+            "href": "https://mach2.cloud/de/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "es",
+            "href": "https://mach2.cloud/es/blog/baas-vs-custom-infra/"
+          },
+          {
+            "hreflang": "x-default",
+            "href": "https://mach2.cloud/en/blog/baas-vs-custom-infra/"
+          }
+        ],
+        "jsonLd": null
+      },
+      "issues": ["Missing JSON-LD structured data (Article)"]
+    },
+    {
+      "url": "https://mach2.cloud/",
+      "httpOk": true,
+      "httpStatus": 200,
+      "meta": {
+        "title": "Redirecting...",
+        "description": null,
+        "keywords": null,
+        "canonical": null,
+        "ogTitle": null,
+        "ogImage": null,
+        "twitterCard": null,
+        "alternates": [],
+        "jsonLd": null
+      },
+      "issues": [
+        "Missing meta description",
+        "Missing canonical link",
+        "Missing og:title",
+        "Missing twitter:card",
+        "Missing JSON-LD structured data (Article)"
+      ]
+    }
+  ]
+}

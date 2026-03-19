@@ -19,7 +19,7 @@ This guidance addressed key architectural decisions including:
 — microservice orchestration using Kubernetes  
 — distributed system scalability patterns  
 — platform automation and operational architecture  
-— long-term platform evolution and maintainability  
+— long-term platform evolution and maintainability
 
 Published in collaboration with Microsoft and Capgemini architecture leadership.
 
@@ -35,7 +35,7 @@ Impact:
 
 — enabled highly automated Cloud platform supporting 1,700 developers  
 — enabled self-service Cloud platform environments using infrastructure automation  
-— contributed to scalable, secure DevSecOps platform architecture  
+— contributed to scalable, secure DevSecOps platform architecture
 
 This platform contributed to AWS Automotive and Innovation Partner of the Year global recognition.
 
@@ -49,13 +49,13 @@ Led and enabled architecture of enterprise Cloud platforms supporting up to:
 
 — 2,500 engineers on Azure Cloud platform environments  
 — global engineering teams across multiple regions  
-— mission-critical systems supporting automotive and enterprise workloads  
+— mission-critical systems supporting automotive and enterprise workloads
 
 Impact included:
 
 — enabling scalable platform architecture for global engineering organizations  
 — enabling self-service infrastructure provisioning and automation  
-— enabling reliable and secure platform operation at scale  
+— enabling reliable and secure platform operation at scale
 
 ---
 
@@ -67,6 +67,6 @@ This certification strengthens my ability to:
 
 — align architecture decisions with business goals  
 — enable engineering teams to operate effectively  
-— lead platform and architecture initiatives across organizations  
+— lead platform and architecture initiatives across organizations
 
 This complements my technical architecture expertise with organizational leadership capability.
