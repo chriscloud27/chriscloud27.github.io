@@ -9,8 +9,11 @@ const STATIC_ROUTE_KEYS = [
   "/",
   "/about",
   "/blog",
-  "/waf2p",
   "/services",
+  "/services/agentic-team-focal",
+  "/diagnosis",
+  "/waf2p",
+  "/whitepaper",
 ] as const;
 
 const CASE_SLUGS = [
@@ -63,7 +66,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: buildCanonical(`/${locale}/blog/${slug}`),
         lastModified: now,
         changeFrequency: "monthly",
-        priority: 0.7,
+        priority: 0.8,
       });
     }
   }
