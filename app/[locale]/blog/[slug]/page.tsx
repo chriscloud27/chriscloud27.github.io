@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getBlogPost, getBlogSlugs } from "@/lib/notion";
 import { Badge } from "@/components/ui/badge";
 import BlogImageLightbox from "@/components/blog/BlogImageLightbox";
+import BlogToC from "@/components/blog/BlogToC";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { getGlobalSettings } from "@/lib/settings";
 import { GLOBAL_KEYWORDS } from "@/lib/keywords";
@@ -141,6 +142,7 @@ export default async function BlogPostPage({
 
   return (
     <main className="pt-16">
+      <BlogToC headings={post.headings} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

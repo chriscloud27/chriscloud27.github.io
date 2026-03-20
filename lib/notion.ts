@@ -31,14 +31,29 @@ export interface NotionBlogPost {
   published: boolean;
 }
 
+export interface TocHeading {
+  id: string;
+  text: string;
+  level: 1 | 2 | 3;
+}
+
 export interface NotionBlogPostDetail extends NotionBlogPost {
   coverImage?: string;
   blocks: string; // rendered HTML string
+  headings: TocHeading[];
 }
 
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+}
+
 function richTextToPlain(rich: RichTextItemResponse[]): string {
   return rich.map((r) => r.plain_text).join("");
 }
@@ -146,17 +161,20 @@ function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
       }
       case "heading_1": {
         const text = richTextToHtml(block.heading_1.rich_text);
-        lines.push(`<h1>${text}</h1>`);
+        const id = slugifyHeading(richTextToPlain(block.heading_1.rich_text));
+        lines.push(`<h1 id="${id}">${text}</h1>`);
         break;
       }
       case "heading_2": {
         const text = richTextToHtml(block.heading_2.rich_text);
-        lines.push(`<h2>${text}</h2>`);
+        const id = slugifyHeading(richTextToPlain(block.heading_2.rich_text));
+        lines.push(`<h2 id="${id}">${text}</h2>`);
         break;
       }
       case "heading_3": {
         const text = richTextToHtml(block.heading_3.rich_text);
-        lines.push(`<h3>${text}</h3>`);
+        const id = slugifyHeading(richTextToPlain(block.heading_3.rich_text));
+        lines.push(`<h3 id="${id}">${text}</h3>`);
         break;
       }
       case "bulleted_list_item": {
@@ -271,6 +289,23 @@ function pageToPost(page: PageObjectResponse): NotionBlogPost {
   return { id: page.id, slug, title, date, excerpt, tags, published };
 }
 
+function extractHeadings(blocks: BlockObjectResponse[]): TocHeading[] {
+  const headings: TocHeading[] = [];
+  for (const block of blocks) {
+    if (block.type === "heading_1") {
+      const text = richTextToPlain(block.heading_1.rich_text);
+      headings.push({ id: slugifyHeading(text), text, level: 1 });
+    } else if (block.type === "heading_2") {
+      const text = richTextToPlain(block.heading_2.rich_text);
+      headings.push({ id: slugifyHeading(text), text, level: 2 });
+    } else if (block.type === "heading_3") {
+      const text = richTextToPlain(block.heading_3.rich_text);
+      headings.push({ id: slugifyHeading(text), text, level: 3 });
+    }
+  }
+  return headings;
+}
+
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
@@ -347,6 +382,7 @@ export async function getBlogPost(
     return {
       ...fallback,
       blocks: fallbackContent[slug] || "<p>Content coming soon.</p>",
+      headings: [],
     };
   }
 
@@ -370,12 +406,11 @@ export async function getBlogPost(
     const blocksResponse = await notion.blocks.children.list({
       block_id: page.id,
     });
-    const blocks = blocksToHtml(
-      blocksResponse.results as BlockObjectResponse[],
-      post.slug,
-    );
+    const rawBlocks = blocksResponse.results as BlockObjectResponse[];
+    const blocks = blocksToHtml(rawBlocks, post.slug);
+    const headings = extractHeadings(rawBlocks);
 
-    return { ...post, coverImage, blocks };
+    return { ...post, coverImage, blocks, headings };
   } catch (err) {
     console.error("[Notion] Failed to fetch post:", err);
     return null;
