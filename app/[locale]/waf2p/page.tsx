@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { WafpassLink } from "@/components/waf2p/WafpassLink";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
@@ -179,6 +181,111 @@ export default async function Waf2pPage({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* WAFPass */}
+      <section className="py-16 border-t border-white/[0.06]">
+        <div className="wrap">
+          {/* Header + Image */}
+          <div className="flex flex-col lg:flex-row gap-10 mb-10 items-start">
+            <div className="lg:flex-1">
+              <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan/60 uppercase block mb-3">
+                CLI Tool
+              </span>
+              <h2 className="text-[1.6rem] font-display font-bold mb-4">
+                WAFPass
+              </h2>
+              <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid">
+                WAFPass is the official CLI for the WAF++ Framework — an
+                automated compliance checker that validates your Terraform
+                infrastructure against the seven pillars: security, cost,
+                performance, reliability, operations, sustainability, and
+                sovereignty.
+              </p>
+              <br></br>
+              <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-6">
+                <span className="text-white font-semibold">
+                  PASS – Platform · Architecture · Strategy · Standards
+                </span>
+                <br />
+                WAFPass applies four PASS perspectives as automated checks
+                against your infrastructure — making compliance decisions
+                traceable, repeatable, and auditable across any cloud.
+              </p>
+            </div>
+            <div className="lg:w-[420px] shrink-0 rounded-card overflow-hidden border border-white/[0.08]">
+              <Image
+                src="/img/wafpass-report.png"
+                alt="WAFPass compliance report output"
+                width={840}
+                height={560}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+
+          {/* PASS acronym grid */}
+          <div className="mb-10">
+            <div className="grid gap-[3px] sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  label: "Platform",
+                  desc: "Validates baseline platform controls — tagging strategies, resource configuration, and account-level guardrails — automatically.",
+                },
+                {
+                  label: "Strategy",
+                  desc: "Enforces governance and cost policies as code — so strategic decisions hold over time and across teams.",
+                },
+                {
+                  label: "Architecture",
+                  desc: "Checks network topology, data residency, and sovereignty requirements against provider-neutral WAF++ controls.",
+                },
+                {
+                  label: "Standards",
+                  desc: "Applies zero-trust and security controls directly to Terraform — with clear PASS, FAIL, and SKIP outcomes for every check.",
+                },
+              ].map(({ label, desc }) => (
+                <div
+                  key={label}
+                  className="bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-6 hover:border-electric-cyan/20 transition-all duration-200"
+                >
+                  <span className="font-mono text-[11px] tracking-[0.08em] text-electric-cyan block mb-2 uppercase">
+                    {label}
+                  </span>
+                  <p className="font-body text-[13px] font-light leading-[1.72] text-grey-mid">
+                    {desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Terminal command box */}
+          <div className="mb-8 rounded-card overflow-hidden border border-white/[0.08]">
+            <div className="bg-white/[0.04] border-b border-white/[0.08] px-4 py-2.5 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+              <span className="w-2.5 h-2.5 rounded-full bg-white/20" />
+              <span className="font-mono text-[11px] text-grey-mid ml-2 tracking-wide">
+                terminal
+              </span>
+            </div>
+            <div className="bg-[#0a0f1a] px-6 py-5">
+              <div className="flex items-start gap-3">
+                <span className="font-mono text-[13px] text-electric-cyan/60 select-none mt-px">
+                  $
+                </span>
+                <code className="font-mono text-[13px] text-electric-cyan leading-relaxed break-all">
+                  wafpass check ./infrastructure/ --pillar sovereign --severity
+                  critical
+                </code>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA link */}
+          <WafpassLink />
         </div>
       </section>
 
