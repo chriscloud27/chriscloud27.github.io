@@ -154,6 +154,11 @@ export default async function Waf2pPage({
               </p>
             </div>
           </div>
+          <div className="mt-10">
+            <a href="#wafpass" className="btn btn-p">
+              Use the WAFPass Tool
+            </a>
+          </div>
         </div>
       </section>
 
@@ -185,7 +190,7 @@ export default async function Waf2pPage({
       </section>
 
       {/* WAFPass */}
-      <section className="py-16 border-t border-white/[0.06]">
+      <section id="wafpass" className="py-16 border-t border-white/[0.06]">
         <div className="wrap">
           {/* Header + Image */}
           <div className="flex flex-col lg:flex-row gap-10 mb-10 items-start">
