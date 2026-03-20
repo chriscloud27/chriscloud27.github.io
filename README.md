@@ -83,6 +83,107 @@ Container platform service design for the German Federal IT infrastructure. Clou
 ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub CI](https://img.shields.io/badge/GitHub%20CI-%23181717?style=for-the-badge&logo=github&logoColor=white)
 
+## Site SEO Implementation (March 2026)
+
+This site implements comprehensive SEO enhancements for indexing by both traditional search engines (Google, Bing) and generative AI engines (ChatGPT, Perplexity, Claude, Gemini).
+
+### Implementation Details
+
+**JSON-LD Schemas:**
+
+- **Person Schema** (homepage) — Christian Weber expertise, credentials, and topical authority
+- **WebSite Schema** with SiteNavigationElement (homepage) — Rich Google sitelinks in search results
+- **Article Schema** (all blog posts) — Full article metadata with keywords, dateModified, author
+
+**AI Crawler Support:**
+
+- `robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot
+- Increases likelihood of LLM training data inclusion and AI search visibility
+
+**Blog Article Enhancements:**
+
+- `metaDescription` field (155 chars, pain-first) extracted from Notion
+- `dateModified` tracking for content freshness signals
+- `internalLinks` (related articles) for topical authority clusters
+- Fallback branded OG image (`/og/default.png`, 1200×627px) for social shares
+
+**New Notion Database Properties** (for blog articles):
+
+- `MetaDescription` (rich_text) — 155-character pain-first summaries
+- `DateModified` (date) — Last modified timestamp
+- `RelatedArticles` (relation) — Links to 2–3 related articles
+
+### Verification Pass (Required)
+
+**Build success does NOT mean signals are being read by search engines and AI crawlers.** You must verify separately. Takes ~15 minutes:
+
+#### 1. LinkedIn Post Inspector (Most Important)
+
+[linkedin.com/post-inspector](https://linkedin.com/post-inspector) — paste and inspect:
+
+- `https://mach2.cloud/en/` — should show branded OG image, correct title, description
+- `https://mach2.cloud/blog` — should show branded OG image
+- Any live blog article URL — should show branded OG image
+
+If image is missing or cached, hit **Regenerate** in the inspector. LinkedIn caches aggressively.
+
+#### 2. Google Rich Results Test
+
+[search.google.com/test/rich-results](https://search.google.com/test/rich-results) — paste:
+
+- Homepage: `https://mach2.cloud/en/` → confirm Person schema and SiteNavigationElement parse without errors
+- Blog article: Any article URL → confirm Article schema parses, shows `datePublished`, `author`, `headline`
+
+#### 3. Schema.org Validator
+
+[validator.schema.org](https://validator.schema.org) — paste one blog article URL, verify:
+
+- Article type detected ✓
+- `about` array populated (topics) ✓
+- `author.sameAs` present (links to LinkedIn, GitHub) ✓
+- `keywords` not empty ✓ (if empty, add Tags to that article in Notion)
+
+#### 4. Google Search Console
+
+1. **Sitemaps:** Submit `https://mach2.cloud/sitemap.xml` (if not already done)
+2. **URL Inspection:** Paste `https://mach2.cloud/en/` → request indexing
+3. Repeat for first 3–4 blog article URLs
+
+### Follow-up Checkpoints
+
+**In 2 weeks:**
+
+- Google Search Console → **Coverage** — blog URLs should move from "Discovered" to "Indexed"
+- Check **Enhancements** → Article for any structured data errors
+
+**In 6 weeks (GEO Baseline Test):**
+Ask ChatGPT, Perplexity, and Claude:
+
+- _"Who is Christian Weber, AI-Native Cloud Architect?"_
+- _"What is the WAF2p framework?"_
+
+Screenshot the responses. mach2.cloud should appear as a source. This is your before/after evidence that the GEO implementation is working.
+
+**If mach2.cloud doesn't appear after 6 weeks:**
+
+- Verify all blog articles have Tags populated in Notion (5–8 per article)
+- Ensure at least 8–10 articles are indexed in Google Search Console
+- Check that Notion integration is pulling metaDescription correctly
+
+### Files Modified
+
+| Path                                  | Change                                                             |
+| ------------------------------------- | ------------------------------------------------------------------ |
+| `app/[locale]/page.tsx`               | Added Person + WebSite schemas                                     |
+| `app/robots.ts`                       | Added explicit AI crawler allow rules                              |
+| `app/[locale]/layout.tsx`             | OG image fallback to `/og/default.png`                             |
+| `app/[locale]/blog/[slug]/page.tsx`   | Enhanced metadata + OG fallback + Article schema                   |
+| `lib/notion.ts`                       | Extract metaDescription, dateModified, relatedArticles from Notion |
+| `components/blog/RelatedArticles.tsx` | NEW — internal linking component                                   |
+| `public/og/default.png`               | NEW — branded fallback OG image (1200×627px)                       |
+| `public/og/default.svg`               | NEW — OG image source                                              |
+| `scripts/generate-og-image.mjs`       | NEW — SVG→PNG conversion script                                    |
+
 ## Connect
 
 - **Website:** [mach2.cloud](https://mach2.cloud)

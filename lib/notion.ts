@@ -29,6 +29,8 @@ export interface NotionBlogPost {
   excerpt: string;
   tags: string[];
   published: boolean;
+  metaDescription?: string;
+  dateModified?: string;
 }
 
 export interface TocHeading {
@@ -41,6 +43,7 @@ export interface NotionBlogPostDetail extends NotionBlogPost {
   coverImage?: string;
   blocks: string; // rendered HTML string
   headings: TocHeading[];
+  internalLinks?: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -286,7 +289,41 @@ function pageToPost(page: PageObjectResponse): NotionBlogPost {
       ? (publishedProp as { checkbox: boolean }).checkbox
       : true;
 
-  return { id: page.id, slug, title, date, excerpt, tags, published };
+  // Extract MetaDescription (NEW property)
+  const metaDescriptionProp = props["MetaDescription"];
+  const metaDescription =
+    metaDescriptionProp &&
+    typeof metaDescriptionProp === "object" &&
+    "rich_text" in (metaDescriptionProp as object)
+      ? richTextToPlain(
+          (
+            metaDescriptionProp as {
+              rich_text: RichTextItemResponse[];
+            }
+          ).rich_text,
+        )
+      : undefined;
+
+  // Extract DateModified (NEW property)
+  const dateModifiedProp = props["DateModified"];
+  const dateModified =
+    dateModifiedProp &&
+    typeof dateModifiedProp === "object" &&
+    "date" in (dateModifiedProp as object)
+      ? (dateModifiedProp as { date: { start: string } | null }).date?.start
+      : undefined;
+
+  return {
+    id: page.id,
+    slug,
+    title,
+    date,
+    excerpt,
+    tags,
+    published,
+    metaDescription,
+    dateModified,
+  };
 }
 
 function extractHeadings(blocks: BlockObjectResponse[]): TocHeading[] {
@@ -304,6 +341,51 @@ function extractHeadings(blocks: BlockObjectResponse[]): TocHeading[] {
     }
   }
   return headings;
+}
+
+function extractInternalLinks(page: PageObjectResponse): string[] {
+  const props = page.properties as Record<string, unknown>;
+  const relatedProp = props["RelatedArticles"];
+
+  if (
+    !relatedProp ||
+    typeof relatedProp !== "object" ||
+    !("relation" in (relatedProp as object))
+  ) {
+    return [];
+  }
+
+  const relations = (relatedProp as { relation: { id: string }[] }).relation;
+  return relations.map((r) => r.id).slice(0, 3); // Limit to 3 related articles (return page IDs)
+}
+
+async function resolvePageIdsToSlugs(pageIds: string[]): Promise<string[]> {
+  if (!pageIds.length) return [];
+
+  try {
+    const slugs: string[] = [];
+    for (const id of pageIds) {
+      const page = await notion.pages.retrieve({ page_id: id });
+      const props = (page as PageObjectResponse).properties as Record<
+        string,
+        unknown
+      >;
+      const slugProp = props["Slug"];
+      const slug =
+        slugProp &&
+        typeof slugProp === "object" &&
+        "rich_text" in (slugProp as object)
+          ? richTextToPlain(
+              (slugProp as { rich_text: RichTextItemResponse[] }).rich_text,
+            )
+          : id; // Fallback to page ID if slug not found
+      slugs.push(slug);
+    }
+    return slugs;
+  } catch (err) {
+    console.error("[Notion] Failed to resolve page IDs to slugs:", err);
+    return [];
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -383,6 +465,7 @@ export async function getBlogPost(
       ...fallback,
       blocks: fallbackContent[slug] || "<p>Content coming soon.</p>",
       headings: [],
+      internalLinks: [],
     };
   }
 
@@ -410,7 +493,11 @@ export async function getBlogPost(
     const blocks = blocksToHtml(rawBlocks, post.slug);
     const headings = extractHeadings(rawBlocks);
 
-    return { ...post, coverImage, blocks, headings };
+    // Extract and resolve internal links (related articles)
+    const relatedPageIds = extractInternalLinks(page);
+    const internalLinks = await resolvePageIdsToSlugs(relatedPageIds);
+
+    return { ...post, coverImage, blocks, headings, internalLinks };
   } catch (err) {
     console.error("[Notion] Failed to fetch post:", err);
     return null;

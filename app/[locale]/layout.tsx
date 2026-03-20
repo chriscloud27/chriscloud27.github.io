@@ -29,6 +29,25 @@ export async function generateMetadata({
   const i18n = buildCanonicalAndAlternates("/", safeLocale);
   const ogImage = settings.defaultSeo?.shareImage;
 
+  // Fallback to default OG image
+  const ogImages = ogImage
+    ? [
+        {
+          url: ogImage.url,
+          width: ogImage.width,
+          height: ogImage.height,
+          alt: ogImage.alternativeText ?? settings.siteName,
+        },
+      ]
+    : [
+        {
+          url: "/og/default.png",
+          width: 1200,
+          height: 627,
+          alt: "MaCh2.Cloud — AI-Native Cloud Architecture for Series A–B SaaS",
+        },
+      ];
+
   return {
     metadataBase: new URL(settings.siteUrl ?? "https://mach2.cloud"),
     title: {
@@ -48,23 +67,14 @@ export async function generateMetadata({
       title: settings.defaultSeo?.metaTitle ?? settings.siteName,
       description:
         settings.defaultSeo?.metaDescription ?? settings.siteDescription,
-      images: ogImage
-        ? [
-            {
-              url: ogImage.url,
-              width: ogImage.width,
-              height: ogImage.height,
-              alt: ogImage.alternativeText ?? settings.siteName,
-            },
-          ]
-        : undefined,
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title: settings.defaultSeo?.metaTitle ?? settings.siteName,
       description:
         settings.defaultSeo?.metaDescription ?? settings.siteDescription,
-      images: ogImage ? [ogImage.url] : undefined,
+      images: [ogImages[0].url],
     },
     robots: {
       index: true,

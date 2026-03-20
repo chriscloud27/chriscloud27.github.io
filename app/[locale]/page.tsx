@@ -61,14 +61,100 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Christian Weber",
+    url: "https://mach2.cloud",
+    jobTitle: "AI-Native Cloud Architect",
+    description:
+      "Principal AI-Native Cloud Architect helping Series A–B B2B SaaS companies design platform architectures that scale safely.",
+    sameAs: [
+      "https://linkedin.com/in/christian-weber-0591",
+      "https://github.com/chriscloud27",
+      "https://waf2p.dev",
+    ],
+    knowsAbout: [
+      "AI-native cloud architecture",
+      "Platform engineering",
+      "Series A–B SaaS scaling",
+      "Cloud cost optimization",
+      "WAF2p framework",
+      "Terraform",
+      "AWS",
+      "Engineering velocity",
+    ],
+    worksFor: {
+      "@type": "Organization",
+      name: "MaCh2.Cloud",
+      url: "https://mach2.cloud",
+    },
+  };
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    url: "https://mach2.cloud",
+    name: "MaCh2.Cloud",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://mach2.cloud/blog?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+    hasPart: [
+      {
+        "@type": "SiteNavigationElement",
+        name: "Architecture Diagnosis Call",
+        description:
+          "60-minute structured call to identify your platform's architectural gaps. No pitch.",
+        url: "https://mach2.cloud/en/diagnosis",
+        position: 1,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        name: "Blog",
+        description:
+          "Insights on AI-native cloud architecture and scaling Series A–B SaaS platforms.",
+        url: "https://mach2.cloud/blog",
+        position: 2,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        name: "Services",
+        description:
+          "Architecture Audit, Blueprint, Enablement, and Fractional Architect engagements.",
+        url: "https://mach2.cloud/en/services",
+        position: 3,
+      },
+      {
+        "@type": "SiteNavigationElement",
+        name: "WAF2p Framework",
+        description:
+          "The Well-Architected Framework for Platform Engineering — design principles for AI-native platforms.",
+        url: "https://waf2p.dev",
+        position: 4,
+      },
+    ],
+  };
+
   return (
-    <main>
-      <HeroSection />
-      <ProblemSection />
-      <ServicesSection />
-      <OutcomesSection />
-      <CtaSection />
-      <CredibilitySection />
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <ServicesSection />
+        <OutcomesSection />
+        <CtaSection />
+        <CredibilitySection />
+      </main>
+    </>
   );
 }

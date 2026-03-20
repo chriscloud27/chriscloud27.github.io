@@ -6,6 +6,7 @@ import { getBlogPost, getBlogSlugs } from "@/lib/notion";
 import { Badge } from "@/components/ui/badge";
 import BlogImageLightbox from "@/components/blog/BlogImageLightbox";
 import BlogToC from "@/components/blog/BlogToC";
+import { RelatedArticles } from "@/components/blog/RelatedArticles";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { getGlobalSettings } from "@/lib/settings";
 import { GLOBAL_KEYWORDS } from "@/lib/keywords";
@@ -33,37 +34,45 @@ export async function generateMetadata({
 
   const canonicalPath = `/${locale}/blog/${post.slug}`;
   const canonicalUrl = buildCanonical(canonicalPath);
-  const imageUrl = post.coverImage ?? settings.defaultSeo?.shareImage?.url;
+  const imageUrl =
+    post.coverImage ??
+    settings.defaultSeo?.shareImage?.url ??
+    "/og/default.png";
   const publishedTime = new Date(post.date).toISOString();
+  const modifiedTime = post.dateModified
+    ? new Date(post.dateModified).toISOString()
+    : publishedTime;
   const i18n = buildCanonicalAndAlternates(`/blog/${post.slug}`, locale);
+
+  // Use metaDescription if available, otherwise fall back to excerpt
+  const description = post.metaDescription || post.excerpt.substring(0, 155);
 
   return {
     title: `${post.title} — ${settings.siteName}`,
-    description: post.excerpt,
+    description,
     keywords: [...new Set([...post.tags, ...GLOBAL_KEYWORDS])],
     openGraph: {
       type: "article",
       url: canonicalUrl,
       title: post.title,
-      description: post.excerpt,
+      description,
       publishedTime,
+      modifiedTime,
       tags: post.tags,
-      images: imageUrl
-        ? [
-            {
-              url: imageUrl,
-              width: settings.defaultSeo?.shareImage?.width,
-              height: settings.defaultSeo?.shareImage?.height,
-              alt: post.title,
-            },
-          ]
-        : undefined,
+      images: [
+        {
+          url: imageUrl,
+          width: settings.defaultSeo?.shareImage?.width ?? 1200,
+          height: settings.defaultSeo?.shareImage?.height ?? 627,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
-      description: post.excerpt,
-      images: imageUrl ? [imageUrl] : undefined,
+      description,
+      images: [imageUrl],
     },
     ...i18n,
   };
@@ -97,10 +106,13 @@ export default async function BlogPostPage({
     "@type": "Article",
     headline: post.title,
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
-    description: post.excerpt,
+    dateModified: post.dateModified
+      ? new Date(post.dateModified).toISOString()
+      : new Date(post.date).toISOString(),
+    description: post.metaDescription || post.excerpt,
     mainEntityOfPage: canonicalUrl,
     image: imageUrl ? [imageUrl] : undefined,
+    keywords: post.tags.join(", "),
     author: {
       "@type": "Person",
       name: "Christian Weber",
@@ -186,6 +198,11 @@ export default async function BlogPostPage({
             coverImage={post.coverImage}
             coverAlt={post.title}
           />
+
+          {/* Related Articles */}
+          {post.internalLinks && post.internalLinks.length > 0 && (
+            <RelatedArticles slugs={post.internalLinks} />
+          )}
         </div>
       </article>
     </main>
