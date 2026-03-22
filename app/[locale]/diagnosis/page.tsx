@@ -2,28 +2,39 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { CalEmbed } from "./CalEmbed";
+import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Architecture Diagnosis Call — MaCh2.Cloud",
-  description:
-    "A structured 60-minute session to surface the one architectural constraint compounding your platform's problems. You leave with a clearer picture either way.",
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
     title: "Architecture Diagnosis Call — MaCh2.Cloud",
     description:
-      "60 minutes. One clear finding. Book a structured architecture diagnosis with Christian Weber.",
-    url: "https://mach2.cloud/en/diagnosis",
-  },
-};
+      "A structured 60-minute session to surface the one architectural constraint compounding your platform's problems. You leave with a clearer picture either way.",
+    openGraph: {
+      title: "Architecture Diagnosis Call — MaCh2.Cloud",
+      description:
+        "60 minutes. One clear finding. Book a structured architecture diagnosis with Christian Weber.",
+      url: buildCanonical(`/${locale}/diagnosis`),
+    },
+    ...buildCanonicalAndAlternates("/diagnosis", locale),
+  };
+}
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Architecture Diagnosis Call",
-  provider: { "@type": "Person", name: "Christian Weber" },
-  description:
-    "Structured 60-minute architecture diagnosis for Series A–B SaaS CTOs and technical founders.",
-  url: "https://mach2.cloud/en/diagnosis",
-};
+function getJsonLd(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Architecture Diagnosis Call",
+    provider: { "@type": "Person", name: "Christian Weber" },
+    description:
+      "Structured 60-minute architecture diagnosis for Series A–B SaaS CTOs and technical founders.",
+    url: buildCanonical(`/${locale}/diagnosis`),
+  };
+}
 
 const steps = [
   {
@@ -101,7 +112,7 @@ export default async function DiagnosisPage({
     <main className="bg-deep-blue min-h-screen pt-16">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(locale)) }}
       />
 
       {/* ── Diagnostic Framework ──────────────────────────────────────────── */}

@@ -5,7 +5,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getGlobalSettings } from "@/lib/settings";
-import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
+import { buildCanonical } from "@/lib/seo";
 import { Providers } from "@/lib/providers";
 import RevealObserver from "@/components/RevealObserver";
 import Header from "@/components/layout/Header";
@@ -26,7 +26,6 @@ export async function generateMetadata({
     ? locale
     : routing.defaultLocale;
   const settings = getGlobalSettings(safeLocale);
-  const i18n = buildCanonicalAndAlternates("/", safeLocale);
   const ogImage = settings.defaultSeo?.shareImage;
 
   // Fallback to default OG image
@@ -80,7 +79,6 @@ export async function generateMetadata({
       index: true,
       follow: true,
     },
-    ...i18n,
   };
 }
 

@@ -1,18 +1,27 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import WhitepaperForm from "@/components/WhitepaperForm";
+import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "AI-Native Cloud Architecture Whitepaper — MaCh2.Cloud",
-  description:
-    "Download the AI-Native Cloud Architecture whitepaper. Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
     title: "AI-Native Cloud Architecture Whitepaper — MaCh2.Cloud",
     description:
-      "Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
-    url: "https://mach2.cloud/en/whitepaper",
-  },
-};
+      "Download the AI-Native Cloud Architecture whitepaper. Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
+    openGraph: {
+      title: "AI-Native Cloud Architecture Whitepaper — MaCh2.Cloud",
+      description:
+        "Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
+      url: buildCanonical(`/${locale}/whitepaper`),
+    },
+    ...buildCanonicalAndAlternates("/whitepaper", locale),
+  };
+}
 
 export default async function WhitepaperPage({
   params,
