@@ -318,14 +318,14 @@ export default async function DiagnosisPage({
               </span>
               <p className="font-body text-[17px] font-light leading-[1.75] text-white/90 mb-6 relative z-10">
                 &ldquo;Christian gave us a direct and honest assessment of where
-                our architecture wasn&apos;t ready yet — and why it mattered
+                our architecture wasn&apos;t ready yet and why it mattered
                 before we scaled further. We&apos;re building a clinical
                 platform for LATAM physicians, from appointments to AI-assisted
                 diagnosis. Stability and cost-efficiency aren&apos;t optional at
                 this stage. His ability to connect architectural decisions to
-                real business consequences helped us understand what to build
-                next, and in what order. That clarity was more valuable than any
-                validation could have been.&rdquo;
+                real business consequences helped us understand how to find what
+                to build next and in which priority. That clarity was more
+                valuable than any validation could have been.&rdquo;
               </p>
               <div className="flex items-center justify-between flex-wrap gap-4 relative z-10">
                 <div className="flex items-center gap-3">
