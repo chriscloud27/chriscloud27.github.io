@@ -1,11 +1,23 @@
 import Image from "next/image";
 
-const testimonials = [
+const testimonials: Array<{
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  companyUrl: string;
+  linkedIn: string;
+  photo: string;
+  photoAlt: string;
+  avatarSize: "sm" | "md" | "lg";
+  align: "left" | "right";
+  glyphSize: string;
+}> = [
   {
     quote:
       "Christian quickly brought clarity into a complex architecture decision around containerization and Kubernetes scaling. He helped us build on an already strong foundation and move even faster and more confidently in how we scale and operate our platform. His ability to structure decisions around cost, scalability, and long-term flexibility helped us move forward with confidence and avoid costly missteps. Highly recommended for fast, high-impact architectural guidance.",
     name: "Philipp Ladwig",
-    role: "CEO · Series A",
+    role: "CEO · SaaS Series A",
     company: "Avaluma.AI",
     companyUrl: "https://avaluma.ai/",
     linkedIn: "https://www.linkedin.com/in/dr-philipp-ladwig-a80a18108/",
@@ -15,21 +27,21 @@ const testimonials = [
     align: "left" as const,
     glyphSize: "text-[140px]",
   },
-  {
-    quote:
-      "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM doctors from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
-    name: "Ivan Peñaloza",
-    role: "CEO & Founder · Pre-Series A",
-    company: "Asclepius AI",
-    companyUrl: "https://asclepius.ai/",
-    linkedIn:
-      "https://www.linkedin.com/in/ivan-dario-pe%C3%B1aloza-rojas-phd-aaa259186/",
-    photo: "/img/Ivan-Dario-Penaloza-Rojas.jpg",
-    photoAlt: "Ivan Dario Peñaloza Rojas",
-    avatarSize: "md" as const,
-    align: "right" as const,
-    glyphSize: "text-[110px]",
-  },
+  // {
+  //   quote:
+  //     "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM doctors from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
+  //   name: "Ivan Peñaloza",
+  //   role: "CEO & Founder · Pre-Series A",
+  //   company: "Asclepius AI",
+  //   companyUrl: "https://asclepius.ai/",
+  //   linkedIn:
+  //     "https://www.linkedin.com/in/ivan-dario-pe%C3%B1aloza-rojas-phd-aaa259186/",
+  //   photo: "/img/Ivan-Dario-Penaloza-Rojas.jpg",
+  //   photoAlt: "Ivan Dario Peñaloza Rojas",
+  //   avatarSize: "md" as const,
+  //   align: "right" as const,
+  //   glyphSize: "text-[110px]",
+  // },
 ];
 
 export default function TestimonialsSection() {
@@ -96,10 +108,6 @@ export default function TestimonialsSection() {
             </div>
           ))}
         </div>
-
-        <p className="font-mono text-[11px] text-grey-mid/70 text-center tracking-wide">
-          Both booked after a single 60-minute call. No prior relationship.
-        </p>
       </div>
     </section>
   );
