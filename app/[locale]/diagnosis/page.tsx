@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
+import Image from "next/image";
 import { CalEmbed } from "./CalEmbed";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 
@@ -240,6 +241,126 @@ export default async function DiagnosisPage({
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ──────────────────────────────────────────────────── */}
+      <section className="border-t border-white/[0.06] py-20">
+        <div className="wrap max-w-[860px]">
+          <p className="eyebrow mb-10">Testimonials</p>
+
+          <div className="flex flex-col gap-6 mb-8">
+            {/* Testimonial 1 — featured, left aligned */}
+            <div className="relative overflow-hidden bg-electric-cyan/[0.03] border border-white/[0.06] rounded-card p-10 md:w-[80%]">
+              <span
+                aria-hidden="true"
+                className="absolute top-0 left-4 font-display text-[140px] leading-none text-electric-cyan/[0.07] select-none pointer-events-none"
+              >
+                &ldquo;
+              </span>
+              <p className="font-body text-[17px] font-light leading-[1.75] text-white/90 mb-8 relative z-10 max-w-prose">
+                &ldquo;Christian quickly brought clarity into a complex
+                architecture decision around containerization and Kubernetes
+                scaling. He helped us build on an already strong foundation and
+                move even faster and more confidently in how we scale and
+                operate our platform. His ability to structure decisions around
+                cost, scalability, and long-term flexibility helped us move
+                forward with confidence and avoid costly missteps. Highly
+                recommended for fast, high-impact architectural guidance.&rdquo;
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-4 relative z-10">
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/dr-philipp-ladwig-a80a18108/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-[2px] rounded-full bg-gradient-to-br from-electric-cyan/60 to-electric-cyan/10 shrink-0 hover:from-electric-cyan hover:to-electric-cyan/40 transition-all duration-200"
+                  >
+                    <Image
+                      src="/img/philipp-ladwig.webp"
+                      alt="Philipp Ladwig"
+                      width={56}
+                      height={56}
+                      className="w-14 h-14 rounded-full object-cover"
+                    />
+                  </a>
+                  <div>
+                    <p className="font-mono text-[12px] font-semibold text-white">
+                      Philipp Ladwig
+                    </p>
+                    <p className="font-mono text-[10px] text-grey-mid">
+                      CEO · Series A ·{" "}
+                      <a
+                        href="https://avaluma.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-electric-cyan hover:text-white transition-colors"
+                      >
+                        Avaluma.AI
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                {/* <span className="tag">→ Architecture Audit</span> */}
+              </div>
+            </div>
+
+            {/* Testimonial 2 — secondary, right aligned */}
+            <div className="relative overflow-hidden bg-electric-cyan/[0.03] border border-white/[0.06] rounded-card p-10 md:w-[80%] md:ml-auto">
+              <span
+                aria-hidden="true"
+                className="absolute top-0 left-4 font-display text-[110px] leading-none text-electric-cyan/[0.07] select-none pointer-events-none"
+              >
+                &ldquo;
+              </span>
+              <p className="font-body text-[17px] font-light leading-[1.75] text-white/90 mb-6 relative z-10">
+                &ldquo;Christian gave us a direct and honest assessment of where
+                our architecture wasn&apos;t ready yet — and why it mattered
+                before we scaled further. We&apos;re building a clinical
+                platform for LATAM physicians, from appointments to AI-assisted
+                diagnosis. Stability and cost-efficiency aren&apos;t optional at
+                this stage. His ability to connect architectural decisions to
+                real business consequences helped us understand what to build
+                next, and in what order. That clarity was more valuable than any
+                validation could have been.&rdquo;
+              </p>
+              <div className="flex items-center justify-between flex-wrap gap-4 relative z-10">
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/ivan-dario-pe%C3%B1aloza-rojas-phd-aaa259186/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-[2px] rounded-full bg-gradient-to-br from-electric-cyan/60 to-electric-cyan/10 shrink-0 hover:from-electric-cyan hover:to-electric-cyan/40 transition-all duration-200"
+                  >
+                    <Image
+                      src="/img/Ivan-Dario-Penaloza-Rojas.jpg"
+                      alt="Ivan Dario Peñaloza Rojas"
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-full object-cover"
+                    />
+                  </a>
+                  <div>
+                    <p className="font-mono text-[12px] font-semibold text-white">
+                      Ivan Peñaloza
+                    </p>
+                    <p className="font-mono text-[10px] text-grey-mid">
+                      CEO &amp; Founder · Pre-Series A ·{" "}
+                      <a
+                        href="https://asclepius.ai/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-electric-cyan hover:text-white transition-colors"
+                      >
+                        Asclepius AI
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                {/* <span className="tag">→ Fractional CTO</span> */}
               </div>
             </div>
           </div>
