@@ -132,7 +132,7 @@
     "pillar7Desc": "Data sovereignty, compliance, vendor neutrality, and exit strategies — your platform should never be held hostage by a provider.",
     "learnMore": "Explore WAF++ Framework →",
     "blogArticle": "Read: WAF++ — A New Approach →",
-    "cta": "Free Architecture Diagnosis",
+    "cta": "Architecture Diagnosis",
     "ctaSecondary": "See Our Work",
     "metaTitle": "WAF++ Framework — Seven Pillars for Sovereign Cloud Architecture",
     "metaDescription": "WAF++ is an open-source framework for intentional, vendor-neutral cloud architecture. Seven pillars: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability, and Sovereignty."
@@ -140,6 +140,36 @@
   "services": {
     "metaTitle": "Services — AI-Native Cloud Architecture Engagements",
     "metaDescription": "Four precision engagements — from architectural clarity to continuous platform leadership. Architecture Audit, Blueprint, Enablement, and Fractional Architect for Series A–B SaaS companies."
+  },
+  "servicesPage": {
+    "eyebrow": "Offers to your needs",
+    "h1Part1": "Architecture that compounds",
+    "h1Emphasis": "velocity.",
+    "sub": "Four precision engagements — from architectural clarity to continuous platform leadership. Designed for Series A–B SaaS companies that are done firefighting and ready to build.",
+    "cta": "Start with a Diagnosis →",
+    "ctaSecondary": "See how it works →"
+  },
+  "servicesSection": {
+    "eyebrow": "Solution Path",
+    "headingPart1": "From first conversation to",
+    "headingEmphasis": "full platform ownership",
+    "diagnosisLabel": "Diagnosis",
+    "diagnosisSub": "30-min call. One clear finding.",
+    "auditLabel": "Audit",
+    "auditSub": "Full platform assessment. Prioritized roadmap.",
+    "blueprintLabel": "Blueprint",
+    "blueprintSub": "Target architecture. Production-ready design.",
+    "enablementLabel": "Enablement",
+    "enablementSub": "Guided implementation. Team ownership.",
+    "fractionalLabel": "Fractional",
+    "fractionalSub": "Ongoing architecture leadership. Monthly cadence."
+  },
+  "finalCta": {
+    "heading1": "Architecture Diagnosis before",
+    "headingEmphasis": "growth exposes it",
+    "sub": "Start with an Architecture Diagnosis Call — 30 minutes to surface the highest-leverage thing worth fixing first. No commitment. No pitch. Just clarity.",
+    "cta": "Book a Diagnosis Call →",
+    "proofLine": "No pitch. One high-leverage finding you can act on."
   },
   "notFound": {
     "label": "404 — Not Found",

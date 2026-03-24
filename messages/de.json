@@ -141,6 +141,36 @@
     "metaTitle": "Services — KI-native Cloud-Architektur-Engagements",
     "metaDescription": "Vier präzise Engagements — von architektonischer Klarheit bis zur kontinuierlichen Plattformführung. Architektur-Audit, Blueprint, Enablement und Fractional Architect für Series A–B SaaS-Unternehmen."
   },
+  "servicesPage": {
+    "eyebrow": "Angebote für Ihre Bedürfnisse",
+    "h1Part1": "Architektur, die",
+    "h1Emphasis": "Geschwindigkeit multipliziert.",
+    "sub": "Vier präzise Engagements — von architektonischer Klarheit bis zur kontinuierlichen Plattformführung. Für Series A–B SaaS-Unternehmen, die bereit sind zu bauen.",
+    "cta": "Mit einer Diagnose starten →",
+    "ctaSecondary": "So funktioniert es →"
+  },
+  "servicesSection": {
+    "eyebrow": "Solution Path",
+    "headingPart1": "Vom ersten Gespräch bis zur",
+    "headingEmphasis": "vollständigen Plattformverantwortung",
+    "diagnosisLabel": "Diagnose",
+    "diagnosisSub": "30-Min-Call. Ein klarer Befund.",
+    "auditLabel": "Audit",
+    "auditSub": "Vollständige Plattformbewertung. Priorisierte Roadmap.",
+    "blueprintLabel": "Blueprint",
+    "blueprintSub": "Zielarchitektur. Produktionsreifes Design.",
+    "enablementLabel": "Enablement",
+    "enablementSub": "Geführte Implementierung. Team-Ownership.",
+    "fractionalLabel": "Fractional",
+    "fractionalSub": "Kontinuierliche Architekturführung. Monatlicher Rhythmus."
+  },
+  "finalCta": {
+    "heading1": "Kostenlose Architektur-Diagnose — bevor",
+    "headingEmphasis": "das Wachstum es offenbart",
+    "sub": "Starten Sie mit einem Architecture Diagnosis Call — 30 Minuten, um den wichtigsten Hebel zu finden. Kein Commitment. Kein Pitch. Nur Klarheit.",
+    "cta": "Diagnose-Call buchen →",
+    "proofLine": "Kein Pitch. Ein konkreter Befund, den Sie sofort nutzen können."
+  },
   "notFound": {
     "label": "404 — Nicht gefunden",
     "h1Part1": "Diese Seite",

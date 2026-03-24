@@ -122,7 +122,7 @@ export default function MobileNav() {
               onClick={handleNavClick}
               className="mobile-menu-btn-primary"
             >
-              Free Architecture Diagnosis
+              Architecture Diagnosis
             </Link>
           </div>
         </Dialog.Content>
