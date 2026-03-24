@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     quote:
-      "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM physicians, from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
+      "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM doctors from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
     name: "Ivan Peñaloza",
     role: "CEO & Founder · Pre-Series A",
     company: "Asclepius AI",
