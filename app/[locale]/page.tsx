@@ -6,7 +6,6 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import CredibilitySection from "@/components/sections/CredibilitySection";
 import CtaSection from "@/components/sections/CtaSection";
 import OutcomesSection from "@/components/sections/OutcomesSection";
-import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { getGlobalSettings } from "@/lib/settings";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { HOME_KEYWORDS } from "@/lib/keywords";
@@ -150,7 +149,6 @@ export default async function HomePage({
       />
       <main>
         <HeroSection />
-        <TestimonialsSection />
         <ProblemSection />
         <ServicesSection />
         <OutcomesSection />

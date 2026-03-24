@@ -1,50 +1,105 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     quote:
-      "Working with Christian as our fractional CTO gave us the architectural clarity we were missing. He identified the compounding problems in our platform before they became emergencies — and gave our team a clear path forward.",
-    name: "— Placeholder Name",
-    role: "CTO, Series B SaaS",
-    tag: "Fractional CTO",
+      "Christian quickly brought clarity into a complex architecture decision around containerization and Kubernetes scaling. He helped us build on an already strong foundation and move even faster and more confidently in how we scale and operate our platform. His ability to structure decisions around cost, scalability, and long-term flexibility helped us move forward with confidence and avoid costly missteps. Highly recommended for fast, high-impact architectural guidance.",
+    name: "Philipp Ladwig",
+    role: "CEO · Series A",
+    company: "Avaluma.AI",
+    companyUrl: "https://avaluma.ai/",
+    linkedIn: "https://www.linkedin.com/in/dr-philipp-ladwig-a80a18108/",
+    photo: "/img/philipp-ladwig.webp",
+    photoAlt: "Philipp Ladwig",
+    avatarSize: "lg" as const,
+    align: "left" as const,
+    glyphSize: "text-[140px]",
   },
   {
     quote:
-      "The Architecture Diagnosis call was the most useful 60 minutes we've spent on our infrastructure. No pitch, just signal. We left with a prioritized list of real risks we hadn't connected before.",
-    name: "— Placeholder Name",
-    role: "VP Engineering, Series A SaaS",
-    tag: "Architecture Diagnosis",
+      "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM physicians, from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
+    name: "Ivan Peñaloza",
+    role: "CEO & Founder · Pre-Series A",
+    company: "Asclepius AI",
+    companyUrl: "https://asclepius.ai/",
+    linkedIn:
+      "https://www.linkedin.com/in/ivan-dario-pe%C3%B1aloza-rojas-phd-aaa259186/",
+    photo: "/img/Ivan-Dario-Penaloza-Rojas.jpg",
+    photoAlt: "Ivan Dario Peñaloza Rojas",
+    avatarSize: "md" as const,
+    align: "right" as const,
+    glyphSize: "text-[110px]",
   },
 ];
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="bg-white py-20">
-      <div className="wrap">
-        <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-grey-mid mb-10">
-          What customers say
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {testimonials.map((t, i) => (
+    <section id="testimonials" className="border-t border-white/[0.06] py-20">
+      <div className="wrap max-w-[860px]">
+        <p className="eyebrow mb-10">Testimonials</p>
+
+        <div className="flex flex-col gap-6 mb-8">
+          {testimonials.map((t) => (
             <div
-              key={i}
-              className="border border-gray-100 rounded-card p-8 flex flex-col gap-6"
+              key={t.name}
+              className={[
+                "relative overflow-hidden bg-electric-cyan/[0.03] border border-white/[0.06] rounded-card p-10 md:w-[80%]",
+                t.align === "right" ? "md:ml-auto" : "",
+              ].join(" ")}
             >
-              <p className="text-graphite text-base leading-relaxed">
+              {/* Decorative quote glyph */}
+              <span
+                aria-hidden="true"
+                className={`absolute top-0 left-4 font-display ${t.glyphSize} leading-none text-electric-cyan/[0.07] select-none pointer-events-none`}
+              >
+                &ldquo;
+              </span>
+
+              {/* Quote */}
+              <p className="font-body text-[17px] font-light leading-[1.75] text-white/90 mb-8 relative z-10 max-w-prose">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="flex items-center justify-between mt-auto">
+
+              {/* Attribution */}
+              <div className="flex items-center gap-4 relative z-10">
+                <a
+                  href={t.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-[2px] rounded-full bg-gradient-to-br from-electric-cyan/60 to-electric-cyan/10 shrink-0 hover:from-electric-cyan hover:to-electric-cyan/40 transition-all duration-200"
+                >
+                  <Image
+                    src={t.photo}
+                    alt={t.photoAlt}
+                    width={t.avatarSize === "lg" ? 56 : 44}
+                    height={t.avatarSize === "lg" ? 56 : 44}
+                    className={`${t.avatarSize === "lg" ? "w-14 h-14" : "w-11 h-11"} rounded-full object-cover`}
+                  />
+                </a>
                 <div>
-                  <p className="text-sm font-semibold text-graphite">
+                  <p className="font-mono text-[12px] font-semibold text-white">
                     {t.name}
                   </p>
-                  <p className="text-xs text-grey-mid">{t.role}</p>
+                  <p className="font-mono text-[10px] text-grey-mid">
+                    {t.role} ·{" "}
+                    <a
+                      href={t.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-electric-cyan hover:text-white transition-colors"
+                    >
+                      {t.company}
+                    </a>
+                  </p>
                 </div>
-                <span className="font-mono text-[10px] tracking-widest uppercase text-electric-cyan border border-electric-cyan/30 rounded px-2 py-1">
-                  {t.tag}
-                </span>
               </div>
             </div>
           ))}
         </div>
+
+        <p className="font-mono text-[11px] text-grey-mid/70 text-center tracking-wide">
+          Both booked after a single 60-minute call. No prior relationship.
+        </p>
       </div>
     </section>
   );
