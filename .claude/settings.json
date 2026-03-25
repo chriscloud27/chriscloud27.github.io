@@ -5,7 +5,8 @@
       "Bash(grep -n \"Your platform\\\\|Build architecture\\\\|AI Native Cloud\\\\|Four engagements\\\\|What happens\\\\|The Problem\\\\|Engagement Philosophy\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
       "Bash(grep -rn \"AI Native Cloud Architect\\\\|Build architecture\\\\|Your platform should\\\\|Four engagements\\\\|Engagement Philosophy\\\\|The Problem\\\\|What happens\\\\|Your platform got you here\\\\|This is the chaos\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/services/page.tsx)",
       "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] -type f -name \"page.tsx\")",
-      "Bash(tree -L 3 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] --charset ascii)"
+      "Bash(tree -L 3 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] --charset ascii)",
+      "Bash(cat /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/onepager/page.tsx)"
     ]
   }
 }

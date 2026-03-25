@@ -176,10 +176,10 @@ export default async function DiagnosisPage({
                 optionally one tech lead
               </p>
               <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid italic mt-6 pt-6 border-t border-white/[0.06]">
-                "If I cannot help, I will tell you and you still walk away with
-                a clearer picture of your platform. If there is a fit, we can
-                discuss a 30‑Day Cloud &amp; AI Constraint Sprint. No slides, no
-                fluff."
+                &ldquo;If I cannot help, I will tell you and you still walk away
+                with a clearer picture of your platform. If there is a fit, we
+                can discuss a 30‑Day Cloud &amp; AI Constraint Sprint. No
+                slides, no fluff.&rdquo;
               </p>
             </div>
 
