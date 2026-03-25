@@ -41,9 +41,9 @@ export default function HeroSection() {
               <Link href="/en/diagnosis" className="btn btn-p">
                 Architecture Diagnosis
               </Link>
-              <a href="/en/services/#journey" className="btn btn-g">
+              <Link href="/en/services/#journey" className="btn btn-g">
                 See How It Works
-              </a>
+              </Link>
             </div>
           </div>
 
