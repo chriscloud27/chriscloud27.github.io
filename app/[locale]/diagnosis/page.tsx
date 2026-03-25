@@ -3,6 +3,7 @@ import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { CalEmbed } from "./CalEmbed";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
+import PageHero from "@/components/sections/PageHero";
 
 export async function generateMetadata({
   params,
@@ -13,11 +14,11 @@ export async function generateMetadata({
   return {
     title: "Architecture Diagnosis Call — MaCh2.Cloud",
     description:
-      "A structured 60-minute session to surface the one architectural constraint compounding your platform's problems. You leave with a clearer picture either way.",
+      "30 minutes to find your highest-leverage Cloud & AI constraint. Free for pre-seed, seed and Series A CTOs. Book a working session — no slides, no pitch.",
     openGraph: {
       title: "Architecture Diagnosis Call — MaCh2.Cloud",
       description:
-        "60 minutes. One clear finding. Book a structured architecture diagnosis with Christian Weber.",
+        "30 minutes. One concrete constraint identified. Book a free Architecture Diagnosis Call with Christian Weber.",
       url: buildCanonical(`/${locale}/diagnosis`),
     },
     ...buildCanonicalAndAlternates("/diagnosis", locale),
@@ -31,43 +32,25 @@ function getJsonLd(locale: string) {
     name: "Architecture Diagnosis Call",
     provider: { "@type": "Person", name: "Christian Weber" },
     description:
-      "Structured 60-minute architecture diagnosis for Series A–B SaaS CTOs and technical founders.",
+      "30-minute architecture diagnosis for B2B SaaS CTOs — identify the highest-leverage Cloud & AI constraint and decide whether a 30-Day Sprint makes sense.",
     url: buildCanonical(`/${locale}/diagnosis`),
   };
 }
 
-const steps = [
-  {
-    num: "01",
-    name: "Situation Mapping",
-    tag: ["context"],
-    subtitle: "Review where your platform currently is",
-    body: "We start where you are, not where you think you should be. You describe the platform as it actually exists: how it was built, under what constraints, what the team looks like today. I'm listening for the gap between the system you intended and the system that got shipped. Most architectural problems reveal themselves here. Not in the symptoms but in the decisions that made sense at the time.",
-    instructions:
-      "We may indentify structural problems reveal themselves here. Not in the symptoms, but in the decisions that made sense at the time.",
-  },
-  {
-    num: "02",
-    name: "Pain Points Identification",
-    tag: ["locate"],
-    subtitle: "Identify where business is fighting tech",
-    body: "Every platform has one or two places where the structure is actively fighting the business. We find them. Slowing delivery cycles, unpredictable cloud spend, AI features that degrade under real load, infrastructure that only two engineers understand. We name the specific friction points not the general category. This is where most teams realize the problem they came in with isn't the problem worth solving first.",
-    instructions:
-      "Every company makes decisions that impact their platform. They may directly or indirectly be costing velocity, margin, or reliability. We name them specifically — slowing deploy cycles, unexplained cloud spend, AI features degrading under load, infrastructure only two engineers understand. Not a category. A location.",
-  },
-  {
-    num: "03",
-    name: "Root Cause Isolation",
-    tag: "architectural decisions",
-    subtitle: "One finding. Framed to be immediately usable",
-    body: "We name what you and your team need to resolve from what will compound until it is addressed at the architectural level. The type of problem determines the type of intervention. ",
-    instructions:
-      "Implementation problem or structural problem. Treating a structural constraint as an implementation issue is the most common reason platform work fails to hold.",
-  },
+const WHO_FOR = [
+  "CTOs and VP Engineering of B2B SaaS companies",
+  "5–40 engineers, cloud‑native stack",
+  "Series A/B feeling real pressure from cloud costs, platform stability or AI delivery",
+];
+
+const WHAT_WE_DO = [
+  "Map your product, team and cloud/AI footprint.",
+  "Pinpoint the most expensive constraint (cost, stability or AI‑delivery).",
+  "Give you a recommendation: run a 30‑day sprint, or not.",
 ];
 
 const stats = [
-  { value: "60'", label: "Structured session", sub: "no extensions" },
+  { value: "30'", label: "Working session", sub: "no extensions" },
   { value: "one", label: "Concrete finding", sub: "not a slide deck" },
   { value: "zero", label: "Commitment required", sub: "to book" },
 ];
@@ -115,131 +98,133 @@ export default async function DiagnosisPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(locale)) }}
       />
 
-      {/* ── Diagnostic Framework ──────────────────────────────────────────── */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="grid-overlay" />
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
+      <PageHero
+        eyebrow="Architecture Diagnosis Call"
+        headline="Architecture Diagnosis Call"
+        sub="30 minutes to find your highest‑leverage Cloud & AI constraint."
+        body="Most B2B SaaS teams I work with see the same patterns: cloud costs grow faster than revenue, AI features work in PoC but break in production, and engineers spend more time firefighting than shipping. In this 30‑minute call we map your current platform, identify the single most expensive constraint, and decide whether a 30‑Day Cloud & AI Constraint Sprint would move the needle."
+        ctaPrimary={{
+          label: "Book a Diagnosis Call",
+          href: "#book-diagnosis-call",
+        }}
+        ctaSecondary={{
+          label: "See the 30-Day Sprint →",
+          href: `/${locale}/sprint`,
+        }}
+      />
 
-        <div className="wrap relative z-10 py-20 lg:py-28">
-          {/* Eyebrow */}
-          <p className="eyebrow mb-6">Architecture Diagnosis</p>
-
-          {/* Headline */}
-          <h1 className="font-display text-[clamp(2rem,5vw,3.25rem)] font-bold italic leading-[1.15] text-white mb-5 max-w-[760px]">
-            The Architecture<br></br>
-            <em>Diagnosis</em>
-          </h1>
-
-          {/* Sub */}
-          <p className="font-body text-[15px] font-light leading-[1.7] text-grey-mid max-w-[560px] mb-12">
-            Four sequential phases. One concrete output. Prepared methodology
-            applied to your specific system.
-          </p>
-
-          <Link
-            href="#book-diagnosis-call"
-            className="btn btn-p mb-12 inline-flex"
-          >
-            Book diagnosis call
-          </Link>
-
-          {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-electric-cyan/60 via-electric-cyan/20 to-transparent mb-16" />
-
-          {/* ── Timeline ──────────────────────────────────────────────────── */}
-          <div className="relative max-w-[720px]">
-            {/* Vertical connecting line */}
-            <div
-              aria-hidden="true"
-              className="absolute left-[26px] top-6 bottom-[340px] w-px bg-electric-cyan/15"
-            />
-
-            {/* Steps 01–03 */}
-            {steps.map((step) => (
-              <div key={step.num} className="group relative flex gap-8 pb-14">
-                {/* Number */}
-                <div className="flex-shrink-0 w-14 pt-0.5">
-                  <div
-                    className={[
-                      "w-12 h-12 rounded-full flex items-center justify-center",
-                      "font-mono text-[13px] font-medium flex-shrink-0",
-                      "bg-transparent text-electric-cyan border border-electric-cyan",
-                      "transition-colors duration-200",
-                      "group-hover:bg-electric-cyan group-hover:text-deep-blue",
-                    ].join(" ")}
+      {/* ── Who + What (2-col on desktop) ────────────────────────────────── */}
+      <section className="border-t border-white/[0.06] py-14">
+        <div className="wrap">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 divide-y lg:divide-y-0 lg:divide-x divide-white/[0.08]">
+            {/* Left — Who this is for */}
+            <div className="pb-10 lg:pb-0 lg:pr-14">
+              <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-electric-cyan mb-5">
+                Who this is for
+              </p>
+              <ul className="list-none m-0 p-0 space-y-3">
+                {WHO_FOR.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-[14px] font-light text-grey-mid leading-[1.6]"
                   >
-                    {step.num}
-                  </div>
-                </div>
+                    <span className="font-mono text-[12px] text-electric-cyan mt-[2px] flex-shrink-0">
+                      {"//"}
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  {/* Title row */}
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-electric-cyan font-medium">
-                      {step.name}
+            {/* Right — What we do in 30 minutes */}
+            <div className="pt-10 lg:pt-0 lg:pl-14">
+              <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-electric-cyan mb-5">
+                What we do in 30 minutes
+              </p>
+              <ul className="list-none m-0 p-0 space-y-3">
+                {WHAT_WE_DO.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-[14px] font-light text-grey-mid leading-[1.6]"
+                  >
+                    <span className="font-mono text-[12px] text-electric-cyan mt-[2px] flex-shrink-0">
+                      {"//"}
                     </span>
-                    <span className="font-mono text-[9px] tracking-[0.08em] border border-electric-cyan/30 text-electric-cyan/60 px-2 py-0.5 rounded-sm">
-                      {step.tag}
-                    </span>
-                  </div>
-                  {/* Subtitle */}
-                  <h2 className="font-display text-[19px] font-bold text-white leading-[1.3] mb-3">
-                    {step.subtitle}
-                  </h2>
-                  {/* Body */}
-                  <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid">
-                    {step.body}
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Format & Pricing ─────────────────────────────────────────────── */}
+      <section className="border-t border-white/[0.06] py-14">
+        <div className="wrap">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+            {/* Left — Format details */}
+            <div>
+              <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-electric-cyan mb-5">
+                Format &amp; pricing
+              </p>
+              <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-3">
+                <span className="text-white font-medium">Format:</span> 30
+                minutes on Google Meet with your CTO/VP Engineering and
+                optionally one tech lead
+              </p>
+              <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid italic mt-6 pt-6 border-t border-white/[0.06]">
+                "If I cannot help, I will tell you and you still walk away with
+                a clearer picture of your platform. If there is a fit, we can
+                discuss a 30‑Day Cloud &amp; AI Constraint Sprint. No slides, no
+                fluff."
+              </p>
+            </div>
+
+            {/* Right — Price callout */}
+            <div className="flex flex-col gap-4">
+              {/* Regular price */}
+              <div className="flex items-center gap-3">
+                <span className="font-mono text-[13px] text-grey-mid">
+                  Regular price:
+                </span>
+                <span className="font-mono text-[18px] text-grey-mid line-through decoration-grey-mid/60">
+                  250 €
+                </span>
+              </div>
+
+              {/* Founder offer badge */}
+              <div className="inline-flex items-start gap-4 rounded-lg border border-green-400/40 bg-green-500/10 px-5 py-4 w-full max-w-sm">
+                <div className="flex-1">
+                  <p className="font-mono text-[10px] tracking-[0.12em] uppercase text-green-400 mb-1">
+                    Founder offer
+                  </p>
+                  <p className="font-mono text-[48px] font-bold leading-none text-green-400 mb-1">
+                    0 €
+                  </p>
+                  <p className="font-body text-[12px] font-light leading-[1.5] text-green-300/80">
+                    Limited free sessions per month for pre‑seed, seed and
+                    Series A CTOs while I refine this format.
                   </p>
                 </div>
               </div>
-            ))}
 
-            {/* Step 04 — boxed */}
-            <div className="group relative flex gap-8">
-              {/* Number */}
-              <div className="flex-shrink-0 w-14 pt-4">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center font-mono text-[13px] font-medium flex-shrink-0 bg-transparent text-electric-cyan border border-electric-cyan transition-colors duration-200 group-hover:bg-electric-cyan group-hover:text-deep-blue">
-                  04
-                </div>
-              </div>
-
-              {/* Bordered card */}
-              <div className="flex-1 min-w-0 border border-electric-cyan/25 rounded-lg p-7 bg-electric-cyan/[0.03]">
-                {/* Title row */}
-                <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-electric-cyan font-medium">
-                    One concrete finding
-                  </span>
-                  <span className="font-mono text-[9px] tracking-[0.08em] border border-electric-cyan/30 text-electric-cyan/60 px-2 py-0.5 rounded-sm">
-                    output
-                  </span>
-                </div>
-                {/* Subtitle — cyan */}
-                <h2 className="font-display text-[19px] font-bold text-electric-cyan leading-[1.3] mb-3">
-                  A highest-leverage thing to be implemented immediately
-                </h2>
-                {/* Body */}
-                <p className="font-body text-[14px] font-light leading-[1.75] text-grey-mid mb-8">
-                  The most architectural constraint worth understanding right
-                  now. Framed clearly enough to take into your next engineering
-                  planning session. Yours, regardless of what comes next.
-                </p>
-
-                {/* Stats row */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/[0.08]">
-                  {stats.map((s) => (
-                    <div key={s.value}>
-                      <div className="font-mono text-[28px] font-bold text-electric-cyan leading-none mb-2">
-                        {s.value}
-                      </div>
-                      <div className="font-mono text-[10px] text-grey-mid leading-[1.5]">
-                        {s.label}
-                        <br />
-                        {s.sub}
-                      </div>
+              {/* Stats row */}
+              <div className="grid grid-cols-3 gap-4 pt-5 border-t border-white/[0.06] mt-2">
+                {stats.map((s) => (
+                  <div key={s.value}>
+                    <div className="font-mono text-[24px] font-bold text-electric-cyan leading-none mb-1.5">
+                      {s.value}
                     </div>
-                  ))}
-                </div>
+                    <div className="font-mono text-[10px] text-grey-mid leading-[1.5]">
+                      {s.label}
+                      <br />
+                      {s.sub}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -256,7 +241,7 @@ export default async function DiagnosisPage({
             Book the call
           </h2>
           <p className="font-mono text-[12px] tracking-[0.08em] text-grey-mid mb-10">
-            60 minutes. The only requirement is that you come with a real
+            30 minutes. The only requirement is that you come with a real
             problem.
           </p>
           <div
@@ -268,6 +253,7 @@ export default async function DiagnosisPage({
         </div>
       </section>
 
+      {/* ── FAQs ─────────────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] py-20">
         <div className="wrap max-w-[860px]">
           <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-bold text-white mb-3 leading-[1.2]">
@@ -303,6 +289,19 @@ export default async function DiagnosisPage({
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Sprint link ──────────────────────────────────────────────────── */}
+      <section className="border-t border-white/[0.06] py-12">
+        <div className="wrap text-center">
+          <p className="font-body text-[14px] font-light text-grey-mid mb-4">
+            After the call — if there is a fit — we can discuss a structured
+            30‑day engagement.
+          </p>
+          <Link href={`/${locale}/sprint`} className="btn btn-g">
+            Learn about the 30‑Day Cloud &amp; AI Constraint Sprint →
+          </Link>
         </div>
       </section>
     </main>
