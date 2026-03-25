@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(grep -n \"Your platform\\\\|Build architecture\\\\|AI Native Cloud\\\\|Four engagements\\\\|What happens\\\\|The Problem\\\\|Engagement Philosophy\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
+      "Bash(grep -rn \"AI Native Cloud Architect\\\\|Build architecture\\\\|Your platform should\\\\|Four engagements\\\\|Engagement Philosophy\\\\|The Problem\\\\|What happens\\\\|Your platform got you here\\\\|This is the chaos\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/services/page.tsx)"
+    ]
+  }
+}

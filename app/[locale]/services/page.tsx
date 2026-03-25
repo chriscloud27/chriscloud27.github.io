@@ -383,7 +383,7 @@ export default async function ServicesPage({
       {/* ── Stats ────────────────────────────────────────────────────────── */}
       <section className="py-16 border-t border-white/[0.06]">
         <div className="wrap">
-          <StatsGrid showHeader={true} />
+          <StatsGrid showHeader={true} portfolioButton={true} />
         </div>
       </section>
 

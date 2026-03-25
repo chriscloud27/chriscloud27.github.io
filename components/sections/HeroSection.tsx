@@ -23,27 +23,25 @@ export default function HeroSection() {
             <p className="eyebrow">AI Native Cloud Architect</p>
 
             <h1>
-              Build architecture that <em>compounds velocity.</em>
+              <em>System-first Architecture</em> for teams that want momentum
             </h1>
 
             <p className="hero-sub">
               My mission is to help growth-stage SaaS teams replace fragile
               cloud foundations with AI-native systems that scale cleanly, stay
-              cost-predictable, and let engineers ship confidently instead of
-              firefighting production friction.
+              cost-predictable, and let engineers ship confidently.
             </p>
 
             {/* brand: proof line — mono label style per spec */}
             <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-grey-mid mb-10">
-              System-first architecture for teams that want momentum, not
-              rework.
+              I build architecture that compounds your velocity.
             </p>
 
             <div className="hero-btns">
               <Link href="/en/diagnosis" className="btn btn-p">
                 Architecture Diagnosis
               </Link>
-              <a href="#how-it-works" className="btn btn-g">
+              <a href="/en/services/#journey" className="btn btn-g">
                 See How It Works
               </a>
             </div>
