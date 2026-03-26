@@ -1,0 +1,41 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  Sub,
+  CompareTable,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>Why Structurally Different</Eyebrow>
+  <Headline>Principal architect judgment.<br/><em>Without the Big-4 price tag.</em></Headline>
+  <Sub>Every alternative has a structural flaw for a Series A–B company. This one doesn't.</Sub>
+
+  <CompareTable rows={[
+    {
+      label: "Time to first insight",
+      them: "4–6 weeks",
+      us: "60 minutes",
+    },
+    {
+      label: "Who does the work",
+      them: "Junior team, reviewed by senior",
+      us: "Senior architect, always",
+    },
+    {
+      label: "Stage fit",
+      them: "Enterprise",
+      us: "Series A–B SaaS only",
+    },
+    {
+      label: "Entry cost",
+      them: "€20k–50k+ to start",
+      us: "Single Diagnosis Call",
+    },
+    {
+      label: "Commitment required",
+      them: "High — multi-month retainers",
+      us: "None to start",
+    },
+  ]} />
+</Slide>

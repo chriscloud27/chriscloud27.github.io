@@ -1,0 +1,33 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  CardGrid,
+  Card,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>The Problem</Eyebrow>
+  <Headline>What happens when architecture<br/><em>can't keep up.</em></Headline>
+
+  <CardGrid cols={3}>
+    <Card title="AI that breaks under load">
+      Inference latency, scaling and cost dynamics weren't part of the original architecture. Features work in demos. They fail in production.
+    </Card>
+    <Card title="Cloud costs outpacing revenue">
+      No usage cost model tied to business value. The bill grows — but no one can explain why or what to cut.
+    </Card>
+    <Card title="Bottlenecks slowing delivery">
+      Teams wait on infrastructure instead of shipping features. The platform is the blocker, not the accelerator.
+    </Card>
+    <Card title="Over- or under-engineered">
+      Either premature complexity or raw technical debt. Both stall growth. Neither is obvious until it's expensive.
+    </Card>
+    <Card title="No clear system direction">
+      Fragmented platform strategy as teams scale. You know the current path won't survive another 12 months.
+    </Card>
+    <Card title="Not investor-ready">
+      Series B VCs evaluate your technical foundation, not just your product. An architecture that can't be explained costs you in diligence.
+    </Card>
+  </CardGrid>
+</Slide>

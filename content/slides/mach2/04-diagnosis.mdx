@@ -1,0 +1,38 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  Sub,
+  CardGrid,
+  Card,
+  InfoBox,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>The Diagnosis Call</Eyebrow>
+  <Headline>One hour.<br/><em>One concrete finding.</em></Headline>
+  <Sub>Most CTOs carry an unanswered question: is our architecture going to hold? After one Diagnosis Call, that question has a concrete answer.</Sub>
+
+<CardGrid cols={2}>
+  <Card title="Structural read of your platform">
+    Where it's solid, where risk is accumulating — named and prioritized. Not
+    documented generically.
+  </Card>
+  <Card title="Gaps tied to business consequence">
+    Each gap connected to cost, velocity, or reliability impact on your actual
+    growth trajectory. Not a checklist.
+  </Card>
+  <Card title="Documented path forward">
+    A written summary you can share internally, use with investors, or execute
+    against immediately.
+  </Card>
+  <Card title="Value regardless of next steps">
+    The call delivers insight before any paid engagement. That is by design —
+    not a pitch session.
+  </Card>
+</CardGrid>
+
+  <InfoBox>
+    Identifying one structural issue in 60 minutes can prevent a €20k–50k rewrite 18 months later. Architectural debt is being paid right now — in engineering cycles, cloud cost, and AI features that don't hold under production load.
+  </InfoBox>
+</Slide>

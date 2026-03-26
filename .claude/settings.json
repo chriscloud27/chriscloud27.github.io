@@ -6,7 +6,13 @@
       "Bash(grep -rn \"AI Native Cloud Architect\\\\|Build architecture\\\\|Your platform should\\\\|Four engagements\\\\|Engagement Philosophy\\\\|The Problem\\\\|What happens\\\\|Your platform got you here\\\\|This is the chaos\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/services/page.tsx)",
       "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] -type f -name \"page.tsx\")",
       "Bash(tree -L 3 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] --charset ascii)",
-      "Bash(cat /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/onepager/page.tsx)"
+      "Bash(cat /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/onepager/page.tsx)",
+      "Bash(ls -la /Users/christianweber/Documents/Github/chriscloud27.github.io/*.json)",
+      "Bash(grep -r \"fairup\\\\|FairUp\" /Users/christianweber/Documents/Github/chriscloud27.github.io --include=*.tsx --include=*.ts --include=*.json --exclude-dir=node_modules)",
+      "Bash(ls -la /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/)",
+      "Bash(head -50 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/page.tsx)",
+      "Bash(grep -i \"fairup\" /Users/christianweber/Documents/Github/chriscloud27.github.io/messages/*.json)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
