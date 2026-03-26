@@ -1,0 +1,42 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  Sub,
+  ProfilePhoto,
+  LogoRow,
+  Logo,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <div className="flex flex-col md:flex-row items-center justify-between gap-10 h-full">
+    {/* Left — text */}
+    <div className="flex-1 flex flex-col justify-center">
+      
+      <div className="mt-8">
+        <Eyebrow>AI-Native Cloud Architect</Eyebrow>
+        <Headline>
+          System-first architecture<br/>for teams that want<br/><em>momentum.</em>
+        </Headline>
+        <Sub>
+          I help Series A and B SaaS companies replace fragile cloud foundations with AI-native systems that scale cleanly, stay cost-predictable, and let engineers ship confidently.
+        </Sub>
+      </div>
+      <LogoRow logos={[
+        { src: "/img/logo_aws.svg", alt: "AWS", width: 64 },
+        { src: "/img/logo_azure.svg", alt: "Azure", width: 80 },
+        { src: "/img/logo_microsoft.svg", alt: "Microsoft", width: 100 },
+      ]} />
+    </div>
+
+    {/* Right — photo */}
+    <div className="shrink-0">
+      <ProfilePhoto
+        src="/img/Chris.png"
+        alt="Christian Weber — MaCh2.Cloud"
+        badge="Available · Remote · US / EU"
+      />
+    </div>
+
+  </div>
+</Slide>

@@ -1,0 +1,41 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  Sub,
+  StepList,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>How It Works</Eyebrow>
+  <Headline>Five steps.<br/><em>One coherent path.</em></Headline>
+  <Sub>Each engagement builds on the last. Start with a single call — no retainer, no commitment.</Sub>
+
+  <StepList steps={[
+    {
+      num: "00",
+      title: "Diagnosis",
+      desc: "60-minute call. One concrete architectural finding. Written summary delivered. Entry point with no strings attached.",
+    },
+    {
+      num: "01",
+      title: "Audit",
+      desc: "Deep structural analysis of your platform. Risk mapping, cost attribution, delivery bottleneck identification.",
+    },
+    {
+      num: "02",
+      title: "Blueprint",
+      desc: "Target architecture document. ADRs, migration path, prioritized roadmap your team can execute against.",
+    },
+    {
+      num: "03",
+      title: "Enablement",
+      desc: "Hands-on with your engineering team. Workshops, reviews, embedded advisory to build internal capability.",
+    },
+    {
+      num: "04",
+      title: "Fractional Architect",
+      desc: "Ongoing principal architect on retainer. Strategic oversight, hiring support, investor-facing architecture documentation.",
+    },
+  ]} />
+</Slide>

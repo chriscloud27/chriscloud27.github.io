@@ -1,0 +1,46 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  Sub,
+  TwoCol,
+  CardGrid,
+  Card,
+  SlideImage,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>Track Record</Eyebrow>
+  <Headline>Real systems.<br/><em>Real scale. Real responsibility.</em></Headline>
+
+  <TwoCol
+    left={
+      <CardGrid cols={2}>
+        <Card title="Platform Architecture">
+          Production-ready foundations for Series A SaaS. Well-Architected Framework, ADRs, DevOps culture, engineering execution.
+        </Card>
+        <Card title="Kubernetes & AI Workloads">
+          Cost-efficient GPU VM scheduling, data privacy architecture, C++ inference containers at production scale.
+        </Card>
+        <Card title="Global Platform Engineering">
+          Kubernetes platforms supporting thousands of engineers across enterprise-scale cloud transformations.
+        </Card>
+        <Card title="WAF2p Framework">
+          Open-source Well-Architected extension for AI-native SaaS. Seven pillars connecting infrastructure to business outcomes.
+        </Card>
+      </CardGrid>
+    }
+    right={
+      <div className="flex flex-col gap-6 items-center justify-center h-full">
+        <SlideImage
+          src="/img/wafpass-report.png"
+          alt="WAF2p Framework Report"
+          width={480}
+          height={320}
+          className="w-full max-w-sm border border-white/10"
+        />
+        <p className="font-mono text-xs text-white/30 text-center">WAF2p — Well-Architected Framework for AI-native SaaS</p>
+      </div>
+    }
+  />
+</Slide>
