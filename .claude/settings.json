@@ -12,7 +12,8 @@
       "Bash(ls -la /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/)",
       "Bash(head -50 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/page.tsx)",
       "Bash(grep -i \"fairup\" /Users/christianweber/Documents/Github/chriscloud27.github.io/messages/*.json)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node scripts/validate-mdx.mjs)"
     ]
   }
 }

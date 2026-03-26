@@ -248,6 +248,8 @@ EOF
 	fi
 }
 
+run_check_verbose "MDX validation" "node scripts/validate-mdx.mjs"
+
 run_build_verbose "build" "npm run build"
 
 print_final_summary
