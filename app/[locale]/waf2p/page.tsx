@@ -373,6 +373,14 @@ export default async function Waf2pPage({
               {t("ctaSecondary")}
             </Link>
           </div>
+          <p className="font-mono text-[11px] tracking-[0.06em] text-grey-mid mt-6">
+            <Link
+              href={`/${locale}/compass`}
+              className="text-electric-cyan hover:underline underline-offset-2"
+            >
+              Test your WAF2p alignment with the Platform Compass →
+            </Link>
+          </p>
         </div>
       </section>
     </main>

@@ -45,6 +45,15 @@ export default function HeroSection() {
                 See How It Works
               </Link>
             </div>
+            <p className="font-mono text-[11px] tracking-[0.06em] text-grey-mid mt-6">
+              Not sure yet?{" "}
+              <Link
+                href="/en/compass"
+                className="text-electric-cyan hover:underline underline-offset-2"
+              >
+                Take the Platform Compass →
+              </Link>
+            </p>
           </div>
 
           {/* Right: profile photo */}

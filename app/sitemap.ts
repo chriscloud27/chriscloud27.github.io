@@ -11,6 +11,7 @@ const STATIC_ROUTE_KEYS = [
   "/blog",
   "/services",
   "/services/agentic-team-focal",
+  "/compass",
   "/diagnosis",
   "/waf2p",
   "/whitepaper",
@@ -44,7 +45,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
                 ? 0.85
                 : routeKey === "/blog"
                   ? 0.8
-                  : 0.7,
+                  : routeKey === "/compass"
+                    ? 0.75
+                    : 0.7,
       });
     }
 
