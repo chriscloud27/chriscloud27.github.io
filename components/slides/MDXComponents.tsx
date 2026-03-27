@@ -21,9 +21,9 @@ export function Headline({ children }: { children: ReactNode }) {
 
 export function Sub({ children }: { children: ReactNode }) {
   return (
-    <p className="font-body text-lg md:text-xl text-white/70 leading-relaxed mb-8">
+    <div className="font-body text-lg md:text-xl text-white/70 leading-relaxed mb-8">
       {children}
-    </p>
+    </div>
   );
 }
 
@@ -185,9 +185,9 @@ export function LogoRow({
 export function InfoBox({ children }: { children: ReactNode }) {
   return (
     <div className="mt-6 border-l-2 border-[#00E5FF] pl-5 py-2">
-      <p className="font-body text-sm text-white/60 leading-relaxed italic">
+      <div className="font-body text-sm text-white/60 leading-relaxed italic">
         {children}
-      </p>
+      </div>
     </div>
   );
 }
