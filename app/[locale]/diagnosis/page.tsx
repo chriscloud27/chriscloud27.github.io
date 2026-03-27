@@ -292,6 +292,18 @@ export default async function DiagnosisPage({
         </div>
       </section>
 
+      {/* ── Platform Compass pre-call option ─────────────────────────── */}
+      <section className="border-t border-white/[0.06] py-10">
+        <div className="wrap text-center">
+          <p className="font-mono text-[11px] tracking-[0.06em] text-grey-mid mb-3">
+            Not ready for a call?
+          </p>
+          <Link href={`/${locale}/compass`} className="btn btn-g">
+            Start with the Platform Compass →
+          </Link>
+        </div>
+      </section>
+
       {/* ── Sprint link ──────────────────────────────────────────────────── */}
       <section className="border-t border-white/[0.06] py-12">
         <div className="wrap text-center">
