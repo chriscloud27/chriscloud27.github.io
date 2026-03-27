@@ -712,7 +712,7 @@ export default function CompassTerminal() {
 
     // ── init ──────────────────────────────────────────────────────────
     async function init() {
-      await addLine("Initialising MaCh2 scoring engine...", "dim");
+      await addLine("Initializing MaCh2 scoring engine...", "dim");
       await blank(100);
       await addLine("Platform Compass", "cyan", 150);
       await addLine(
@@ -729,7 +729,7 @@ export default function CompassTerminal() {
       await addLine("Estimated time: 5 minutes.", "dim", 420);
       await blank(500);
       await addLine(
-        "Your personalised report arrives within 24 hours.",
+        "Your personalized report arrives within 24 hours.",
         "dim",
         560,
       );

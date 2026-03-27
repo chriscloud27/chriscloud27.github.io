@@ -88,7 +88,7 @@ reports/seo/
 
 ## Platform Compass Security
 
-The Platform Compass (`/[locale]/compass`) is an interactive terminal-based assessment. It collects 14 scored answers across 5 WAF2p pillars and returns a personalised readiness tier. The scoring and tier logic are company IP and must not be exposed in the client JS bundle.
+The Platform Compass (`/[locale]/compass`) is an interactive terminal-based assessment. It collects 14 scored answers across 5 WAF2p pillars and returns a personalized readiness tier. The scoring and tier logic are company IP and must not be exposed in the client JS bundle.
 
 ### Client / server split
 

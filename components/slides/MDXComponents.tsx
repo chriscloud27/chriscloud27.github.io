@@ -274,6 +274,130 @@ export function Logo({
   );
 }
 
+export function CompassFlow() {
+  const survey = [
+    { name: "Basic", desc: "5 min · terminal CLI\nlead + basic report" },
+    {
+      name: "Intense",
+      desc: "WAF2p pillars · days–weeks\nassessment + findings",
+    },
+  ];
+  const engine = [
+    { name: "AI only", desc: "basic scoring logic\nbasic report" },
+    { name: "AI + human", desc: "advanced logic\nGitHub · website · stage" },
+  ];
+  const outcomes = [
+    { name: "Fragile foundation", desc: "Architecture Audit" },
+    { name: "Scaling under pressure", desc: "Blueprint + Enablement" },
+    { name: "Ready to accelerate", desc: "Fractional Architect" },
+  ];
+
+  const NodeBox = ({
+    name,
+    desc,
+    highlight = false,
+  }: {
+    name: string;
+    desc: string;
+    highlight?: boolean;
+  }) => (
+    <div
+      className={`rounded-lg p-3 text-center ${
+        highlight
+          ? "border border-[#00E5FF]/60 bg-[#00E5FF]/5"
+          : "border border-white/10 bg-white/5"
+      }`}
+    >
+      <div
+        className={`font-mono text-xs font-semibold ${
+          highlight ? "text-[#00E5FF]" : "text-white"
+        }`}
+      >
+        {name}
+      </div>
+      <div className="font-body text-[10px] text-white/50 mt-1 leading-tight whitespace-pre-line">
+        {desc}
+      </div>
+    </div>
+  );
+
+  const Arrow = () => (
+    <div className="flex items-center justify-center px-1 shrink-0 self-center">
+      <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+        <path
+          d="M0 5H16M16 5L11 1M16 5L11 9"
+          stroke="#378ADD"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  );
+
+  return (
+    <div className="mt-6 w-full overflow-x-auto">
+      <div className="flex items-stretch gap-1 min-w-[560px]">
+        {/* Survey */}
+        <div className="flex flex-col flex-1 min-w-0">
+          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#00E5FF]/50 mb-2 text-center">
+            1 · Survey
+          </div>
+          <div className="flex flex-col gap-2 h-full justify-center">
+            {survey.map((n) => (
+              <NodeBox key={n.name} name={n.name} desc={n.desc} />
+            ))}
+          </div>
+        </div>
+
+        <Arrow />
+
+        {/* Engine */}
+        <div className="flex flex-col flex-1 min-w-0">
+          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#00E5FF]/50 mb-2 text-center">
+            2 · Engine
+          </div>
+          <div className="flex flex-col gap-2 h-full justify-center">
+            {engine.map((n) => (
+              <NodeBox key={n.name} name={n.name} desc={n.desc} />
+            ))}
+          </div>
+        </div>
+
+        <Arrow />
+
+        {/* Outcome */}
+        <div className="flex flex-col flex-[1.4] min-w-0">
+          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-[#00E5FF]/50 mb-2 text-center">
+            3 · Outcome
+          </div>
+          <div className="flex flex-col gap-2 h-full justify-center">
+            {outcomes.map((n) => (
+              <NodeBox key={n.name} name={n.name} desc={n.desc} />
+            ))}
+          </div>
+        </div>
+
+        <Arrow />
+
+        {/* CTA */}
+        <div className="flex flex-col justify-center min-w-0 shrink-0">
+          <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-transparent mb-2 text-center select-none">
+            &nbsp;
+          </div>
+          <div className="border border-[#00E5FF] rounded-lg px-3 py-4 text-center bg-[#00E5FF]/5">
+            <div className="font-mono text-xs font-bold text-[#00E5FF] leading-tight">
+              Diagnosis
+              <br />
+              Call
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // MDX default element overrides
 export const mdxComponents = {
   h1: ({ children }: { children: ReactNode }) => (
@@ -328,4 +452,5 @@ export const mdxComponents = {
   CompareTable,
   StepList,
   Logo,
+  CompassFlow,
 };

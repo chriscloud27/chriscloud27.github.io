@@ -61,7 +61,7 @@ export default async function CompassPage({
           <p className="font-body text-[15px] font-light leading-[1.7] text-grey-mid max-w-[540px] mx-auto mb-8">
             Discover your architectural archetype in minutes. A rapid,
             structured assessment based on industry best-practice frameworks.
-            Personalised report within 24 hours.
+            Personalized report within 24 hours.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6">

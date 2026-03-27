@@ -7,6 +7,7 @@ import Slide05 from "@/content/slides/mach2/05-journey.mdx";
 import Slide06 from "@/content/slides/mach2/06-why-different.mdx";
 import Slide07 from "@/content/slides/mach2/07-track-record.mdx";
 import Slide08 from "@/content/slides/mach2/08-cta.mdx";
+import Slide09 from "@/content/slides/mach2/09-compass.mdx";
 
 export default function MaCh2Deck() {
   return (
@@ -18,6 +19,7 @@ export default function MaCh2Deck() {
       <Slide05 />
       <Slide06 />
       <Slide07 />
+      <Slide09 />
       <Slide08 />
     </Deck>
   );
