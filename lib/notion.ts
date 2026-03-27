@@ -400,8 +400,10 @@ export async function getBlogPosts(): Promise<NotionBlogPost[]> {
     const response = await notion.databases.query({
       database_id: DATABASE_ID,
       filter: {
-        property: "Published",
-        checkbox: { equals: true },
+        and: [
+          { property: "Published", checkbox: { equals: true } },
+          { property: "post_on", multi_select: { contains: "blog" } },
+        ],
       },
       sorts: [{ property: "Date", direction: "descending" }],
     });
