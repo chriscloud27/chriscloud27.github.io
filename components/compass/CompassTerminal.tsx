@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import { SendHorizontal } from "lucide-react";
+import { scoreAnswers } from "@/lib/compassEngine";
+import { buildSimpleReport, buildAdvancedReport } from "@/lib/compassReports";
 
 const TERMINAL_CSS = `
 .compass-terminal {
@@ -89,11 +91,11 @@ const TERMINAL_CSS = `
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: var(--t-dim);
+  color: var(--t-cyan);
   flex-shrink: 0;
-  transition: color .15s;
+  transition: opacity .15s;
 }
-.compass-terminal .send-btn:hover { color: var(--t-cyan); }
+.compass-terminal .send-btn:hover { opacity: .7; }
 
 @media (max-width: 900px) {
   .compass-terminal .send-btn { display: flex; }
@@ -174,7 +176,6 @@ const TERMINAL_CSS = `
 }
 
 @media (max-width: 600px) {
-  .compass-terminal       { margin: 0 12px; }
   .compass-terminal .tbody  { padding: 16px 18px 40px; }
   .compass-terminal .ttitle { display: none; }
 }
@@ -537,7 +538,7 @@ export default function CompassTerminal() {
       return null;
     }
 
-    // ── done screen (calls server for scoring) ─────────────────────────
+    // ── done screen (client-side scoring + full webhook payload) ─────────
     async function showDone() {
       const name = String(answers["name_first"] ?? "there");
       const stages: Record<string, string> = {
@@ -566,51 +567,19 @@ export default function CompassTerminal() {
       await addLine("Running MaCh2 scoring engine...", "dim", 280);
       await blank(420);
 
-      // POST to server — scoring logic stays private
-      let result: {
-        tier: string;
-        label: string;
-        message: string;
-        recommendation: string;
-        highGap: boolean;
-        lowSov: boolean;
-        aiLevel: number;
-        aiInfra: number;
-      } | null = null;
-
-      try {
-        const res = await fetch("/api/compass/score", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ ...answers }),
-        });
-        if (res.ok) result = await res.json();
-      } catch {
-        // fall through to error message below
-      }
-
-      if (!result) {
-        await addLine(
-          "  Error · Could not compute score. Please try again.",
-          "err",
-          440,
-        );
-        ir!.style.display = "flex";
-        scrollBottom();
-        ti!.focus();
-        phase = "question";
-        return;
-      }
+      // ── Step 2.5: score client-side (instant, no server round-trip) ──
+      const result = scoreAnswers(answers);
 
       await addLine("  Tier  ·  " + result.label, "cyan", 440);
-      await addLine("  " + result.message, "", 520);
-      await blank(600);
+      await addLine("  Score · " + result.overall + " / 100", "cyan", 500);
+      await addLine("  " + result.message, "", 560);
+      await blank(620);
 
       if (result.highGap) {
         await addLine(
           "  Warning · AI ambition outpaces infrastructure maturity",
           "warn",
-          640,
+          660,
         );
         await addLine(
           "  Level " +
@@ -619,58 +588,69 @@ export default function CompassTerminal() {
             (result.aiInfra + 1) +
             " infrastructure – high risk",
           "warn",
-          680,
+          700,
         );
-        await blank(720);
+        await blank(740);
       }
       if (result.lowSov) {
         await addLine(
           "  Sovereignty · High vendor lock-in detected",
           "warn",
-          760,
+          780,
         );
         await addLine(
           "  Provider independence and open standards both flagged",
           "warn",
-          800,
+          820,
         );
-        await blank(840);
+        await blank(860);
       }
 
-      await addLine("  Recommended  ·  " + result.recommendation, "warn", 880);
+      await addLine("  Recommended  ·  " + result.recommendation, "warn", 900);
       await blank(960);
-      await addLine("Report → " + String(answers["email"] ?? ""), "dim", 1000);
-      await new Promise<void>((r) => setTimeout(r, 1040));
-      const cta = document.createElement("a");
-      cta.className = "cta-link";
-      cta.href = "/en/diagnosis";
-      const label = document.createElement("span");
-      label.className = "cta-label";
-      label.textContent = "next step";
-      const action = document.createElement("span");
-      action.className = "cta-action";
-      action.textContent = "$ diagnose --your-platform  →";
-      cta.appendChild(label);
-      cta.appendChild(action);
-      out!.appendChild(cta);
-      scrollBottom();
-      phase = "done";
+      await addLine("Sending your report...", "dim", 1000);
 
-      // Fire-and-forget webhook — mapped to target field names
+      // ── Fire-and-forget: full payload including both HTML reports ────
+      const simpleHtml = buildSimpleReport(answers, result);
+      const advancedHtml = buildAdvancedReport(answers, result);
+
       fetch("https://flow.mach2.cloud/webhook/compass", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name_first: answers["name_first"],
-          name_family: answers["name_family"],
-          email_address: answers["email"],
-          company: answers["website"],
-          created_at: new Date().toISOString(),
-          compass_assessment: result,
+          answers: { ...answers },
+          result,
+          simple_report_html: simpleHtml,
+          advanced_report_html: advancedHtml,
         }),
       }).catch(() => {
         /* non-blocking */
       });
+
+      await addLine(
+        "Report sent to " + String(answers["email"] ?? ""),
+        "dim",
+        1040,
+      );
+      await new Promise<void>((r) => setTimeout(r, 1080));
+
+      // Cal.com CTA — label + button
+      const label = document.createElement("div");
+      label.className = "ln dim";
+      label.textContent = "Recommended action";
+      out!.appendChild(label);
+
+      const calA = document.createElement("a");
+      calA.className = "cta-link";
+      calA.href = "https://cal.com/mach2cloud/diagnosis-call";
+      calA.target = "_blank";
+      calA.rel = "noopener noreferrer";
+      calA.innerHTML =
+        '<span class="cta-label">next step</span>' +
+        '<span class="cta-action">→ Book a diagnosis call</span>';
+      out!.appendChild(calA);
+      scrollBottom();
+      phase = "done";
     }
 
     // ── submit handler ────────────────────────────────────────────────
@@ -734,17 +714,24 @@ export default function CompassTerminal() {
         560,
       );
       await blank(640);
-      // "begin" button — appended directly so it looks native in the terminal
-      setTimeout(() => {
+      await new Promise((r) => setTimeout(r, 680));
+      const isMobile = window.matchMedia("(max-width: 900px)").matches;
+      if (isMobile) {
+        // Mobile: show a tappable START button (no physical Enter key)
         const btn = document.createElement("button");
         btn.className = "begin-btn";
         btn.type = "button";
-        btn.textContent = "begin";
-        btn.addEventListener("click", () => handleSubmit());
+        btn.textContent = "START";
+        btn.addEventListener("click", () => {
+          btn.remove();
+          handleSubmit();
+        });
         out!.appendChild(btn);
         scrollBottom();
-      }, 680);
-      await new Promise((r) => setTimeout(r, 680));
+      } else {
+        // Desktop: show keyboard hint
+        addLine("press ENTER to start", "dim");
+      }
       phase = "intro";
       ir!.style.display = "flex";
       scrollBottom();
