@@ -1,0 +1,50 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  TwoCol,
+  InfoBox,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>Slide 2</Eyebrow>
+  <Headline>Zwei Ökosysteme —<br/><em>eine gemeinsame Lücke</em></Headline>
+
+  <TwoCol
+    left={
+      <div>
+        <p className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-4">cozama baut</p>
+        <div className="border border-white/10 rounded-xl bg-white/5 p-4 font-mono text-xs text-white/70 leading-relaxed">
+          <div className="text-[#00E5FF] mb-1">Semantic OS</div>
+          <div className="pl-4 text-white/50">├── eigenes Leben</div>
+          <div className="pl-4 text-white/50">├── eigene Company</div>
+          <div className="pl-4 text-white/50 mb-3">└── eigenes Produkt</div>
+          <div className="text-white mb-1">Omniship (Plattform)</div>
+          <div className="pl-4 text-white/50">├── Web Applications</div>
+          <div className="pl-4 text-white/50">├── Monitoring, Backup</div>
+          <div className="pl-4 text-white/50 mb-3">└── Rails Engines</div>
+          <div className="text-white mb-1">Socrates (in Entwicklung)</div>
+          <div className="pl-4 text-white/50">└── Purpose-driven Company Builder</div>
+        </div>
+      </div>
+    }
+    right={
+      <div>
+        <p className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-4">MaCh2.Cloud als Architecture Quality Layer</p>
+        <p className="font-body text-sm text-white/70 leading-relaxed mb-4">
+          Ein Gründer in Socrates baut sein Produkt. Irgendwann kommt der Punkt: erste Paying Customers, erstes Load-Problem, erster Investor fragt nach Infrastruktur-Dokumentation.
+        </p>
+        <p className="font-body text-sm text-white/70 leading-relaxed mb-4">
+          cozama sieht diesen Triggerpunkt — bevor der Gründer es merkt.
+        </p>
+        <p className="font-body text-sm text-white/70 leading-relaxed mb-5">
+          MaCh2.Cloud hilft Omniship, sein Produkt qualitätsgeprüft mit Best Practices aufzubauen: skalierbar, modular, ausbaufähig — von Anfang an.
+        </p>
+        <div className="border-l-2 border-[#00E5FF] pl-4 flex flex-col gap-2">
+          <span className="font-mono text-xs text-[#00E5FF]">Great data in → great result out</span>
+          <span className="font-mono text-xs text-white/50">Great desired result → great systems → great agentic work → great real results</span>
+        </div>
+      </div>
+    }
+  />
+</Slide>
