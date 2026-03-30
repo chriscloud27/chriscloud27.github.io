@@ -13,7 +13,7 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 
 export function Headline({ children }: { children: ReactNode }) {
   return (
-    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-6">
+    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-snug text-white mb-6">
       {children}
     </h1>
   );
@@ -401,7 +401,7 @@ export function CompassFlow() {
 // MDX default element overrides
 export const mdxComponents = {
   h1: ({ children }: { children: ReactNode }) => (
-    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] text-white mb-6">
+    <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-snug text-white mb-6">
       {children}
     </h1>
   ),

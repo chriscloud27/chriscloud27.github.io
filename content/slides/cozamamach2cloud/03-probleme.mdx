@@ -3,8 +3,8 @@ import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
 
 export const ProblemItem = ({ text }) => (
   <div className="flex gap-3 items-start">
-    <span className="text-red-400/60 shrink-0 mt-0.5 font-mono text-xs">✕</span>
-    <span className="font-body text-sm text-white/60 leading-relaxed">
+    <span className="text-red-400 shrink-0 mt-0.5 font-mono text-xs">✕</span>
+    <span className="font-body text-sm text-red-300/80 leading-relaxed">
       {text}
     </span>
   </div>
@@ -12,8 +12,8 @@ export const ProblemItem = ({ text }) => (
 
 export const SolutionItem = ({ text }) => (
   <div className="flex gap-3 items-start">
-    <span className="text-[#00E5FF] shrink-0 mt-0.5">—</span>
-    <span className="font-body text-sm text-white/70 leading-relaxed">
+    <span className="text-green-400 shrink-0 mt-0.5 font-mono text-xs">☑</span>
+    <span className="font-body text-sm text-green-300/80 leading-relaxed">
       {text}
     </span>
   </div>
@@ -28,15 +28,15 @@ export const SolutionItem = ({ text }) => (
     <div>
       <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-4">cozama / Startplatz Kunden</div>
       <div className="flex flex-col gap-2 mb-5">
-        <ProblemItem text="Keine Orientierung beim Infrastruktur-Aufbau" />
+        <ProblemItem text="Keine Orientierung beim Infrastrukturaufbau" />
         <ProblemItem text="Produkt skaliert nicht bei Product-Market-Fit" />
         <ProblemItem text="Kosten explodieren ohne Transparenz" />
-        <ProblemItem text="Kein Architektur-Partner im Ökosystem" />
+        <ProblemItem text="Kein Architekturpartner im Ökosystem" />
       </div>
       <div className="font-mono text-[10px] uppercase tracking-widest text-[#00E5FF] mb-3">Lösung durch cozama</div>
       <div className="flex flex-col gap-2">
         <SolutionItem text="Semantic OS: Company, Produkt, Leben strukturieren" />
-        <SolutionItem text="Omniship: schnell launchen, modular skalieren" />
+        <SolutionItem text="omaship: schnell launchen, modular skalieren" />
         <SolutionItem text="Incubator + KI-Accelerator: Mentoring, Community, Netzwerk" />
       </div>
     </div>
