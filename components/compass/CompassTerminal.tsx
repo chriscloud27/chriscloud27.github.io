@@ -31,6 +31,9 @@ const TERMINAL_CSS = `
   overflow: hidden;
   border: 1px solid rgba(0,229,255,.1);
   font-family: var(--mono);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
 }
 
 .compass-terminal .tbar {
@@ -40,6 +43,7 @@ const TERMINAL_CSS = `
   align-items: center;
   gap: 8px;
   border-bottom: 1px solid rgba(0,229,255,.06);
+  flex-shrink: 0;
 }
 
 .compass-terminal .dot { width: 11px; height: 11px; border-radius: 50%; }
@@ -56,7 +60,9 @@ const TERMINAL_CSS = `
 
 .compass-terminal .tbody {
   padding: 22px 26px 56px;
-  min-height: 480px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .compass-terminal .ln {
@@ -176,6 +182,7 @@ const TERMINAL_CSS = `
 }
 
 @media (max-width: 600px) {
+  .compass-terminal .term   { height: 75svh; }
   .compass-terminal .tbody  { padding: 16px 18px 40px; }
   .compass-terminal .ttitle { display: none; }
 }
@@ -443,7 +450,8 @@ export default function CompassTerminal() {
 
     // ── scroll to bottom (real terminal behavior) ─────────────────────
     function scrollBottom() {
-      sentinel!.scrollIntoView({ behavior: "smooth", block: "end" });
+      const tb = document.getElementById("ct-tb");
+      if (tb) tb.scrollTo({ top: tb.scrollHeight, behavior: "smooth" });
     }
 
     // ── output helpers ────────────────────────────────────────────────
@@ -709,7 +717,7 @@ export default function CompassTerminal() {
       await addLine("Estimated time: 5 minutes.", "dim", 420);
       await blank(500);
       await addLine(
-        "Your personalized report arrives within 24 hours.",
+        "Your personalized report arrives within 39 minutes.",
         "dim",
         560,
       );

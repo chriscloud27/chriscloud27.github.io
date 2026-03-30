@@ -96,7 +96,7 @@ export default async function CompassPage({
         </div>
         <br></br>
         {/* Founder note */}
-        <div className="border-l-2 border-electric-cyan/40 pl-5 text-left max-w-[480px] mx-auto mb-10">
+        <div className="border-l-2 border-electric-cyan/40 pl-5 text-left max-w-[480px] mx-auto mb-10 px-4">
           <p className="font-body text-[14px] font-light leading-[1.7] text-white/70 italic mb-4">
             &ldquo;Architectural debt is visibly burning 30–40% of engineering
             capacity and it&rsquo;s starting to show up in cloud costs and board
