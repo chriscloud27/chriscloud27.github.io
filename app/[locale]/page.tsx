@@ -149,11 +149,11 @@ export default async function HomePage({
       />
       <main>
         <HeroSection />
+        <CredibilitySection />
         <ProblemSection />
         <ServicesSection />
         <OutcomesSection />
         <CtaSection />
-        <CredibilitySection />
       </main>
     </>
   );
