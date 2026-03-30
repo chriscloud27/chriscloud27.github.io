@@ -15,18 +15,32 @@ const testimonials: Array<{
 }> = [
   {
     quote:
-      "Christian quickly brought clarity into a complex architecture decision around containerization and Kubernetes scaling. He helped us build on an already strong foundation and move even faster and more confidently in how we scale and operate our platform. His ability to structure decisions around cost, scalability, and long-term flexibility helped us move forward with confidence and avoid costly missteps. Highly recommended for fast, high-impact architectural guidance.",
-    name: "Philipp Ladwig",
-    role: "CEO · SaaS Series A",
-    company: "Avaluma.AI",
-    companyUrl: "https://avaluma.ai/",
-    linkedIn: "https://www.linkedin.com/in/dr-philipp-ladwig-a80a18108/",
-    photo: "/img/philipp-ladwig.webp",
-    photoAlt: "Philipp Ladwig",
+      "Christian helped us move from a fragile, no-code setup to a scalable, production-ready AWS architecture.\n He quickly identified structural limitations, introduced clear decision-making frameworks and aligned our platform with long-term business goals.\n The biggest impact: we stopped reacting to problems and started building with confidence. Our platform is now ready to scale from early-stage to enterprise without major rework.\n\n Highly valuable for any SaaS company navigating growth and architectural complexity.",
+    name: "Fredrik Bendel",
+    role: "CEO · SaaS Seed Series",
+    company: "Fairup.Dev",
+    companyUrl: "https://fairup.dev/",
+    linkedIn: "https://de.linkedin.com/in/frederik-bendel-547664145",
+    photo: "/img/fairup-frederik-bendel.jpg",
+    photoAlt: "Fredrik Bendel",
     avatarSize: "lg" as const,
     align: "left" as const,
     glyphSize: "text-[140px]",
   },
+  // {
+  //   quote:
+  //     "Christian quickly brought clarity into a complex architecture decision around containerization and Kubernetes scaling. He helped us build on an already strong foundation and move even faster and more confidently in how we scale and operate our platform. His ability to structure decisions around cost, scalability, and long-term flexibility helped us move forward with confidence and avoid costly missteps. Highly recommended for fast, high-impact architectural guidance.",
+  //   name: "Philipp Ladwig",
+  //   role: "CEO · SaaS Series A",
+  //   company: "Avaluma.AI",
+  //   companyUrl: "https://avaluma.ai/",
+  //   linkedIn: "https://www.linkedin.com/in/dr-philipp-ladwig-a80a18108/",
+  //   photo: "/img/avaluma-philipp-ladwig.webp",
+  //   photoAlt: "Philipp Ladwig",
+  //   avatarSize: "lg" as const,
+  //   align: "left" as const,
+  //   glyphSize: "text-[140px]",
+  // },
   // {
   //   quote:
   //     "Christian gave us a direct and honest assessment of where our architecture wasn't ready yet and why it mattered before we scaled further. We're building a clinical platform for LATAM doctors from appointments to AI-assisted diagnosis. Stability and cost-efficiency aren't optional at this stage. His ability to connect architectural decisions to real business consequences helped us understand how to find what to build next and in which priority. That clarity was more valuable than any validation could have been.",
