@@ -642,7 +642,7 @@ export default function CompassTerminal() {
 
       const calA = document.createElement("a");
       calA.className = "cta-link";
-      calA.href = "https://cal.com/mach2cloud/diagnosis-call";
+      calA.href = `/${new URL(window.location.href).pathname.split("/")[1] || "en"}/diagnosis`;
       calA.target = "_blank";
       calA.rel = "noopener noreferrer";
       calA.innerHTML =
@@ -775,7 +775,7 @@ export default function CompassTerminal() {
             <div className="dot dy" />
             <div className="dot dg" />
             <span className="ttitle">
-              platform compass · mach2.cloud · ai-native platform readiness
+              platform diagnosis · mach2.cloud · ai-native platform readiness
               assessment
             </span>
           </div>

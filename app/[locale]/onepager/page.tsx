@@ -19,11 +19,11 @@ export async function generateMetadata({
   return {
     title: "MaCh2.Cloud — AI-Native Cloud Architecture for Series A–B SaaS",
     description:
-      "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 60 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
+      "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 30 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
     openGraph: {
       title: "MaCh2.Cloud — AI-Native Cloud Architecture for Series A–B SaaS",
       description:
-        "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 60 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
+        "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 30 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
       url: buildCanonical(`/${locale}/onepager`),
     },
     ...buildCanonicalAndAlternates("/onepager", locale),

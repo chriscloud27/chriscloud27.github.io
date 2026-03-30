@@ -106,7 +106,7 @@ export default async function HomePage({
         "@type": "SiteNavigationElement",
         name: "Architecture Diagnosis Call",
         description:
-          "60-minute structured call to identify your platform's architectural gaps. No pitch.",
+          "30-minute structured call to identify your platform's architectural gaps. No pitch.",
         url: "https://mach2.cloud/en/diagnosis",
         position: 1,
       },
