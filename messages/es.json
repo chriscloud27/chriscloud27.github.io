@@ -141,6 +141,36 @@
     "metaTitle": "Servicios — Compromisos de Arquitectura Cloud Nativa con IA",
     "metaDescription": "Cuatro compromisos de precisión — desde la claridad arquitectónica hasta el liderazgo continuo de la plataforma. Auditoría, Blueprint, Habilitación y Arquitecto Fraccionado para empresas SaaS Serie A–B."
   },
+  "servicesPage": {
+    "eyebrow": "Ofertas para tus necesidades",
+    "h1Part1": "Arquitectura que multiplica",
+    "h1Emphasis": "la velocidad.",
+    "sub": "Cuatro compromisos de precisión — desde la claridad arquitectónica hasta el liderazgo continuo de la plataforma. Para empresas SaaS Serie A–B que están listas para construir.",
+    "cta": "Comenzar con un diagnóstico →",
+    "ctaSecondary": "Cómo funciona →"
+  },
+  "servicesSection": {
+    "eyebrow": "Solution Path",
+    "headingPart1": "From first conversation to",
+    "headingEmphasis": "full platform ownership",
+    "diagnosisLabel": "Diagnosis",
+    "diagnosisSub": "30-min call. One clear finding.",
+    "auditLabel": "Audit",
+    "auditSub": "Full platform assessment. Prioritized roadmap.",
+    "blueprintLabel": "Blueprint",
+    "blueprintSub": "Target architecture. Production-ready design.",
+    "enablementLabel": "Enablement",
+    "enablementSub": "Guided implementation. Team ownership.",
+    "fractionalLabel": "Fractional",
+    "fractionalSub": "Ongoing architecture leadership. Monthly cadence."
+  },
+  "finalCta": {
+    "heading1": "Diagnóstico de Arquitectura gratuito antes de que",
+    "headingEmphasis": "el crecimiento lo exponga",
+    "sub": "Comienza con una llamada de Diagnóstico de Arquitectura — 30 minutos para identificar el cambio de mayor impacto. Sin compromiso. Sin pitch. Solo claridad.",
+    "cta": "Reservar una llamada de Diagnóstico →",
+    "proofLine": "Sin pitch. Un hallazgo concreto que puedes aplicar de inmediato."
+  },
   "notFound": {
     "label": "404 — No encontrado",
     "h1Part1": "Esta página",

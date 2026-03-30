@@ -1,38 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const STEPS = [
   {
     num: "00",
     slug: "diagnosis",
-    label: "Diagnosis",
-    sub: "30-min call. One clear finding.",
+    labelKey: "diagnosisLabel",
+    subKey: "diagnosisSub",
   },
-  {
-    num: "01",
-    slug: "audit",
-    label: "Audit",
-    sub: "Full platform assessment. Prioritized roadmap.",
-  },
+  { num: "01", slug: "audit", labelKey: "auditLabel", subKey: "auditSub" },
   {
     num: "02",
     slug: "blueprint",
-    label: "Blueprint",
-    sub: "Target architecture. Production-ready design.",
+    labelKey: "blueprintLabel",
+    subKey: "blueprintSub",
   },
   {
     num: "03",
     slug: "enablement",
-    label: "Enablement",
-    sub: "Guided implementation. Team ownership.",
+    labelKey: "enablementLabel",
+    subKey: "enablementSub",
   },
   {
     num: "04",
     slug: "fractional",
-    label: "Fractional",
-    sub: "Ongoing architecture leadership. Monthly cadence.",
+    labelKey: "fractionalLabel",
+    subKey: "fractionalSub",
   },
 ];
 
@@ -44,6 +39,7 @@ export default function ServicesSection({
   sectionId = "services",
 }: ServicesSectionProps) {
   const locale = useLocale();
+  const t = useTranslations("servicesSection");
   const servicesHref = `/${locale}/services`;
 
   return (
@@ -54,9 +50,9 @@ export default function ServicesSection({
       <div className="wrap">
         {/* Section header */}
         <div className="max-w-[640px] mb-[72px]">
-          <p className="eyebrow">Solution Path</p>
+          <p className="eyebrow">{t("eyebrow")}</p>
           <h2>
-            From first conversation to <em>full platform ownership</em>
+            {t("headingPart1")} <em>{t("headingEmphasis")}</em>
           </h2>
         </div>
 
@@ -83,10 +79,10 @@ export default function ServicesSection({
                 </div>
 
                 <p className="text-[13px] font-semibold text-white mb-1.5 group-hover:text-electric-cyan transition-colors duration-200 m-0">
-                  {step.label}
+                  {t(step.labelKey as Parameters<typeof t>[0])}
                 </p>
                 <p className="font-mono text-[11px] text-grey-mid leading-[1.5] m-0">
-                  {step.sub}
+                  {t(step.subKey as Parameters<typeof t>[0])}
                 </p>
               </Link>
             ))}

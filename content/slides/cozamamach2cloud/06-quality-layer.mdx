@@ -1,0 +1,129 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
+
+export const FlowRow = ({ nodes, color = "dark" }) => {
+  const styles = {
+    dark: "border-[#00E5FF]/40 bg-[#0B1F3A] text-white",
+    mid: "border-white/10 bg-[#1A1A1A] text-white",
+    cyan: "border-[#00E5FF] bg-[#00E5FF]/10 text-[#00E5FF]",
+  };
+  const items = [];
+  nodes.forEach((n, i) => {
+    items.push(
+      <div
+        key={`n-${i}`}
+        className={`rounded-lg border px-3 py-2.5 flex-1 ${styles[n.color ?? color]}`}
+      >
+        <div
+          className={`font-mono text-[10px] font-semibold leading-snug whitespace-pre-line ${(n.color ?? color) === "cyan" ? "text-[#00E5FF]" : "text-white"}`}
+        >
+          {n.label}
+        </div>
+      </div>,
+    );
+    if (i < nodes.length - 1) {
+      items.push(
+        <div
+          key={`a-${i}`}
+          className="flex items-center justify-center shrink-0 self-center px-0.5"
+        >
+          <svg width="14" height="8" viewBox="0 0 16 8" fill="none">
+            <path
+              d="M0 4H12M12 4L8 1M12 4L8 7"
+              stroke="#00E5FF"
+              strokeWidth="1.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>,
+      );
+    }
+  });
+  return <div className="flex items-stretch gap-0">{items}</div>;
+};
+
+export const BiArrow = () => (
+  <div className="flex flex-col items-center gap-0.5 px-3 self-center shrink-0">
+    <div className="flex items-center gap-1">
+      <svg width="14" height="8" viewBox="0 0 16 8" fill="none">
+        <path
+          d="M0 4H12M12 4L8 1M12 4L8 7"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      <span className="font-mono text-[8px] text-white/25 whitespace-nowrap">
+        Transferleistung
+      </span>
+      <svg
+        width="14"
+        height="8"
+        viewBox="0 0 16 8"
+        fill="none"
+        className="rotate-180"
+      >
+        <path
+          d="M0 4H12M12 4L8 1M12 4L8 7"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </div>
+  </div>
+);
+
+<Slide variant="dark">
+  <Eyebrow>Value Add im Detail</Eyebrow>
+  <Headline>MaCh2.Cloud<br/><em>Quality Layer</em></Headline>
+
+  <div className="mt-2 flex flex-col gap-1 w-full overflow-x-auto">
+    <div className="font-body text-base text-white/60 leading-relaxed mb-4">
+      MaCh2.Cloud ist der <strong className="text-white font-semibold">Architecture Quality Layer</strong> im cozama-Ökosystem.
+    </div>
+
+    <div className="flex flex-col gap-5 min-w-[560px]">
+
+      {/* Compass */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/50 mb-2">Platform Compass Scorecard</div>
+        <FlowRow nodes={[
+          { label: "Erste Orientierung\nstrukturiert · wiederverwendbar", color: "dark" },
+          { label: "Referenzarchitektur\nfür Early Founders", color: "dark" },
+          { label: "Aussicht auf Erfolg\ndurch Struktur", color: "dark" },
+        ]} />
+      </div>
+
+      {/* WAF2p */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/50 mb-2">WAF2p als Rückversicherung</div>
+        <FlowRow nodes={[
+          { label: "Best-Practice-Framework\n→ 7 Säulen, inkl. Soveränität", color: "mid" },
+          { label: "Regelmäßig & automatisiert\n → prüfbar durch WAFpass", color: "mid" },
+          { label: "OpenSource Community\n → rapides Wachstum", color: "mid" },
+          { label: "Lernt mit jedem Startup\n→ Zinseszinseffekt", color: "mid" },
+        ]} />
+      </div>
+
+      {/* Scale */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/50 mb-2">Das Beste aus beiden Welten</div>
+        <div className="flex items-center">
+          <div className="flex-1 rounded-lg border border-[#00E5FF] bg-[#00E5FF]/10 px-3 py-2.5 text-center">
+            <div className="font-mono text-[10px] font-semibold text-[#00E5FF] whitespace-pre-line leading-snug">{"Enterprise-Kunden \nErfahrene Engineers · große Landschaften · hohe Standards"}</div>
+          </div>
+          <BiArrow />
+          <div className="flex-1 rounded-lg border border-[#00E5FF] bg-[#00E5FF]/10 px-3 py-2.5 text-center">
+            <div className="font-mono text-[10px] font-semibold text-[#00E5FF] whitespace-pre-line leading-snug">{"Startups\nGeschwindigkeit + Innovation · Unternehmergeist"}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</Slide>

@@ -1,4 +1,6 @@
-# 🔎 SEO & Content
+**PROJECT README**
+
+# SEO & Content
 
 > Find the `/reports/seo/SEO-SUMMARY.md` for more details.
 
@@ -81,6 +83,34 @@ reports/seo/
 - **Security**: `robots.txt` is not access control; sensitive endpoints must be protected server-side; avoid leaking secrets in metadata or JSON-LD
 - **Canonical stability**: Maintain `https://mach2.cloud` as canonical host to avoid drift
 - **Documentation**: Update this section + `reports/seo/SEO-SUMMARY.md` when metadata, robots, sitemap, or canonical logic changes
+
+---
+
+## Platform Compass Security
+
+The Platform Compass (`/[locale]/compass`) is an interactive terminal-based assessment. It collects 14 scored answers across 5 WAF2p pillars and returns a personalized readiness tier. The scoring and tier logic are company IP and must not be exposed in the client JS bundle.
+
+### Client / server split
+
+| Layer                                                 | What lives here                                                                                                     | Rationale                             |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **Client** (`components/compass/CompassTerminal.tsx`) | Questions, hints, answer labels, UI state machine, input validation                                                 | Visible to users — acceptable         |
+| **Server** (`app/api/compass/score/route.ts`)         | `toNum()`, `stageWeight()`, `calcResults()`, tier thresholds (`≤2.2`, `≤3.5`), tier labels/messages/recommendations | Company IP — never shipped to browser |
+
+### Request flow
+
+1. Terminal collects all answers into an `answers` object (client memory only)
+2. On final submit, `showDone()` POSTs `{ ...answers }` to `/api/compass/score`
+3. Server validates the payload shape, runs scoring, returns `{ tier, label, message, recommendation, highGap, lowSov, aiLevel, aiInfra }`
+4. Terminal renders the result — no raw scores or thresholds are ever returned to the client
+
+### Security notes
+
+- **No auth** on the endpoint — it is intentionally public (assessment tool)
+- **Server-side validation** rejects payloads missing any of q1–q14 or with an invalid stage value (400 response)
+- **XSS:** terminal output uses `textContent` exclusively — user input cannot inject HTML
+- **No persistence** — answers exist only in browser memory during the session; nothing is stored server-side by this route (report delivery is handled separately out-of-band)
+- If rate limiting becomes necessary, add it at the Cloudflare/middleware layer — do not add it to the route handler itself
 
 ---
 

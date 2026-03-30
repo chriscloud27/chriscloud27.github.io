@@ -1,0 +1,41 @@
+import Slide from "@/components/slides/Slide";
+import {
+  Eyebrow,
+  Headline,
+  StatRow,
+  Stat,
+  LogoRow,
+} from "@/components/slides/MDXComponents";
+
+<Slide variant="dark" centered>
+  <Eyebrow>Track Record</Eyebrow>
+  <Headline>Built on real systems.<br/><em>Real scale.</em></Headline>
+
+<StatRow>
+  <Stat value="13+" label="years designing enterprise and SaaS cloud systems" />
+  <Stat
+    value="5k+"
+    label="engineers supported on global cloud-native platforms"
+  />
+  <Stat
+    value="90%"
+    label="operational automation achieved on production-scale systems"
+  />
+  <Stat
+    value="0%"
+    label="architectural rewrites on systems with a clear foundation"
+  />
+</StatRow>
+
+  <div className="mt-12 flex flex-col items-center gap-3">
+    <p className="font-mono text-xs tracking-widest uppercase text-white/30">
+      Built on
+    </p>
+    <LogoRow logos={[
+      { src: "/img/logo_aws.svg", alt: "AWS", width: 64 },
+      { src: "/img/logo_azure.svg", alt: "Azure", width: 80 },
+      { src: "/img/logo_microsoft.svg", alt: "Microsoft", width: 100 },
+      { src: "/img/logo_n8n.svg", alt: "n8n", width: 56 },
+    ]} />
+  </div>
+</Slide>

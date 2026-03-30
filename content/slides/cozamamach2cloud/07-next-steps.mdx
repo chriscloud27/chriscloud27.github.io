@@ -1,0 +1,89 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
+
+export const Block = ({ label, items, color = "dark" }) => {
+  const border = {
+    dark: "border-white/10",
+    cyan: "border-[#00E5FF]/40",
+    green: "border-[#1D9E75]/40",
+    amber: "border-[#BA7517]/40",
+  }[color];
+  const tag = {
+    dark: "text-[#00E5FF]",
+    cyan: "text-[#00E5FF]",
+    green: "text-[#1D9E75]",
+    amber: "text-[#BA7517]",
+  }[color];
+  return (
+    <div
+      className={`border rounded-xl p-4 bg-white/5 flex flex-col gap-3 ${border}`}
+    >
+      <p className={`font-mono text-[10px] uppercase tracking-widest ${tag}`}>
+        {label}
+      </p>
+      <div className="flex flex-col gap-2">
+        {items.map((item, i) => (
+          <div key={i} className="flex gap-2.5 items-start">
+            <span className={`shrink-0 mt-0.5 font-mono text-xs ${tag}`}>
+              —
+            </span>
+            <span className="font-body text-sm text-white/70 leading-relaxed">
+              {item}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+<Slide variant="dark">
+  <Eyebrow>Gute Aussicht</Eyebrow>
+  <Headline>Nächste<br/><em>Schritte</em></Headline>
+
+  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <Block
+      label="Business-Sicht"
+      color="dark"
+      items={[
+        "Chris lernt Semantic OS kennen",
+        "Verständnis für cozama-Ökosystem und Gründer-Journey aufbauen",
+      ]}
+    />
+
+    <Block
+      label="Tech-Sicht"
+      color="cyan"
+      items={[
+        "Chris und Jero tauschen sich technisch aus",
+        "Ziel: omaship auf eine stabile, skalierbare Infrastruktur bringen",
+        "\"Eure Infra-Entscheidungen heute sind die Architektur-Constraints von morgen.\"",
+      ]}
+    />
+
+    <Block
+      label="Erster gemeinsamer Kunde"
+      color="green"
+      items={[
+        "Ein Seed / Series-A Startup aus dem Netzwerk von cozama / Startplatz",
+        "Tech + Business gleichzeitig begleiten",
+        "Pilotformat: Platform Compass → Diagnosis Call → Engagement",
+      ]}
+    />
+
+    <Block
+      label="Sichtbarkeit & Werbung"
+      color="amber"
+      items={[
+        "MaCh2.Cloud empfiehlt omaship aktiv",
+        "Querverlinkungen: Startplatz ↔ cozama ↔ mach2.cloud ",
+        "\"Wollt ihr schnell validieren und skalieren ohne die Plattform neu zu bauen? Nutzt omaship.\"",
+      ]}
+    />
+
+  </div>
+
+  <div className="mt-5 pt-4 border-t border-white/5 flex gap-6">
+    <span className="font-mono text-xs text-white/25">cozama · MaCh2.Cloud · Mana & Jero, Chris</span>
+  </div>
+</Slide>

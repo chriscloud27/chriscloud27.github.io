@@ -1,0 +1,135 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
+
+export const N = ({ label, color = "dark", small = false }) => {
+  const bg = {
+    dark: "border-[#00E5FF]/40 bg-[#0B1F3A] text-white",
+    mid: "border-white/10 bg-[#1A1A1A] text-white",
+    green: "border-[#1D9E75]/60 bg-[#1D9E75]/20 text-white",
+    amber: "border-[#BA7517]/60 bg-[#BA7517]/20 text-white",
+    cyan: "border-[#00E5FF] bg-[#00E5FF]/10 text-[#00E5FF]",
+  }[color];
+  return (
+    <div
+      className={`rounded-lg border px-2.5 py-2 text-center ${bg} ${small ? "min-w-[80px]" : "flex-1"}`}
+    >
+      <div className="font-mono text-[10px] font-semibold leading-snug whitespace-pre-line">
+        {label}
+      </div>
+    </div>
+  );
+};
+
+export const Arr = ({ label, vertical = false }) =>
+  vertical ? (
+    <div className="flex flex-col items-center gap-0.5 py-0.5 self-center">
+      <svg width="8" height="14" viewBox="0 0 8 16" fill="none">
+        <path
+          d="M4 0V12M4 12L1 8M4 12L7 8"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      {label && (
+        <span className="font-mono text-[8px] text-white/25 text-center leading-tight whitespace-pre-line">
+          {label}
+        </span>
+      )}
+    </div>
+  ) : (
+    <div className="flex flex-col items-center gap-0.5 px-0.5 self-center shrink-0">
+      <svg width="14" height="8" viewBox="0 0 16 8" fill="none">
+        <path
+          d="M0 4H12M12 4L8 1M12 4L8 7"
+          stroke="#00E5FF"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+      {label && (
+        <span className="font-mono text-[8px] text-white/25 text-center leading-tight whitespace-pre-line">
+          {label}
+        </span>
+      )}
+    </div>
+  );
+
+<Slide variant="dark">
+  <Eyebrow>Integration</Eyebrow>
+  <Headline>cozama / Startplatz<br/><em>Customer Lifecycle</em></Headline>
+
+  <div className="mt-3 w-full overflow-x-auto">
+    <div className="flex flex-col gap-2 min-w-[660px]">
+
+      {/* Row 1: Lifecycle stages */}
+      <div className="flex items-center gap-1">
+        <N label={"Idea\nSemantic OS"} color="dark" />
+        <Arr />
+        <N label={"Incubator\nMentoring"} color="dark" />
+        <Arr />
+        <N label={"KI-Accelerator\nStartplatz Batch"} color="dark" />
+        <Arr />
+        <N label={"Scale\nA/B · Exit-ready"} color="green" />
+      </div>
+
+      {/* Arrow down to omaship */}
+      <div className="flex justify-center">
+        <Arr vertical label="" />
+      </div>
+
+      {/* Row 2: omaship */}
+      <div className="flex">
+        <N label={"Socrates / omaship — Idee validieren · skalieren ohne Neubau"} color="mid" />
+      </div>
+
+      {/* Arrow down to MaCh2 */}
+      <div className="flex justify-center">
+        <Arr vertical label="" />
+      </div>
+
+      {/* Row 3: MaCh2 trigger */}
+      <div className="flex">
+        <N label={"MaCh2.Cloud greift ein — Infra-Pain: Kosten · Skalierung · Investor-Fragen · Firefighting"} color="amber" />
+      </div>
+
+      {/* Arrow down to 3 options */}
+      <div className="grid grid-cols-3 gap-1">
+        <div className="flex justify-center"><Arr vertical /></div>
+        <div className="flex justify-center"><Arr vertical /></div>
+        <div className="flex justify-center"><Arr vertical /></div>
+      </div>
+
+      {/* Row 4: Engagement options */}
+      <div className="grid grid-cols-3 gap-1">
+        <N label={"Platform Compass\nScorecard · gratis"} color="amber" />
+        <N label={"Diagnosis Call\nKlarheit · nächster Schritt"} color="amber" />
+        <N label={"Audit → Fractional\nWAF2p · EU-souverän"} color="green" />
+      </div>
+
+      {/* Converge arrow down */}
+      <div className="flex justify-center">
+        <Arr vertical />
+      </div>
+
+      {/* Row 5: Referral */}
+      <div className="flex">
+        <N label={"MaCh2.Cloud empfiehlt omaship: \"Wollt ihr schnell validieren und skalieren ohne Neubau? → Nutzt omaship.\""} color="green" />
+      </div>
+
+      {/* Arrow down */}
+      <div className="flex justify-center">
+        <Arr vertical />
+      </div>
+
+      {/* Row 6: Flywheel */}
+      <div className="flex">
+        <N label={"Zinseszinseffekt: mehr omaship → mehr zufriedene Nutzer"} color="mid" />
+      </div>
+
+    </div>
+
+  </div>
+</Slide>

@@ -1,0 +1,82 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, ProfilePhoto } from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>Chris & MaCh2.Cloud</Eyebrow>
+
+  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 flex-1">
+
+    {/* Left: Bio */}
+    <div className="flex flex-col gap-5">
+      <div>
+        <h2 className="font-display text-3xl md:text-4xl font-bold leading-[1.1] text-white mb-3">
+          AI-Native Cloud Architecture<br/>
+        </h2>
+        <div className="font-body text-base text-white/60 leading-relaxed">
+          2026+: Ich helfe Series-A-B Startups, architektonische Schulden zu beseitigen, bevor sie ihre Engineering-Teams verlangsamen.
+        </div>
+            </div>
+
+            <div>
+        <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3">Hintergrund</div>
+        <div className="flex flex-col gap-3">
+          <div className="flex gap-3 items-start">
+            <span className="text-[#00E5FF] shrink-0 mt-0.5">*</span>
+            <div className="font-body text-sm text-white/60 leading-relaxed">
+              Seit 2015: Design, Implementierung, Lead von IT-/Cloud-Systemen: Plattformen, die Tausende von Ingenieuren bei Capgemini, Automotive, Assurance, Public, Military und Startup unterstützen
+            </div>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-[#00E5FF] shrink-0 mt-0.5">*</span>
+            <div className="font-body text-sm text-white/60 leading-relaxed">
+              2025-2026: FairUp.dev - Career Fair Software for Smart Events
+            </div>
+          </div>
+        </div>
+
+        <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3 pt-6">Unfaire Vorteile</div>
+        <div className="flex flex-col gap-3">
+          <div className="flex gap-3 items-start">
+            <span className="text-[#00E5FF] shrink-0 mt-0.5">*</span>
+            <div className="font-body text-sm text-white/60 leading-relaxed">
+              Ich tauche mit hoher Geschwindigkeit in komplexe technische Bereiche ein und schaffe Klarheit dort, wo Mehrdeutigkeit herrscht.
+            </div>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-[#00E5FF] shrink-0 mt-0.5">*</span>
+            <div className="font-body text-sm text-white/60 leading-relaxed">
+              Nahtlose Übersetzung zwischen Executive-Strategie und Tech-Teams. Von agilem High-Performance-Teamaufbau zu verständlicher Erläuterung technischer Hürden verständlich.
+            </div>
+          </div>
+          <div className="flex gap-3 items-start">
+            <span className="text-[#00E5FF] shrink-0 mt-0.5">*</span>
+            <div className="font-body text-sm text-white/60 leading-relaxed">
+              Skalierungsposition. Ich befinde mich zwischen den Zeitzonen EU und US, speziell zu hochqualifizierten und günstigen IT-Fachkräften in Medellin, Kolumbien.
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+
+          {/* Right: Photo */}
+          <div className="flex flex-col items-center justify-center gap-6">
+            <ProfilePhoto
+        src="/img/Chris.png"
+        alt="Christian Weber — MaCh2.Cloud"
+            />
+            <div className="text-center">
+        <div className="font-display text-sm font-semibold text-white">Christian Weber</div>
+        <div className="font-mono text-xs text-white/40 mt-1">MaCh2.Cloud</div>
+        <a
+          href="https://www.linkedin.com/in/christian-weber-0591/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 px-4 py-2 text-sm font-semibold text-white bg-[#00E5FF] rounded hover:bg-[#00E5FF]/90 transition-colors"
+        >
+          LinkedIn
+        </a>
+            </div>
+          </div>
+
+  </div>
+</Slide>

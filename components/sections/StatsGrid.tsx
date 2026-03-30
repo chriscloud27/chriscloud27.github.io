@@ -32,9 +32,13 @@ type StatItem = {
 
 type StatsGridProps = {
   showHeader?: boolean;
+  portfolioButton?: boolean;
 };
 
-export default function StatsGrid({ showHeader = true }: StatsGridProps) {
+export default function StatsGrid({
+  showHeader = true,
+  portfolioButton = false,
+}: StatsGridProps) {
   return (
     <>
       {showHeader && (
@@ -62,10 +66,22 @@ export default function StatsGrid({ showHeader = true }: StatsGridProps) {
           </div>
         ))}
       </div>
-      {/* Authority footnote */}
-      <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-grey-700 text-center mt-12">
-        Real systems. Real scale. Real responsibility.
-      </p>
+      {/* Authority footnote + optional portfolio button */}
+      <div className="flex items-center justify-between mt-12 gap-6">
+        <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-grey-700">
+          Real systems. Real scale. Real responsibility.
+        </p>
+        {portfolioButton && (
+          <a
+            href="https://www.linkedin.com/in/christian-weber-0591/details/projects/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.07em] uppercase no-underline rounded-btn transition-all duration-200 px-[26px] py-[13px] border border-electric-cyan text-electric-cyan hover:bg-electric-cyan hover:text-deep-blue"
+          >
+            View Full Project Portfolio →
+          </a>
+        )}
+      </div>
     </>
   );
 }

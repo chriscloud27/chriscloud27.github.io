@@ -21,7 +21,7 @@ export default function CtaSection() {
           </p>
 
           <Link href="/en/diagnosis" className="btn btn-p">
-            Free Architecture Diagnosis
+            Architecture Diagnosis
           </Link>
         </div>
       </div>

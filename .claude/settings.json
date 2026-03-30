@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(grep -n \"Your platform\\\\|Build architecture\\\\|AI Native Cloud\\\\|Four engagements\\\\|What happens\\\\|The Problem\\\\|Engagement Philosophy\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
+      "Bash(grep -rn \"AI Native Cloud Architect\\\\|Build architecture\\\\|Your platform should\\\\|Four engagements\\\\|Engagement Philosophy\\\\|The Problem\\\\|What happens\\\\|Your platform got you here\\\\|This is the chaos\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/services/page.tsx)",
+      "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] -type f -name \"page.tsx\")",
+      "Bash(tree -L 3 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] --charset ascii)",
+      "Bash(cat /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/onepager/page.tsx)",
+      "Bash(ls -la /Users/christianweber/Documents/Github/chriscloud27.github.io/*.json)",
+      "Bash(grep -r \"fairup\\\\|FairUp\" /Users/christianweber/Documents/Github/chriscloud27.github.io --include=*.tsx --include=*.ts --include=*.json --exclude-dir=node_modules)",
+      "Bash(ls -la /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/)",
+      "Bash(head -50 /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/sprint/page.tsx)",
+      "Bash(grep -i \"fairup\" /Users/christianweber/Documents/Github/chriscloud27.github.io/messages/*.json)",
+      "Bash(npx tsc:*)",
+      "Bash(node scripts/validate-mdx.mjs)",
+      "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale] -type d)",
+      "Bash(curl -s -X POST https://flow.mach2.cloud/webhook-test/compass -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(cat:*)",
+      "Bash(curl -s -X POST https://flow.mach2.cloud/webhook/compass -H \"Content-Type: application/json\" -d '{:*)",
+      "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io -type f -name *slide* -o -name *deck* -o -name *present*)",
+      "Bash(grep -n \"output\\\\|exportPathMap\\\\|trailingSlash\" /Users/christianweber/Documents/Github/chriscloud27.github.io/next.config.*)"
+    ]
+  }
+}

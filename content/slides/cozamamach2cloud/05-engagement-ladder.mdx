@@ -1,0 +1,113 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
+
+export const N = ({ label, color = "dark" }) => {
+  const styles = {
+    dark: "border-[#00E5FF]/40 bg-[#0B1F3A] text-white",
+    mid: "border-white/10 bg-[#1A1A1A] text-white",
+    green: "border-[#1D9E75]/60 bg-[#1D9E75]/20 text-white",
+    amber: "border-[#BA7517]/60 bg-[#BA7517]/20 text-white",
+  };
+  return (
+    <div
+      className={`rounded-xl border px-4 py-3 w-full text-center ${styles[color]}`}
+    >
+      <div className="font-mono text-[11px] font-semibold leading-snug whitespace-pre-line">
+        {label}
+      </div>
+    </div>
+  );
+};
+
+export const Arr = ({ label }) => (
+  <div className="flex flex-col items-center gap-0.5 py-1 self-center">
+    <svg width="8" height="16" viewBox="0 0 8 18" fill="none">
+      <path
+        d="M4 0V14M4 14L1 9M4 14L7 9"
+        stroke="#00E5FF"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+    {label && (
+      <span className="font-mono text-[8px] text-white/25 text-center leading-tight">
+        {label}
+      </span>
+    )}
+  </div>
+);
+
+<Slide variant="dark">
+  <Eyebrow>Lifetime-Übersicht</Eyebrow>
+  <Headline>MaCh2.Cloud<br/><em>Engagement</em></Headline>
+
+  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+
+    {/* Left: Flow */}
+    <div className="flex flex-col items-center gap-0">
+      <div className="grid grid-cols-2 gap-2 w-full">
+        <N label={"cozama Signal\nInkubator · Accelerator"} color="mid" />
+        <N label={"Warm Outreach\nLinkedIn · Netzwerk"} color="mid" />
+      </div>
+      <div className="grid grid-cols-2 w-full">
+        <div className="flex justify-center"><Arr /></div>
+        <div className="flex justify-center"><Arr /></div>
+      </div>
+      <N label={"Platform Compass\nScorecard · AI-Readiness · gratis"} color="dark" />
+      <Arr />
+      <N label={"Diagnosis Call\nstrukturiert · cal.com · gratis"} color="dark" />
+      <Arr label="Bereit" />
+      <div className="grid grid-cols-2 gap-2 w-full">
+        <N label={"Audit\nFixed-scope · Bridge"} color="green" />
+        <N label={"Blueprint\nArch-Design · Roadmap"} color="green" />
+      </div>
+      <div className="grid grid-cols-2 w-full">
+        <div className="flex justify-center"><Arr /></div>
+        <div className="flex justify-center"><Arr /></div>
+      </div>
+      <N label={"Fractional AI-Native Cloud Architect\nlaufende Leadership · Platform + Team Evolution"} color="amber" />
+      <Arr label=""/>
+      <N label={"MaCh2.Cloud empfiehlt: omaship als Plattform von Seed bis Growth Series"} color="dark" />
+    </div>
+
+    {/* Right: Text + CTA */}
+    <div className="flex flex-col gap-6 justify-between">
+      <div className="flex flex-col gap-6">
+        <div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3">Einstieg</div>
+          <div className="font-body text-sm text-white/60 leading-relaxed">
+            <span className="text-[#00E5FF]">Platform Compass:</span>
+            Kostenlos, strukturiert, ohne Verpflichtung. cozama gibt das Signal, MaCh2.Cloud übernimmt den nächsten Schritt.
+            <span className="text-[#00E5FF]">Score-Feedback an cozama</span>.
+          </div>
+        </div>
+        <div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3">Engagement</div>
+          <div className="font-body text-sm text-white/60 leading-relaxed">
+            <span className="text-[#00E5FF]">Diagnosis/Audit oder Blueprint:</span>
+            Report, Guidance und Roadmap abhänig von Analyseergebnis für ein Startup.
+            <span className="text-[#00E5FF]">omaship als Standard</span>.
+          </div>
+        </div>
+        <div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3">Fractional</div>
+          <div className="font-body text-sm text-white/60 leading-relaxed">
+            <span className="text-[#00E5FF]">Stärkstes Engagement:</span>
+            Active hands-on enablement für Startups mit starken Wachstumspotential. Laufende Architektur-Leadership.
+            <span className="text-[#00E5FF]">Investoren-facing</span>.
+          </div>
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <a
+        href="/service"
+        className="block w-full text-center font-mono text-sm font-bold tracking-widest uppercase bg-[#00E5FF] text-[#0B1F3A] rounded-xl px-6 py-4 hover:bg-white transition-colors"
+      >
+        Visit MaCh2.Cloud →
+      </a>
+    </div>
+
+  </div>
+</Slide>

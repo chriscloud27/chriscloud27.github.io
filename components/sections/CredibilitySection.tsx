@@ -8,7 +8,7 @@ export default function CredibilitySection() {
 
       <div className="wrap">
         {/* Stats grid */}
-        <StatsGrid />
+        <StatsGrid portfolioButton={true} />
       </div>
     </section>
   );

@@ -7,7 +7,6 @@ import { getGlobalSettings } from "@/lib/settings";
 import { SERVICES_KEYWORDS } from "@/lib/keywords";
 import StatsGrid from "@/components/sections/StatsGrid";
 import ServicesSection from "@/components/sections/ServicesSection";
-import FinalCta from "@/components/sections/FinalCta";
 
 export async function generateMetadata({
   params,
@@ -57,17 +56,17 @@ const OFFERS = [
     num: "00",
     slug: "diagnosis",
     label: "DIAGNOSIS",
-    title: "Architecture\nDiagnosis",
-    subtitle: "Free Diagnosis",
+    title: "Architecture\nDiagnosis Call",
+    subtitle: "Free — 30 minutes",
     description:
-      "A focused 60-minute architecture diagnosis to surface the highest-leverage constraint worth fixing first. A concrete finding and next step.",
+      "30‑minute working session to identify your highest‑leverage cloud/AI constraint and decide whether a 30‑Day Sprint makes sense. No slides, no pitch.",
     trigger: '"We need a clear starting point — fast."',
-    cta: "Book Diagnosis",
+    cta: "Book a Diagnosis Call",
     outcomesLabel: "What You Walk Away With",
     outcomes: [
       "One concrete architectural finding you can act on immediately",
       "Concise written summary to share with your team",
-      "A recommended next step and priority roadmap item",
+      "A recommended next step — sprint or not",
     ],
     deliverablesLabel: "Deliverables",
     deliverables: [
@@ -78,19 +77,40 @@ const OFFERS = [
   },
   {
     num: "01",
+    slug: "sprint",
+    label: "SPRINT",
+    title: "30‑Day Cloud & AI\nConstraint Sprint",
+    subtitle: "Fixed-fee. One constraint. 90-day roadmap.",
+    description:
+      "A one‑month engagement to name your most expensive platform constraint and design a 90‑day roadmap to fix it. Fixed fee. Remote only. Risk‑reversal guarantee.",
+    trigger:
+      '"We know something needs to change. We just need to name it and make a plan."',
+    cta: "Talk about a 30‑Day Sprint",
+    outcomesLabel: "What You Get After 30 Days",
+    outcomes: [
+      "A clearly named primary platform constraint and its business impact",
+      "2–3 concrete architecture decisions with pros/cons and recommendations",
+      "A pragmatic 90-day implementation plan your team can execute without me",
+      "A closing session with your leadership team (CTO/VP Eng, founders)",
+    ],
+    deliverablesLabel: "Format",
+    deliverables: ["Fixed Fee", "Remote Only", "4 Weeks", "Risk‑Reversal"],
+  },
+  {
+    num: "02",
     slug: "audit",
     label: "AUDIT",
-    title: "Architecture\nAudit",
-    subtitle: "Clarity Before Commitment",
+    title: "Architecture\nAudit & Blueprint",
+    subtitle: "Deeper review. Full target architecture.",
     description:
-      "A structured diagnostic of your current platform. We surface every structural risk, cost inefficiency, and scalability constraint — before they surface in production. The result is a prioritized roadmap your CTO can act on immediately.",
+      "Deeper review and target architecture for teams that already validated the sprint and want a full blueprint for the next growth stage.",
     trigger:
       '"We know something is wrong. We just don\'t know where to start — or how expensive it already is."',
-    cta: "Start with an Audit",
+    cta: "Start with a Diagnosis Call",
     outcomesLabel: "What You Walk Away With",
     outcomes: [
       "Full picture of your current platform architecture and hidden technical debt",
-      "Identified scalability, reliability, and cloud cost risks — ranked by severity",
+      "Identified scalability, reliability and cloud cost risks — ranked by severity",
       "Prioritized architectural improvement plan with clear next steps",
       "An answer to the Series B question before your investors ask it",
     ],
@@ -103,42 +123,16 @@ const OFFERS = [
     ],
   },
   {
-    num: "02",
-    slug: "blueprint",
-    label: "BLUEPRINT",
-    title: "Architecture\nBlueprint",
-    subtitle: "Design the Platform That Carries the Next Stage",
-    description:
-      "We design the target architecture — AI-native from the foundation, cost-efficient by design, production-grade by standard. Built to carry your growth stage and the one after it, without a rewrite in between.",
-    trigger:
-      '"We know what we need to build. We need someone who has built it before to tell us how to build it right."',
-    cta: "Design Your Blueprint",
-    outcomesLabel: "What You Walk Away With",
-    outcomes: [
-      "Target architecture designed for your specific growth trajectory and AI ambitions",
-      "Cloud infrastructure design optimized for reliability, scalability, and cost efficiency",
-      "Scalability and cost optimization strategy your team can execute against",
-      "Implementation roadmap your engineers can build from with confidence",
-    ],
-    deliverablesLabel: "Deliverables",
-    deliverables: [
-      "Architecture Diagrams",
-      "Platform Spec",
-      "Cost Strategy",
-      "Implementation Roadmap",
-    ],
-  },
-  {
     num: "03",
     slug: "enablement",
     label: "ENABLEMENT",
     title: "Enablement &\nGuidance",
     subtitle: "Build It Right. Own It Independently.",
     description:
-      "Hands-on architectural support during implementation. Architecture reviews, real-time decision guidance, and engineering enablement sessions — so your team builds the right thing and owns it fully when I'm no longer in the room.",
+      "Hands‑on architectural support during implementation so your team can make the right decisions under pressure and own the platform when I am not in the room.",
     trigger:
       "\"We're in the build. But every architectural decision feels like a bet we're not sure we should take alone.\"",
-    cta: "Accelerate Your Build",
+    cta: "Start with a Diagnosis Call",
     outcomesLabel: "What You Walk Away With",
     outcomes: [
       "Faster and safer infrastructure implementation with reduced architectural risk",
@@ -158,13 +152,13 @@ const OFFERS = [
     num: "04",
     slug: "fractional",
     label: "FRACTIONAL",
-    title: "Fractional\nArchitect",
-    subtitle: "Principal-Level Leadership. Without the Full-Time Cost.",
+    title: "Fractional AI‑Native\nCloud Architect",
+    subtitle: "Ongoing strategic ownership. Monthly retainer.",
     description:
-      "Continuous architectural leadership aligned with your business and product strategy. Monthly cadence — architecture reviews, platform evolution planning, engineering direction, and strategic alignment. The Principal Architect your platform needs, embedded without the hiring timeline.",
+      "Ongoing strategic ownership of your cloud & AI architecture on a monthly retainer, once the foundations are in place.",
     trigger:
       '"We\'re scaling fast. We need architectural leadership at every board cycle, every product decision, every infrastructure evolution — not just when things break."',
-    cta: "Explore the Retainer",
+    cta: "Start with a Diagnosis Call",
     outcomesLabel: "Ongoing Cadence",
     outcomes: [
       "Monthly architecture review aligned to your product and business roadmap",
@@ -188,7 +182,7 @@ const PHILOSOPHY = [
   {
     icon: Bot,
     title: "AI-Native by Design",
-    text: "AI workloads, inference patterns, and cost dynamics built into the architecture from day one — not retrofitted.",
+    text: "AI workloads, inference patterns and cost dynamics built into the architecture from day one, not retrofitted.",
   },
   {
     icon: Cloud,
@@ -214,6 +208,7 @@ export default async function ServicesPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const tPage = await getTranslations({ locale, namespace: "servicesPage" });
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -246,22 +241,18 @@ export default async function ServicesPage({
         <div aria-hidden="true" className="grid-overlay" />
 
         <div className="wrap relative z-10">
-          <p className="eyebrow">Offers to your needs</p>
-          <h1 className="mt-7 mb-8 max-w-3xl">
-            Architecture that compounds <em>velocity.</em>
+          <p className="eyebrow">{tPage("eyebrow")}</p>
+          <h1 className="max-w-3xl">
+            {tPage("h1Part1")} <em>{tPage("h1Emphasis")}</em>
           </h1>
-          <p className="hero-sub max-w-xl mb-14">
-            Four precision engagements — from architectural clarity to
-            continuous platform leadership. Designed for Series A–B SaaS
-            companies that are done firefighting and ready to build.
-          </p>
-          <div className="flex flex-wrap gap-4 items-center">
-            <Link href="/en/diagnosis" className="btn btn-p btn-p-lg">
-              Start with a Diagnosis →
+          <p className="hero-sub">{tPage("sub")}</p>
+          <div className="hero-btns">
+            <Link href={`/${locale}/diagnosis`} className="btn btn-p">
+              {tPage("cta")}
             </Link>
-            <a href="#journey" className="btn btn-g">
-              See how it works →
-            </a>
+            <Link href={`/${locale}/sprint`} className="btn btn-g">
+              {tPage("ctaSecondary")}
+            </Link>
           </div>
         </div>
       </section>
@@ -272,9 +263,10 @@ export default async function ServicesPage({
       {/* ── Services (Offer Cards) ───────────────────────────────────────── */}
       <section id="services" className="py-16 border-t border-white/[0.06]">
         <div className="wrap">
-          <p className="eyebrow mb-6">Services</p>
+          <p className="eyebrow mb-6">Your Way to Ship Faster</p>
+
           <h2 className="text-[clamp(1.75rem,3.5vw,2.75rem)] font-display font-bold mb-14 max-w-lg leading-[1.2]">
-            Four engagements. <em>One architectural trajectory</em>
+            Five engagements. <em>One architectural trajectory</em>
           </h2>
 
           <div className="flex flex-col gap-[2px]">
@@ -331,11 +323,8 @@ export default async function ServicesPage({
                       </div>
                     </div>
 
-                    <Link
-                      href="/en/diagnosis"
-                      className="inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.1em] uppercase text-electric-cyan no-underline transition-[gap] duration-200 hover:gap-4"
-                    >
-                      {offer.cta} <span className="text-base">→</span>
+                    <Link href={`/${locale}/diagnosis`} className="btn btn-p">
+                      {offer.cta}
                     </Link>
                   </div>
 
@@ -388,7 +377,7 @@ export default async function ServicesPage({
       {/* ── Stats ────────────────────────────────────────────────────────── */}
       <section className="py-16 border-t border-white/[0.06]">
         <div className="wrap">
-          <StatsGrid showHeader={true} />
+          <StatsGrid showHeader={true} portfolioButton={true} />
         </div>
       </section>
 
@@ -405,12 +394,12 @@ export default async function ServicesPage({
               <p className="font-body text-[15px] font-light text-grey-mid leading-[1.8] mb-4">
                 It is a continuously evolving system aligned with product and
                 business growth. My role is not to replace your engineering
-                team. It is to give them the clarity, direction, and frameworks
+                team. It is to give them the clarity, direction and frameworks
                 to build at a level they couldn&apos;t reach alone.
               </p>
               <p className="font-body text-[15px] font-light text-grey-mid leading-[1.8]">
                 The result is a platform that accelerates execution, supports
-                product scalability, and enables sustainable business growth
+                product scalability and enables sustainable business growth
                 independent of my continued involvement.
               </p>
             </div>
@@ -440,8 +429,19 @@ export default async function ServicesPage({
         </div>
       </section>
 
-      {/* ── Final CTA (component) ───────────────────────────────────────────── */}
-      <FinalCta locale={locale} />
+      {/* ── Final CTA ────────────────────────────────────────────────────── */}
+      <section className="bg-deep-blue py-20 border-t border-white/[0.06] relative overflow-hidden">
+        <div aria-hidden="true" className="grid-overlay-dim" />
+        <div className="wrap relative z-10 text-center max-w-[640px] mx-auto">
+          <p className="font-body text-[15px] font-light leading-[1.75] text-grey-mid mb-8">
+            Not sure where you are on this ladder? Start with a 30‑minute
+            Architecture Diagnosis Call and we will decide together.
+          </p>
+          <Link href={`/${locale}/diagnosis`} className="btn btn-p">
+            Start with a Diagnosis Call
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
