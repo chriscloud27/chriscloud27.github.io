@@ -1,0 +1,38 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline, TwoCol } from "@/components/slides/MDXComponents";
+
+<Slide variant="dark">
+  <Eyebrow>cozama × MaCh2.Cloud · März 2026</Eyebrow>
+  <Headline>Integrationsmodell —<br/><em>Alignment Deck</em></Headline>
+
+  <TwoCol
+    left={
+      <div>
+        <p className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-3">Ziel</p>
+        <p className="font-body text-base md:text-lg text-white/70 leading-relaxed">
+          Gemeinsames Verständnis schaffen, wie cozama und MaCh2.Cloud strukturell zusammenarbeiten.
+        </p>
+      </div>
+    }
+    right={
+      <div>
+        <p className="font-mono text-xs uppercase tracking-widest text-[#00E5FF] mb-4">Agenda</p>
+        <div className="flex flex-col gap-3">
+          {[
+            "Zwei Ökosysteme — eine gemeinsame Lücke",
+            "Startup-Lifecycle: Wo MaCh2.Cloud eingreift",
+            "User Journey: Omniship × MaCh2.Cloud",
+            "MaCh2.Cloud als Quality Layer",
+            "Startplatz: Gemeinsame Mission",
+            "User Story & nächste Schritte",
+          ].map((item, i) => (
+            <div key={i} className="flex gap-4 items-start">
+              <span className="font-mono text-xs text-[#00E5FF]/50 shrink-0 w-5">{i + 1}</span>
+              <span className="font-body text-sm text-white/70">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    }
+  />
+</Slide>

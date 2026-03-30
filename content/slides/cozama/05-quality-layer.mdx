@@ -1,0 +1,90 @@
+import Slide from "@/components/slides/Slide";
+import { Eyebrow, Headline } from "@/components/slides/MDXComponents";
+
+export const Arrow = () => (
+  <div className="flex items-center justify-center shrink-0 self-center px-0.5">
+    <svg width="16" height="10" viewBox="0 0 20 10" fill="none">
+      <path
+        d="M0 5H16M16 5L11 1M16 5L11 9"
+        stroke="#00E5FF"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  </div>
+);
+
+export const Node = ({ label, sub, highlight = false }) => (
+  <div
+    className={`rounded-lg p-2.5 border flex-1 ${highlight ? "border-[#00E5FF]/60 bg-[#00E5FF]/10" : "border-white/10 bg-white/5"}`}
+  >
+    <div
+      className={`font-mono text-[11px] font-semibold leading-tight ${highlight ? "text-[#00E5FF]" : "text-white"}`}
+    >
+      {label}
+    </div>
+    {sub && (
+      <div className="font-body text-[10px] text-white/40 mt-1 leading-tight">
+        {sub}
+      </div>
+    )}
+  </div>
+);
+
+<Slide variant="dark">
+  <Eyebrow>Slide 5</Eyebrow>
+  <Headline>MaCh2.Cloud als<br/><em>Quality Layer</em></Headline>
+
+  <div className="mt-4 flex flex-col gap-5 w-full overflow-x-auto">
+    <div className="min-w-[560px] flex flex-col gap-5">
+
+      {/* COMPASS */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/40 mb-2">Platform Compass Scorecard</div>
+        <div className="flex items-stretch gap-1">
+          <Node label="Erste Orientierung" sub="strukturiert · wiederverwendbar" />
+          <Arrow />
+          <Node label="Referenzarchitektur" sub="für Early Founders" />
+          <Arrow />
+          <Node label="Aussicht auf Erfolg" sub="durch Struktur" />
+        </div>
+      </div>
+
+      {/* WAF */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/40 mb-2">WAF2p als Rückversicherung</div>
+        <div className="flex items-stretch gap-1">
+          <Node label="Best-Practice-Framework" sub="AI-native erweitert" />
+          <Arrow />
+          <Node label="Regelmäßig & automatisiert prüfbar" />
+          <Arrow />
+          <Node label="Skaliert" sub="manuell → self-serve" />
+          <Arrow />
+          <Node label="Lernt mit jedem Startup" sub="Zinseszinseffekt" />
+        </div>
+      </div>
+
+      {/* SCALE */}
+      <div>
+        <div className="font-mono text-[9px] uppercase tracking-widest text-[#00E5FF]/40 mb-2">Von groß nach klein — und zurück</div>
+        <div className="flex items-stretch gap-1">
+          <Node label="Erfahrene Engineers" sub="große Landscapes · hohe Standards" highlight />
+          <div className="flex flex-col items-center justify-center gap-1 px-2 shrink-0">
+            <svg width="16" height="10" viewBox="0 0 20 10" fill="none">
+              <path d="M0 5H16M16 5L11 1M16 5L11 9" stroke="#00E5FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="font-mono text-[8px] text-white/30 text-center leading-tight">Standards<br/>transferieren</span>
+            <svg width="16" height="10" viewBox="0 0 20 10" fill="none" className="rotate-180">
+              <path d="M0 5H16M16 5L11 1M16 5L11 9" stroke="#00E5FF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <span className="font-mono text-[8px] text-white/30 text-center leading-tight">Praxis­lernen</span>
+          </div>
+          <Node label="Startups" sub="Speed + Innovation · Standardisiert" highlight />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</Slide>
