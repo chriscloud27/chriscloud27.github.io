@@ -33,15 +33,15 @@ function getJsonLd(locale: string) {
     name: "Architecture Diagnosis Call",
     provider: { "@type": "Person", name: "Christian Weber" },
     description:
-      "30-minute architecture diagnosis for B2B SaaS CTOs — identify the highest-leverage Cloud & AI constraint and decide whether a 30-Day Sprint makes sense.",
+      "30-minute architecture diagnosis for SaaS CTOs — identify the highest-leverage Cloud & AI constraint and decide whether a 30-Day Sprint makes sense.",
     url: buildCanonical(`/${locale}/diagnosis`),
   };
 }
 
 const WHO_FOR = [
-  "CTOs and VP Engineering of B2B SaaS companies",
-  "5–40 engineers, cloud‑native stack",
-  "Series A/B feeling real pressure from cloud costs, platform stability or AI delivery",
+  "CTOs and VP Engineering of SaaS companies",
+  "5+ engineering team, cloud-native stack, and at least one AI feature in production or PoC",
+  "Series A/B with real pressure from cloud costs, platform stability or AI delivery",
 ];
 
 const WHAT_WE_DO = [
@@ -191,7 +191,7 @@ export default async function DiagnosisPage({
                 <span className="font-mono text-[13px] text-grey-mid">
                   Regular price:
                 </span>
-                <span className="font-mono text-[18px] text-grey-mid line-through decoration-grey-mid/60">
+                <span className="font-mono text-[18px] text-red-500 line-through decoration-red-500/60">
                   250 €
                 </span>
               </div>
@@ -207,7 +207,7 @@ export default async function DiagnosisPage({
                   </p>
                   <p className="font-body text-[12px] font-light leading-[1.5] text-green-300/80">
                     Limited free sessions per month for pre‑seed, seed and
-                    Series A CTOs while I refine this format.
+                    Series A CTOs.
                   </p>
                 </div>
               </div>

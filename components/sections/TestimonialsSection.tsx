@@ -17,7 +17,7 @@ const testimonials: Array<{
     quote:
       "Christian helped us move from a fragile, no-code setup to a scalable, production-ready AWS architecture.\n He quickly identified structural limitations, introduced clear decision-making frameworks and aligned our platform with long-term business goals.\n The biggest impact: we stopped reacting to problems and started building with confidence. Our platform is now ready to scale from early-stage to enterprise without major rework.\n\n Highly valuable for any SaaS company navigating growth and architectural complexity.",
     name: "Fredrik Bendel",
-    role: "CEO · SaaS Seed Series",
+    role: "CTO · SaaS Seed Series",
     company: "Fairup.Dev",
     companyUrl: "https://fairup.dev/",
     linkedIn: "https://de.linkedin.com/in/frederik-bendel-547664145",

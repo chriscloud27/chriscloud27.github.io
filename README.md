@@ -334,6 +334,40 @@ See → `N8N_AUTOMATION.md` for workflows
 
 ---
 
+## Platform Compass
+
+The [Platform Compass](https://mach2.cloud/en/compass) is a 14-question terminal-style assessment that scores a prospect's platform readiness across five blocks (Foundations, Reliability, AI Maturity, Cloud Sovereignty, Team AI Usage) and returns a tier (`fragile`, `scaling`, `accelerating`) with a personalised report via n8n webhook.
+
+### Webhook test script
+
+**File:** `scripts/test-compass-webhook.mjs`
+
+**What it does:** Scores three pre-built sample answer sets (one per tier), builds the full HTML email reports via `compassReports.js`, then POSTs the identical JSON payload that `CompassTerminal.tsx` sends after a live assessment — including `answers`, `result`, `simple_report_html`, and `advanced_report_html`.
+
+**Why it exists:** End-to-end verification without going through the browser UI. Lets you confirm the n8n webhook receives and processes the payload correctly after changing the scoring engine, report templates, or webhook URL — without needing a real respondent.
+
+**When to run it:**
+
+- After any change to `lib/compassEngine.js` or `lib/compassReports.js`
+- After changing the `WEBHOOK_URL` constant in `CompassTerminal.tsx`
+- When debugging n8n workflow failures (dry-run first, then live)
+- Before deploying a new report template to production
+
+```bash
+# Dry-run all three tiers — no HTTP call, prints full payload + report sizes
+node scripts/test-compass-webhook.mjs --dry-run
+
+# Send a single tier to the live webhook
+node scripts/test-compass-webhook.mjs --tier fragile
+node scripts/test-compass-webhook.mjs --tier scaling
+node scripts/test-compass-webhook.mjs --tier accelerating
+
+# Send all three tiers in sequence
+node scripts/test-compass-webhook.mjs
+```
+
+---
+
 ## Connect
 
 - **Website:** [mach2.cloud](https://mach2.cloud)

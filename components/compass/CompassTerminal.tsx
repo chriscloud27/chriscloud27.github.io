@@ -10,16 +10,16 @@ const TERMINAL_CSS = `
   --cyan:   #00E5FF;
   --cyan-dim:#00b8cc;
   --white:  #FFFFFF;
-  --t-bg:   #091828;
-  --t-surf: #0B1F3A;
+  --t-bg:   #111111;
+  --t-surf: #1A1A1A;
   --t-cyan: #00E5FF;
-  --t-body: #a8c0d8;
-  --t-dim:  #2d4a65;
+  --t-body: #c7d0d8;
+  --t-dim:  #8b98a5;
   --t-ans:  #e8f4fc;
   --t-warn: #FEBC2E;
   --t-ok:   #28C840;
   --t-err:  #FF5F57;
-  --t-blk:  #1e3a55;
+  --t-blk:  #738396;
   --mono: 'JetBrains Mono', monospace;
   --sans: 'Space Grotesk', sans-serif;
   width: 100%;
@@ -48,7 +48,7 @@ const TERMINAL_CSS = `
 .compass-terminal .dg  { background: #28C840; }
 
 .compass-terminal .ttitle {
-  color: #4a6fa5;
+  color: #7c8c9b;
   font-size: 11px;
   letter-spacing: .05em;
   margin: 0 auto;
