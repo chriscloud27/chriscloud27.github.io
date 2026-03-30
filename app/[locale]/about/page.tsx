@@ -97,8 +97,11 @@ export default async function AboutPage({
                 >
                   {t("cta")}
                 </Link>
-                <Link href={`/${locale}/#portfolio`} className="btn btn-g">
-                  {t("ctaSecondary")}
+                <Link
+                  href={`/${locale}/diagnosis#testimonials`}
+                  className="btn btn-g"
+                >
+                  Customer Voices
                 </Link>
               </div>
             </div>

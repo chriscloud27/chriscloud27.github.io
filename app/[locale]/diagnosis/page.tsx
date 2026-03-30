@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 import { CalEmbed } from "./CalEmbed";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import PageHero from "@/components/sections/PageHero";
 
@@ -92,7 +93,7 @@ export default async function DiagnosisPage({
   setRequestLocale(locale);
 
   return (
-    <main className="bg-deep-blue min-h-screen pt-16">
+    <main className="bg-deep-blue min-h-screen pt-24 md:pt-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(getJsonLd(locale)) }}
@@ -230,6 +231,8 @@ export default async function DiagnosisPage({
           </div>
         </div>
       </section>
+
+      <TestimonialsSection />
 
       {/* ── Cal.com Booking ───────────────────────────────────────────────── */}
       <section

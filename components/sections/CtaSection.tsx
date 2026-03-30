@@ -13,7 +13,7 @@ export default function CtaSection() {
       <div className="wrap relative z-10">
         <div className="max-w-[600px] mx-auto text-center">
           <h2 className="mb-5">
-            Your platform should <em>accelerate growth.</em>
+            Your platform should <em>accelerate growth</em>
           </h2>
 
           <p className="font-body text-base font-light leading-[1.75] text-grey-mid mb-10">
