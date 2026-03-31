@@ -35,11 +35,11 @@ export async function generateMetadata({
 const FAQ = [
   {
     q: "How long does it take?",
-    a: "8–10 minutes if you're a CTO, VP Eng, or Head of Platform who understands your current stack and incidents.",
+    a: "~5 minutes if you're a CTO, VP Eng, or Head of Platform who understands your current stack and incidents.",
   },
   {
     q: "Who should fill it out?",
-    a: "Ideally the person who gets board questions about reliability or cloud cost and engineers\u2019 complaints about \u201Cplatform drag\u201D \u2014 usually the CTO, VP Eng, or Head of Platform.",
+    a: "Ideally the person who gets board questions about reliability or cloud cost and engineers\u2019 complaints about \u201Cplatform drag\u201D. Usually the CTO, VP Eng, or Head of Platform.",
   },
   {
     q: "What happens after I complete it?",
@@ -47,7 +47,7 @@ const FAQ = [
   },
   {
     q: "Will you see my answers?",
-    a: "Yes, but there is no code or customer data — only high‑level signals about incidents, deployment patterns, and costs. It's enough to spot structural patterns, not enough to expose sensitive information.",
+    a: "Yes, but there is no code or customer data. Only high‑level signals about incidents, deployment patterns, and costs. It's enough to spot structural patterns, not enough to expose sensitive information.",
   },
   {
     q: "Is this only for AI-native teams?",
@@ -78,8 +78,7 @@ export default async function CompassPage({
           </h1>
 
           <p className="font-body text-[15px] font-light leading-[1.7] text-grey-mid max-w-[540px] mx-auto mb-8">
-            5-minute AI-native platform diagnostic for Series A/B SaaS.{" "}
-            <br></br>
+            AI-native platform diagnostic for Series A/B SaaS. <br></br>
             Get your top 3 failure risks and next-step priorities.
           </p>
         </div>
