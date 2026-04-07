@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { WafpassLink } from "@/components/WAF++/WafpassLink";
+import { WafpassLink } from "@/components/waf2p/WafpassLink";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { getGlobalSettings } from "@/lib/settings";
-import { WAF++_KEYWORDS } from "@/lib/keywords";
+import { waf2p_KEYWORDS } from "@/lib/keywords";
 
 export async function generateMetadata({
   params,
@@ -23,10 +23,10 @@ export async function generateMetadata({
   return {
     title,
     description,
-    keywords: WAF++_KEYWORDS,
+    keywords: waf2p_KEYWORDS,
     openGraph: {
       type: "website",
-      url: buildCanonical(`/${locale}/WAF++`),
+      url: buildCanonical(`/${locale}/waf2p`),
       title,
       description,
       images: ogImage
@@ -60,7 +60,7 @@ const PILLARS = [
   { key: "pillar7", number: "07" },
 ] as const;
 
-export default async function WAF++Page({
+export default async function waf2pPage({
   params,
 }: {
   params: Promise<{ locale: string }>;

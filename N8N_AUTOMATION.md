@@ -267,7 +267,8 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
     messages: [
       {
         role: "user",
-        content: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?",
+        content:
+          "Who is Christian Weber, AI‑Native Cloud & Platform Architect?",
       },
     ],
   }),

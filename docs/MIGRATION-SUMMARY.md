@@ -27,7 +27,7 @@ All pages updated to pass `locale` via params instead of using headers:
 - ✅ **app/[locale]/blog/[slug]/page.tsx** - Fixed getTranslations pattern
 - ✅ **app/[locale]/about/page.tsx** - Fixed getTranslations pattern
 - ✅ **app/[locale]/cases/[slug]/page.tsx** - Fixed getTranslations pattern
-- ✅ **app/[locale]/waf2p/page.tsx** - Fixed getTranslations pattern
+- ✅ **app/[locale]/WAF++/page.tsx** - Fixed getTranslations pattern
 
 ### 4. Output Directory Structure
 
@@ -42,7 +42,7 @@ out/
 │   ├── blog/[slug]/index.html
 │   ├── cases/index.html
 │   ├── cases/[slug]/index.html
-│   └── waf2p/index.html
+│   └── WAF++/index.html
 ├── de/
 │   └── (same structure)
 ├── es/
@@ -125,7 +125,7 @@ Visit in browser:
 - http://localhost:3000/de/
 - http://localhost:3000/en/blog/
 - http://localhost:3000/en/cases/
-- http://localhost:3000/en/waf2p/
+- http://localhost:3000/en/WAF++/
 
 All should render without errors.
 

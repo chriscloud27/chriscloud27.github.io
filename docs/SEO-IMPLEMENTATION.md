@@ -15,10 +15,10 @@ landing site and how to make changes or extend the setup.
 ## Key files
 
 - `src/app/[locale]/layout.tsx` – central location where the GTM snippet and
-  consent helpers are written to the page head/body.  Edits here affect all
+  consent helpers are written to the page head/body. Edits here affect all
   localized pages.
 - `src/app/components/cookie-consent.tsx` – component responsible for asking
-  users and updating the `fairup_consent` cookie.  Consent changes push
+  users and updating the `fairup_consent` cookie. Consent changes push
   events to `dataLayer`.
 
 ## How it works
@@ -28,8 +28,8 @@ landing site and how to make changes or extend the setup.
 2. When consent is stored/updated (via the cookie-consent component), a
    `fairup_consent_update` event is dispatched and the layout helper picks it
    up to notify GTM (`dataLayer.push({ event: 'update_consent', ... })`).
-3. GTM container loads asynchronously and listens to the dataLayer events.  It
-   contains all GA4 tags, remarketing, etc.  The actual analytics IDs (such as
+3. GTM container loads asynchronously and listens to the dataLayer events. It
+   contains all GA4 tags, remarketing, etc. The actual analytics IDs (such as
    `G-XXXXXXXXXX`) are configured inside the GTM web interface.
 4. A `<noscript>` iframe is included for browsers with JavaScript disabled.
 
@@ -64,10 +64,10 @@ landing site and how to make changes or extend the setup.
 - Any modifications to `layout.tsx` should preserve the consent helper
   functions and GTM initialization snippet.
 - When adding new pages or components, simply rely on `dataLayer.push` from
-  within React code if custom events are needed.  For example:
+  within React code if custom events are needed. For example:
   ```tsx
   useEffect(() => {
-    window.dataLayer?.push({ event: 'myCustomEvent', category: 'foo' });
+    window.dataLayer?.push({ event: "myCustomEvent", category: "foo" });
   }, []);
   ```
 

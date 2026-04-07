@@ -17,11 +17,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "MaCh2.Cloud — AI‑Native Cloud & Platform Architecture for Series A–B SaaS",
+    title:
+      "MaCh2.Cloud — AI‑Native Cloud & Platform Architecture for Series A–B SaaS",
     description:
       "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 30 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
     openGraph: {
-      title: "MaCh2.Cloud — AI‑Native Cloud & Platform Architecture for Series A–B SaaS",
+      title:
+        "MaCh2.Cloud — AI‑Native Cloud & Platform Architecture for Series A–B SaaS",
       description:
         "One hour. One concrete architectural finding. Book an Architecture Diagnosis Call — 30 minutes, no commitment, immediate clarity on your highest-leverage platform risk.",
       url: buildCanonical(`/${locale}/onepager`),

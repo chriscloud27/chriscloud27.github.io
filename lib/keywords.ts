@@ -60,7 +60,7 @@ export const BLOG_KEYWORDS = [
 ];
 
 /** WAF++ dedicated framework page — Tier 1 own-namespace keywords */
-export const WAF++_KEYWORDS = [
+export const waf2p_KEYWORDS = [
   "WAF++",
   "WAF++ framework",
   "Well-Architected Framework for AI-native platforms",

@@ -24,12 +24,12 @@ MaCh2.Cloud implements comprehensive SEO and GEO (Generative Engine Optimization
 
 ### Phase 1 Baseline Test Results (Week 0 - March 20, 2026)
 
-| Engine         | Query                     | Result            | Quote                                     |
-| -------------- | ------------------------- | ----------------- | ----------------------------------------- |
-| **Claude**     | "Who is Christian Weber?" | ❌ Not indexed    | No mach2.cloud presence yet               |
-| **ChatGPT**    | "Who is Christian Weber?" | ❌ Not verifiable | "Not a known public figure"               |
+| Engine         | Query                     | Result            | Quote                                                |
+| -------------- | ------------------------- | ----------------- | ---------------------------------------------------- |
+| **Claude**     | "Who is Christian Weber?" | ❌ Not indexed    | No mach2.cloud presence yet                          |
+| **ChatGPT**    | "Who is Christian Weber?" | ❌ Not verifiable | "Not a known public figure"                          |
 | **Perplexity** | "Who is Christian Weber?" | ✅ Appearing      | "MaCh2.Cloud — AI‑Native Cloud & Platform Architect" |
-| **Perplexity** | "What is WAF++?"          | ✅ Appearing      | mach2.cloud cited as source               |
+| **Perplexity** | "What is WAF++?"          | ✅ Appearing      | mach2.cloud cited as source                          |
 
 **Key Finding**: Perplexity is indexing mach2.cloud content, but Claude and ChatGPT have no indexed data yet. This is expected at Week 0 — full indexing typically requires 2–6 weeks.
 

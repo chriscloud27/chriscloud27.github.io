@@ -19,7 +19,8 @@
       "Bash(cat:*)",
       "Bash(curl -s -X POST https://flow.mach2.cloud/webhook/compass -H \"Content-Type: application/json\" -d '{:*)",
       "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io -type f -name *slide* -o -name *deck* -o -name *present*)",
-      "Bash(grep -n \"output\\\\|exportPathMap\\\\|trailingSlash\" /Users/christianweber/Documents/Github/chriscloud27.github.io/next.config.*)"
+      "Bash(grep -n \"output\\\\|exportPathMap\\\\|trailingSlash\" /Users/christianweber/Documents/Github/chriscloud27.github.io/next.config.*)",
+      "Bash(grep -A 30 \"FAQ.map\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/compass/page.tsx)"
     ]
   }
 }

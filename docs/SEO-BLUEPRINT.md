@@ -7,9 +7,11 @@ This setup uses native Next.js App Router SEO with metadata APIs and custom help
 No dedicated SEO package is required.
 
 Required:
+
 - `next` (App Router)
 
 Optional for multilingual SEO:
+
 - `next-intl`
 
 ## 2. Core Architecture
@@ -26,6 +28,7 @@ Implement SEO in these layers:
 ## 3. Global SEO Config
 
 Create `src/lib/settings.ts` (or equivalent) with locale-aware defaults:
+
 - `siteName`
 - `siteDescription`
 - `siteUrl`
@@ -56,6 +59,7 @@ export interface GlobalSettings {
 ## 4. Canonical and hreflang Helpers
 
 Create `src/lib/seo.ts` with:
+
 - `getBaseUrl()`
 - `buildCanonical(path)`
 - `buildI18nAlternates(routeKey)`
@@ -70,21 +74,23 @@ export function getBaseUrl() {
 
 export function buildCanonical(path: string) {
   if (path.startsWith("http")) return path;
-  return getBaseUrl().replace(/\/$/, "") + (path.startsWith("/") ? path : `/${path}`);
+  return (
+    getBaseUrl().replace(/\/$/, "") + (path.startsWith("/") ? path : `/${path}`)
+  );
 }
 
 export function buildCanonicalAndAlternates(routeKey: string) {
   const languages = {
     en: buildCanonical(`/en${routeKey === "/" ? "" : routeKey}`),
     de: buildCanonical(`/de${routeKey === "/" ? "" : routeKey}`),
-    "x-default": buildCanonical(`/en${routeKey === "/" ? "" : routeKey}`)
+    "x-default": buildCanonical(`/en${routeKey === "/" ? "" : routeKey}`),
   };
 
   return {
     alternates: {
       canonical: languages.en,
-      languages
-    }
+      languages,
+    },
   };
 }
 ```
@@ -92,6 +98,7 @@ export function buildCanonicalAndAlternates(routeKey: string) {
 ## 5. Layout-Level Metadata (Global)
 
 In `src/app/[locale]/layout.tsx`:
+
 - add `generateMetadata(...)`
 - load global settings
 - set defaults (`title`, `description`, icons, OG image)
@@ -109,7 +116,7 @@ export async function generateMetadata({ params }) {
   return {
     title: settings.defaultSeo?.metaTitle ?? settings.siteName,
     description: settings.defaultSeo?.metaDescription,
-    ...i18n
+    ...i18n,
   };
 }
 ```
@@ -117,18 +124,21 @@ export async function generateMetadata({ params }) {
 ## 6. Page-Level Metadata
 
 Add `generateMetadata` on key pages:
+
 - home
 - blog listing
 - blog details
 - pricing/contact/about
 
 Include:
+
 - page title and description
 - Open Graph
 - Twitter
 - canonical and hreflang
 
 For blog detail pages:
+
 - canonical must include locale and slug
 - use `openGraph.type = 'article'`
 - include content fallbacks
@@ -145,6 +155,7 @@ Inject JSON-LD via script tags:
 ```
 
 Recommended schemas:
+
 - `WebSite`
 - `Organization` or `SoftwareApplication`
 - `Article`
@@ -154,14 +165,17 @@ Recommended schemas:
 ## 8. Technical SEO Routes
 
 Create:
+
 - `src/app/sitemap.ts`
 - `src/app/robots.ts`
 
 Sitemap:
+
 - include static and dynamic URLs
 - set `lastModified`, `changeFrequency`, `priority`
 
 Robots:
+
 - allow production domain crawling
 - block staging/dev/preview
 - disallow internal paths (`/api`, admin/private)
@@ -174,6 +188,7 @@ Centralize localized pathnames (for example `src/i18n/routing.ts`) to keep canon
 ## 10. On-Page SEO Rules
 
 Per page:
+
 - one clear `h1`
 - descriptive image `alt` text
 - internal links to key conversion pages
