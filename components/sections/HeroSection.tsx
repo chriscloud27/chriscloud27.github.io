@@ -60,7 +60,7 @@ export default function HeroSection() {
           <div className="hphoto">
             <Image
               src="/img/Chris.png"
-              alt="Christian Weber — AI-Native Cloud Architect"
+              alt="Christian Weber — AI‑Native Cloud & Platform Architect"
               width={272}
               height={340}
               priority

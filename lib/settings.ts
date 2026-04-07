@@ -19,17 +19,17 @@ export interface GlobalSettings {
 const BASE_SETTINGS: GlobalSettings = {
   siteName: "MaCh2.Cloud",
   siteDescription:
-    "AI-native cloud architecture for B2B SaaS teams scaling from early traction to enterprise-grade reliability.",
+    "AI‑Native Cloud & Platform Architecture for B2B SaaS teams scaling from early traction to enterprise-grade reliability.",
   siteUrl: "https://mach2.cloud",
   defaultSeo: {
-    metaTitle: "MaCh2.Cloud — AI-Native Cloud Architect",
+    metaTitle: "MaCh2.Cloud — AI‑Native Cloud & Platform Architect",
     metaDescription:
-      "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
+      "AI‑Native Cloud & Platform Architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites.",
     shareImage: {
       url: "/img/LinkedIn-banner.jpg",
       width: 1200,
       height: 630,
-      alternativeText: "MaCh2.Cloud — AI-Native Cloud Architect",
+      alternativeText: "MaCh2.Cloud — AI‑Native Cloud & Platform Architect",
     },
   },
 };

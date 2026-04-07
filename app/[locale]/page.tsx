@@ -66,20 +66,20 @@ export default async function HomePage({
     "@type": "Person",
     name: "Christian Weber",
     url: "https://mach2.cloud",
-    jobTitle: "AI-Native Cloud Architect",
+    jobTitle: "AI‑Native Cloud & Platform Architect",
     description:
-      "Principal AI-Native Cloud Architect helping Series A–B B2B SaaS companies design platform architectures that scale safely.",
+      "Principal AI‑Native Cloud & Platform Architect helping Series A–B B2B SaaS companies design platform architectures that scale safely.",
     sameAs: [
       "https://linkedin.com/in/christian-weber-0591",
       "https://github.com/chriscloud27",
-      "https://waf2p.dev",
+      "https://WAF++.dev",
     ],
     knowsAbout: [
-      "AI-native cloud architecture",
+      "AI‑Native Cloud & Platform Architecture",
       "Platform engineering",
       "Series A–B SaaS scaling",
       "Cloud cost optimization",
-      "WAF2p framework",
+      "WAF++ framework",
       "Terraform",
       "AWS",
       "Engineering velocity",
@@ -114,7 +114,7 @@ export default async function HomePage({
         "@type": "SiteNavigationElement",
         name: "Blog",
         description:
-          "Insights on AI-native cloud architecture and scaling Series A–B SaaS platforms.",
+          "Insights on AI‑Native Cloud & Platform Architecture and scaling Series A–B SaaS platforms.",
         url: "https://mach2.cloud/blog",
         position: 2,
       },
@@ -128,10 +128,10 @@ export default async function HomePage({
       },
       {
         "@type": "SiteNavigationElement",
-        name: "WAF2p Framework",
+        name: "WAF++ Framework",
         description:
           "The Well-Architected Framework for Platform Engineering — design principles for AI-native platforms.",
-        url: "https://waf2p.dev",
+        url: "https://WAF++.dev",
         position: 4,
       },
     ],

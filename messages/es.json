@@ -4,7 +4,7 @@
     "experience": "Experiencia",
     "cases": "Casos",
     "portfolio": "Portafolio",
-    "waf2p": "WAF++",
+    "WAF++": "WAF++",
     "about": "Sobre mí",
     "blog": "Blog",
     "connect": "Contacto",
@@ -37,8 +37,8 @@
     "eyebrow": "Experiencia",
     "heading": "Construido a <em>escala real.</em>",
     "sub": "Desde 2010: construyendo infraestructura de sistemas. Desde 2019: arquitectando plataformas cloud. <strong>No teoría. Sistemas de producción que se entregaron.</strong>",
-    "waf2pTitle": "WAF++ — Framework Open-Source",
-    "waf2pDesc": "Participante y colaborador de WAF++ — el framework open-source de siete pilares para arquitectura cloud soberana y neutral ante proveedores."
+    "WAF++Title": "WAF++ — Framework Open-Source",
+    "WAF++Desc": "Participante y colaborador de WAF++ — el framework open-source de siete pilares para arquitectura cloud soberana y neutral ante proveedores."
   },
   "portfolio": {
     "eyebrow": "Portafolio",
@@ -106,7 +106,7 @@
     "cta": "Ponerse en contacto",
     "ctaSecondary": "Ver mi trabajo"
   },
-  "waf2p": {
+  "WAF++": {
     "eyebrow": "Framework Abierto",
     "h1Part1": "WAF++ Arquitectura Cloud",
     "h1Emphasis": "diseñada con intención.",

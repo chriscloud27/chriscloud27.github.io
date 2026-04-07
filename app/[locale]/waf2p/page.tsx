@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { WafpassLink } from "@/components/waf2p/WafpassLink";
+import { WafpassLink } from "@/components/WAF++/WafpassLink";
 import Link from "next/link";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { getGlobalSettings } from "@/lib/settings";
-import { WAF2P_KEYWORDS } from "@/lib/keywords";
+import { WAF++_KEYWORDS } from "@/lib/keywords";
 
 export async function generateMetadata({
   params,
@@ -13,20 +13,20 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "waf2p" });
+  const t = await getTranslations({ locale, namespace: "WAF++" });
   const settings = getGlobalSettings(locale);
   const title = t("metaTitle");
   const description = t("metaDescription");
-  const i18n = buildCanonicalAndAlternates("/waf2p", locale);
+  const i18n = buildCanonicalAndAlternates("/WAF++", locale);
   const ogImage = settings.defaultSeo?.shareImage;
 
   return {
     title,
     description,
-    keywords: WAF2P_KEYWORDS,
+    keywords: WAF++_KEYWORDS,
     openGraph: {
       type: "website",
-      url: buildCanonical(`/${locale}/waf2p`),
+      url: buildCanonical(`/${locale}/WAF++`),
       title,
       description,
       images: ogImage
@@ -60,14 +60,14 @@ const PILLARS = [
   { key: "pillar7", number: "07" },
 ] as const;
 
-export default async function Waf2pPage({
+export default async function WAF++Page({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "waf2p" });
+  const t = await getTranslations({ locale, namespace: "WAF++" });
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -83,7 +83,7 @@ export default async function Waf2pPage({
         "@type": "ListItem",
         position: 2,
         name: "WAF++",
-        item: buildCanonical(`/${locale}/waf2p`),
+        item: buildCanonical(`/${locale}/WAF++`),
       },
     ],
   };
@@ -95,11 +95,11 @@ export default async function Waf2pPage({
     description: t("metaDescription"),
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Cloud",
-    url: "https://waf2p.dev",
+    url: "https://WAF++.dev",
     publisher: {
       "@type": "Organization",
       name: "WAF++ Community",
-      url: "https://waf2p.dev",
+      url: "https://WAF++.dev",
     },
   };
 
@@ -299,7 +299,7 @@ export default async function Waf2pPage({
         <div className="wrap">
           <div className="grid gap-[3px] sm:grid-cols-2">
             <a
-              href="https://waf2p.dev/saeulen/"
+              href="https://WAF++.dev/saeulen/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7 hover:border-electric-cyan/30 hover:bg-electric-cyan/[0.04] transition-all duration-200"
@@ -311,7 +311,7 @@ export default async function Waf2pPage({
                 Explore WAF++ Framework
               </span>
               <span className="font-mono text-[12px] text-grey-mid">
-                waf2p.dev/saeulen
+                WAF++.dev/saeulen
               </span>
               <svg
                 className="absolute bottom-7 right-7 w-4 h-4 text-electric-cyan/40 group-hover:text-electric-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
@@ -329,7 +329,7 @@ export default async function Waf2pPage({
               </svg>
             </a>
             <a
-              href="https://waf2p.dev/cloud/2025/11/25/waf-ein-neuer-ansatz/"
+              href="https://WAF++.dev/cloud/2025/11/25/waf-ein-neuer-ansatz/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative bg-electric-cyan/[0.02] border border-white/[0.08] rounded-card p-7 hover:border-electric-cyan/30 hover:bg-electric-cyan/[0.04] transition-all duration-200"
@@ -341,7 +341,7 @@ export default async function Waf2pPage({
                 WAF++ — A New Approach
               </span>
               <span className="font-mono text-[12px] text-grey-mid">
-                waf2p.dev/cloud
+                WAF++.dev/cloud
               </span>
               <svg
                 className="absolute bottom-7 right-7 w-4 h-4 text-electric-cyan/40 group-hover:text-electric-cyan group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
@@ -378,7 +378,7 @@ export default async function Waf2pPage({
               href={`/${locale}/compass`}
               className="text-electric-cyan hover:underline underline-offset-2"
             >
-              Test your WAF2p alignment with the Platform Compass →
+              Test your WAF++ alignment with the Platform Compass →
             </Link>
           </p>
         </div>

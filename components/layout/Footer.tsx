@@ -21,7 +21,7 @@ export default async function Footer() {
           </Link>
 
           <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-grey-700">
-            AI-Native Cloud Architecture
+            AI‑Native Cloud & Platform Architecture
           </span>
 
           <ul className="foot-links">

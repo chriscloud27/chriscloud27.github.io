@@ -71,10 +71,10 @@ Actions if trends show:
 
 ```
 Test Queries:
-1. "Who is Christian Weber, AI-Native Cloud Architect?"
-2. "What is the WAF2p framework?"
+1. "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
+2. "What is the WAF++ framework?"
 3. "Who helps Series A SaaS scale cloud architecture?"
-4. "AI-native cloud architecture for SaaS"
+4. "AI‑Native Cloud & Platform Architecture for SaaS"
 5. "Platform engineering for Series A B2B companies"
 
 Record for Each Query:
@@ -305,7 +305,7 @@ Status: ✓ PROVEN or ⏸️ NOT YET
 - ✅ Clear data on ICP messaging effectiveness
 - ✅ Roadmap for content strategy Phase 2
 
-**Month 6 Vision**: mach2.cloud as primary source for "AI-native cloud architecture" across Google, ChatGPT, Perplexity, and Claude.
+**Month 6 Vision**: mach2.cloud as primary source for "AI‑Native Cloud & Platform Architecture" across Google, ChatGPT, Perplexity, and Claude.
 
 ---
 

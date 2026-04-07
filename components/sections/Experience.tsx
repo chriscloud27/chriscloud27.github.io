@@ -18,7 +18,7 @@ const TIMELINE: TimelineEntry[] = [
     period: "2022 — Present",
     company: "MaCh2.Cloud",
     location: "Remote · Global",
-    role: "Principal AI-Native Cloud Architect",
+    role: "Principal AI‑Native Cloud & Platform Architect",
     description:
       "Fractional architecture leadership for Growth SaaS companies building or scaling AI-powered products. Designing cloud-agnostic, cost-effective platform foundations that give engineering teams clarity, speed, and cost predictability without the overhead of a full-time Principal hire.",
     tags: [
@@ -216,8 +216,8 @@ export default async function Experience() {
         </div>
 
         <div className="creds reveal">
-          <div className="cred-title">{t("waf2pTitle")}</div>
-          <p className="cred-desc">{t("waf2pDesc")}</p>
+          <div className="cred-title">{t("WAF++Title")}</div>
+          <p className="cred-desc">{t("WAF++Desc")}</p>
         </div>
       </div>
     </section>

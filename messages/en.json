@@ -4,7 +4,7 @@
     "experience": "Experience",
     "cases": "Cases",
     "portfolio": "Portfolio",
-    "waf2p": "WAF++",
+    "WAF++": "WAF++",
     "about": "About",
     "blog": "Blog",
     "connect": "Connect",
@@ -15,7 +15,7 @@
     "case04": "Case 04 — BaaS Startup to Production"
   },
   "hero": {
-    "eyebrow": "Principal AI-Native Cloud Architect",
+    "eyebrow": "Principal AI‑Native Cloud & Platform Architect",
     "h1Part1": "Your platform should",
     "h1Emphasis": "accelerate growth",
     "h1Part2": "Right now it probably isn't.",
@@ -37,8 +37,8 @@
     "eyebrow": "Experience",
     "heading": "Built at <em>real scale.</em>",
     "sub": "Since 2010: building system infrastructure that powers organisations at scale. Since 2019: architecting cloud platforms that accelerate engineering velocity and unlock growth. Not theory. <strong>Production systems that shipped.</strong>",
-    "waf2pTitle": "WAF++ — Open Framework Contributor",
-    "waf2pDesc": "WAF++ participant and contributor — applying the open-source seven-pillar framework for sovereign, vendor-neutral cloud architecture across every engagement."
+    "WAF++Title": "WAF++ — Open Framework Contributor",
+    "WAF++Desc": "WAF++ participant and contributor — applying the open-source seven-pillar framework for sovereign, vendor-neutral cloud architecture across every engagement."
   },
   "portfolio": {
     "eyebrow": "Portfolio",
@@ -100,13 +100,13 @@
   },
   "about": {
     "eyebrow": "About",
-    "heading": "Christian Weber <em>AI-Native Cloud Architect</em>",
+    "heading": "Christian Weber <em>AI‑Native Cloud & Platform Architect</em>",
     "sub": "I help Startup Series A-C SaaS CTOs and engineering leaders <highlight>build scalable SaaS infrastructure for growth-stage velocity</highlight>.",
     "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs <highlight>validated code, production-ready features, tests, and documentation</highlight> in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to <highlight>create platforms that are both technically robust and aligned with business objectives</highlight>.",
     "cta": "Get in touch",
     "ctaSecondary": "See My Work"
   },
-  "waf2p": {
+  "WAF++": {
     "eyebrow": "Open Framework",
     "h1Part1": "WAF++ Cloud Architecture",
     "h1Emphasis": "Done Intentionally",
@@ -138,7 +138,7 @@
     "metaDescription": "WAF++ is an open-source framework for intentional, vendor-neutral cloud architecture. Seven pillars: Security, Cost Optimization, Performance, Reliability, Operations, Sustainability, and Sovereignty."
   },
   "services": {
-    "metaTitle": "Services — AI-Native Cloud Architecture Engagements",
+    "metaTitle": "Services — AI‑Native Cloud & Platform Architecture Engagements",
     "metaDescription": "Four precision engagements — from architectural clarity to continuous platform leadership. Architecture Audit, Blueprint, Enablement, and Fractional Architect for Series A–B SaaS companies."
   },
   "servicesPage": {

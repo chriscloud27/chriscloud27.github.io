@@ -120,11 +120,11 @@ Ask three AI assistants:
 
 **ChatGPT:**
 
-> "Who is Christian Weber, AI-Native Cloud Architect?"
+> "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
 
 **Perplexity:**
 
-> "What is the WAF2p framework?"
+> "What is the WAF++ framework?"
 
 **Claude:**
 
@@ -195,7 +195,7 @@ Track these over the next 3 months:
 | Blog URLs Indexed                 | 100%      | Google Search Console → Coverage               |
 | Article Schema Valid              | 100%      | Google Search Console → Enhancements → Article |
 | mach2.cloud in ChatGPT answers    | Yes       | Ask: "Who is Christian Weber?"                 |
-| mach2.cloud in Perplexity sources | Yes       | Ask: "What is WAF2p?"                          |
+| mach2.cloud in Perplexity sources | Yes       | Ask: "What is WAF++?"                          |
 | Social share image                | Branded   | LinkedIn Post Inspector                        |
 | Blog internal links working       | All pages | Manual check or Lighthouse audit               |
 

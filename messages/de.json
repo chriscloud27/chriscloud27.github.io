@@ -4,7 +4,7 @@
     "experience": "Erfahrung",
     "cases": "Fallstudien",
     "portfolio": "Portfolio",
-    "waf2p": "WAF++",
+    "WAF++": "WAF++",
     "about": "Über mich",
     "blog": "Blog",
     "connect": "Kontakt",
@@ -37,8 +37,8 @@
     "eyebrow": "Erfahrung",
     "heading": "Im <em>echten Maßstab</em> gebaut.",
     "sub": "Seit 2010: Aufbau von Systeminfrastruktur für Organisationen in großem Maßstab. Seit 2019: Cloud-Plattformen die Engineering-Geschwindigkeit beschleunigen. <strong>Keine Theorie. Produktivsysteme, die ausgeliefert wurden.</strong>",
-    "waf2pTitle": "WAF++ — Open-Source-Framework",
-    "waf2pDesc": "WAF++ Teilnehmer und Mitwirkender — das Open-Source-Framework mit sieben Säulen für souveräne, herstellerneutrale Cloud-Architektur."
+    "WAF++Title": "WAF++ — Open-Source-Framework",
+    "WAF++Desc": "WAF++ Teilnehmer und Mitwirkender — das Open-Source-Framework mit sieben Säulen für souveräne, herstellerneutrale Cloud-Architektur."
   },
   "portfolio": {
     "eyebrow": "Portfolio",
@@ -106,7 +106,7 @@
     "cta": "Kontakt aufnehmen",
     "ctaSecondary": "Meine Arbeit ansehen"
   },
-  "waf2p": {
+  "WAF++": {
     "eyebrow": "Offenes Framework",
     "h1Part1": "WAF++ Cloud-Architektur",
     "h1Emphasis": "mit Absicht gestaltet.",

@@ -43,7 +43,7 @@ export async function generateMetadata({
           url: "/og/default.png",
           width: 1200,
           height: 627,
-          alt: "MaCh2.Cloud — AI-Native Cloud Architecture for Series A–B SaaS",
+          alt: "MaCh2.Cloud — AI‑Native Cloud & Platform Architecture for Series A–B SaaS",
         },
       ];
 

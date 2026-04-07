@@ -1,6 +1,6 @@
 # Site Content Architecture
 
-## AI-Native Cloud Architecture for SaaS CTOs
+## AI‑Native Cloud & Platform Architecture for SaaS CTOs
 
 **Target Audience:** SaaS CTOs, Technical Founders, VP Engineering  
 **Conversion Goal:** Book a 30-minute architectural clarity call  
@@ -26,7 +26,7 @@
 | `/blog/[slug]`  | `app/[locale]/blog/[slug]/page.tsx`  | Individual blog post    | Notion API (`lib/notion.ts`)           |
 | `/cases`        | `app/[locale]/cases/page.tsx`        | Case studies            | Hardcoded case slugs + component       |
 | `/cases/[slug]` | `app/[locale]/cases/[slug]/page.tsx` | Individual case study   | Hardcoded case details                 |
-| `/waf2p`        | `app/[locale]/waf2p/page.tsx`        | WAF2p Framework         | Dedicated page component               |
+| `/WAF++`        | `app/[locale]/WAF++/page.tsx`        | WAF++ Framework         | Dedicated page component               |
 
 ---
 
@@ -60,7 +60,7 @@
 **Header (Sticky):**
 
 - MaCh2.Cloud logo (left)
-- Nav links: Home → About → Blog → Cases → WAF2p
+- Nav links: Home → About → Blog → Cases → WAF++
 - Locale switcher (en/de/es)
 - CTA button: "Book Clarity Call" (Calendly link)
 
@@ -121,9 +121,9 @@ Content keys structured by component/section:
 **Component:** `app/[locale]/cases/[slug]/page.tsx` (renders case details)  
 **Fallback:** Static HTML at `public/cases/case-*.html` (for compatibility)
 
-### WAF2p Framework
+### WAF++ Framework
 
-**File:** `app/[locale]/waf2p/page.tsx`  
+**File:** `app/[locale]/WAF++/page.tsx`  
 **Purpose:** Dedicated framework explainer page (separate from homepage)  
 **Content:** Framework methodology, steps, components, visual walkthrough
 
@@ -176,7 +176,7 @@ Content keys structured by component/section:
 
 - Multi-locale, dynamic routing
 - Component-driven sections
-- Content in `messages/*.json` (i18n) + Notion (blog) + code (cases, waf2p)
+- Content in `messages/*.json` (i18n) + Notion (blog) + code (cases, WAF++)
 - Styling: Tailwind CSS via `components/` and `app/globals.css`
 
 ---
@@ -224,7 +224,7 @@ app/
 │   ├── cases/
 │   │   ├── page.tsx             # Cases listing
 │   │   └── [slug]/page.tsx      # Individual case
-│   └── waf2p/page.tsx           # WAF2p framework page
+│   └── WAF++/page.tsx           # WAF++ framework page
 ├── layout.tsx                    # Root layout
 ├── robots.ts                     # robots.txt generation
 └── sitemap.ts                    # Sitemap generation

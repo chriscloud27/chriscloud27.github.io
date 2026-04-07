@@ -11,9 +11,9 @@ export const GLOBAL_KEYWORDS = [
   // Tier 1
   "fractional cloud architect",
   "fractional principal architect SaaS",
-  "WAF2p",
-  "WAF2p framework",
-  "AI-native cloud architecture",
+  "WAF++",
+  "WAF++ framework",
+  "AI‑Native Cloud & Platform Architecture",
   // Tier 2
   "cloud architecture audit SaaS",
   "SaaS architecture Series A technical debt",
@@ -59,12 +59,12 @@ export const BLOG_KEYWORDS = [
   "AI workload scaling",
 ];
 
-/** WAF2p dedicated framework page — Tier 1 own-namespace keywords */
-export const WAF2P_KEYWORDS = [
-  "WAF2p",
-  "WAF2p framework",
+/** WAF++ dedicated framework page — Tier 1 own-namespace keywords */
+export const WAF++_KEYWORDS = [
+  "WAF++",
+  "WAF++ framework",
   "Well-Architected Framework for AI-native platforms",
-  "AI-native cloud architecture",
+  "AI‑Native Cloud & Platform Architecture",
   "cloud-agnostic platform design",
   "open-source cloud framework",
   "AI workload scaling",
@@ -89,7 +89,7 @@ export const CASE_KUBERNETES_KEYWORDS = [
   "cloud architecture for SaaS",
   "Series B cloud architecture",
   "platform slowing engineering velocity",
-  "AI-native cloud architecture",
+  "AI‑Native Cloud & Platform Architecture",
 ];
 
 /** Case study: autonomous driving / AWS platform */
@@ -98,7 +98,7 @@ export const CASE_AWS_KEYWORDS = [
   "AI workload scaling",
   "AI features work in staging fail in production",
   "Series B cloud architecture",
-  "AI-native cloud architecture",
+  "AI‑Native Cloud & Platform Architecture",
 ];
 
 /** Case study: enterprise SaaS optimisation */
@@ -117,7 +117,7 @@ export const CASE_BAAS_KEYWORDS = [
   "fractional cloud architect",
   "cloud architecture for SaaS",
   "Series B cloud architecture",
-  "AI-native cloud architecture",
+  "AI‑Native Cloud & Platform Architecture",
 ];
 
 export const CASE_KEYWORDS: Record<string, string[]> = {

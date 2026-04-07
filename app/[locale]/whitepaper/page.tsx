@@ -10,11 +10,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return {
-    title: "AI-Native Cloud Architecture Whitepaper — MaCh2.Cloud",
+    title: "AI‑Native Cloud & Platform Architecture Whitepaper — MaCh2.Cloud",
     description:
-      "Download the AI-Native Cloud Architecture whitepaper. Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
+      "Download the AI‑Native Cloud & Platform Architecture whitepaper. Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
     openGraph: {
-      title: "AI-Native Cloud Architecture Whitepaper — MaCh2.Cloud",
+      title: "AI‑Native Cloud & Platform Architecture Whitepaper — MaCh2.Cloud",
       description:
         "Practical frameworks for Series A–B SaaS companies outgrowing their foundation.",
       url: buildCanonical(`/${locale}/whitepaper`),
@@ -46,7 +46,7 @@ export default async function WhitepaperPage({
               ·
             </span>
             <span className="font-mono text-[10px] tracking-[0.14em] uppercase text-electric-cyan">
-              AI-Native Cloud Architecture
+              AI‑Native Cloud & Platform Architecture
             </span>
           </div>
 

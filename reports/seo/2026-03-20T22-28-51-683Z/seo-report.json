@@ -11,15 +11,15 @@
       "diff": {
         "title": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "description": {
           "before": null,
-          "after": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
+          "after": "AI‑Native Cloud & Platform Architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -27,7 +27,7 @@
         },
         "ogTitle": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "ogImage": {
           "before": null,
@@ -77,7 +77,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -135,7 +135,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -180,7 +180,7 @@
         }
       }
     },
-    "https://mach2.cloud/en/waf2p/": {
+    "https://mach2.cloud/en/WAF++/": {
       "note": "NEW_URL",
       "diff": {
         "title": {
@@ -193,11 +193,11 @@
         },
         "keywords": {
           "before": null,
-          "after": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
+          "after": "WAF++,WAF++ framework,Well-Architected Framework for AI-native platforms,AI‑Native Cloud & Platform Architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
         },
         "canonical": {
           "before": null,
-          "after": "https://mach2.cloud/en/waf2p/"
+          "after": "https://mach2.cloud/en/WAF++/"
         },
         "ogTitle": {
           "before": null,
@@ -216,19 +216,19 @@
           "after": [
             {
               "hreflang": "en",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             },
             {
               "hreflang": "de",
-              "href": "https://mach2.cloud/de/waf2p/"
+              "href": "https://mach2.cloud/de/WAF++/"
             },
             {
               "hreflang": "es",
-              "href": "https://mach2.cloud/es/waf2p/"
+              "href": "https://mach2.cloud/es/WAF++/"
             },
             {
               "hreflang": "x-default",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             }
           ]
         },
@@ -243,7 +243,7 @@
       "diff": {
         "title": {
           "before": null,
-          "after": "Services — AI-Native Cloud Architecture Engagements | MaCh2.Cloud"
+          "after": "Services — AI‑Native Cloud & Platform Architecture Engagements | MaCh2.Cloud"
         },
         "description": {
           "before": null,
@@ -251,7 +251,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -259,7 +259,7 @@
         },
         "ogTitle": {
           "before": null,
-          "after": "Services — AI-Native Cloud Architecture Engagements"
+          "after": "Services — AI‑Native Cloud & Platform Architecture Engagements"
         },
         "ogImage": {
           "before": null,
@@ -309,7 +309,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture"
+          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -367,7 +367,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture"
+          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -483,7 +483,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture"
+          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -533,15 +533,15 @@
       "diff": {
         "title": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "description": {
           "before": null,
-          "after": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
+          "after": "AI‑Native Cloud & Platform Architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -549,7 +549,7 @@
         },
         "ogTitle": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "ogImage": {
           "before": null,
@@ -599,7 +599,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -657,7 +657,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -702,7 +702,7 @@
         }
       }
     },
-    "https://mach2.cloud/de/waf2p/": {
+    "https://mach2.cloud/de/WAF++/": {
       "note": "NEW_URL",
       "diff": {
         "title": {
@@ -715,11 +715,11 @@
         },
         "keywords": {
           "before": null,
-          "after": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
+          "after": "WAF++,WAF++ framework,Well-Architected Framework for AI-native platforms,AI‑Native Cloud & Platform Architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
         },
         "canonical": {
           "before": null,
-          "after": "https://mach2.cloud/de/waf2p/"
+          "after": "https://mach2.cloud/de/WAF++/"
         },
         "ogTitle": {
           "before": null,
@@ -738,19 +738,19 @@
           "after": [
             {
               "hreflang": "en",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             },
             {
               "hreflang": "de",
-              "href": "https://mach2.cloud/de/waf2p/"
+              "href": "https://mach2.cloud/de/WAF++/"
             },
             {
               "hreflang": "es",
-              "href": "https://mach2.cloud/es/waf2p/"
+              "href": "https://mach2.cloud/es/WAF++/"
             },
             {
               "hreflang": "x-default",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             }
           ]
         },
@@ -773,7 +773,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -831,7 +831,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture"
+          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -889,7 +889,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture"
+          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -1005,7 +1005,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture"
+          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -1055,15 +1055,15 @@
       "diff": {
         "title": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "description": {
           "before": null,
-          "after": "AI-native cloud architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
+          "after": "AI‑Native Cloud & Platform Architecture for Series A-B SaaS teams: production-ready platforms, cost control, and faster delivery without rewrites."
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -1071,7 +1071,7 @@
         },
         "ogTitle": {
           "before": null,
-          "after": "MaCh2.Cloud — AI-Native Cloud Architect"
+          "after": "MaCh2.Cloud — AI‑Native Cloud & Platform Architect"
         },
         "ogImage": {
           "before": null,
@@ -1121,7 +1121,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,fractional cloud architect vs full-time,cloud architect for hire,cloud architect Series A Series B,Christian Weber cloud architect,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -1179,7 +1179,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architectural debt Series B SaaS,cloud costs growing faster than revenue,AI features work in staging fail in production,platform slowing engineering velocity,cloud cost optimization SaaS,AI workload scaling"
         },
         "canonical": {
           "before": null,
@@ -1224,7 +1224,7 @@
         }
       }
     },
-    "https://mach2.cloud/es/waf2p/": {
+    "https://mach2.cloud/es/WAF++/": {
       "note": "NEW_URL",
       "diff": {
         "title": {
@@ -1237,11 +1237,11 @@
         },
         "keywords": {
           "before": null,
-          "after": "WAF2p,WAF2p framework,Well-Architected Framework for AI-native platforms,AI-native cloud architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
+          "after": "WAF++,WAF++ framework,Well-Architected Framework for AI-native platforms,AI‑Native Cloud & Platform Architecture,cloud-agnostic platform design,open-source cloud framework,AI workload scaling,fractional cloud architect"
         },
         "canonical": {
           "before": null,
-          "after": "https://mach2.cloud/es/waf2p/"
+          "after": "https://mach2.cloud/es/WAF++/"
         },
         "ogTitle": {
           "before": null,
@@ -1260,19 +1260,19 @@
           "after": [
             {
               "hreflang": "en",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             },
             {
               "hreflang": "de",
-              "href": "https://mach2.cloud/de/waf2p/"
+              "href": "https://mach2.cloud/de/WAF++/"
             },
             {
               "hreflang": "es",
-              "href": "https://mach2.cloud/es/waf2p/"
+              "href": "https://mach2.cloud/es/WAF++/"
             },
             {
               "hreflang": "x-default",
-              "href": "https://mach2.cloud/en/waf2p/"
+              "href": "https://mach2.cloud/en/WAF++/"
             }
           ]
         },
@@ -1295,7 +1295,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
+          "after": "fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS,architecture audit SaaS,cloud architecture blueprint,fractional architect engagement,cloud architecture consulting Series A,engineering enablement cloud,AI-native platform design"
         },
         "canonical": {
           "before": null,
@@ -1353,7 +1353,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI-native cloud architecture"
+          "after": "enterprise Kubernetes platform,multi-tenant Kubernetes Azure,cloud architecture for SaaS,Series B cloud architecture,platform slowing engineering velocity,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -1411,7 +1411,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI-native cloud architecture"
+          "after": "cloud architecture AWS,AI workload scaling,AI features work in staging fail in production,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -1527,7 +1527,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI-native cloud architecture"
+          "after": "SaaS architecture Series A technical debt,fractional cloud architect,cloud architecture for SaaS,Series B cloud architecture,AI‑Native Cloud & Platform Architecture"
         },
         "canonical": {
           "before": null,
@@ -1585,7 +1585,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1643,7 +1643,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1701,7 +1701,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1759,7 +1759,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1817,7 +1817,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1875,7 +1875,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1933,7 +1933,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -1991,7 +1991,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -2049,7 +2049,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "ai-development,AI-Native,Platform Engineering,ci-cd-pipeline,software-engineering,SaaS,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -2107,7 +2107,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Startup Architecture,Cloud Economics,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -2165,7 +2165,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "AI-Native,Architecture,Platform Design,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,
@@ -2223,7 +2223,7 @@
         },
         "keywords": {
           "before": null,
-          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF2p,WAF2p framework,AI-native cloud architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
+          "after": "BaaS,AWS Amplify,Startup Architecture,Cloud Architecture,Decision Making,fractional cloud architect,fractional principal architect SaaS,WAF++,WAF++ framework,AI‑Native Cloud & Platform Architecture,cloud architecture audit SaaS,SaaS architecture Series A technical debt,Series B cloud architecture,cloud architecture for SaaS,technical debt SaaS"
         },
         "canonical": {
           "before": null,

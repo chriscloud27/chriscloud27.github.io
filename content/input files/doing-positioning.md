@@ -1,6 +1,6 @@
 # Doing:Positioning (short to long-term)
 
-**AI-Native Cloud Architect for B2B SaaS — MaCh2.Cloud**
+**AI‑Native Cloud & Platform Architect for B2B SaaS — MaCh2.Cloud**
 
 I help SaaS companies design and build scalable AI-native cloud platforms, enabling engineering teams to ship faster, scale reliably, and support long-term business growth without architectural constraint.
 
@@ -8,7 +8,7 @@ I help SaaS companies design and build scalable AI-native cloud platforms, enabl
 
 # Solopreneur Authority Path
 
-**GCP Cloud Arch + CKA + IaC + WAF2p = CNCF-adjacent authority path for AI-native cloud-native thought leadership.**
+**GCP Cloud Arch + CKA + IaC + WAF++ = CNCF-adjacent authority path for AI-native cloud-native thought leadership.**
 
 > Deep cloud infrastructure know-how → hands-on current projects → governed AI-acceleration → certifications + community and customer recognition → global authority
 
@@ -16,16 +16,16 @@ I help SaaS companies design and build scalable AI-native cloud platforms, enabl
 
 1. **Certs Foundation:** GCP Cloud Architect validates AI patterns and multi-cloud design; CKA validates Kubernetes/IaC — prerequisites for CNCF contributions and principal-level credibility.
 2. **IaC Bridge:** Public Terraform modules for GCP/K8s on GitHub — CNCF-compatible, demo-ready in client pitches.
-3. **WAF2p as Active Framework:**
-   - WAF2p is live — not a future submission. It is the signature framework defining the MaCh2.Cloud methodology.
+3. **WAF++ as Active Framework:**
+   - WAF++ is live — not a future submission. It is the signature framework defining the MaCh2.Cloud methodology.
    - Aligns with CNCF landscape: Cilium/OPA for security, Prometheus for reliability, OpenTofu/Terraform for IaC.
    - CNCF Sandbox submission path: extends Well-Architected Frameworks to K8s-native AI-SaaS systems.
    - Active contributions: docs/PRs to Kubernetes sig-arch, CNCF landscape submission.
 
 ## Global Recognition Path
 
-- **CNCF Visibility:** KubeCon talks ("WAF2p: AI-Native Resilience") — 300k+ network reach.
-- **Proof Loop:** Certs → IaC repos → WAF2p PRs → CNCF badge → SaaS clients.
+- **CNCF Visibility:** KubeCon talks ("WAF++: AI-Native Resilience") — 300k+ network reach.
+- **Proof Loop:** Certs → IaC repos → WAF++ PRs → CNCF badge → SaaS clients.
 - **Sub-niche Authority:** "AI-native WAF for cloud-agnostic SaaS" — fills a real gap; CNCF TAC endorsement path.
 
 ---

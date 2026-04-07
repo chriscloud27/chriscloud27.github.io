@@ -1,4 +1,4 @@
-# Christian Weber — AI-Native Cloud Architect
+# Christian Weber — AI‑Native Cloud & Platform Architect
 
 **Helping Series A–B SaaS teams eliminate architectural debt before it blocks scale**
 
@@ -18,20 +18,20 @@ My work sits at the intersection most companies can't staff internally: strategi
 | Stage                                                                    | What happens                                                                                                                  |
 | ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | [Architecture Diagnosis Call](https://cal.com/mach2cloud/diagnosis-call) | 60-minute structured diagnostic. You leave with clarity on what's actually driving the problem regardless of what comes next. |
-| Architecture Audit                                                       | Deep analysis of your current platform against the WAF2p framework. Clear picture of risk, cost, and velocity impact.         |
+| Architecture Audit                                                       | Deep analysis of your current platform against the WAF++ framework. Clear picture of risk, cost, and velocity impact.         |
 | Blueprint & System Design                                                | A concrete architecture design your team can execute without external dependency.                                             |
 | Engineering Enablement                                                   | Hands-on guidance through implementation — decisions, reviews, unblocking.                                                    |
 | Fractional Principal Architect                                           | Ongoing architecture leadership without the cost or ramp time of a full-time hire.                                            |
 
 The Diagnosis Call is the only entry point. Every engagement starts there.
 
-## WAF2p Framework
+## WAF++ Framework
 
-WAF2p is an open-source extension of the AWS Well-Architected Framework, purpose-built for AI-native, cloud-agnostic SaaS platforms.
+WAF++ is an open-source extension of the AWS Well-Architected Framework, purpose-built for AI-native, cloud-agnostic SaaS platforms.
 
 It addresses what the standard framework doesn't: inference cost modeling, AI workload scaling patterns, failure blast radius design, and platform architecture for systems where AI is a first-class citizen, not a feature add-on.
 
-**→ [waf2p.dev](https://waf2p.dev)**
+**→ [WAF++.dev](https://WAF++.dev)**
 
 ## Where This Applies
 
@@ -61,8 +61,8 @@ Engineering teams enabled to own and evolve architecture independently. The goal
 
 ## Selected Experience
 
-**MaCh2.Cloud** — Principal AI-Native Cloud Architect _(2022–Present)_
-Fractional architecture leadership for Series A–B SaaS companies. Creator of WAF2p.
+**MaCh2.Cloud** — Principal AI‑Native Cloud & Platform Architect _(2022–Present)_
+Fractional architecture leadership for Series A–B SaaS companies. Creator of WAF++.
 
 **Capgemini** — Enterprise & Cloud Architect _(2020–2023)_
 Azure and AWS cloud platforms (landing zones) supporting 1,700 and 2,500 developers respectively. 90% automated AWS platform with CDK/Python. AWS Global Partner Award 2023.
@@ -159,8 +159,8 @@ If image is missing or cached, hit **Regenerate** in the inspector. LinkedIn cac
 **In 6 weeks (GEO Baseline Test):**
 Ask ChatGPT, Perplexity, and Claude:
 
-- _"Who is Christian Weber, AI-Native Cloud Architect?"_
-- _"What is the WAF2p framework?"_
+- _"Who is Christian Weber, AI‑Native Cloud & Platform Architect?"_
+- _"What is the WAF++ framework?"_
 
 Screenshot the responses. mach2.cloud should appear as a source. This is your before/after evidence that the GEO implementation is working.
 
@@ -290,8 +290,8 @@ See → `N8N_AUTOMATION.md` for workflows
 
 **Week 6 (6-Week Baseline Test)**:
 
-- [ ] Ask ChatGPT: _"Who is Christian Weber, AI-Native Cloud Architect?"_
-- [ ] Ask Perplexity: _"What is the WAF2p framework?"_
+- [ ] Ask ChatGPT: _"Who is Christian Weber, AI‑Native Cloud & Platform Architect?"_
+- [ ] Ask Perplexity: _"What is the WAF++ framework?"_
 - [ ] Ask Claude: _"Who helps Series A SaaS companies with AI-native architecture?"_
 - [ ] **Screenshot responses** — is mach2.cloud appearing as a source?
 - [ ] Record results in spreadsheet (for month 3 comparison)
@@ -372,7 +372,7 @@ node scripts/test-compass-webhook.mjs
 
 - **Website:** [mach2.cloud](https://mach2.cloud)
 - **LinkedIn:** [linkedin.com/in/christian-weber-0591](https://linkedin.com/in/christian-weber-0591)
-- **WAF2p Framework:** [waf2p.dev](https://waf2p.dev)
+- **WAF++ Framework:** [WAF++.dev](https://WAF++.dev)
 - **Architecture Diagnosis Call:** [cal.com/mach2cloud/diagnosis-call](https://cal.com/mach2cloud/diagnosis-call)
 
 ---

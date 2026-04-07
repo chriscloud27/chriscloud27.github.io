@@ -55,7 +55,7 @@ const FAQ = [
   },
 ];
 
-const META_PILLS = ["~5 minutes", "WAF2p aligned", "report in 24h"];
+const META_PILLS = ["~5 minutes", "WAF++ aligned", "report in 24h"];
 
 export default async function CompassPage({
   params,
@@ -116,7 +116,7 @@ export default async function CompassPage({
               />
             </a>
             <p className="font-mono text-[11px] tracking-[0.08em] text-grey-mid">
-              Christian · Founder &amp; AI-Native Cloud Architect
+              Christian · Founder &amp; AI‑Native Cloud & Platform Architect
             </p>
           </div>
         </div>

@@ -279,7 +279,7 @@ export function CompassFlow() {
     { name: "Basic", desc: "5 min · terminal CLI\nlead + basic report" },
     {
       name: "Intense",
-      desc: "WAF2p pillars · days–weeks\nassessment + findings",
+      desc: "WAF++ pillars · days–weeks\nassessment + findings",
     },
   ];
   const engine = [

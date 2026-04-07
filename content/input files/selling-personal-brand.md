@@ -6,9 +6,9 @@
 
 # 1. Primary Headline Identity
 
-**AI-Native Cloud Architect for B2B SaaS**
+**AI‑Native Cloud & Platform Architect for B2B SaaS**
 
-I help Series A–B SaaS companies design AI-native cloud architectures that eliminate the architectural debt compounding from the build-fast phase — so engineering teams ship product instead of firefighting the platform beneath it.
+I help Series A–B SaaS companies design AI‑Native Cloud & Platform Architectures that eliminate the architectural debt compounding from the build-fast phase — so engineering teams ship product instead of firefighting the platform beneath it.
 
 AI is not an add-on.  
 Architecture is not documentation.  
@@ -20,7 +20,7 @@ Cloud sovereignty is not optional.
 
 I operate at the intersection of:
 
-- AI-Native Cloud Architecture
+- AI‑Native Cloud & Platform Architecture
 - Platform Engineering & Infrastructure as Code
 - Governance, Security & Compliance
 - Cloud Economics & Cost Architecture
@@ -76,7 +76,7 @@ It is not retrofitted after the system is built.
 
 ## Strategic Position
 
-- AI-Native cloud architect operating at principal level — globally.
+- AI‑Native Cloud & Platform Architect operating at principal level — globally.
 - Security-first credibility without security theater.
 - Production-reality bias — designed to survive real traffic, real growth, real constraints.
 - Strategic challenger of chaos, short-termism, and tool-first thinking.
@@ -85,12 +85,12 @@ It is not retrofitted after the system is built.
 
 # 5. Signature Framework
 
-## WAF2p — Well-Architected Framework Open-Source Extension
+## WAF++ — Well-Architected Framework Open-Source Extension
 
-WAF2p is an active, public architectural framework.  
+WAF++ is an active, public architectural framework.  
 It extends existing Well-Architected Frameworks to address what they leave unresolved for AI-native SaaS systems.
 
-WAF2p integrates:
+WAF++ integrates:
 
 - AI-native architecture patterns
 - Governance and security modeling
@@ -98,7 +98,7 @@ WAF2p integrates:
 - Economic and risk metrics (cost-as-constraint)
 - Cross-cloud portability and sovereignty design
 
-WAF2p is the structured foundation that makes architecture measurable, sovereign, and continuously adaptive.
+WAF++ is the structured foundation that makes architecture measurable, sovereign, and continuously adaptive.
 
 It is not theoretical.  
 It is built from production-scale systems and evolves with real execution.
@@ -192,7 +192,7 @@ Resilience is not a trait. It is an architectural property — applied to both s
 
 **Perceived As:**
 
-- AI-Native Cloud Architect — operating at the strategic and hands-on level
+- AI‑Native Cloud & Platform Architect — operating at the strategic and hands-on level
 - Strategic Challenger
 - Visionary systems thinker
 - Professor-level clarity without academic abstraction
@@ -214,7 +214,7 @@ System-first. Business-aware.
 
 # 10. Brand Essence
 
-AI-native cloud architect designing the system foundations  
+AI‑Native Cloud & Platform Architect designing the system foundations  
 that allow B2B SaaS companies to scale with speed,  
 operational stability, and economic discipline.
 
@@ -230,9 +230,9 @@ when they are designed to — not hoped to.
 
 This identity is locked.
 
-**Primary headline:** AI-Native Cloud Architect for B2B SaaS  
+**Primary headline:** AI‑Native Cloud & Platform Architect for B2B SaaS  
 **Primary target:** Series A–B SaaS companies — past chaos, not yet enterprise  
-**Signature framework:** WAF2p  
+**Signature framework:** WAF++  
 **Differentiator:** Cloud-agnostic by principle, AI-native by design  
 **Resilience narrative:** Implicit authority proof — operational, not performative  
 **Architectural KPIs:** Engineering velocity / Cloud unit economics / System resilience  

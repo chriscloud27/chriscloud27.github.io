@@ -10,10 +10,10 @@
 
 ## Test Queries
 
-1. **Query 1**: "Who is Christian Weber, AI-Native Cloud Architect?"
-2. **Query 2**: "What is the WAF2p framework?"
+1. **Query 1**: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
+2. **Query 2**: "What is the WAF++ framework?"
 3. **Query 3**: "Who helps Series A SaaS companies scale cloud architecture?"
-4. **Query 4**: "What is AI-native cloud architecture?"
+4. **Query 4**: "What is AI‑Native Cloud & Platform Architecture?"
 
 ---
 
@@ -21,20 +21,20 @@
 
 ### 1. ChatGPT (GPT-4o)
 
-**Query 1**: "Who is Christian Weber, AI-Native Cloud Architect?"
+**Query 1**: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
 
 ```
 Status: ❌ NOT INDEXED
-Response: "Christian Weber, AI-Native Cloud Architect" cannot be verified as a known public figure.
+Response: "Christian Weber, AI‑Native Cloud & Platform Architect" cannot be verified as a known public figure.
 mach2.cloud: Not mentioned
 Sources: None
 ```
 
-**Query 2**: "What is WAF2p?"
+**Query 2**: "What is WAF++?"
 
 ```
 Status: ❌ NOT INDEXED
-Response: "WAF2p is a real, but niche/emerging cloud architecture framework concept"
+Response: "WAF++ is a real, but niche/emerging cloud architecture framework concept"
 mach2.cloud: Not mentioned
 Sources: None
 ```
@@ -45,38 +45,38 @@ Sources: None
 
 ### 2. Perplexity
 
-**Query 1**: "Who is Christian Weber, AI-Native Cloud Architect?"
+**Query 1**: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
 
 ```
 Status: ✅ INDEXED
-Response: "Christian Weber is an AI-Native Cloud Architect who focuses on building
+Response: "Christian Weber is an AI‑Native Cloud & Platform Architect who focuses on building
 scalable platform infrastructure and helping B2B SaaS companies design, build, and
 optimize reliable, scalable cloud platforms, particularly for Seed and Series A–B startups."
 
 mach2.cloud: ✅ CITED AS SOURCE
-Quote: "MaCh2.Cloud — AI-Native Cloud Architect. System-first architecture for teams that
-want momentum, not rework. … Christian Weber — AI-Native Cloud Architect."
+Quote: "MaCh2.Cloud — AI‑Native Cloud & Platform Architect. System-first architecture for teams that
+want momentum, not rework. … Christian Weber — AI‑Native Cloud & Platform Architect."
 ```
 
-**Query 2**: "What is WAF2p?"
+**Query 2**: "What is WAF++?"
 
 ```
 Status: ✅ INDEXED
-Response: "WAF2p (also written WAF++) is a community-driven, cloud-agnostic framework that
+Response: "WAF++ (also written WAF++) is a community-driven, cloud-agnostic framework that
 helps organizations build secure, scalable, and efficient cloud architectures in a
 structured, modular way."
 
 mach2.cloud: ✅ CITED AS SOURCE
-Quote: Shows MaCh2.Cloud as primary source for WAF2p information
+Quote: Shows MaCh2.Cloud as primary source for WAF++ information
 ```
 
-**Summary**: Perplexity is actively indexing mach2.cloud. Christian Weber and WAF2p framework appear as established sources. This is the strongest baseline signal.
+**Summary**: Perplexity is actively indexing mach2.cloud. Christian Weber and WAF++ framework appear as established sources. This is the strongest baseline signal.
 
 ---
 
 ### 3. Claude (Claude 3.5 Sonnet)
 
-**Query 1**: "Who is Christian Weber, AI-Native Cloud Architect?"
+**Query 1**: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
 
 ```
 Status: ❌ NOT INDEXED
@@ -89,11 +89,11 @@ mach2.cloud: Not mentioned
 Note: Claude acknowledges the role exists but lacks authoritative data
 ```
 
-**Query 2**: "What is WAF2p?"
+**Query 2**: "What is WAF++?"
 
 ```
 Status: ❌ NOT INDEXED
-Response: "I'm not familiar with WAF2p specifically. You may be referring to a
+Response: "I'm not familiar with WAF++ specifically. You may be referring to a
 cloud architecture framework, but I don't have reliable information about it."
 
 mach2.cloud: Not mentioned
@@ -105,7 +105,7 @@ mach2.cloud: Not mentioned
 
 ### 4. Google Gemini
 
-**Query 1**: "Who is Christian Weber, AI-Native Cloud Architect?"
+**Query 1**: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
 
 ```
 Status: ⏳ PARTIAL
@@ -116,12 +116,12 @@ mach2.cloud: Not mentioned
 Sources: Generic cloud architecture resources
 ```
 
-**Query 2**: "What is AI-native cloud architecture?"
+**Query 2**: "What is AI‑Native Cloud & Platform Architecture?"
 
 ```
 Status: ✅ INDEXED
 Response: Comprehensive information on AI-native architecture concepts;
-does NOT cite mach2.cloud or WAF2p framework
+does NOT cite mach2.cloud or WAF++ framework
 
 mach2.cloud: Not mentioned yet
 ```
@@ -146,7 +146,7 @@ mach2.cloud: Not mentioned yet
 ### 1. Perplexity Is Ahead
 
 - **Status**: Actively indexing mach2.cloud
-- **Visibility**: High (Christian Weber + WAF2p cited as sources)
+- **Visibility**: High (Christian Weber + WAF++ cited as sources)
 - **Why**: Perplexity prioritizes current web crawling; fresh content indexed quickly
 
 ### 2. ChatGPT & Claude Have No Data
@@ -185,7 +185,7 @@ By Week 6 (April 3, 2026), success = :
 
 ```
 ✅ ChatGPT: Christian Weber + mach2.cloud appearing
-✅ Claude: WAF2p framework as mach2.cloud source
+✅ Claude: WAF++ framework as mach2.cloud source
 ✅ Perplexity: Continued high visibility
 ✅ Gemini: mach2.cloud cited for AI-native architecture
 ```

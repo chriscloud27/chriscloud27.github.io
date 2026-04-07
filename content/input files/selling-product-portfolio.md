@@ -1,4 +1,4 @@
-# AI-Native Cloud Architecture — Product Portfolio
+# AI‑Native Cloud & Platform Architecture — Product Portfolio
 
 ## Executive Summary
 
@@ -12,7 +12,7 @@ However, as companies grow, Cloud architecture often evolves reactively. New fea
 
 Over time, this creates hidden friction. Technology decisions must directly support business strategy, customer value delivery, and long-term scalability.
 
-My role is to design AI-native Cloud architectures that align your technical foundation with your business objectives:
+My role is to design AI‑Native Cloud & Platform Architectures that align your technical foundation with your business objectives:
 — deliver customer value faster  
 — scale your product and revenue efficiently  
 — integrate AI capabilities reliably into your core product  
@@ -45,7 +45,7 @@ The core issue is not technology. It is alignment.
 
 Technology decisions must directly support business strategy, customer value delivery, and long-term scalability.
 
-My role is to design AI-native Cloud architectures that align your technical foundation with your business objectives.
+My role is to design AI‑Native Cloud & Platform Architectures that align your technical foundation with your business objectives.
 
 This ensures that your platform enables — rather than limits — your ability to:
 
@@ -72,7 +72,7 @@ This transforms Cloud and AI infrastructure from a technical necessity into a st
 
 # Product Portfolio
 
-## 1. AI-Native Cloud Architecture Audit
+## 1. AI‑Native Cloud & Platform Architecture Audit
 
 ### Purpose
 
@@ -99,7 +99,7 @@ Establish architectural clarity and identify risks, inefficiencies, and scaling 
 
 ---
 
-## 2. AI-Native Cloud Architecture Blueprint
+## 2. AI‑Native Cloud & Platform Architecture Blueprint
 
 ### Purpose
 
@@ -153,7 +153,7 @@ Provide continuous architectural guidance as systems evolve and scale.
 
 ---
 
-## 4. Fractional AI-Native Cloud Architect
+## 4. Fractional AI‑Native Cloud & Platform Architect
 
 ### Purpose
 

@@ -356,14 +356,14 @@
 curl -X POST https://api.openai.com/v1/chat/completions \
   -H "Authorization: Bearer $OPENAI_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"model": "gpt-4", "messages": [{"role": "user", "content": "Who is Christian Weber, AI-Native Cloud Architect?"}]}' \
+  -d '{"model": "gpt-4", "messages": [{"role": "user", "content": "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"}]}' \
   | jq '.choices[0].message.content'
 
 # Perplexity
 curl -X POST https://api.perplexity.ai/chat/completions \
   -H "Authorization: Bearer $PERPLEXITY_API_KEY" \
   -H "Content-Type: application/json" \
-  -d '{"model": "pplx-7b-online", "messages": [{"role": "user", "content": "What is the WAF2p framework?"}]}'
+  -d '{"model": "pplx-7b-online", "messages": [{"role": "user", "content": "What is the WAF++ framework?"}]}'
 
 # Claude
 curl -X POST https://api.anthropic.com/v1/messages \
@@ -374,7 +374,7 @@ curl -X POST https://api.anthropic.com/v1/messages \
 # Google Gemini
 curl -X POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$GEMINI_API_KEY \
   -H "Content-Type: application/json" \
-  -d '{"contents": [{"parts": [{"text": "What is AI-native cloud architecture?"}]}]}'
+  -d '{"contents": [{"parts": [{"text": "What is AI‑Native Cloud & Platform Architecture?"}]}]}'
 ```
 
 **Then manually record results in Google Sheet**:

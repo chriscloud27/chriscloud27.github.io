@@ -3,7 +3,7 @@
 ## Brand Identity
 
 - Name: MaCh2.Cloud
-- Role: AI-Native Cloud Architect for B2B SaaS
+- Role: AI‑Native Cloud & Platform Architect for B2B SaaS
 - Target: Series A–B SaaS companies — past early chaos, not yet enterprise
 - Tone: Calm. Precise. Direct. No hype. No jargon. System-first.
 
@@ -29,11 +29,11 @@
 
 ## Hero Copy (locked — do not change)
 
-- Eyebrow: AI-NATIVE CLOUD ARCHITECT
+- Eyebrow: AI‑Native Cloud & Platform Architect
 - Headline line 1: You survived early chaos.
 - Headline line 2: Now your architecture
 - Headline line 3 (Electric Cyan #00E5FF): is the chaos.
-- Subheadline: Series A and B SaaS companies move fast — until the foundation built to get there starts breaking under the weight of growth. I design AI-native cloud architectures that eliminate the technical debt compounding in your platform, so your engineering team ships faster instead of firefighting what already exists.
+- Subheadline: Series A and B SaaS companies move fast — until the foundation built to get there starts breaking under the weight of growth. I design AI‑Native Cloud & Platform Architectures that eliminate the technical debt compounding in your platform, so your engineering team ships faster instead of firefighting what already exists.
 - Proof line: Architectures built to survive growth — not to be replaced by it.
 - Primary CTA: Architecture Diagnosis
 - Secondary CTA: See How It Works
@@ -54,16 +54,16 @@ Full brand strategy, ICP, value proposition, and product packages are in `/brand
 - `/brand/selling-icp.md` — ideal customer profile, buyer psychology, triggers
 - `/brand/selling-Product-Packages.md` — 4 products and engagement philosophy
 - `/brand/selling-personal-brand-colors.md` — full color system and usage rules
-- `/brand/doing-positioning.md` — authority path, cert roadmap, WAF2p framework
+- `/brand/doing-positioning.md` — authority path, cert roadmap, WAF++ framework
 
 ## Site Content & Architecture
 
 **Reference:** `docs/SITE-CONTENT-OUTLINE.md`
 
 - Multi-locale routing: `app/[locale]/` with i18n via `next-intl`
-- Content sources: `messages/*.json` (i18n), Notion API (blog), hardcoded (cases, waf2p)
+- Content sources: `messages/*.json` (i18n), Notion API (blog), hardcoded (cases, WAF++)
 - Homepage sections: modular components in `components/sections/`
-- Navigation: multi-level routes (home, about, blog, cases, waf2p)
+- Navigation: multi-level routes (home, about, blog, cases, WAF++)
 
 Consult this document before modifying site structure, routes, or content organization.
 

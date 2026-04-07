@@ -73,7 +73,7 @@ export default async function AboutPage({
               <h1>
                 Christian Weber
                 <br />
-                <em>AI-Native Cloud Architect</em>
+                <em>AI‑Native Cloud & Platform Architect</em>
               </h1>
               <p className="hero-sub mt-6">
                 {t.rich("sub", {

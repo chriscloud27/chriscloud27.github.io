@@ -29,7 +29,7 @@ Your SEO/GEO implementation is live. Now you need three things:
 | Rank  | Engine            | Users | Test Quarterly            | Why It Matters             |
 | ----- | ----------------- | ----- | ------------------------- | -------------------------- |
 | **1** | ChatGPT           | 200M  | "Who is Christian Weber?" | Largest AI search volume   |
-| **2** | Perplexity        | 50M   | "What is WAF2p?"          | Cites sources prominently  |
+| **2** | Perplexity        | 50M   | "What is WAF++?"          | Cites sources prominently  |
 | **3** | Claude            | 50M   | Run via API               | You have full API access   |
 | **4** | Google Gemini     | 100M  | gemini.google.com         | Google-native AI           |
 | **5** | Microsoft Copilot | 50M   | copilot.microsoft.com     | Bing-based, lower priority |

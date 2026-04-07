@@ -28,8 +28,8 @@ MaCh2.Cloud implements comprehensive SEO and GEO (Generative Engine Optimization
 | -------------- | ------------------------- | ----------------- | ----------------------------------------- |
 | **Claude**     | "Who is Christian Weber?" | ❌ Not indexed    | No mach2.cloud presence yet               |
 | **ChatGPT**    | "Who is Christian Weber?" | ❌ Not verifiable | "Not a known public figure"               |
-| **Perplexity** | "Who is Christian Weber?" | ✅ Appearing      | "MaCh2.Cloud — AI-Native Cloud Architect" |
-| **Perplexity** | "What is WAF2p?"          | ✅ Appearing      | mach2.cloud cited as source               |
+| **Perplexity** | "Who is Christian Weber?" | ✅ Appearing      | "MaCh2.Cloud — AI‑Native Cloud & Platform Architect" |
+| **Perplexity** | "What is WAF++?"          | ✅ Appearing      | mach2.cloud cited as source               |
 
 **Key Finding**: Perplexity is indexing mach2.cloud content, but Claude and ChatGPT have no indexed data yet. This is expected at Week 0 — full indexing typically requires 2–6 weeks.
 
@@ -73,7 +73,7 @@ Root Layout (app/[locale]/layout.tsx)
     │  ├─ Article JSON-LD schema
     │  └─ Related articles component
     │
-    └─ Other Routes (diagnosis, services, waf2p, etc.)
+    └─ Other Routes (diagnosis, services, WAF++, etc.)
        └─ Unique metadata per route
 ```
 
@@ -86,8 +86,8 @@ Root Layout (app/[locale]/layout.tsx)
   "@type": "Person",
   "name": "Christian Weber",
   "url": "https://mach2.cloud",
-  "jobTitle": "AI-Native Cloud Architect",
-  "sameAs": ["linkedin.com/in/christian-weber-0591", "github.com/chriscloud27", "waf2p.dev"],
+  "jobTitle": "AI‑Native Cloud & Platform Architect",
+  "sameAs": ["linkedin.com/in/christian-weber-0591", "github.com/chriscloud27", "WAF++.dev"],
   "knowsAbout": ["AI-native architecture", "Platform engineering", "Series A–B SaaS scaling", ...]
 }
 ```
@@ -101,7 +101,7 @@ Root Layout (app/[locale]/layout.tsx)
     { "name": "Architecture Diagnosis Call", "url": "...", "position": 1 },
     { "name": "Blog", "url": "...", "position": 2 },
     { "name": "Services", "url": "...", "position": 3 },
-    { "name": "WAF2p Framework", "url": "...", "position": 4 }
+    { "name": "WAF++ Framework", "url": "...", "position": 4 }
   ]
 }
 ```
@@ -159,7 +159,7 @@ Sitemap: https://mach2.cloud/sitemap.xml
 **Generation**:
 
 1. Iterates all locales (en, de, es)
-2. Static routes: /, /about, /blog, /services, /services/agentic-team-focal, /diagnosis, /waf2p, /whitepaper (8 per locale = 24)
+2. Static routes: /, /about, /blog, /services, /services/agentic-team-focal, /diagnosis, /WAF++, /whitepaper (8 per locale = 24)
 3. Case studies: 4 case studies × 3 locales = 12
 4. Blog articles: ~12 articles × 3 locales = 36
 5. **Total**: ~72 URLs
@@ -167,7 +167,7 @@ Sitemap: https://mach2.cloud/sitemap.xml
 **Priorities**:
 
 - Homepage: 1.0 (weekly)
-- /waf2p: 0.9 (monthly)
+- /WAF++: 0.9 (monthly)
 - /services: 0.85 (monthly)
 - /blog: 0.8 (monthly)
 - Blog articles: 0.8 (monthly)
@@ -252,10 +252,10 @@ Blog Post Fields:
 **Week 0 (Baseline)**: Establish baseline — ask all AI engines
 
 ```
-ChatGPT: "Who is Christian Weber, AI-Native Cloud Architect?"
-Perplexity: "What is the WAF2p framework?"
+ChatGPT: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
+Perplexity: "What is the WAF++ framework?"
 Claude: "Who helps Series A SaaS scale cloud architecture?"
-Gemini: "What is AI-native cloud architecture?"
+Gemini: "What is AI‑Native Cloud & Platform Architecture?"
 ```
 
 Record: Does mach2.cloud appear? In what position? What quote?
@@ -403,10 +403,10 @@ Record: Does mach2.cloud appear? In what position? What quote?
 ### Week 6 (GEO Baseline Verification)
 
 - [ ] **Run baseline verification test**:
-  - Ask ChatGPT: "Who is Christian Weber, AI-Native Cloud Architect?"
-  - Ask Perplexity: "What is the WAF2p framework?"
+  - Ask ChatGPT: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?"
+  - Ask Perplexity: "What is the WAF++ framework?"
   - Ask Claude: "Who helps Series A SaaS companies scale cloud architecture?"
-  - Ask Gemini: "What is AI-native cloud architecture?"
+  - Ask Gemini: "What is AI‑Native Cloud & Platform Architecture?"
   - **Screenshot each response**
   - Record: Does mach2.cloud appear? As what quote?
   - **Owner**: You

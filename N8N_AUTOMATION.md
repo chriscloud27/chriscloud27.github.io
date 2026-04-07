@@ -240,8 +240,8 @@ Dashboard: https://console.google.com/webmasters/
 
 ### Manual: Ask AI Assistants
 
-1. ChatGPT: `"Who is Christian Weber, AI-Native Cloud Architect?"`
-2. Perplexity: `"What is the WAF2p framework?"`
+1. ChatGPT: `"Who is Christian Weber, AI‑Native Cloud & Platform Architect?"`
+2. Perplexity: `"What is the WAF++ framework?"`
 3. Claude: `"Who helps Series A SaaS companies with AI-native architecture?"`
 
 **Record in Google Sheets**:
@@ -267,7 +267,7 @@ const response = await fetch("https://api.anthropic.com/v1/messages", {
     messages: [
       {
         role: "user",
-        content: "Who is Christian Weber, AI-Native Cloud Architect?",
+        content: "Who is Christian Weber, AI‑Native Cloud & Platform Architect?",
       },
     ],
   }),

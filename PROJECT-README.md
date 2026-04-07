@@ -14,7 +14,7 @@ Keyword strategy is centralized in `lib/keywords.ts` and applied per route:
 - **Page-level keywords**: Each route's `generateMetadata()` function
   - Blog listing: `app/[locale]/blog/page.tsx` → `keywords: BLOG_KEYWORDS`
   - Blog articles: `app/[locale]/blog/[slug]/page.tsx` → merge post tags + `GLOBAL_KEYWORDS`
-  - Other routes (home/about/waf2p/cases): set `keywords` in each route's metadata
+  - Other routes (home/about/WAF++/cases): set `keywords` in each route's metadata
 - **Blog article deduplication**: Keywords are built as `[...new Set([...post.tags, ...GLOBAL_KEYWORDS])]` to avoid duplicates
 
 ## Tools & Workflows
@@ -88,7 +88,7 @@ reports/seo/
 
 ## Platform Compass Security
 
-The Platform Compass (`/[locale]/compass`) is an interactive terminal-based assessment. It collects 14 scored answers across 5 WAF2p pillars and returns a personalized readiness tier. The scoring and tier logic are company IP and must not be exposed in the client JS bundle.
+The Platform Compass (`/[locale]/compass`) is an interactive terminal-based assessment. It collects 14 scored answers across 5 WAF++ pillars and returns a personalized readiness tier. The scoring and tier logic are company IP and must not be exposed in the client JS bundle.
 
 ### Client / server split
 

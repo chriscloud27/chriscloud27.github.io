@@ -12,8 +12,8 @@
   <text x="30" y="180" font-family="Syne, sans-serif" font-size="60" font-weight="700" fill="#FFFFFF" width="840">AI-Native Cloud</text>
   <text x="30" y="250" font-family="Syne, sans-serif" font-size="60" font-weight="700" fill="#FFFFFF">Architecture</text>
 
-  <!-- Subtitle: "AI-Native Cloud Architecture · Series A–B SaaS" -->
-  <text x="30" y="320" font-family="'DM Sans', sans-serif" font-size="20" fill="#8899AA">AI-Native Cloud Architecture · Series A–B SaaS</text>
+  <!-- Subtitle: "AI‑Native Cloud & Platform Architecture · Series A–B SaaS" -->
+  <text x="30" y="320" font-family="'DM Sans', sans-serif" font-size="20" fill="#8899AA">AI‑Native Cloud & Platform Architecture · Series A–B SaaS</text>
 
   <!-- Bottom-right domain: "mach2.cloud" -->
   <text x="1170" y="600" font-family="'DM Sans', sans-serif" font-size="16" font-weight="500" fill="#00E5FF" text-anchor="end">mach2.cloud</text>

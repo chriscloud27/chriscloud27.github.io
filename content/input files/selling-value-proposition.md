@@ -1,4 +1,4 @@
-# Christian — AI-Native Cloud Architect
+# Christian — AI‑Native Cloud & Platform Architect
 
 ## MaCh2.Cloud — Personal Brand Value Proposition
 
@@ -6,7 +6,7 @@
 
 # 1. Executive Positioning
 
-I help SaaS companies design AI-native cloud architectures that scale reliably, evolve intelligently, and remain cost-efficient as they grow.
+I help SaaS companies design AI‑Native Cloud & Platform Architectures that scale reliably, evolve intelligently, and remain cost-efficient as they grow.
 
 Unlike traditional cloud consultants who focus on tooling or short-term migrations, I design system-level architecture foundations that enable long-term speed, operational stability, and financial predictability.
 
@@ -34,7 +34,7 @@ I operate where architectural decisions determine whether a company accelerates 
 
 ## Outcomes I Enable
 
-- Production-ready AI-native cloud architecture
+- Production-ready AI‑Native Cloud & Platform Architecture
 - Predictable and optimized cloud cost structure
 - Clear architectural decision frameworks
 - Faster feature delivery on stable foundations
@@ -82,9 +82,9 @@ Architectures designed to survive:
 - Real constraints
 - Real budget pressure
 
-## 6. WAF2p — Proprietary Architectural Framework
+## 6. WAF++ — Proprietary Architectural Framework
 
-WAF2p (Well-Architected Framework — Open Extension) is my active, public methodology that extends standard Well-Architected Frameworks for AI-native SaaS systems.
+WAF++ (Well-Architected Framework — Open Extension) is my active, public methodology that extends standard Well-Architected Frameworks for AI-native SaaS systems.
 
 It integrates:
 
@@ -94,13 +94,13 @@ It integrates:
 - Cloud economics and risk metrics
 - Cross-cloud portability design
 
-Architecture through WAF2p becomes measurable, sovereign, and continuously adaptive — not a one-time deliverable.
+Architecture through WAF++ becomes measurable, sovereign, and continuously adaptive — not a one-time deliverable.
 
 ---
 
 # 4. Conceptual Frameworks I Operate From
 
-- WAF2p — AI-Native Well-Architected Extension
+- WAF++ — AI-Native Well-Architected Extension
 - Systems Thinking (architecture + org + economics)
 - AI-Native Lifecycle Architecture
 - Cloud-Native Design Principles
@@ -203,7 +203,7 @@ Tone:
 5. Leadership of global engineering teams
 6. Multiple industry and cloud architecture excellence awards
 7. Proven production-scale system design
-8. Creator of WAF2p — active open-source architectural framework
+8. Creator of WAF++ — active open-source architectural framework
 
 Authority grounded in:  
 Real systems.  
@@ -227,7 +227,7 @@ If you work with me or follow my work, you will:
 
 # 10. Long-Term Brand Goal
 
-To become the reference authority for AI-native cloud architecture in modern SaaS.
+To become the reference authority for AI‑Native Cloud & Platform Architecture in modern SaaS.
 
 Not a migration consultant.  
 Not a tooling expert.  

@@ -13,7 +13,7 @@ const STATIC_ROUTE_KEYS = [
   "/services/agentic-team-focal",
   "/compass",
   "/diagnosis",
-  "/waf2p",
+  "/WAF++",
   "/whitepaper",
 ] as const;
 
@@ -39,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority:
           routeKey === "/"
             ? 1
-            : routeKey === "/waf2p"
+            : routeKey === "/WAF++"
               ? 0.9
               : routeKey === "/services"
                 ? 0.85

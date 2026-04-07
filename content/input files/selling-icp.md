@@ -1,6 +1,6 @@
 # Ideal Customer Profile (ICP)
 
-## AI-Native Cloud Architecture — MaCh2.Cloud
+## AI‑Native Cloud & Platform Architecture — MaCh2.Cloud
 
 ## Overview
 
@@ -105,7 +105,7 @@ These moments create urgency. They are not shopping for architecture in the abst
 ## Problems I Solve
 
 — eliminate architectural bottlenecks compounding from the build-fast phase  
-— design AI-native cloud architectures that scale without rewrites  
+— design AI‑Native Cloud & Platform Architectures that scale without rewrites  
 — reduce and optimize cloud cost with full visibility  
 — improve system reliability and reduce blast radius of failures  
 — provide clear architectural direction so engineering teams ship product instead of managing infrastructure  

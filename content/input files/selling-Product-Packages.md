@@ -1,4 +1,4 @@
-# AI-Native Cloud Architecture â€” Product Portfolio
+# AI‑Native Cloud & Platform Architecture â€” Product Portfolio
 
 ## Executive Summary
 
@@ -16,7 +16,7 @@ Engineering teams slow down. Cloud cost increases without proportional business 
 
 Architecture becomes a constraint instead of an enabler.
 
-My role is to design and enable AI-native Cloud architectures that directly support business execution.
+My role is to design and enable AI‑Native Cloud & Platform Architectures that directly support business execution.
 
 I operate at both strategic and hands-on levels â€” defining architectural direction while working directly with engineering teams to build and evolve scalable systems.
 
@@ -81,7 +81,7 @@ The result is a Cloud platform architecture that supports engineering velocity, 
 
 # Product Portfolio
 
-## 1. AI-Native Cloud Architecture Audit
+## 1. AI‑Native Cloud & Platform Architecture Audit
 
 ### Purpose
 
@@ -108,7 +108,7 @@ Establish architectural clarity and identify risks, inefficiencies, and scaling 
 
 ---
 
-## 2. AI-Native Cloud Architecture Blueprint
+## 2. AI‑Native Cloud & Platform Architecture Blueprint
 
 ### Purpose
 
@@ -162,7 +162,7 @@ Enable engineering teams to build, operate, and evolve platform architecture cor
 
 ---
 
-## 4. Fractional AI-Native Cloud Architect
+## 4. Fractional AI‑Native Cloud & Platform Architect
 
 ### Purpose
 
