@@ -429,6 +429,8 @@ const BLOCK_LABELS: Record<string, string> = {
   b5: "BLOCK 5 · TEAM & AI USAGE",
 };
 
+const DIAGNOSIS_CALL_URL = "https://cal.com/mach2cloud/diagnosis-call";
+
 export default function CompassTerminal() {
   const initialized = useRef(false);
 
@@ -721,7 +723,7 @@ export default function CompassTerminal() {
 
       const calA = document.createElement("a");
       calA.className = "cta-link";
-      calA.href = "https://cal.com/mach2cloud/diagnosis-call";
+      calA.href = DIAGNOSIS_CALL_URL;
       calA.target = "_blank";
       calA.rel = "noopener noreferrer";
       calA.innerHTML =
