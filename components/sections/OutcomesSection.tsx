@@ -1,12 +1,12 @@
 const OUTCOMES = [
   {
     id: "01",
-    headline: "Ship faster, not slower",
+    headline: "Engineers ship features, not infrastructure tickets",
     body: "Deliver customer value faster with stable platform foundations",
   },
   {
     id: "02",
-    headline: "Scale without ceilings",
+    headline: "Revenue scales without architectural rewrites",
     body: "Scale product and revenue without architectural bottlenecks",
   },
   {
@@ -59,17 +59,18 @@ export default function OutcomesSection() {
             <p className="eyebrow">Outcomes</p>
 
             <h2 className="mb-6">
-              Architecture that <em>compounds.</em>
+              What a fixed foundation <em>makes possible.</em>
             </h2>
 
             <p
               className="font-body text-[15px] font-light leading-[1.78] mb-10"
               style={{ color: "var(--g300)" }}
             >
-              Most architecture problems aren&apos;t visible until they&apos;re
-              expensive. The right foundation doesn&apos;t just solve
-              today&apos;s bottlenecks — it removes the ones that would have
-              appeared in six months.
+              Most architectural problems are invisible until they&apos;re
+              expensive. By the time they surface in missed sprints, rising
+              cloud bills, or a failed due diligence, the cost of fixing them
+              has multiplied. The right foundation removes the problems that
+              haven&apos;t appeared yet.
             </p>
 
             {/* Direct contrast statement */}

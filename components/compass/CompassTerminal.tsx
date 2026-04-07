@@ -429,6 +429,8 @@ const BLOCK_LABELS: Record<string, string> = {
   b5: "BLOCK 5 · TEAM & AI USAGE",
 };
 
+const DIAGNOSIS_CALL_URL = "https://cal.com/mach2cloud/diagnosis-call";
+
 export default function CompassTerminal() {
   const initialized = useRef(false);
 
@@ -583,11 +585,76 @@ export default function CompassTerminal() {
       await addLine("  " + result.message, "", 560);
       await blank(620);
 
+      // ── Dimension breakdown ───────────────────────────────────────────
+      await addLine("─".repeat(46), "dim", 660);
+      await addLine("  DIMENSION SCORES", "blk", 680);
+      await blank(700);
+
+      type DimDef = {
+        key: "b1" | "b2" | "b3" | "b4" | "b5";
+        name: string;
+        low: string;
+        high: string;
+      };
+      const DIMENSIONS: DimDef[] = [
+        {
+          key: "b1",
+          name: "Platform Foundations",
+          low: "AI features and infrastructure weren't designed to scale. Fix velocity and cost visibility first.",
+          high: "Strong foundations. Shipping speed and cost clarity are in good shape.",
+        },
+        {
+          key: "b2",
+          name: "Reliability & Ownership",
+          low: "Incidents surprise the team and ownership is unclear. Reliability needs structured attention.",
+          high: "Reliability patterns are in place and architectural ownership is defined.",
+        },
+        {
+          key: "b3",
+          name: "AI Maturity",
+          low: "AI ambitions outpace infrastructure. Staging and production diverge — high operational risk.",
+          high: "AI capabilities are production-hardened and infrastructure matches the roadmap.",
+        },
+        {
+          key: "b4",
+          name: "Cloud Sovereignty",
+          low: "High vendor lock-in. A price change or API deprecation could create serious disruption.",
+          high: "Platform uses open standards and can adapt to provider changes with low risk.",
+        },
+        {
+          key: "b5",
+          name: "Team & AI Usage",
+          low: "AI tooling adoption is low and ownership of AI decisions is fragmented.",
+          high: "Engineering team uses AI tooling broadly and architectural ownership is clear.",
+        },
+      ];
+
+      let dimDelay = 720;
+      for (const dim of DIMENSIONS) {
+        const score = result[dim.key];
+        const rag = score >= 65 ? "ok" : score >= 40 ? "warn" : "err";
+        const bar =
+          score >= 65
+            ? "▓▓▓▓▓▓▓░░░"
+            : score >= 40
+              ? "▓▓▓▓░░░░░░"
+              : "▓▓░░░░░░░░";
+        await addLine(
+          "  " + dim.name.padEnd(26) + bar + "  " + score + "/100",
+          rag,
+          dimDelay,
+        );
+        const interp = score >= 65 ? dim.high : dim.low;
+        await addLine("    " + interp, "dim", dimDelay + 40);
+        await blank(dimDelay + 80);
+        dimDelay += 140;
+      }
+
       if (result.highGap) {
         await addLine(
           "  Warning · AI ambition outpaces infrastructure maturity",
           "warn",
-          660,
+          dimDelay,
         );
         await addLine(
           "  Level " +
@@ -596,27 +663,33 @@ export default function CompassTerminal() {
             (result.aiInfra + 1) +
             " infrastructure – high risk",
           "warn",
-          700,
+          dimDelay + 40,
         );
-        await blank(740);
+        await blank(dimDelay + 80);
+        dimDelay += 140;
       }
       if (result.lowSov) {
         await addLine(
           "  Sovereignty · High vendor lock-in detected",
           "warn",
-          780,
+          dimDelay,
         );
         await addLine(
           "  Provider independence and open standards both flagged",
           "warn",
-          820,
+          dimDelay + 40,
         );
-        await blank(860);
+        await blank(dimDelay + 80);
+        dimDelay += 140;
       }
 
-      await addLine("  Recommended  ·  " + result.recommendation, "warn", 900);
-      await blank(960);
-      await addLine("Sending your report...", "dim", 1000);
+      await addLine(
+        "  Recommended  ·  " + result.recommendation,
+        "warn",
+        dimDelay,
+      );
+      await blank(dimDelay + 60);
+      await addLine("Sending summary to your email...", "dim", dimDelay + 100);
 
       // ── Fire-and-forget: full payload including both HTML reports ────
       const simpleHtml = buildSimpleReport(answers, result);
@@ -636,26 +709,26 @@ export default function CompassTerminal() {
       });
 
       await addLine(
-        "Report sent to " + String(answers["email"] ?? ""),
+        "Summary sent to " + String(answers["email"] ?? ""),
         "dim",
-        1040,
+        dimDelay + 140,
       );
-      await new Promise<void>((r) => setTimeout(r, 1080));
+      await new Promise<void>((r) => setTimeout(r, dimDelay + 180));
 
-      // Cal.com CTA — label + button
+      // CTA — label + button
       const label = document.createElement("div");
       label.className = "ln dim";
-      label.textContent = "Recommended action";
+      label.textContent = "Want to go deeper?";
       out!.appendChild(label);
 
       const calA = document.createElement("a");
       calA.className = "cta-link";
-      calA.href = `/${new URL(window.location.href).pathname.split("/")[1] || "en"}/diagnosis`;
+      calA.href = DIAGNOSIS_CALL_URL;
       calA.target = "_blank";
       calA.rel = "noopener noreferrer";
       calA.innerHTML =
         '<span class="cta-label">next step</span>' +
-        '<span class="cta-action">→ Book a diagnosis call</span>';
+        '<span class="cta-action">→ A 30-minute call turns this into a prioritized roadmap.</span>';
       out!.appendChild(calA);
       scrollBottom();
       phase = "done";
@@ -717,7 +790,7 @@ export default function CompassTerminal() {
       await addLine("Estimated time: 5 minutes.", "dim", 420);
       await blank(500);
       await addLine(
-        "Your personalized report arrives within 39 minutes.",
+        "Results appear on screen instantly. A summary is also sent by email.",
         "dim",
         560,
       );
