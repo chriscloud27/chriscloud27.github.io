@@ -1,23 +1,24 @@
 const painPoints = [
   {
     headline: "AI features work in demos but fail in production",
-    body: "Inference latency, scaling and cost dynamics weren't part of the architecture.",
+    body: "Inference latency and scaling weren't built in. They were bolted on. Production exposes the difference.",
   },
   {
     headline: "Cloud costs growing faster than revenue",
-    body: "No clear AI / Cloud usage cost model tied to business value.",
+    body: "Cloud spend is rising but no one can explain exactly why — or what to cut without breaking something.",
   },
   {
-    headline: "Architectural bottlenecks slowing delivery",
-    body: "Teams wait on infrastructure instead of shipping features.",
+    headline: "Engineers are waiting on infrastructure, not shipping features",
+    body: "30–40% of engineering cycles go to platform firefighting instead of customer value.",
   },
   {
-    headline: "Over-engineered or under-engineered foundations",
-    body: "Either premature complexity or technical debt stalling growth.",
+    headline:
+      "The platform is either too complex to move fast or too fragile to scale",
+    body: "Both paths converge on the same outcome: a rewrite at the worst possible time.",
   },
   {
-    headline: "Fragmented platform strategy",
-    body: "No clear system direction as teams scale and re-architecture risk are almost programmed. You know the current path won't scale another 12 months.",
+    headline: "No clear direction as the team grows",
+    body: "What worked at 10 engineers doesn't work at 40. The architecture hasn't caught up to the org.",
   },
   {
     headline: "Your platform isn't investor-ready",
@@ -34,7 +35,7 @@ export default function ProblemSection() {
         <div className="max-w-[600px] mb-[72px]">
           <p className="eyebrow">The Problem</p>
           <h2>
-            What happens when architecture <em>can&apos;t keep up</em>
+            These are the problems that appear between Series A and Series B.
           </h2>
         </div>
 

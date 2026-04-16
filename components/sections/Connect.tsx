@@ -15,15 +15,13 @@ export default async function Connect() {
             {/* brand: centred eyebrow label */}
             <div className="eyebrow justify-center">{t("eyebrow")}</div>
             <h2>
-              Your platform should
-              <br />
-              <em>outlast your roadmap.</em>
+              If your architecture is creating friction, this is the right
+              conversation.
             </h2>
             <p>
-              Let&apos;s talk if you&apos;re a CTO or engineering leader at a
-              SaaS company scaling from 10 to 100 engineers and architecture is
-              starting to create friction <strong></strong> A short call usually
-              surfaces the one thing worth fixing first.
+              If you&apos;re a CTO or Technical Founder at a Series A–B SaaS
+              company and your platform is starting to slow the business down —
+              a short call usually surfaces the one thing worth fixing first.
             </p>
           </div>
 

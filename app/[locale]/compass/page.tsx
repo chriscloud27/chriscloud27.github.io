@@ -43,7 +43,7 @@ const FAQ = [
   },
   {
     q: "What happens after I complete it?",
-    a: "You get an on‑screen summary and a PDF. At the end, you can optionally book a 30‑minute Architecture Audit review or close the tab. No forced calendar booking.",
+    a: "You get your results immediately on screen — scored by dimension, with context on what to fix first. At the end, you can optionally book a 30-minute Architecture Audit call or close the tab. No forced calendar booking. A summary is also sent to your email.",
   },
   {
     q: "Will you see my answers?",
@@ -55,7 +55,7 @@ const FAQ = [
   },
 ];
 
-const META_PILLS = ["~5 minutes", "WAF++ aligned", "report in 24h"];
+const META_PILLS = ["~5 minutes", "WAF++ aligned", "instant results"];
 
 export default async function CompassPage({
   params,
@@ -71,15 +71,12 @@ export default async function CompassPage({
       <section className="py-20 text-center">
         <div className="wrap max-w-[720px]">
           <h1 className="font-display text-[clamp(1.75rem,4.5vw,3rem)] font-light leading-[1.15] tracking-[-0.02em] text-white mb-5">
-            See where your platform will break <br></br>
-            <em className="not-italic text-electric-cyan font-medium">
-              before your costs explode
-            </em>
+            Find out which gaps are most likely blocking your growth phase
           </h1>
 
           <p className="font-body text-[15px] font-light leading-[1.7] text-grey-mid max-w-[540px] mx-auto mb-8">
-            AI-native platform diagnostic for Series A/B SaaS. <br></br>
-            Get your top 3 failure risks and next-step priorities.
+            Answer 10 questions about your platform. Get an instant readout of
+            your top architectural risk areas — mapped to the WAF2p framework.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6">
@@ -89,7 +86,19 @@ export default async function CompassPage({
               className="flex items-center gap-2 font-mono text-[11px] text-grey-mid tracking-[0.06em]"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-electric-cyan/50 flex-shrink-0" />
-              {pill}
+              {pill === "WAF++ aligned" ? (
+                <a
+                  href={`/${locale}/waf2p`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="WAF2p is an open-source extension of the AWS Well-Architected Framework for AI-native SaaS platforms."
+                  className="hover:text-electric-cyan transition-colors"
+                >
+                  {pill}
+                </a>
+              ) : (
+                pill
+              )}
             </span>
           ))}
         </div>
@@ -120,6 +129,11 @@ export default async function CompassPage({
             </p>
           </div>
         </div>
+
+        <p className="font-body text-[13px] font-light leading-[1.7] text-grey-mid max-w-[480px] mx-auto mb-4">
+          Used by CTOs at Series A–B SaaS teams to identify the one
+          architectural gap most likely to create friction at scale.
+        </p>
 
         <a
           href="#terminal"

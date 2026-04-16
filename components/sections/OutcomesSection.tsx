@@ -1,12 +1,12 @@
 const OUTCOMES = [
   {
     id: "01",
-    headline: "Ship faster, not slower",
+    headline: "Engineers ship features, not infrastructure tickets",
     body: "Deliver customer value faster with stable platform foundations",
   },
   {
     id: "02",
-    headline: "Scale without ceilings",
+    headline: "Revenue scales without architectural rewrites",
     body: "Scale product and revenue without architectural bottlenecks",
   },
   {
@@ -58,33 +58,18 @@ export default function OutcomesSection() {
           <div className="lg:sticky lg:top-[100px]">
             <p className="eyebrow">Outcomes</p>
 
-            <h2 className="mb-6">
-              Architecture that <em>compounds.</em>
-            </h2>
+            <h2 className="mb-6">What a fixed foundation makes possible.</h2>
 
             <p
               className="font-body text-[15px] font-light leading-[1.78] mb-10"
               style={{ color: "var(--g300)" }}
             >
-              Most architecture problems aren&apos;t visible until they&apos;re
-              expensive. The right foundation doesn&apos;t just solve
-              today&apos;s bottlenecks — it removes the ones that would have
-              appeared in six months.
+              Most architectural problems are invisible until they&apos;re
+              expensive. By the time they surface in missed sprints, rising
+              cloud bills, or a failed due diligence, the cost of fixing them
+              has multiplied. The right foundation removes the problems that
+              haven&apos;t appeared yet.
             </p>
-
-            {/* Direct contrast statement */}
-            <div
-              className="border-l-2 pl-5 py-1"
-              style={{ borderColor: "var(--cyan)" }}
-            >
-              <p
-                className="font-mono text-[12px] leading-[1.65]"
-                style={{ color: "var(--g500)" }}
-              >
-                Production systems. Not prototypes. Not proofs of concept that
-                need replacing at Series B.
-              </p>
-            </div>
           </div>
 
           {/* Right — outcome list */}

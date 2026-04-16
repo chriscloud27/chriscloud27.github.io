@@ -3,7 +3,11 @@
 import { useEffect, useRef } from "react";
 import { SendHorizontal } from "lucide-react";
 import { scoreAnswers } from "@/lib/compassEngine";
-import { buildSimpleReport, buildAdvancedReport } from "@/lib/compassReports";
+import {
+  buildSimpleReport,
+  buildAdvancedReport,
+  BLOCKS,
+} from "@/lib/compassReports";
 
 const TERMINAL_CSS = `
 .compass-terminal {
@@ -616,7 +620,45 @@ export default function CompassTerminal() {
 
       await addLine("  Recommended  ·  " + result.recommendation, "warn", 900);
       await blank(960);
-      await addLine("Sending your report...", "dim", 1000);
+
+      // ── Per-dimension breakdown ──────────────────────────────────────
+      await addLine("─".repeat(46), "dim", 980);
+      await addLine("Dimension breakdown", "cyan", 1020);
+      await blank(1060);
+
+      const blockKeys = ["b1", "b2", "b3", "b4", "b5"] as const;
+      let delay = 1100;
+      for (const key of blockKeys) {
+        const score = result[key as keyof typeof result] as number;
+        const block = (
+          BLOCKS as Record<
+            string,
+            {
+              label: string;
+              finding: Record<string, string>;
+              quickWin: Record<string, string>;
+            }
+          >
+        )[key];
+        const tier = result.tier as string;
+        await addLine(`  ${block.label}  ·  ${score} / 100`, "cyan", delay);
+        delay += 60;
+        await addLine(`  ${block.finding[tier]}`, "", delay);
+        delay += 60;
+        await addLine(`  → ${block.quickWin[tier]}`, "warn", delay);
+        delay += 60;
+        await blank(delay);
+        delay += 60;
+      }
+
+      await addLine("─".repeat(46), "dim", delay);
+      delay += 40;
+      await addLine(
+        "Sending summary to " + String(answers["email"] ?? "") + "...",
+        "dim",
+        delay,
+      );
+      delay += 40;
 
       // ── Fire-and-forget: full payload including both HTML reports ────
       const simpleHtml = buildSimpleReport(answers, result);
@@ -635,27 +677,22 @@ export default function CompassTerminal() {
         /* non-blocking */
       });
 
-      await addLine(
-        "Report sent to " + String(answers["email"] ?? ""),
-        "dim",
-        1040,
-      );
-      await new Promise<void>((r) => setTimeout(r, 1080));
+      await new Promise<void>((r) => setTimeout(r, delay + 40));
 
       // Cal.com CTA — label + button
       const label = document.createElement("div");
       label.className = "ln dim";
-      label.textContent = "Recommended action";
+      label.textContent = "Want to go deeper?";
       out!.appendChild(label);
 
       const calA = document.createElement("a");
       calA.className = "cta-link";
-      calA.href = `/${new URL(window.location.href).pathname.split("/")[1] || "en"}/diagnosis`;
+      calA.href = "https://cal.com/mach2cloud/diagnosis-call";
       calA.target = "_blank";
       calA.rel = "noopener noreferrer";
       calA.innerHTML =
         '<span class="cta-label">next step</span>' +
-        '<span class="cta-action">→ Book a diagnosis call</span>';
+        '<span class="cta-action">→ Book Architecture Diagnosis Call — 30 minutes to a prioritized roadmap</span>';
       out!.appendChild(calA);
       scrollBottom();
       phase = "done";
@@ -717,7 +754,7 @@ export default function CompassTerminal() {
       await addLine("Estimated time: 5 minutes.", "dim", 420);
       await blank(500);
       await addLine(
-        "Your personalized report arrives within 39 minutes.",
+        "Results render instantly after completion. A summary is also sent to your email.",
         "dim",
         560,
       );

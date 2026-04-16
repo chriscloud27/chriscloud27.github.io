@@ -19,9 +19,9 @@
     "h1Part1": "Your platform should",
     "h1Emphasis": "accelerate growth",
     "h1Part2": "Right now it probably isn't.",
-    "sub": "I help <strong>Seed–Series C SaaS CTOs and engineering leaders</strong> build scalable SaaS infrastructure for growth-stage velocity. I design <strong>automated, secure, high-leverage cloud platforms</strong> that scale AI-native products without architectural rewrites.",
+    "sub": "MaCh2.Cloud helps <strong>Seed–Series C SaaS CTOs and engineering leaders</strong> build scalable SaaS infrastructure for growth-stage velocity. We design <strong>automated, secure, high-leverage cloud platforms</strong> that scale AI-native products without architectural rewrites.",
     "cta": "Get in touch",
-    "ctaSecondary": "See My Work",
+    "ctaSecondary": "See Our Work",
     "stat1Value": "13+",
     "stat1Label": "Years designing enterprise cloud systems",
     "stat2Value": "2,500",
@@ -51,7 +51,7 @@
   },
   "authority": {
     "heading": "Proven Architecture at <em>Enterprise Scale</em>",
-    "sub": "My work has enabled platforms supporting thousands of engineers, mission-critical workloads, and globally distributed systems.",
+    "sub": "MaCh2.Cloud has enabled platforms supporting thousands of engineers, mission-critical workloads, and globally distributed systems.",
     "downloadWhitepaper": "Download Whitepaper"
   },
   "connect": {
@@ -101,10 +101,10 @@
   "about": {
     "eyebrow": "About",
     "heading": "Christian Weber <em>AI‑Native Cloud & Platform Architect</em>",
-    "sub": "I help Startup Series A-C SaaS CTOs and engineering leaders <highlight>build scalable SaaS infrastructure for growth-stage velocity</highlight>.",
-    "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs <highlight>validated code, production-ready features, tests, and documentation</highlight> in a repeatable way. My approach combines cloud-native patterns with AI-assisted development practices to <highlight>create platforms that are both technically robust and aligned with business objectives</highlight>.",
+    "sub": "MaCh2.Cloud helps Startup Series A-C SaaS CTOs and engineering leaders <highlight>build scalable SaaS infrastructure for growth-stage velocity</highlight>.",
+    "description": "AI gives engineering teams powerful tool access to accelerate their development if put in structured workflows that outputs <highlight>validated code, production-ready features, tests, and documentation</highlight> in a repeatable way. The MaCh2.Cloud approach combines cloud-native patterns with AI-assisted development practices to <highlight>create platforms that are both technically robust and aligned with business objectives</highlight>.",
     "cta": "Get in touch",
-    "ctaSecondary": "See My Work"
+    "ctaSecondary": "See Our Work"
   },
   "WAF++": {
     "eyebrow": "Open Framework",
@@ -145,7 +145,7 @@
     "eyebrow": "Your Way to Ship Faster",
     "h1Part1": "System‑first architecture for SaaS teams that want momentum,",
     "h1Emphasis": "not rework",
-    "sub": "I work with B2B SaaS CTOs to replace fragile cloud foundations with AI‑native systems that scale cleanly, stay cost‑predictable and let engineering teams ship confidently. The offers below build on each other — from a simple diagnosis call to ongoing fractional support.",
+    "sub": "MaCh2.Cloud works with B2B SaaS CTOs to replace fragile cloud foundations with AI‑native systems that scale cleanly, stay cost‑predictable and let engineering teams ship confidently. The offers below build on each other — from a simple diagnosis call to ongoing fractional support.",
     "cta": "Start with a Diagnosis Call →",
     "ctaSecondary": "See the 30‑Day Sprint →"
   },

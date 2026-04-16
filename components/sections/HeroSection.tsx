@@ -22,19 +22,18 @@ export default function HeroSection() {
           <div>
             <p className="eyebrow">AI Native Cloud Architect</p>
 
-            <h1>
-              <em>System-first Architecture</em> for teams that want momentum
-            </h1>
+            <h1>Your cloud architecture is slowing your engineers down.</h1>
 
             <p className="hero-sub">
-              My mission is to help growth-stage SaaS teams replace fragile
-              cloud foundations with AI-native systems that scale cleanly, stay
-              cost-predictable, and let engineers ship confidently.
+              MaCh2.Cloud helps Series A–B SaaS CTOs fix the architectural gaps
+              that slow shipping, spike cloud costs, and block the next funding
+              round.
             </p>
 
             {/* brand: proof line — mono label style per spec */}
             <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-grey-mid mb-10">
-              I build architecture that compounds your velocity.
+              One conversation usually surfaces the one thing worth fixing
+              first.
             </p>
 
             <div className="hero-btns">

@@ -19,8 +19,7 @@ const STATS = [
   {
     value: "0",
     suffix: "%",
-    label:
-      "Architectural rewrites on systems designed with a clear foundation from the start",
+    label: "Architectural rewrites on systems designed with WAF2p from day one",
   },
 ] as const;
 
