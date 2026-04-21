@@ -41,8 +41,9 @@ export default async function Footer() {
             <li>
               <a href={localeHref("/#connect")}>Contact</a>
             </li>
-            {/* Desktop-only vertical divider between nav and legal links */}
-            <li className="foot-links-sep" aria-hidden="true" />
+          </ul>
+
+          <ul className="foot-legal">
             <li>
               <Link href={localeHref("/impressum")}>{t("impressum")}</Link>
             </li>

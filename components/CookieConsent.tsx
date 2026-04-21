@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
-const COOKIE_NAME = "fairup_consent";
+const COOKIE_NAME = "mach2_consent";
 const COOKIE_MAX_AGE = 365 * 24 * 60 * 60; // 1 year in seconds
 
 type ConsentValue = "granted" | "denied";
@@ -63,7 +63,7 @@ function writeConsentCookie(state: ConsentState) {
 
 function dispatchConsentUpdate(state: ConsentState) {
   document.dispatchEvent(
-    new CustomEvent("fairup_consent_update", { detail: state }),
+    new CustomEvent("mach2_consent_update", { detail: state }),
   );
 }
 
@@ -112,31 +112,41 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={t("label")}
-      className="fixed bottom-0 left-0 right-0 z-50 bg-[#0B1F3A] border-t border-white/10 px-4 py-4 sm:py-5"
-    >
-      <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <p className="flex-1 text-sm text-white/80 leading-relaxed">
-          {t("message")}
-        </p>
-        <div className="flex gap-3 shrink-0">
-          <button
-            onClick={handleDecline}
-            className="text-sm px-4 py-2 rounded border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-colors"
-          >
-            {t("decline")}
-          </button>
-          <button
-            onClick={handleAccept}
-            className="text-sm px-4 py-2 rounded bg-[#00E5FF] text-[#0B1F3A] font-medium hover:bg-[#00ccee] transition-colors"
-          >
-            {t("accept")}
-          </button>
+    <>
+      <div
+        className="fixed inset-0 z-[9998] bg-black/40 pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t("label")}
+        className="fixed bottom-0 left-0 right-0 z-[9999] bg-[#0B1F3A] border-t border-white/10 px-4 py-4 sm:py-5"
+        style={{
+          transform: "translateZ(0)",
+          paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
+        }}
+      >
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full min-w-0">
+          <p className="flex-1 min-w-0 text-sm text-white/80 leading-relaxed break-words">
+            {t("message")}
+          </p>
+          <div className="flex gap-3 shrink-0">
+            <button
+              onClick={handleDecline}
+              className="text-sm px-4 py-2 rounded border border-white/20 text-white/70 hover:text-white hover:border-white/40 transition-colors"
+            >
+              {t("decline")}
+            </button>
+            <button
+              onClick={handleAccept}
+              className="text-sm px-4 py-2 rounded bg-[#00E5FF] text-[#0B1F3A] font-medium hover:bg-[#00ccee] transition-colors"
+            >
+              {t("accept")}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

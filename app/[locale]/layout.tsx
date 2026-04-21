@@ -28,7 +28,7 @@ gtag('consent', 'default', {
   'security_storage': 'granted',
   'wait_for_update': 500
 });
-document.addEventListener('fairup_consent_update', function(e) {
+document.addEventListener('mach2_consent_update', function(e) {
   var detail = e.detail || {};
   dataLayer.push({
     event: 'update_consent',
