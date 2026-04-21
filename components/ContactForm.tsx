@@ -3,7 +3,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,10 +16,12 @@ type ContactFormValues = {
   email: string;
   company?: string;
   message: string;
+  privacyConsent: true;
 };
 
 export default function ContactForm() {
   const t = useTranslations("form");
+  const locale = useLocale();
 
   const {
     register,
@@ -33,6 +36,9 @@ export default function ContactForm() {
         email: z.string().email(t("validation.emailInvalid")),
         company: z.string().optional(),
         message: z.string().min(1, t("validation.messageRequired")),
+        privacyConsent: z.literal(true, {
+          errorMap: () => ({ message: t("validation.privacyConsentRequired") }),
+        }),
       }),
     ),
   });
@@ -133,6 +139,32 @@ export default function ContactForm() {
         />
         {errors.message && (
           <span className="form-error show">{errors.message.message}</span>
+        )}
+      </div>
+
+      <div className="form-group">
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            type="checkbox"
+            {...register("privacyConsent")}
+            className="w-4 h-4 mt-0.5 accent-[#00E5FF] cursor-pointer shrink-0"
+          />
+          <span className="font-body text-[13px] text-grey-mid leading-relaxed">
+            I have read the{" "}
+            <Link
+              href={`/${locale}/datenschutz`}
+              className="text-electric-cyan hover:underline"
+            >
+              Privacy Policy
+            </Link>{" "}
+            and consent to the processing of my data.{" "}
+            <span className="required">*</span>
+          </span>
+        </label>
+        {errors.privacyConsent && (
+          <span className="form-error show">
+            {errors.privacyConsent.message}
+          </span>
         )}
       </div>
 

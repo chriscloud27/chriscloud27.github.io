@@ -23,7 +23,10 @@
       "Bash(grep -A 30 \"FAQ.map\" /Users/christianweber/Documents/Github/chriscloud27.github.io/app/[locale]/compass/page.tsx)",
       "Bash(grep -r \"I help\\\\|I design\\\\|I work\\\\|I build\\\\|I offer\\\\|I provide\\\\|I am\\\\|I'm\\\\|I've\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
       "Bash(grep -n \"My work\\\\|My approach\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
-      "Bash(grep -rn \"\\\\bI\\\\s\\\\|My\\\\s\\\\|me\\\\s\\\\|myself\\\\s\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)"
+      "Bash(grep -rn \"\\\\bI\\\\s\\\\|My\\\\s\\\\|me\\\\s\\\\|myself\\\\s\" /Users/christianweber/Documents/Github/chriscloud27.github.io/components/sections/*.tsx)",
+      "Bash(find /Users/christianweber/Documents/Github/chriscloud27.github.io -type f \\\\\\( -name \"*.tsx\" -o -name \"*.ts\" \\\\\\) -exec grep -l \"impressum\\\\|datenschutz\\\\|privacy\\\\|terms\\\\|agb\" {} \\\\;)",
+      "Bash(xargs basename *)",
+      "WebFetch(domain:logarec.de)"
     ]
   }
 }

@@ -80,11 +80,14 @@
       "firstNameRequired": "First name is required",
       "lastNameRequired": "Last name is required",
       "emailInvalid": "Please enter a valid email address",
-      "messageRequired": "Message is required"
+      "messageRequired": "Message is required",
+      "privacyConsentRequired": "Please accept the privacy policy to continue"
     }
   },
   "footer": {
-    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com"
+    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com",
+    "impressum": "Impressum",
+    "datenschutz": "Privacy Policy"
   },
   "blog": {
     "eyebrow": "Blog",
@@ -170,6 +173,12 @@
     "sub": "Start with an Architecture Diagnosis Call — 30 minutes to surface the highest-leverage thing worth fixing first. No commitment. No pitch. Just clarity.",
     "cta": "Book a Diagnosis Call →",
     "proofLine": "No pitch. One high-leverage finding you can act on."
+  },
+  "cookieConsent": {
+    "label": "Cookie consent",
+    "message": "We use cookies to analyse site traffic and improve your experience. You can accept or decline non-essential cookies.",
+    "accept": "Accept all",
+    "decline": "Decline"
   },
   "notFound": {
     "label": "404 — Not Found",

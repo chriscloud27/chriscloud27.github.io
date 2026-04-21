@@ -80,11 +80,14 @@
       "firstNameRequired": "El nombre es requerido",
       "lastNameRequired": "El apellido es requerido",
       "emailInvalid": "Por favor, introduce un correo electrónico válido",
-      "messageRequired": "El mensaje es requerido"
+      "messageRequired": "El mensaje es requerido",
+      "privacyConsentRequired": "Por favor, acepte la política de privacidad para continuar"
     }
   },
   "footer": {
-    "copy": "Christian Weber · Remoto, US–EU · chrisallin24@gmail.com"
+    "copy": "Christian Weber · Remoto, US–EU · chrisallin24@gmail.com",
+    "impressum": "Aviso Legal",
+    "datenschutz": "Política de privacidad"
   },
   "blog": {
     "eyebrow": "Blog",
@@ -170,6 +173,12 @@
     "sub": "Comienza con una llamada de Diagnóstico de Arquitectura — 30 minutos para identificar el cambio de mayor impacto. Sin compromiso. Sin pitch. Solo claridad.",
     "cta": "Reservar una llamada de Diagnóstico →",
     "proofLine": "Sin pitch. Un hallazgo concreto que puedes aplicar de inmediato."
+  },
+  "cookieConsent": {
+    "label": "Consentimiento de cookies",
+    "message": "Usamos cookies para analizar el tráfico del sitio y mejorar tu experiencia. Puedes aceptar o rechazar las cookies no esenciales.",
+    "accept": "Aceptar todo",
+    "decline": "Rechazar"
   },
   "notFound": {
     "label": "404 — No encontrado",
