@@ -80,11 +80,14 @@
       "firstNameRequired": "Vorname ist erforderlich",
       "lastNameRequired": "Nachname ist erforderlich",
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
-      "messageRequired": "Nachricht ist erforderlich"
+      "messageRequired": "Nachricht ist erforderlich",
+      "privacyConsentRequired": "Bitte akzeptieren Sie die Datenschutzerklärung, um fortzufahren"
     }
   },
   "footer": {
-    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com"
+    "copy": "Christian Weber · Remote, US–EU · chrisallin24@gmail.com",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz"
   },
   "blog": {
     "eyebrow": "Blog",
@@ -170,6 +173,12 @@
     "sub": "Starten Sie mit einem Architecture Diagnosis Call — 30 Minuten, um den wichtigsten Hebel zu finden. Kein Commitment. Kein Pitch. Nur Klarheit.",
     "cta": "Diagnose-Call buchen →",
     "proofLine": "Kein Pitch. Ein konkreter Befund, den Sie sofort nutzen können."
+  },
+  "cookieConsent": {
+    "label": "Cookie-Einwilligung",
+    "message": "Wir verwenden Cookies, um den Website-Traffic zu analysieren und Ihr Erlebnis zu verbessern. Sie können nicht wesentliche Cookies akzeptieren oder ablehnen.",
+    "accept": "Alle akzeptieren",
+    "decline": "Ablehnen"
   },
   "notFound": {
     "label": "404 — Nicht gefunden",

@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,6 +27,7 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export default function WhitepaperForm() {
+  const locale = useLocale();
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
@@ -148,17 +151,23 @@ export default function WhitepaperForm() {
 
       {/* Consent */}
       <div className="form-group">
-        <Label className="form-label">
-          Do you consent with our terms and conditions?{" "}
-          <span className="required">*</span>
-        </Label>
-        <label className="flex items-center gap-3 cursor-pointer mt-2">
+        <label className="flex items-start gap-3 cursor-pointer">
           <input
             type="checkbox"
             {...register("consent")}
-            className="w-4 h-4 accent-[#00E5FF] cursor-pointer"
+            className="w-4 h-4 mt-0.5 accent-[#00E5FF] cursor-pointer shrink-0"
           />
-          <span className="font-body text-[14px] text-grey-mid">I consent</span>
+          <span className="font-body text-[13px] text-grey-mid leading-relaxed">
+            I have read the{" "}
+            <Link
+              href={`/${locale}/datenschutz`}
+              className="text-electric-cyan hover:underline"
+            >
+              Privacy Policy
+            </Link>{" "}
+            and consent to the processing of my data.{" "}
+            <span className="required">*</span>
+          </span>
         </label>
         {errors.consent && (
           <span className="form-error show">{errors.consent.message}</span>

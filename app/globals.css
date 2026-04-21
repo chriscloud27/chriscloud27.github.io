@@ -1171,6 +1171,14 @@ footer {
 .foot-links a:hover {
   @apply text-electric-cyan;
 }
+.foot-links-sep {
+  width: 1px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  align-self: center;
+  list-style: none;
+  flex-shrink: 0;
+}
 
 /* ── Blog ────────────────────────────────────────────────────────────────────── */
 .blog-post-content h1 {
@@ -1334,6 +1342,9 @@ footer {
   .foot-inner {
     flex-direction: column;
     text-align: center;
+  }
+  .foot-links-sep {
+    display: none;
   }
   .foot-links {
     justify-content: center;

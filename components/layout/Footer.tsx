@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Mach2Logo from "@/components/Mach2Logo";
 
 export default async function Footer() {
   const locale = await getLocale();
+  const t = await getTranslations("footer");
 
   function localeHref(path: string) {
     return `/${locale}${path === "/" ? "" : path}`;
@@ -39,6 +40,14 @@ export default async function Footer() {
             </li>
             <li>
               <a href={localeHref("/#connect")}>Contact</a>
+            </li>
+            {/* Desktop-only vertical divider between nav and legal links */}
+            <li className="foot-links-sep" aria-hidden="true" />
+            <li>
+              <Link href={localeHref("/impressum")}>{t("impressum")}</Link>
+            </li>
+            <li>
+              <Link href={localeHref("/datenschutz")}>{t("datenschutz")}</Link>
             </li>
           </ul>
         </div>
