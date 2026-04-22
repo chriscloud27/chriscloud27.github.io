@@ -120,6 +120,33 @@ Detailed runbook: [reports/seo/SEO-SUMMARY.md](reports/seo/SEO-SUMMARY.md)
 
 ---
 
+## Architecture Decision Records
+
+This repo uses lightweight ADRs for architecture-level decisions.
+
+- ADR policy and rules: [CLAUDE.md](CLAUDE.md)
+- ADR index and canonical folder: [docs/adr/README.md](docs/adr/README.md)
+- ADR template: [docs/adr/0000-template.md](docs/adr/0000-template.md)
+- Broader architecture context: [docs/MULTI-PROJECT-SETUP.md](docs/MULTI-PROJECT-SETUP.md)
+
+Use ADRs only for decision-level architecture changes, one file per decision, with the fixed structure Title, Status, Date, Context, Decision, Consequences.
+
+Based on the CLAUDE.md in this repo, write an ADR when a decision:
+
+- Changes or establishes the overall architecture (routing, auth, storage, tenancy model)
+- Chooses between technologies or platforms (e.g. Firebase vs Supabase)
+- Establishes a pattern that all future code must follow (e.g. RLS on every table)
+- Would be confusing or surprising to a new developer without context
+- Explicitly rejects a reasonable alternative — document why
+
+Do not write one for:
+
+- Implementation details (which component to use, how to name a variable)
+- Bug fixes
+- Decisions that are obvious from reading the code
+
+---
+
 ## Platform Compass
 
 The [Platform Compass](https://mach2.cloud/en/compass) is a 14-question terminal-style assessment that scores a prospect's platform readiness across five blocks (Foundations, Reliability, AI Maturity, Cloud Sovereignty, Team AI Usage) and returns a tier (`fragile`, `scaling`, `accelerating`) with a personalised report via n8n webhook.

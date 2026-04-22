@@ -15,3 +15,31 @@
 - `reports/seo/SEO-SUMMARY.md`
 - `README.md` (SEO reference section)
 - Keep examples copy-pasteable and aligned with current paths.
+
+## Next.js Async Params (App Router)
+
+For layouts and pages under `app/[locale]/`, always use async function signatures and treat `params` as a Promise:
+
+```ts
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  // ...
+}
+```
+
+## ADR Conventions
+
+- Canonical ADR documentation lives in `docs/adr/`.
+- Use `docs/adr/0000-template.md` for new ADRs.
+- Broader architecture context lives in `docs/MULTI-PROJECT-SETUP.md`.
+- ADRs are decision-level only: one file per architecture decision.
+- Write an ADR when a decision changes overall architecture, selects a major technology or platform, establishes a repo-wide pattern, or rejects a plausible alternative that should remain documented.
+- Do not write ADRs for implementation details, bug fixes, or obvious code-level decisions.
+- Use the next available four-digit number, for example `0001-title.md`.
+- Allowed status values are `proposed`, `accepted`, `deprecated`, and `superseded by ADR-XXXX`.

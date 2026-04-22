@@ -99,3 +99,43 @@ Consult this document before modifying site structure, routes, or content organi
 - Available tags: `<highlight>` (Electric Cyan text), `<strong>` (semibold white text)
 - Rule: wrap styled words/phrases in these tags in the JSON
 - Rule: use `t.rich('key')` for any field with rich text tags — plain `t()` will not render them
+
+## Architectural Decision Records (ADRs)
+
+ADRs live in [`docs/adr/`](docs/adr/). Use [`docs/adr/0000-template.md`](docs/adr/0000-template.md) as the starting point.
+
+Broader architecture context lives in [`docs/MULTI-PROJECT-SETUP.md`](docs/MULTI-PROJECT-SETUP.md). Use that document for narrative system context and use ADRs for individual architecture decisions.
+
+### When to write an ADR
+
+Write a new ADR when a decision:
+
+- Changes or establishes the overall architecture (routing, auth, storage, tenancy model)
+- Chooses between technologies or platforms (e.g. Firebase vs Supabase)
+- Establishes a pattern that all future code must follow (e.g. RLS on every table)
+- Would be confusing or surprising to a new developer without context
+- Explicitly rejects a reasonable alternative — document why
+
+Do **not** write an ADR for:
+
+- Implementation details (which component to use, how to name a variable)
+- Bug fixes
+- Decisions that are obvious from reading the code
+
+### Numbering
+
+Use the next available four-digit number: `0005-title.md`, `0006-title.md`, etc.
+
+### Status values
+
+- `proposed` — under discussion
+- `accepted` — decided and active
+- `deprecated` — no longer relevant
+- `superseded by ADR-XXXX` — replaced by a newer decision
+
+### Writing style
+
+- Use the fixed template sections only: Title, Status, Date, Context, Decision, Consequences
+- Keep the Decision section to one clear active-voice statement
+- Use Consequences for trade-offs, constraints, and follow-up impact
+- If useful, compare Option A vs Option B inside Context before stating the final decision
