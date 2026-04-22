@@ -161,6 +161,14 @@ export default async function LocaleLayout({
     <html lang={locale}>
       {/* eslint-disable-next-line @next/next/no-page-custom-font */}
       <head>
+        {/* Security headers via meta — GitHub Pages does not support HTTP headers.
+            X-Frame-Options, HSTS, and Permissions-Policy require a CDN (Cloudflare). */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://www.googletagmanager.com https://flow.mach2.cloud; frame-src https://www.googletagmanager.com; object-src 'none';"
+        />
         {/* Consent Mode V2 defaults must run before GTM */}
         <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />
         {/* Google Tag Manager */}

@@ -145,8 +145,51 @@ All should render without errors.
 
 **March 2026**
 
-## Next Steps (Optional)
+---
 
-- Monitor build times and static export output size
-- Consider adding ISR (Incremental Static Regeneration) if needed
-- Explore edge caching strategies for optimal CDN performance
+## Architecture Decisions & Constraints
+
+Decisions made during and after the migration that are not obvious from the code.
+
+### Locale redirect strategy
+
+GitHub Pages has no server-side routing. The `/` root redirect to `/en/` is handled by a custom `out/index.html` injected during the build step (`.github/workflows/deploy.yml`). It uses client-side JS to detect `navigator.language` and redirect to the matching locale, with `/en/` as the default fallback.
+
+### `vercel.json` is a legacy artifact
+
+A `vercel.json` file exists at the repo root but is **not used** by the GitHub Pages deployment. The CI pipeline (`actions/deploy-pages@v4`) ignores it entirely. It was present before the migration and contains only a redirect rule that is superseded by the client-side locale detection above. It can be removed safely.
+
+### Security headers cannot be set from this repo
+
+GitHub Pages does not support custom HTTP response headers. Headers like `X-Frame-Options`, `Content-Security-Policy`, `Referrer-Policy`, and `Permissions-Policy` **cannot be injected** via any file in this repository. The only options are:
+
+- **Cloudflare proxy** (recommended) — DNS change only; headers set in Cloudflare Transform Rules
+- **`<meta http-equiv>` tags** — partial coverage; does not cover `X-Frame-Options`, `HSTS`, or `Permissions-Policy`
+
+This is documented as the primary blocker in the SOVP audit (SICHERHEITS-HEADER: 14%). See `docs/SOVP-AUDIT-FIXES.md`.
+
+### Images are not auto-converted to WebP
+
+`images: { unoptimized: true }` is required for static export. Next.js image optimization runs server-side and is incompatible with `output: "export"`. Images must be pre-converted to WebP/AVIF manually before committing. The `next/image` component still provides lazy loading and correct sizing attributes.
+
+### Cookie consent naming
+
+The consent cookie is `mach2_consent` and the GTM dataLayer event is `mach2_consent_update`. Both are wired in `components/CookieConsent.tsx` and `app/[locale]/layout.tsx`. The old names (`fairup_consent`, `fairup_consent_update`) were renamed in April 2026 and must not be reintroduced.
+
+### `overflow-x: clip` instead of `overflow-x: hidden`
+
+`globals.css` uses `overflow-x: clip` on both `html` and `body` — not `hidden`. The distinction matters: `overflow-x: hidden` creates a **scroll container** on the body, which causes `position: fixed` elements (cookie banner, modals) to anchor to the body's scroll container rather than the true viewport. On mobile, when body content is wider than the viewport, fixed elements can appear off-screen. `overflow-x: clip` clips paint without creating a scroll container, so `position: fixed` always anchors to the real viewport. Changed April 2026.
+
+### Cookie banner implementation constraints
+
+`components/CookieConsent.tsx` uses three non-obvious techniques required for correct mobile behavior:
+
+- `style={{ transform: "translateZ(0)" }}` — forces the element onto its own GPU compositing layer, ensuring `position: fixed` anchors to the visual viewport on mobile browsers
+- `paddingBottom: "max(1rem, env(safe-area-inset-bottom))"` — prevents buttons from being hidden behind the iOS home indicator
+- A full-viewport backdrop `div` (`fixed inset-0 z-[9998] pointer-events: none`) renders behind the banner to dim content and signal that a decision is required
+
+The banner uses `z-[9999]` to guarantee it is always above all other page elements.
+
+### Notion API is build-time only
+
+The Notion API (`lib/notion.ts`) is called exclusively during `npm run export` to fetch blog posts. There is no runtime API access — the result is baked into static HTML. Secrets (`NOTION_TOKEN`, `NOTION_BLOG_DATABASE_ID`) are GitHub Actions secrets and are not available at runtime.

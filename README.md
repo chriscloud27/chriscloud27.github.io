@@ -83,254 +83,40 @@ Container platform service design for the German Federal IT infrastructure. Clou
 ![Docker](https://img.shields.io/badge/Docker-%232496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![GitHub CI](https://img.shields.io/badge/GitHub%20CI-%23181717?style=for-the-badge&logo=github&logoColor=white)
 
-## Site SEO Implementation (March 2026)
+## SEO / GEO
 
-This site implements comprehensive SEO enhancements for indexing by both traditional search engines (Google, Bing) and generative AI engines (ChatGPT, Perplexity, Claude, Gemini).
+The site targets both traditional search engines (Google, Bing) and generative AI engines (ChatGPT, Perplexity, Claude, Gemini) through structured data, explicit crawler permissions, and AI-readable content declarations.
 
-### Implementation Details
+### What is implemented
 
-**JSON-LD Schemas:**
+- **JSON-LD schemas** — Person, WebSite, Organization on the homepage; Article on all blog posts
+- **AI crawler permissions** — `robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot
+- **`public/llms.txt`** — machine declaration file for AI model indexing ([llmstxt.org](https://llmstxt.org))
+- **Notion-driven blog metadata** — metaDescription (155 chars), dateModified, tags, related articles
+- **Keyword strategy** — centralized in `lib/keywords.ts`, applied per route via `generateMetadata()`
+- **Sitemap** — dynamic, includes all locales × routes; submitted to Google Search Console
 
-- **Person Schema** (homepage) — Christian Weber expertise, credentials, and topical authority
-- **WebSite Schema** with SiteNavigationElement (homepage) — Rich Google sitelinks in search results
-- **Article Schema** (all blog posts) — Full article metadata with keywords, dateModified, author
+### SOVP Audit Status (2026-04-21)
 
-**AI Crawler Support:**
+| Layer                 | Score | Target | Key gap                                                  |
+| --------------------- | ----- | ------ | -------------------------------------------------------- |
+| Signal Discovery (AI) | 35%   | 100%   | D2/D3/D4 all 0% — llms.txt, citability, sameAs URLs      |
+| Security Headers      | 14%   | ≥ 90%  | GitHub Pages has no header support — requires Cloudflare |
+| Schema                | 50%   | ≥ 90%  | Missing WebPage, FAQPage, DefinedTerm, datePublished     |
+| Performance / Mobile  | 42%   | ≥ 90%  | Static export constraint; no WebP auto-conversion        |
+| META / Links / SSL    | 100%  | ≥ 90%  | ✅                                                       |
 
-- `robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot, Googlebot, Bingbot
-- Increases likelihood of LLM training data inclusion and AI search visibility
+Full findings, root causes, and fix plan: **[docs/SOVP-AUDIT-FIXES.md](docs/SOVP-AUDIT-FIXES.md)**
 
-**Blog Article Enhancements:**
+### Monitoring
 
-- `metaDescription` field (155 chars, pain-first) extracted from Notion
-- `dateModified` tracking for content freshness signals
-- `internalLinks` (related articles) for topical authority clusters
-- Fallback branded OG image (`/og/default.png`, 1200×627px) for social shares
+Run the local SEO checker against the live sitemap:
 
-**New Notion Database Properties** (for blog articles):
+```bash
+node scripts/check-seo.mjs --sitemap=https://mach2.cloud/sitemap.xml --max=40
+```
 
-- `MetaDescription` (rich_text) — 155-character pain-first summaries
-- `DateModified` (date) — Last modified timestamp
-- `RelatedArticles` (relation) — Links to 2–3 related articles
-
-### Verification Pass (Required)
-
-**Build success does NOT mean signals are being read by search engines and AI crawlers.** You must verify separately. Takes ~15 minutes:
-
-#### 1. LinkedIn Post Inspector (Most Important)
-
-[linkedin.com/post-inspector](https://linkedin.com/post-inspector) — paste and inspect:
-
-- `https://mach2.cloud/en/` — should show branded OG image, correct title, description
-- `https://mach2.cloud/blog` — should show branded OG image
-- Any live blog article URL — should show branded OG image
-
-If image is missing or cached, hit **Regenerate** in the inspector. LinkedIn caches aggressively.
-
-#### 2. Google Rich Results Test
-
-[search.google.com/test/rich-results](https://search.google.com/test/rich-results) — paste:
-
-- Homepage: `https://mach2.cloud/en/` → confirm Person schema and SiteNavigationElement parse without errors
-- Blog article: Any article URL → confirm Article schema parses, shows `datePublished`, `author`, `headline`
-
-#### 3. Schema.org Validator
-
-[validator.schema.org](https://validator.schema.org) — paste one blog article URL, verify:
-
-- Article type detected ✓
-- `about` array populated (topics) ✓
-- `author.sameAs` present (links to LinkedIn, GitHub) ✓
-- `keywords` not empty ✓ (if empty, add Tags to that article in Notion)
-
-#### 4. Google Search Console
-
-1. **Sitemaps:** Submit `https://mach2.cloud/sitemap.xml` (if not already done)
-2. **URL Inspection:** Paste `https://mach2.cloud/en/` → request indexing
-3. Repeat for first 3–4 blog article URLs
-
-### Follow-up Checkpoints
-
-**In 2 weeks:**
-
-- Google Search Console → **Coverage** — blog URLs should move from "Discovered" to "Indexed"
-- Check **Enhancements** → Article for any structured data errors
-
-**In 6 weeks (GEO Baseline Test):**
-Ask ChatGPT, Perplexity, and Claude:
-
-- _"Who is Christian Weber, AI‑Native Cloud & Platform Architect?"_
-- _"What is the WAF++ framework?"_
-
-Screenshot the responses. mach2.cloud should appear as a source. This is your before/after evidence that the GEO implementation is working.
-
-**If mach2.cloud doesn't appear after 6 weeks:**
-
-- Verify all blog articles have Tags populated in Notion (5–8 per article)
-- Ensure at least 8–10 articles are indexed in Google Search Console
-- Check that Notion integration is pulling metaDescription correctly
-
-### Files Modified
-
-| Path                                  | Change                                                                  |
-| ------------------------------------- | ----------------------------------------------------------------------- |
-| `app/[locale]/page.tsx`               | Added Person + WebSite schemas                                          |
-| `app/robots.ts`                       | Added explicit AI crawler allow rules                                   |
-| `app/[locale]/layout.tsx`             | OG image fallback to `/og/default.png`                                  |
-| `app/[locale]/blog/[slug]/page.tsx`   | Enhanced metadata + OG fallback + Article schema                        |
-| `lib/notion.ts`                       | Extract metaDescription, dateModified, relatedArticles from Notion      |
-| `components/blog/RelatedArticles.tsx` | NEW — internal linking component                                        |
-| `public/og/default.png`               | NEW — branded fallback OG image (1200×627px)                            |
-| `public/og/default.svg`               | NEW — OG image source                                                   |
-| `scripts/generate-og-image.mjs`       | NEW — SVG→PNG conversion script                                         |
-| `app/sitemap.ts`                      | Includes diagnosis, whitepaper, agentic-team-focal; improved priorities |
-
-### SEO/GEO Monitoring & Automation
-
-**Automated Health Monitoring**: Use n8n or Google Apps Script to track daily:
-
-- Coverage (indexed vs crawled URLs)
-- Schema validation (Article, Person, WebSite)
-- Performance (clicks, impressions, CTR)
-- Weekly digest reports
-
-See → `N8N_AUTOMATION.md` for workflows
-
----
-
-## SEO/GEO Health Monitoring Dashboard
-
-### Key Metrics to Track (Next 3 Months)
-
-| Metric                    | Week 1–2   | Week 3–4         | Month 2–3       | End Goal       |
-| ------------------------- | ---------- | ---------------- | --------------- | -------------- |
-| **Coverage**              |            |                  |                 |                |
-| Homepage Indexed          | ✓ Indexed  | ✓ Indexed        | ✓ Indexed       | 100%           |
-| Blog URLs Indexed         | Crawled    | 50%+ Indexed     | 100% Indexed    | 100%           |
-| Coverage Errors           | 0          | 0                | 0               | 0              |
-| **Schema Validation**     |            |                  |                 |                |
-| Article Schemas Valid     | 12/12 ✓    | 12/12 ✓          | 12/12 ✓         | 100%           |
-| Keywords Populated        | 12/12 ✓    | 12/12 ✓          | 12/12 ✓         | 100%           |
-| **Performance**           |            |                  |                 |                |
-| Organic Clicks            | 0–3        | 5–20             | 30–100          | 100+/mo        |
-| Impressions               | 10–50      | 100–300          | 500–1500        | 1500+/mo       |
-| Average CTR               | –          | 4–8%             | 6–10%           | 8%+            |
-| Avg Position              | –          | 15–25            | 10–20           | Top 10         |
-| Top Keywords              | Brand only | Brand + 2–3 head | Head + 5+ body  | 20+ keywords   |
-| **AI Indexing (GEO)**     |            |                  |                 |                |
-| mach2.cloud in ChatGPT    | Not yet    | Not yet          | **Appearing ✓** | Appearing      |
-| mach2.cloud in Perplexity | Not yet    | Not yet          | **Appearing ✓** | Appearing      |
-| Articles as source        | –          | –                | **Starting ✓**  | Primary source |
-
-### Expected Results by Timeline
-
-#### **Week 1–2: Crawl Phase**
-
-- ✅ Homepage indexed
-- ⏳ Blog articles in "Crawled" state (not indexed yet)
-- 📊 0–3 organic clicks (branded searches only)
-- 📈 Impressions: 10–50 (branded: "mach2.cloud", "Christian Weber")
-
-**Status**: All systems working correctly; Google is processing.
-
-#### **Week 3–4: Indexing Phase**
-
-- ✅ 50%+ of blog articles move to "Indexed"
-- ✅ Homepage + main pages completely indexed
-- 📊 5–20 organic clicks
-- 📈 Impressions: 100–300
-- 🔍 Keywords appearing: "mach2.cloud", "Christian Weber", maybe "architecture SaaS"
-- 📍 Average position: 15–25 (competitive keywords, first appearance)
-
-**Status**: SEO is working; content being discovered.
-
-#### **Month 2–3: Authority Building**
-
-- ✅ 100% of blog articles indexed (all 12)
-- ✅ All Article schemas valid
-- 📊 30–100 organic clicks
-- 📈 Impressions: 500–1500
-- 🔍 Keywords: Brand + 5–8 head/body keywords appearing
-- 📍 Average position: 10–20 (moving up the rankings)
-- 🤖 **mach2.cloud appearing in AI responses** (ChatGPT/Perplexity/Claude)
-
-**Status**: GEO implementation proven; organic momentum building.
-
-### Action Plan by Checkpoint
-
-**Right Now** (Today):
-
-- [ ] Verify sitemap at `mach2.cloud/sitemap.xml` (now includes diagnosis + whitepaper)
-- [ ] Request indexing for `https://mach2.cloud/en/` in GSC → wait 24 hrs
-- [ ] Request indexing for 3–4 blog articles in GSC
-- [ ] Build Google Sheet for tracking (columns: Date, Indexed, Crawled, Errors, Clicks, Status)
-
-**Week 1–2**:
-
-- [ ] Set up n8n or Google Apps Script for daily coverage checks (see `N8N_AUTOMATION.md`)
-- [ ] Check GSC daily: Homepage should be Indexed within 2–3 days
-- [ ] Check schema validation in Google Rich Results Test
-- [ ] Add 3 new properties to Notion: MetaDescription, DateModified, RelatedArticles
-- [ ] Start backfilling article metadata in Notion
-
-**Week 3–4**:
-
-- [ ] Check GSC Coverage: at least 50% of blog URLs should be Indexed
-- [ ] Verify Article schemas are all Valid (zero errors)
-- [ ] Check Performance report: clicks + impressions appearing?
-- [ ] Manually test LinkedIn Post Inspector (verify OG images)
-- [ ] Continue Notion backfill: all articles should have Tags (5–8 per article)
-
-**Month 2**:
-
-- [ ] Check GSC Coverage: approaching 100% indexed
-- [ ] Monitor Performance: CTR and position trends
-- [ ] Optimize top articles: any with CTR below 4%? Update title/description
-- [ ] Add more related articles: improve internal linking depth
-
-**Week 6 (6-Week Baseline Test)**:
-
-- [ ] Ask ChatGPT: _"Who is Christian Weber, AI‑Native Cloud & Platform Architect?"_
-- [ ] Ask Perplexity: _"What is the WAF++ framework?"_
-- [ ] Ask Claude: _"Who helps Series A SaaS companies with AI-native architecture?"_
-- [ ] **Screenshot responses** — is mach2.cloud appearing as a source?
-- [ ] Record results in spreadsheet (for month 3 comparison)
-
-**Month 3**:
-
-- [ ] Analyze Performance trends: clicks/impressions increasing? Position improving?
-- [ ] Identify top 3–5 performing keywords
-- [ ] Create follow-up content for high-impression, low-click queries
-- [ ] Plan content refresh: update old articles (set DateModified in Notion)
-- [ ] Run GEO baseline test again: is mach2.cloud now appearing consistently?
-
-### Red Flags to Watch For
-
-🚩 **If after 3 weeks**:
-
-- Homepage still not indexed → Check robots.txt, server errors in GSC
-- Articles stuck in "Crawled" → May have noindex tag or other blocking issues
-- Coverage errors appearing → Fix immediately; errors block indexing
-
-🚩 **If after 6 weeks**:
-
-- CTR flat or declining → Meta descriptions may not match search intent; update
-- Position stuck at 20+ → Keywords may be too competitive; focus on long-tail variations
-- mach2.cloud not in AI responses → Verify article Tags are populated; need 8–10 indexed articles
-
-🚩 **If article schema shows errors**:
-
-- "Missing keywords" → Add Tags to Notion article; reindex
-- "author.sameAs not found" → Check notion.ts is extracting correctly
-- "Empty datePublished" → Verify post.date is in Notion
-
-### Resources
-
-- **Sitemap**: `https://mach2.cloud/sitemap.xml`
-- **Robots.txt**: `https://mach2.cloud/robots.txt` (includes GPTBot, ClaudeBot allow rules)
-- **Google Search Console**: [console.google.com/webmasters](https://console.google.com/webmasters)
-- **Automation Setup**: See `N8N_AUTOMATION.md` for daily/weekly monitoring workflows
-- **Verification Checklist**: See `VERIFICATION_CHECKLIST.md` for schema validation tasks
+Detailed runbook: [reports/seo/SEO-SUMMARY.md](reports/seo/SEO-SUMMARY.md)
 
 ---
 

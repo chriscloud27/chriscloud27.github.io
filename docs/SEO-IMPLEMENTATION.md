@@ -1,75 +1,50 @@
-# Google Analytics / Tag Manager Implementation
+# Analytics & Consent Implementation
 
-This document explains how Google Analytics is integrated into the FairUp
-landing site and how to make changes or extend the setup.
+GTM + Google Consent Mode V2 integration for mach2.cloud.
 
 ## Overview
 
-- The project uses **Google Tag Manager (GTM)** to load all analytics tags
-  (GA4, conversion pixels, etc.).
-- No native `gtag` or `analytics.js` code exists in the React components.
-- The GTM container ID is `GTM-M7VZPNZG` and it is injected in the
-  per-locale root layout (`src/app/[locale]/layout.tsx`).
-- Consent mode is enabled and wired to the custom cookie consent component.
+- **Google Tag Manager** (`GTM-M7VZPNZG`) loads all analytics tags — no native `gtag` code in components
+- **Consent Mode V2** defaults all storage to `denied` until the user accepts via the cookie banner
+- **Cookie name**: `mach2_consent` — stores the user's consent decision for 1 year
+- **GTM container ID** is the only analytics identifier in the repo; GA4 measurement IDs live inside GTM
 
 ## Key files
 
-- `src/app/[locale]/layout.tsx` – central location where the GTM snippet and
-  consent helpers are written to the page head/body. Edits here affect all
-  localized pages.
-- `src/app/components/cookie-consent.tsx` – component responsible for asking
-  users and updating the `fairup_consent` cookie. Consent changes push
-  events to `dataLayer`.
+| File                           | Role                                                                              |
+| ------------------------------ | --------------------------------------------------------------------------------- |
+| `app/[locale]/layout.tsx`      | GTM snippet injection, Consent Mode V2 defaults, security meta tags               |
+| `components/CookieConsent.tsx` | Cookie banner UI, reads/writes `mach2_consent`, dispatches `mach2_consent_update` |
+| `lib/site-config.ts`           | `SITE_CONFIG.seo.consent` — canonical source for cookie name and event name       |
 
 ## How it works
 
-1. Layout script creates `window.dataLayer` and pushes `default_consent` and
-   other configuration settings.
-2. When consent is stored/updated (via the cookie-consent component), a
-   `fairup_consent_update` event is dispatched and the layout helper picks it
-   up to notify GTM (`dataLayer.push({ event: 'update_consent', ... })`).
-3. GTM container loads asynchronously and listens to the dataLayer events. It
-   contains all GA4 tags, remarketing, etc. The actual analytics IDs (such as
-   `G-XXXXXXXXXX`) are configured inside the GTM web interface.
-4. A `<noscript>` iframe is included for browsers with JavaScript disabled.
+1. `layout.tsx` injects an inline script before GTM that sets all consent signals to `denied` (except `security_storage`)
+2. On page load, `CookieConsent.tsx` reads the `mach2_consent` cookie:
+   - If present → re-dispatches the stored consent state so GTM picks it up without showing the banner
+   - If absent → renders the banner
+3. When the user accepts or declines, the component writes `mach2_consent`, dispatches `mach2_consent_update`, and GTM fires `update_consent` via a dataLayer listener in `layout.tsx`
+4. GTM loads asynchronously after the consent defaults are established — GA4 and other tags only fire after consent is granted
 
 ## Adding or changing analytics tags
 
-1. Open the GTM container at
-   `https://tagmanager.google.com/#/container/accounts/.../containers/GTM-M7VZPNZG`.
-2. Add/update tags, triggers, and variables as needed.
-3. Publish the container when finished.
+Edit inside the GTM container at `https://tagmanager.google.com` using container ID `GTM-M7VZPNZG`. Publish when done. Do not hardcode any measurement IDs in the repo.
 
-### Consent mode considerations
+## Custom events from React components
 
-- The layout script uses Google Consent Mode V2, setting defaults to
-  `denied` for all storage categories except `security_storage`.
-- The GTM container should respect consent signals coming from the
-  `update_consent` event; this is usually handled by the built-in
-  Consent Overview in GTM.
+```tsx
+useEffect(() => {
+  window.dataLayer?.push({ event: "myEvent", category: "foo" });
+}, []);
+```
 
-## Testing locally
+## Testing
 
-1. Run `npm run dev` to start the Next.js frontend.
-2. Open the site in the browser and use the `Preview` mode in GTM to verify
-   that dataLayer events are firing correctly.
-3. Clear cookies or use incognito to simulate first-time visitors.
-4. Use browser devtools network/console to ensure the GTM script loads and the
-   `dataLayer` contains expected events.
+1. `npm run dev` — start local server
+2. Open site in incognito (simulates first visit, no existing cookie)
+3. Use GTM Preview mode to verify dataLayer events
+4. Accept/decline in the banner — confirm `mach2_consent_update` fires in the console
 
-## Notes
+## Security headers
 
-- Do **not** hard-code any analytics measurement IDs in the repo; those belong
-  in GTM.
-- Any modifications to `layout.tsx` should preserve the consent helper
-  functions and GTM initialization snippet.
-- When adding new pages or components, simply rely on `dataLayer.push` from
-  within React code if custom events are needed. For example:
-  ```tsx
-  useEffect(() => {
-    window.dataLayer?.push({ event: "myCustomEvent", category: "foo" });
-  }, []);
-  ```
-
-That’s all you need to know to implement or update Google Analytics in this
-project.
+Security headers (`X-Frame-Options`, `Content-Security-Policy`, etc.) are partially set via `<meta http-equiv>` tags in `layout.tsx`. Full header coverage requires a CDN proxy — GitHub Pages does not support HTTP response headers. See `docs/SOVP-AUDIT-FIXES.md` for the complete picture and Cloudflare setup instructions.

@@ -9,6 +9,7 @@ import OutcomesSection from "@/components/sections/OutcomesSection";
 import { getGlobalSettings } from "@/lib/settings";
 import { buildCanonical, buildCanonicalAndAlternates } from "@/lib/seo";
 import { HOME_KEYWORDS } from "@/lib/keywords";
+import { SITE_CONFIG } from "@/lib/site-config";
 
 export async function generateMetadata({
   params,
@@ -61,19 +62,19 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const { person, organization, siteUrl } = SITE_CONFIG.seo;
+  const pageUrl = buildCanonical(`/${locale}`);
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Christian Weber",
-    url: "https://mach2.cloud",
+    name: person.name,
+    url: siteUrl,
+    image: person.image,
     jobTitle: "AI‑Native Cloud & Platform Architect",
     description:
       "Principal AI‑Native Cloud & Platform Architect helping Series A–B B2B SaaS companies design platform architectures that scale safely.",
-    sameAs: [
-      "https://linkedin.com/in/christian-weber-0591",
-      "https://github.com/chriscloud27",
-      "https://WAF++.dev",
-    ],
+    sameAs: person.sameAs,
     knowsAbout: [
       "AI‑Native Cloud & Platform Architecture",
       "Platform engineering",
@@ -86,8 +87,76 @@ export default async function HomePage({
     ],
     worksFor: {
       "@type": "Organization",
-      name: "MaCh2.Cloud",
-      url: "https://mach2.cloud",
+      name: organization.name,
+      url: organization.url,
+    },
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "MaCh2.Cloud — AI‑Native Cloud & Platform Architect",
+    url: pageUrl,
+    description:
+      "Series A–B B2B SaaS companies move fast — until the foundation built to get there starts breaking under the weight of growth. MaCh2.Cloud designs AI‑Native Cloud & Platform Architectures that eliminate technical debt and restore engineering velocity.",
+    datePublished: "2024-01-01",
+    dateModified: "2026-04-21",
+    inLanguage: locale,
+    author: { "@type": "Person", name: person.name },
+    publisher: {
+      "@type": "Organization",
+      name: organization.name,
+      url: organization.url,
+    },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", ".hero-sub"],
+    },
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is an AI-Native Cloud & Platform Architect?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "An AI-Native Cloud & Platform Architect designs cloud infrastructure and platform systems purpose-built for AI workloads, developer velocity, and scalable SaaS growth — addressing inference cost, failure blast radius, and platform engineering for AI-first products.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does MaCh2.Cloud offer?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "MaCh2.Cloud offers Architecture Diagnosis, Architecture Blueprint, Platform Enablement, and Fractional Principal Architect engagements for Series A–B B2B SaaS companies whose platform needs structural improvement to support growth.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is MaCh2.Cloud for?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Series A and Series B B2B SaaS companies whose platform was built for speed and now needs architectural improvement to reduce cloud costs, eliminate technical debt, and restore engineering velocity.",
+        },
+      },
+    ],
+  };
+
+  const definedTermSchema = {
+    "@context": "https://schema.org",
+    "@type": "DefinedTerm",
+    name: "WAF++",
+    alternateName: "Well-Architected Framework Plus Plus",
+    description:
+      "Open-source extension of the AWS Well-Architected Framework, purpose-built for AI-native SaaS platforms. Adds inference cost modeling, AI workload scaling patterns, and platform engineering pillars missing from the standard framework.",
+    url: "https://wafplusplus.dev",
+    inDefinedTermSet: {
+      "@type": "DefinedTermSet",
+      name: "Platform Engineering Glossary",
+      url: siteUrl,
     },
   };
 
@@ -131,7 +200,7 @@ export default async function HomePage({
         name: "WAF++ Framework",
         description:
           "The Well-Architected Framework for Platform Engineering — design principles for AI-native platforms.",
-        url: "https://WAF++.dev",
+        url: "https://wafplusplus.dev",
         position: 4,
       },
     ],
@@ -146,6 +215,18 @@ export default async function HomePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }}
       />
       <main>
         <HeroSection />

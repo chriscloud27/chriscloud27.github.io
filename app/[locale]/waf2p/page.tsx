@@ -95,11 +95,11 @@ export default async function waf2pPage({
     description: t("metaDescription"),
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Cloud",
-    url: "https://WAF++.dev",
+    url: "https://wafplusplus.dev",
     publisher: {
       "@type": "Organization",
       name: "WAF++ Community",
-      url: "https://WAF++.dev",
+      url: "https://wafplusplus.dev",
     },
   };
 

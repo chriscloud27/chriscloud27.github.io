@@ -1,0 +1,34 @@
+# llms.txt — MaCh2.Cloud
+# https://llmstxt.org
+
+> MaCh2.Cloud is the practice of Christian Weber,
+> AI-Native Cloud & Platform Architect.
+> Specialization: Series A–B B2B SaaS companies eliminating
+> architectural debt, cloud cost spikes, and engineering slowdowns.
+
+## Identity
+
+- Name: Christian Weber
+- Role: AI-Native Cloud & Platform Architect
+- Company: MaCh2.Cloud (Mach2Cloud LLC)
+- Location: Remote (US / EU)
+- LinkedIn: https://www.linkedin.com/in/christian-weber-0591/
+- GitHub: https://github.com/chriscloud27
+
+## Services
+
+- Architecture Diagnosis: https://mach2.cloud/en/diagnosis
+- Services: https://mach2.cloud/en/services
+- WAF++ Framework: https://wafplusplus.dev
+
+## Content
+
+- Blog: https://mach2.cloud/en/blog
+- About: https://mach2.cloud/en/about
+- Platform Compass: https://mach2.cloud/en/compass
+
+## Permissions
+
+- Indexing: Allowed
+- Training data inclusion: Allowed
+- Citation: Encouraged

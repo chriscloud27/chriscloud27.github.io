@@ -70,11 +70,13 @@ Consult this document before modifying site structure, routes, or content organi
 ## SEO Workflow
 
 - Runbook: `reports/seo/SEO-SUMMARY.md`
+- Audit findings & fix plan: `docs/SOVP-AUDIT-FIXES.md`
 - Checker script: `scripts/check-seo.mjs`
 - Reports: `reports/seo/<ISO-timestamp>/`
 - Baseline: `reports/seo/baseline/seo-baseline.json`
 - Rule: do not create root-level SEO artifacts (`seo-snapshot.json`, `seo-report.json`, `seo-baseline.json`)
 - Rule: if SEO paths change, update both `reports/seo/SEO-SUMMARY.md` and `README.md`
+- Rule: sameAs URLs are the single source of truth in `lib/site-config.ts` under `SITE_CONFIG.seo` — do not hardcode them elsewhere
 
 ## Platform Compass Webhook Test
 
