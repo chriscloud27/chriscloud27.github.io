@@ -151,9 +151,30 @@ function getNotionFileUrl(
   return undefined;
 }
 
-function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
+async function fetchAllChildren(
+  blockId: string,
+): Promise<BlockObjectResponse[]> {
+  const results: BlockObjectResponse[] = [];
+  let cursor: string | undefined;
+  do {
+    const response = await notion.blocks.children.list({
+      block_id: blockId,
+      ...(cursor ? { start_cursor: cursor } : {}),
+    });
+    results.push(...(response.results as BlockObjectResponse[]));
+    cursor = response.has_more
+      ? (response.next_cursor ?? undefined)
+      : undefined;
+  } while (cursor);
+  return results;
+}
+
+async function blocksToHtml(
+  blocks: BlockObjectResponse[],
+  slug: string,
+  imageCounter = { value: 0 },
+): Promise<string> {
   const lines: string[] = [];
-  let imageIndex = 0;
 
   for (const block of blocks) {
     switch (block.type) {
@@ -192,7 +213,12 @@ function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
       }
       case "quote": {
         const text = richTextToHtml(block.quote.rich_text);
-        lines.push(`<blockquote>${text}</blockquote>`);
+        let inner = text;
+        if (block.has_children) {
+          const children = await fetchAllChildren(block.id);
+          inner += await blocksToHtml(children, slug, imageCounter);
+        }
+        lines.push(`<blockquote>${inner}</blockquote>`);
         break;
       }
       case "code": {
@@ -216,13 +242,13 @@ function blocksToHtml(blocks: BlockObjectResponse[], slug: string): string {
         const imageUrl =
           getLocalAssetUrl(
             slug,
-            `inline-${String(imageIndex).padStart(2, "0")}`,
+            `inline-${String(imageCounter.value).padStart(2, "0")}`,
             sourceUrl,
           ) ?? sourceUrl;
         lines.push(
           `<figure><img src="${escapeHtmlAttribute(imageUrl)}" alt="${escapeHtmlAttribute(altText)}" loading="lazy" />${caption ? `<figcaption>${caption}</figcaption>` : ""}</figure>`,
         );
-        imageIndex += 1;
+        imageCounter.value += 1;
         break;
       }
       default:
@@ -492,7 +518,7 @@ export async function getBlogPost(
       block_id: page.id,
     });
     const rawBlocks = blocksResponse.results as BlockObjectResponse[];
-    const blocks = blocksToHtml(rawBlocks, post.slug);
+    const blocks = await blocksToHtml(rawBlocks, post.slug);
     const headings = extractHeadings(rawBlocks);
 
     // Extract and resolve internal links (related articles)

@@ -11,7 +11,7 @@ export default async function Connect() {
       <div className="gbg" />
       <div className="wrap">
         <div className="connect-body">
-          <div className="connect-cta reveal">
+          <div className="connect-cta">
             {/* brand: centred eyebrow label */}
             <div className="eyebrow justify-center">{t("eyebrow")}</div>
             <h2>

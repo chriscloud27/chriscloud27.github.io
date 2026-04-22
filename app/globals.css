@@ -228,6 +228,14 @@ h2 em {
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* Rise keyframe animation */
 @keyframes rise {
   from {
@@ -1215,6 +1223,8 @@ footer {
   border-left: 3px solid var(--cyan);
   padding: 12px 20px;
   margin: 18px 0;
+  background: rgba(0, 229, 255, 0.04);
+  border-radius: 0 4px 4px 0;
   @apply text-grey-mid italic font-body;
 }
 .blog-post-content pre {

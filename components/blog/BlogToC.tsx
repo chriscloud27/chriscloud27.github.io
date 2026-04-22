@@ -9,7 +9,6 @@ interface BlogToCProps {
 
 export default function BlogToC({ headings }: BlogToCProps) {
   const [activeId, setActiveId] = useState<string>("");
-  const [hovered, setHovered] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -41,25 +40,14 @@ export default function BlogToC({ headings }: BlogToCProps) {
 
   if (headings.length < 2) return null;
 
-  const handleClick = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
-    <div
-      className="fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-row-reverse items-center gap-3 z-40"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+    <div className="group fixed right-6 top-1/2 -translate-y-1/2 hidden xl:flex flex-row-reverse items-center gap-3 z-40">
       {/* Collapsed indicator — always visible */}
       <div className="flex flex-col gap-[6px] items-center">
         {headings.map((h) => (
-          <button
+          <a
             key={h.id}
-            onClick={() => handleClick(h.id)}
+            href={`#${h.id}`}
             aria-label={h.text}
             className={[
               "rounded-full transition-all duration-200 cursor-pointer",
@@ -80,9 +68,9 @@ export default function BlogToC({ headings }: BlogToCProps) {
       <div
         className={[
           "transition-all duration-200 origin-right",
-          hovered
-            ? "opacity-100 scale-x-100 pointer-events-auto"
-            : "opacity-0 scale-x-95 pointer-events-none",
+          "opacity-0 scale-x-95 pointer-events-none",
+          "group-hover:opacity-100 group-hover:scale-x-100 group-hover:pointer-events-auto",
+          "group-focus-within:opacity-100 group-focus-within:scale-x-100 group-focus-within:pointer-events-auto",
         ].join(" ")}
       >
         <div className="bg-[#0B1F3A]/90 backdrop-blur-sm border border-white/8 rounded-md px-4 py-3 max-h-[60vh] overflow-y-auto min-w-[180px] max-w-[240px]">
@@ -91,9 +79,9 @@ export default function BlogToC({ headings }: BlogToCProps) {
           </p>
           <nav className="flex flex-col gap-[6px]">
             {headings.map((h) => (
-              <button
+              <a
                 key={h.id}
-                onClick={() => handleClick(h.id)}
+                href={`#${h.id}`}
                 className={[
                   "text-left font-mono text-[11px] leading-[1.4] tracking-[0.02em] transition-colors duration-150 cursor-pointer",
                   h.level === 3 ? "pl-3" : "pl-0",
@@ -103,7 +91,7 @@ export default function BlogToC({ headings }: BlogToCProps) {
                 ].join(" ")}
               >
                 {h.text}
-              </button>
+              </a>
             ))}
           </nav>
         </div>
