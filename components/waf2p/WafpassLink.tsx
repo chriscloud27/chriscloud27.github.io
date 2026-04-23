@@ -3,7 +3,7 @@
 export function WafpassLink() {
   return (
     <a
-      href="https://waf2p.dev/pass/"
+      href="https://mach2.cloud/go/wafpass-tool"
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => {
