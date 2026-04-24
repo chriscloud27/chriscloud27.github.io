@@ -167,7 +167,7 @@ export default async function LocaleLayout({
         <meta name="referrer" content="strict-origin-when-cross-origin" />
         <meta
           httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://www.googletagmanager.com https://flow.mach2.cloud; frame-src https://www.googletagmanager.com; object-src 'none';"
+          content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://www.googletagmanager.com https://flow.mach2.cloud https://app.cal.com; frame-src https://www.googletagmanager.com https://cal.com https://app.cal.com; object-src 'none';"
         />
         {/* Consent Mode V2 defaults must run before GTM */}
         <script dangerouslySetInnerHTML={{ __html: consentInitScript }} />

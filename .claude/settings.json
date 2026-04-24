@@ -36,7 +36,8 @@
       "Bash(curl -sI \"https://cal.com/mach2cloud/diagnosis-call?embed=true\")",
       "Bash(curl -sI \"https://cal.com/mach2cloud/diagnosis-call\")",
       "Bash(node -e \"const p=require\\('./package.json'\\); console.log\\('next:', p.dependencies.next, '\\\\nreact:', p.dependencies.react\\)\")",
-      "Bash(curl -sI \"https://app.cal.com/mach2cloud/diagnosis-call?embed=true&layout=month_view\")"
+      "Bash(curl -sI \"https://app.cal.com/mach2cloud/diagnosis-call?embed=true&layout=month_view\")",
+      "Bash(curl -sI \"https://app.cal.com/mach2cloud/diagnosis-call?embed=true\")"
     ]
   }
 }
