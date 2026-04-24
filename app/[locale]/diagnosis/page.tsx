@@ -249,7 +249,7 @@ export default async function DiagnosisPage({
           </p>
           <div
             className="overflow-hidden bg-deep-blue"
-            style={{ minHeight: "600px" }}
+            style={{ height: "700px" }}
           >
             <CalEmbed />
           </div>
