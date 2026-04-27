@@ -15,15 +15,21 @@ export default async function GoPage({
 
   if (!destination) notFound();
 
-  // Inline script runs synchronously — reads window.location.search (UTM params
-  // and any other query string) and appends it to the destination before redirecting.
-  // This means mach2.cloud/go/geo-validator?utm_content=p1 correctly forwards the
-  // utm_content param to the destination URL.
+  // Inline script runs synchronously — injects utm_source=mach2.cloud by rule,
+  // then merges any additional query params forwarded from the share URL.
+  // e.g. mach2.cloud/go/waf2p?utm_medium=social correctly adds both utm_source and utm_medium.
   const redirectScript = `
 (function() {
   var dest = ${JSON.stringify(destination)};
-  var qs = window.location.search;
-  window.location.replace(dest + qs);
+  var url = new URL(dest);
+  // Always set utm_source — the canonical referral rule for all go-links.
+  if (!url.searchParams.has('utm_source')) {
+    url.searchParams.set('utm_source', 'mach2.cloud');
+  }
+  // Forward any additional params from the share URL (e.g. utm_medium, utm_campaign).
+  var incoming = new URLSearchParams(window.location.search);
+  incoming.forEach(function(v, k) { url.searchParams.set(k, v); });
+  window.location.replace(url.toString());
 })();
 `.trim();
 
