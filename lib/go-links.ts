@@ -9,9 +9,8 @@
  *   All query params are forwarded transparently to the destination.
  */
 export const GO_LINKS: Record<string, string> = {
-  "geo-validator":
-    "https://engine.litzki-systems.org/#https://litzki-systems.com/sovp-full-validator",
-  "sovp-audit": "https://litzki-systems.com/sovp-full-validator",
+  "sovp-audit-quick": "https://validator.litzki-systems.com/",
+  "sovp-audit-full": "https://litzki-systems.com/sovp-full-validator",
   waf2p: "https://waf2p.dev/",
   wafpass: "https://waf2p.dev/wafpass/",
   "wafpass-tool": "https://waf2p.dev/pass/",

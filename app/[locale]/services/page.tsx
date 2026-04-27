@@ -59,60 +59,40 @@ const OFFERS = [
     title: "Architecture\nDiagnosis Call",
     subtitle: "Free — 30 minutes",
     description:
-      "30‑minute working session to identify your highest‑leverage cloud/AI constraint and decide whether a 30‑Day Sprint makes sense. No slides, no pitch.",
-    trigger: '"We need a clear starting point — fast."',
+      "Interview-styled working session to identify your highest‑leverage cloud/AI constraint. Detect which concrete problem is blocking your company from shipping. \n Concrete dialoge.",
+    trigger: '"We need a clear starting point. Fast."',
     cta: "Book a Diagnosis Call",
-    outcomesLabel: "What You Walk Away With",
+    outcomesLabel: "Input Data You Provide",
     outcomes: [
-      "One concrete architectural finding you can act on immediately",
-      "Concise written summary to share with your team",
-      "A recommended next step — sprint or not",
+      "One concrete problem you encounter",
+      "Any written text, problem summary, screenshots",
+      "(Non) Technical role (e.g. CEO or CTO)",
     ],
     deliverablesLabel: "Deliverables",
     deliverables: [
-      "One finding",
+      "Name your most expensive platform constraint",
       "Written summary",
       "Next-step recommendation",
     ],
   },
   {
     num: "01",
-    slug: "sprint",
-    label: "SPRINT",
-    title: "30‑Day Cloud & AI\nConstraint Sprint",
-    subtitle: "Fixed-fee. One constraint. 90-day roadmap.",
-    description:
-      "A one‑month engagement to name your most expensive platform constraint and design a 90‑day roadmap to fix it. Fixed fee. Remote only. Risk‑reversal guarantee.",
-    trigger:
-      '"We know something needs to change. We just need to name it and make a plan."',
-    cta: "Talk about a 30‑Day Sprint",
-    outcomesLabel: "What You Get After 30 Days",
-    outcomes: [
-      "A clearly named primary platform constraint and its business impact",
-      "2–3 concrete architecture decisions with pros/cons and recommendations",
-      "A pragmatic 90-day implementation plan your team can execute without me",
-      "A closing session with your leadership team (CTO/VP Eng, founders)",
-    ],
-    deliverablesLabel: "Format",
-    deliverables: ["Fixed Fee", "Remote Only", "4 Weeks", "Risk‑Reversal"],
-  },
-  {
-    num: "02",
     slug: "audit",
     label: "AUDIT",
-    title: "Architecture\nAudit & Blueprint",
-    subtitle: "Deeper review. Full target architecture.",
+    title: "Architecture\nAudit",
+    subtitle: "Deeper review.", // -> Full target architecture.
     description:
-      "Deeper review and target architecture for teams that already validated the sprint and want a full blueprint for the next growth stage.",
+      "Deeper review making compliance decisions traceable, repeatable, and auditable. Deeper understand what's blocking your SaaS team to scale to the next stage.",
+    // "Deeper review and target architecture for SaaS teams that want a full blueprint for the next growth stage.",
     trigger:
-      '"We know something is wrong. We just don\'t know where to start — or how expensive it already is."',
+      '"We know something is wrong. We need to understand the root cause of why it\'s happening."', // We just don\'t know where to start or how expensive it already is.
     cta: "Start with a Diagnosis Call",
     outcomesLabel: "What You Walk Away With",
     outcomes: [
-      "Full picture of your current platform architecture and hidden technical debt",
-      "Identified scalability, reliability and cloud cost risks — ranked by severity",
-      "Prioritized architectural improvement plan with clear next steps",
-      "An answer to the Series B question before your investors ask it",
+      "Clearly named primary platform constraints and their business impact",
+      "Report of hidden technical debt. E.g. identified risk for scalability, security, or sovereignty", // ranked by severity
+      "Prioritized improvement plan with clear next steps",
+      'Answering the question " what is missing and why"',
     ],
     deliverablesLabel: "Deliverables",
     deliverables: [
@@ -123,22 +103,49 @@ const OFFERS = [
     ],
   },
   {
-    num: "03",
-    slug: "enablement",
-    label: "ENABLEMENT",
-    title: "Enablement &\nGuidance",
-    subtitle: "Build It Right. Own It Independently.",
+    num: "02",
+    slug: "blueprint",
+    label: "BLUEPRINT",
+    title: "Design \nYour Target \nArchitecture", // Cloud & AI\nConstraint
+    subtitle: "Desired State. Roadmap. In-team engagement.",
     description:
-      "Hands‑on architectural support during implementation so your team can make the right decisions under pressure and own the platform when I am not in the room.",
+      "In-detail meetings to create a cloud infrastructure plan that suits your needs. Adapting AI-native workflows to speed up the delivery.",
     trigger:
-      "\"We're in the build. But every architectural decision feels like a bet we're not sure we should take alone.\"",
+      '"We know something needs to change. We just need to name it and make a plan."',
+    cta: "Talk about a 30‑Day Sprint",
+    outcomesLabel: "What You Get After 30 Days",
+    outcomes: [
+      "Adressing the top 5 technical debts",
+      "Concrete company archicture analyzed",
+      "Pragmatic 90-day implementation plan",
+      "Closing session with your leadership team",
+    ],
+    deliverablesLabel: "Deliverables",
+    deliverables: [
+      "High-level architecture plan",
+      "Architectural decision recorded",
+      "Software requirements specified",
+      "Quality assurance gates defined",
+    ],
+  },
+  {
+    num: "03",
+    slug: "enablement & guidance",
+    label: "Build It Right. Own It Independently.",
+    title: "30-Day Sprint",
+    subtitle:
+      "Following the roadmap to realize the blueprint. Enabling the team. Hands-on.",
+    description:
+      "Instructor-led platform realization of your individual blueprint, project-led and supervised. Hands‑on where needed to ensure high-quality outcomes. Enabling your team to make future-ready decisions.",
+    trigger:
+      '"We\'re in the build. But making something does not lead to a structured and winning outcome. We need guidance."',
     cta: "Start with a Diagnosis Call",
     outcomesLabel: "What You Walk Away With",
     outcomes: [
       "Faster and safer infrastructure implementation with reduced architectural risk",
       "Engineering team enabled to make sound architectural decisions independently",
-      "Architectural bottlenecks resolved before they become production incidents",
-      "A team that owns the platform — not just operates it",
+      "Top architectural bottlenecks resolved",
+      "DevOps: Your team owning the platform",
     ],
     deliverablesLabel: "Deliverables",
     deliverables: [
@@ -157,14 +164,14 @@ const OFFERS = [
     description:
       "Ongoing strategic ownership of your cloud & AI architecture on a monthly retainer, once the foundations are in place.",
     trigger:
-      '"We\'re scaling fast. We need architectural leadership at every board cycle, every product decision, every infrastructure evolution — not just when things break."',
+      '"We\'re scaling fast. We need architectural leadership at every board cycle, every product decision, every infrastructure evolution. Not just when things break."',
     cta: "Start with a Diagnosis Call",
     outcomesLabel: "Ongoing Cadence",
     outcomes: [
       "Monthly architecture review aligned to your product and business roadmap",
-      "Continuous platform evolution planning — architecture grows with the business",
+      "Continuous platform evolution. Architecture grows with the business",
       "On-demand architectural guidance for engineering decisions and strategic trade-offs",
-      "Investor and board-level architectural narrative — always ready",
+      "Investor and board-level architectural narrative",
       "Cloud cost oversight and optimization as an ongoing architectural practice",
     ],
     deliverablesLabel: "Engagement Format",
