@@ -15,7 +15,8 @@ export const GO_LINKS: Record<string, string> = {
   wafpass: "https://waf2p.dev/wafpass/",
   "wafpass-tool": "https://waf2p.dev/pass/",
   "wedding-invitation": "https://maria-chris.vercel.app/#rsvp",
-  "cv-us-rr": "https://mach2.cloud/CV-US_CW-2026-04-RR.pdf",
+  "us-rr-cv": "https://mach2.cloud/CV-US_CW-2026-04-RR.pdf",
+  "us-rr-linkedin": "https://www.linkedin.com/in/christian-weber-0591/",
 };
 
 export type GoSlug = keyof typeof GO_LINKS;
