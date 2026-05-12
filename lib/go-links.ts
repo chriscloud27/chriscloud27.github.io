@@ -6,12 +6,16 @@
  *
  * utm_source=mach2.cloud is injected automatically at redirect time.
  * Additional params can still be appended at share time and are forwarded transparently:
- *   mach2.cloud/go/geo-validator?utm_medium=social&utm_campaign=sovp-series&utm_content=p1
+ *   https://mach2.cloud/go/geo-validator?utm_medium=social&utm_campaign=sovp-series&utm_content=p1
+ *   https://mach2.cloud/go/waf2p?utm_medium=social&utm_campaign=waf2p-launch&utm_content=share1
+ *   https://mach2.cloud/go/wafpass?utm_medium=social&utm_campaign=waf2p-launch&utm_content=share1
+ *   https://mach2.cloud/go/waf2pdocs?utm_medium=social&utm_campaign=waf2p-launch&utm_content=share1
  */
 export const GO_LINKS: Record<string, string> = {
   "sovp-audit-quick": "https://validator.litzki-systems.com",
   "sovp-audit-full": "https://litzki-systems.com/sovp-full-validator",
   waf2p: "https://waf2p.dev",
+  waf2pdocs: "https://waf2p.dev/docs/",
   wafpass: "https://waf2p.dev/wafpass/",
   "wafpass-tool": "https://waf2p.dev/pass/",
   "wedding-invitation": "https://maria-chris.vercel.app/#rsvp",
