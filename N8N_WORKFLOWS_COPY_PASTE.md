@@ -378,10 +378,11 @@ curl -X POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-
 ```
 
 **Then manually record results in Google Sheet**:
-| Month | ChatGPT | Perplexity | Claude | Gemini | mach2cloud Mentions |
-|-------|---------|-----------|--------|--------|---|
-| Mar 26 | ❌ | ✅ | ❌ | ❌ | 2 (Perplexity) |
-| Apr 2 | ⏳ | ✅ | ⏳ | ⏳ | ? (check) |
+
+| Month  | ChatGPT | Perplexity | Claude | Gemini | mach2cloud Mentions |
+| ------ | ------- | ---------- | ------ | ------ | ------------------- |
+| Mar 26 | ❌      | ✅         | ❌     | ❌     | 2 (Perplexity)      |
+| Apr 2  | ⏳      | ✅         | ⏳     | ⏳     | ? (check)           |
 
 ---
 

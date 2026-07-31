@@ -21,6 +21,7 @@ export const GO_LINKS: Record<string, string> = {
   "wedding-invitation": "https://maria-chris.vercel.app/#rsvp",
   "us-rr-cv": "https://mach2.cloud/CV-US_CW-2026-04-RR.pdf",
   "us-rr-linkedin": "https://www.linkedin.com/in/christian-weber-0591/",
+  "maria-chris-media": "https://maria-chris.vercel.app/en/media",
 };
 
 export type GoSlug = keyof typeof GO_LINKS;
