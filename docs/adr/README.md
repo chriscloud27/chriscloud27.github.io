@@ -96,6 +96,12 @@ Do not write an ADR for:
 | [0022](0022-n8n-monitoring-backbone.md)     | n8n as the SEO/GEO Monitoring Automation Backbone                      | accepted |
 | [0023](0023-wafplusplus-separate-domain.md) | WAF++ as a Separate Open-Source Domain and Intellectual Property Asset | accepted |
 
+### Brand & Design System
+
+| ADR                                       | Title                                                       | Status   |
+| ------------------------------------------ | ------------------------------------------------------------ | -------- |
+| [0025](0025-logo-assets-kept-as-is.md)    | Keep Existing Logo Assets Despite BrandBook Rule Conflicts   | accepted |
+
 ## Historical note
 
 Some older decision context still lives in docs such as `docs/MIGRATION-SUMMARY.md` and `memory/MEMORY.md`. Do not treat those as ADRs unless they are explicitly promoted into this folder.

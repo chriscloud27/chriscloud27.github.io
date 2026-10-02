@@ -166,12 +166,11 @@ ReferenzÃ¤sthetik:
 
 ## Typografie-Empfehlung
 
-PrimÃ¤re Schriftarten:
+PrimÃ¤re Schriftarten (Stand BrandBook v1.0, MÃ¤rz 2026):
 
-â€” Inter  
-â€” IBM Plex Sans  
-â€” SF Pro  
-â€” JetBrains Mono (fÃ¼r technische Akzente)
+â€” Syne (Display/Headlines, 700â€“800)  
+â€” Space Grotesk (FlieÃŸtext, 400)  
+â€” JetBrains Mono (fÃ¼r technische Akzente, Labels, Code)
 
 Eigenschaften:
 

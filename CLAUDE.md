@@ -16,8 +16,10 @@
 
 ## Typography
 
-- Primary: Inter or IBM Plex Sans
+- Display / Headings: Syne (700–800)
+- Body: Space Grotesk (400)
 - Mono accents: JetBrains Mono (technical elements only)
+- Never Arial, Roboto, or system fonts in brand materials
 - Style: Minimalist. Technical. No decorative fonts.
 
 ## Design Reference
